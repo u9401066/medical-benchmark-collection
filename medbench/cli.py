@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import List, Optional
 
-from .datasets import DEFAULT_SUITE, SOURCES, prepare
+from .datasets import DEFAULT_SUITE, SOURCES, SUITES, expand, prepare
 
 
 def main(argv: Optional[List[str]] = None) -> int:
@@ -16,12 +16,13 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--data", default="data", help="dataset folder [data]")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
+    suites = "; suites: " + ", ".join("@%s" % k for k in SUITES)
     p = sub.add_parser("prepare", help="download, verify (sha256) and normalise the datasets")
-    p.add_argument("--datasets", default=",".join(DEFAULT_SUITE))
+    p.add_argument("--datasets", default=",".join(DEFAULT_SUITE), help="comma-separated names" + suites)
 
     p = sub.add_parser("run", help="run one model config over datasets (resumable)")
     p.add_argument("--config", required=True)
-    p.add_argument("--datasets", default=",".join(DEFAULT_SUITE))
+    p.add_argument("--datasets", default=",".join(DEFAULT_SUITE), help="comma-separated names" + suites)
     p.add_argument("--out", help="run folder [results/<config name>]")
     p.add_argument("--sample", type=int, help="evenly spaced subset per dataset (pilot)")
     p.add_argument("--baseline-s", type=float, default=15.0, help="idle seconds recorded before the first request (power baseline)")
@@ -43,14 +44,25 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--env", default="reports/environment.json", help="test environment record (medbench env)")
     p.add_argument("--repo-url", default="https://github.com/u9401066/medqa-bench")
 
+    p = sub.add_parser("datasets", help="list the datasets and suites")
+
+    p = sub.add_parser("twmed-build", help="build the twmed bank from Taiwan's licensing exams (network; needs the [build] extra)")
+    p.add_argument("--years", default="2024,2025,2026")
+    p.add_argument("--out", default="datasets/twmed")
+    p.add_argument("--cache", default="data/twmed-pdf", help="downloaded exam PDFs")
+    p.add_argument("--delay", type=float, default=1.0, help="seconds between requests to the Ministry of Examination")
+
     p = sub.add_parser("env", help="record this host (OS, CPU, RAM, GPU, driver, PCIe, disks) into an environment JSON")
     p.add_argument("--out", default="reports/environment.json")
 
     a = ap.parse_args(argv)
     data = Path(a.data)
     if a.cmd == "prepare":
-        info = prepare(data, [d for d in a.datasets.split(",") if d])
-        (data / "datasets.json").write_text(json.dumps(info, indent=1, ensure_ascii=False))
+        info = prepare(data, a.datasets.split(","))
+        old = data / "datasets.json"
+        merged = json.loads(old.read_text()) if old.exists() else {}
+        merged.update(info)
+        old.write_text(json.dumps(merged, indent=1, ensure_ascii=False))
         for k, v in info.items():
             print("%-12s %5d items  sha256 %s  (%s@%s)" % (k, v["n"], v["sha256"][:12], v["repo"], v["revision"][:10]))
         return 0
@@ -58,7 +70,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         from .runner import run
 
         cfg = json.loads(Path(a.config).read_text())
-        names = [d for d in a.datasets.split(",") if d]
+        try:
+            names = expand(a.datasets.split(","))
+        except KeyError as e:
+            print(e, file=sys.stderr)
+            return 2
         for n in names:
             if n not in SOURCES:
                 print("unknown dataset %s" % n, file=sys.stderr)
@@ -96,6 +112,20 @@ def main(argv: Optional[List[str]] = None) -> int:
         path = write_docx([Path(r) for r in a.runs], data, Path(a.out), a.title, Path(a.notes) if a.notes else None,
                           Path(a.env) if a.env else None, a.repo_url)
         print(path)
+        return 0
+    if a.cmd == "datasets":
+        for k, src in SOURCES.items():
+            print("%-13s %6d  %-6s %s" % (k, src.n, src.lang, src.title))
+        for k, v in SUITES.items():
+            print("@%-12s %s" % (k, ", ".join(v)))
+        return 0
+    if a.cmd == "twmed-build":
+        from .twmed import build, known_questions
+
+        years = [int(y) for y in a.years.split(",") if y.strip()]
+        known, refs = known_questions(data)
+        res = build(years, Path(a.out), Path(a.cache), known=known, delay=a.delay, overlap_sources=refs)
+        print(json.dumps(res, ensure_ascii=False))
         return 0
     if a.cmd == "env":
         import datetime

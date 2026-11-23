@@ -7,7 +7,8 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from .datasets import SOURCES, load
+from . import __version__
+from .datasets import SOURCES, TWMED_TITLES, load
 from .prompts import PROMPT_VERSION, TEMPLATES
 from .score import common_items, compare, score_run
 
@@ -15,7 +16,12 @@ DATASET_TITLES = {
     "medqa_usmle": "MedQA-USMLE（英文，4 選 1）",
     "medqa_twmle": "MedQA-TWMLE（繁體中文，台灣醫師國考，4 選 1）",
     "pubmedqa": "PubMedQA-L（英文，摘要閱讀，yes/no/maybe）",
-    "medmcqa": "MedMCQA validation（英文，印度醫學入學，單選 4 選 1）",
+    "medmcqa": "MedMCQA validation（英文，印度醫學入學考，4 選 1）",
+    "mmlu_med": "MMLU 醫學 6 科 test（英文，4 選 1）",
+    "medxpertqa": "MedXpertQA Text test（英文，專家級，10 選 1）",
+    "medqa_mcmle": "MedQA-MCMLE test（簡體中文，中國大陸醫師資格考，4 選 1）",
+    "tmmlu_med": "TMMLU+ 醫學 8 科 test（繁體中文，台灣考試，4 選 1）",
+    **{k: "twmed %s（繁體中文，考選部專技高考 2024–2026：%s，4 選 1）" % (k, v) for k, v in TWMED_TITLES.items()},
 }
 
 
@@ -37,6 +43,22 @@ def _pv(p: float) -> str:
 
 def _ci(d: Dict[str, Any]) -> str:
     return "%s [%s–%s]" % (_p(d["acc"]), _p(d["ci95"][0]), _p(d["ci95"][1]))
+
+
+def run_versions(S: List[Dict[str, Any]], key: str) -> str:
+    """The medbench / prompt versions the runs were made with (from their manifests), e.g. "v1" or "v1、v1.1"."""
+    return "、".join(sorted({str(s["manifest"].get(key) or "?") for s in S}))
+
+
+def option_keys(S: List[Dict[str, Any]], n: str) -> List[str]:
+    """Option letters seen in a multiple-choice dataset's answers and predictions, then "none"; [] for yes/no datasets."""
+    seen = set(S[0]["datasets"][n]["gold_distribution"])
+    for s in S:
+        seen |= set(s["datasets"][n]["pred_distribution"])
+    letters = sorted(k for k in seen if isinstance(k, str) and len(k) == 1 and k.isalpha() and k.isupper())
+    if not letters or seen - set(letters) - {"none"}:
+        return []
+    return letters + ["none"]
 
 
 def _same_setup(S: List[Dict[str, Any]]) -> str:
@@ -79,7 +101,8 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
 
     w("# %s" % title)
     w("")
-    w("產生時間：%s（medbench %s，prompt %s）  " % (_dt.datetime.now().strftime("%Y-%m-%d %H:%M"), S[0]["manifest"]["medbench_version"], PROMPT_VERSION))
+    w("產生時間：%s（執行時 medbench %s、prompt %s；報告由 medbench %s 產生）  " % (
+        _dt.datetime.now().strftime("%Y-%m-%d %H:%M"), run_versions(S, "medbench_version"), run_versions(S, "prompt_version"), __version__))
     w("受測系統：%s" % "、".join("**%s**" % l for l in labels))
     w("")
 
@@ -119,7 +142,8 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
     w("|---|---|---:|---|")
     for n in names:
         src = SOURCES[n]
-        w("| %s | `%s@%s` / `%s` | %d | `%s…` |" % (DATASET_TITLES.get(n, n), src.repo, src.revision[:10], src.path, S[0]["datasets"][n]["n"], src.sha256[:16]))
+        w("| %s | [`%s@%s`](%s) / `%s` | %d | `%s…` |" % (DATASET_TITLES.get(n, n), src.repo, src.revision[:10], src.browse_url, src.path,
+                                                      S[0]["datasets"][n]["n"], src.sha256[:16]))
     w("")
     notes_ds = {
         "medqa_usmle": "MedQA-USMLE：test split 全部 1,273 題（4 選項版本），依 `meta_info` 分 Step 1 與 Step 2&3。",
@@ -134,11 +158,11 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
     w("### 1.2 作答協定")
     w("")
     w("- 單一 user 訊息、零樣本、不給範例；模型思考（reasoning）開啟，effort 一律 **medium**。")
-    w("- 只評分最終回答（`content`），不看思考內容。解析規則：取最後一個 `Answer: X`（MCQ 為 A–D，PubMedQA 為 yes/no/maybe）；找不到視為答錯並計入「無答案」。")
+    w("- 只評分最終回答（`content`），不看思考內容。解析規則：取最後一個 `Answer: X`（MCQ 為選項字母 A–D，MedXpertQA 為 A–J；PubMedQA 為 yes/no/maybe）；找不到視為答錯並計入「無答案」。")
     w("- 每題用由題目 ID 雜湊得到的固定 seed；各系統的取樣參數見 1.4。")
     w("- 被截斷（`finish_reason=length`）照樣解析，另外計數。HTTP/串流錯誤會重試 2 次，仍失敗記為錯誤且算答錯。")
     w("")
-    w("提示詞範本（`medbench/prompts.py`，版本 %s）：" % PROMPT_VERSION)
+    w("提示詞範本（`medbench/prompts.py`，目前版本 %s；各執行使用的版本見上方，%s 對原 3 個題庫的提示詞與 v1 逐字相同）：" % (PROMPT_VERSION, PROMPT_VERSION))
     w("")
     for k, v in TEMPLATES.items():
         w("<details><summary>%s</summary>" % k)
@@ -223,14 +247,16 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
     w("")
     w("選擇題預測答案分佈（檢查位置偏誤；none = 無可解析答案）：")
     w("")
-    w("| 資料集 | 系統 | %s |" % " | ".join(["A", "B", "C", "D", "none"]))
-    w("|---|---|%s|" % "|".join("---:" for _ in range(5)))
     for n in names:
-        if S[0]["datasets"][n]["gold_distribution"].keys() <= {"A", "B", "C", "D", "E"}:
-            w("| %s | 正確答案 | %s |" % (n, " | ".join(str(S[0]["datasets"][n]["gold_distribution"].get(k, 0)) for k in ["A", "B", "C", "D", "none"])))
-            for s in S:
-                w("| %s | %s | %s |" % (n, s["label"], " | ".join(str(s["datasets"][n]["pred_distribution"].get(k, 0)) for k in ["A", "B", "C", "D", "none"])))
-    w("")
+        keys = option_keys(S, n)
+        if not keys:
+            continue
+        w("| %s | 系統 | %s |" % (n, " | ".join(keys)))
+        w("|---|---|%s|" % "|".join("---:" for _ in keys))
+        w("| %s | 正確答案 | %s |" % (n, " | ".join(str(S[0]["datasets"][n]["gold_distribution"].get(k, 0)) for k in keys)))
+        for s in S:
+            w("| %s | %s | %s |" % (n, s["label"], " | ".join(str(s["datasets"][n]["pred_distribution"].get(k, 0)) for k in keys)))
+        w("")
     if "pubmedqa" in names:
         w("PubMedQA 混淆矩陣（列 = 正確答案，欄 = 模型回答）：")
         w("")

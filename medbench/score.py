@@ -103,6 +103,25 @@ def _subsets(name: str, rows: List[Dict[str, Any]], items: Dict[str, Dict[str, A
         dep = [r for r in rows if items[r["id"]]["meta"].get("depends_on_previous")]
         subs["standalone"] = _acc([r for r in rows if not items[r["id"]]["meta"].get("depends_on_previous")])
         subs["depends_on_previous (承上題)"] = _acc(dep)
+    def by(field: str, prefix: str = "") -> None:
+        vals = sorted({str(items[r["id"]]["meta"].get(field)) for r in rows if items[r["id"]]["meta"].get(field) is not None})
+        if len(vals) > 1:
+            for v in vals:
+                subs["%s%s" % (prefix or field + "=", v)] = _acc([r for r in rows if str(items[r["id"]]["meta"].get(field)) == v])
+
+    if name in ("mmlu_med", "tmmlu_med"):
+        by("subject", "subject=")
+    if name == "medmcqa":
+        by("choice_type")
+    if name == "medxpertqa":
+        by("question_type")
+        by("medical_task")
+    if name.startswith("twmed_"):
+        by("year")
+        by("profession")
+        dep = [r for r in rows if items[r["id"]]["meta"].get("depends_on_previous")]
+        if dep:
+            subs["depends_on_previous (承上題)"] = _acc(dep)
     if name == "pubmedqa":
         for lab in ("yes", "no", "maybe"):
             subs["gold=%s" % lab] = _acc([r for r in rows if r["gold"] == lab])

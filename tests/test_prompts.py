@@ -52,3 +52,15 @@ def test_prompts():
     y = build_prompt(YN)
     assert "BACKGROUND: ..." in y and "Does X?" in y and parse(YN, "Answer: Yes") == "yes"
     assert parse(MCQ, "Answer: b") == "B"
+
+
+def test_v1_prompts_are_unchanged_and_new_languages_and_letters_work():
+    import hashlib
+
+    digests = [hashlib.sha256(build_prompt(it).encode()).hexdigest()[:16] for it in (MCQ, TW, YN)]
+    assert digests == ["c47980222d0ea223", "9d0e3f8d84ed96de", "52518e521e78dd37"]  # prompt v1 of the core datasets
+    cn = build_prompt({"kind": "mcq", "lang": "zh-CN", "question": "问?", "options": {"A": "甲", "B": "乙"}})
+    assert cn.startswith("请回答以下医学单选题") and "A、B" in cn
+    ten = {"kind": "mcq", "lang": "en", "question": "Q?", "options": {k: k.lower() for k in "ABCDEFGHIJ"}}
+    assert "I or J" in build_prompt(ten)
+    assert parse(ten, "Answer: J") == "J" and parse(ten, "最终答案为 Ｈ") == "H" and parse(MCQ, "Answer: J") is None

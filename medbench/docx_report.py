@@ -12,10 +12,10 @@ from typing import Any, Dict, List, Optional
 
 from . import __version__
 from . import docx_figures as figs
-from .datasets import SOURCES, load
+from .datasets import SOURCES, TWMED_TITLES, load
 from .docx_base import DocBuilder
 from .prompts import PROMPT_VERSION, TEMPLATES
-from .report import _ci, _f, _p, _pv, _same_setup, run_commands
+from .report import _ci, _f, _p, _pv, _same_setup, option_keys, run_commands, run_versions
 from .score import common_items, compare, load_predictions, score_run
 
 REPO_URL = "https://github.com/u9401066/medqa-bench"
@@ -54,7 +54,13 @@ DS_INFO = {
     "medqa_usmle": ("MedQA-USMLE", "英文，4 選 1", "美國醫師執照考試（USMLE）式題目，test split 全部；依 meta_info 分 Step 1 / Step 2&3", "jin2021"),
     "medqa_twmle": ("MedQA-TWMLE", "繁體中文，4 選 1", "台灣醫師國考題，test split 全部；24 題「承上題」需要前一題情境", "jin2021"),
     "pubmedqa": ("PubMedQA-L", "英文，yes / no / maybe", "PubMed 摘要（去掉結論段）＋研究問題，專家標註的 1,000 題", "jin2019"),
-    "medmcqa": ("MedMCQA", "英文，4 選 1", "印度醫學入學考試題，validation split 單選題", None),
+    "medmcqa": ("MedMCQA", "英文，4 選 1", "印度 AIIMS / NEET-PG 醫學入學考試題，validation split 全部 4,183 題", None),
+    "mmlu_med": ("MMLU 醫學", "英文，4 選 1", "MMLU 的解剖、臨床知識、大學生物、大學醫學、醫學遺傳、專業醫學 6 科 test", None),
+    "medxpertqa": ("MedXpertQA", "英文，10 選 1", "專家級醫學推理與理解題（Text 子集 test），選項多、難度高", None),
+    "medqa_mcmle": ("MedQA-MCMLE", "簡體中文，4 選 1", "中國大陸醫師資格考題，test split 全部", "jin2021"),
+    "tmmlu_med": ("TMMLU+ 醫學", "繁體中文，4 選 1", "TMMLU+ 的基礎醫學、藥理、藥學、臨床心理、牙醫、中醫臨床、驗光、職能治療 8 科 test", None),
+    **{k: ("twmed %s" % k.split("_", 1)[1], "繁體中文，4 選 1", "考選部專技高考 2024–2026 考畢試題：%s（本 repo 自建，見 datasets/twmed）" % v, None)
+       for k, v in TWMED_TITLES.items()},
 }
 
 GLOSSARY = [
@@ -90,6 +96,13 @@ def _git(*args: str) -> Optional[str]:
 
 def _utc(ts: float) -> str:
     return _dt.datetime.fromtimestamp(ts, _dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
+
+
+def _random_guess(data_dir: Path, n: str) -> tuple:
+    items = load(data_dir, n)
+    k = sorted({len(it["options"] or {}) for it in items})
+    p = sum(1 / max(1, len(it["options"] or {"yes": 1, "no": 1, "maybe": 1})) for it in items) / max(1, len(items))
+    return ("隨機猜測（%s 選 1）" % "/".join(str(x) for x in k), p, None)
 
 
 def _n(x: Optional[float], d: int = 0) -> str:
@@ -161,7 +174,8 @@ def _cover(b: DocBuilder, c: Dict[str, Any]) -> None:
         ("測試主機", _host_line(host)),
         ("程式、原始資料與結果", "[%s](%s)" % (c["repo_url"], c["repo_url"])),
         ("結果資料版本", "[commit %s](%s/tree/%s)（results/ 的最後一次修改）" % (c["results_commit"][:7], c["repo_url"], c["results_commit"])),
-        ("產生方式", "`medbench docx`（medbench %s，提示詞 %s）從 results/ 自動產生；數字與 %s 相同" % (__version__, PROMPT_VERSION, c["out"].with_suffix(".md"))),
+        ("產生方式", "`medbench docx`（medbench %s）從 results/ 自動產生，數字與 %s 相同；各執行使用 medbench %s、提示詞 %s"
+         % (__version__, c["out"].with_suffix(".md"), run_versions(S, "medbench_version"), run_versions(S, "prompt_version"))),
     ]
     b.table(["項目", "內容"], rows, align="ll", widths=[3.6, 13.4], size=9.5)
     b.page_break()
@@ -240,9 +254,9 @@ def _methods(b: DocBuilder, c: Dict[str, Any]) -> None:
     rows = []
     for n in names:
         src = SOURCES[n]
-        url = "https://huggingface.co/datasets/%s/blob/%s/%s" % (src.repo, src.revision, src.path)
-        rows.append([DS_INFO.get(n, (n,))[0], "[%s@%s](%s)\n`%s`" % (src.repo, src.revision[:10], url, src.path), "`%s`" % src.sha256])
-    b.table(["題庫", "來源（Hugging Face repo@revision、檔案）", "原始 parquet 的 SHA-256"], rows, align="lll",
+        where = "medqa-bench repo" if src.repo == "local" else "%s@%s" % (src.repo, src.revision[:10])
+        rows.append([DS_INFO.get(n, (n,))[0], "[%s](%s)\n`%s`" % (where, src.browse_url, src.path), "`%s`" % src.sha256])
+    b.table(["題庫", "來源（repo@revision、檔案）", "原始檔的 SHA-256（多檔為各檔雜湊串接後的 SHA-256）"], rows, align="lll",
             widths=[2.6, 7.4, 7.0], size=7.5, caption="資料來源與雜湊（下載時驗證）")
     rows = []
     for n in names:
@@ -257,7 +271,7 @@ def _methods(b: DocBuilder, c: Dict[str, Any]) -> None:
     rows = []
     for n in names:
         title = DS_INFO.get(n, (n,))[0]
-        refs = list(BASELINES.get(n, []))
+        refs = list(BASELINES.get(n, [])) or [_random_guess(data_dir, n)]
         refs.insert(1, ("多數類別（永遠回答 %s）" % c["majority_label"][n], c["majority"][n], None))
         for name, acc, ref in refs:
             rows.append([title, name, _p(acc), cite(ref) if ref else "本資料計算" if "多數" in name else "—"])
@@ -386,16 +400,15 @@ def _accuracy(b: DocBuilder, c: Dict[str, Any]) -> None:
             caption="失敗模式（題數）")
 
     b.heading("2.4 答案分佈與混淆", 2)
-    keys = ["A", "B", "C", "D", "none"]
-    rows = []
     for n in names:
-        if set(S[0]["datasets"][n]["gold_distribution"]) <= {"A", "B", "C", "D", "E"}:
-            rows.append([DS_INFO.get(n, (n,))[0], "正確答案"] + [str(S[0]["datasets"][n]["gold_distribution"].get(k, 0)) for k in keys])
-            for s in S:
-                rows.append([DS_INFO.get(n, (n,))[0], s["label"]] + [str(s["datasets"][n]["pred_distribution"].get(k, 0)) for k in keys])
-    if rows:
-        b.table(["題庫", "來源"] + keys, rows, align="ll" + "r" * 5, widths=[2.8, 6.2] + [1.6] * 5, size=8.5,
-                caption="選擇題的答案分佈（檢查位置偏誤；none = 無可解析答案）")
+        keys = option_keys(S, n)
+        if not keys:
+            continue
+        rows = [["正確答案"] + [str(S[0]["datasets"][n]["gold_distribution"].get(k, 0)) for k in keys]]
+        rows += [[s["label"]] + [str(s["datasets"][n]["pred_distribution"].get(k, 0)) for k in keys] for s in S]
+        b.table(["%s" % DS_INFO.get(n, (n,))[0]] + keys, rows, align="l" + "r" * len(keys),
+                widths=[5.0] + [12.0 / len(keys)] * len(keys), size=8 if len(keys) > 6 else 8.5,
+                caption="%s 的答案分佈（檢查位置偏誤；none = 無可解析答案）" % DS_INFO.get(n, (n,))[0])
     if "pubmedqa" in names:
         for s in S:
             cm = s["datasets"]["pubmedqa"]["confusion"]
@@ -544,7 +557,7 @@ def _appendices(b: DocBuilder, c: Dict[str, Any]) -> None:
     links = [("本評測程式與結果", c["repo_url"])]
     for n in c["names"]:
         src = SOURCES[n]
-        links.append(("題庫 %s" % DS_INFO.get(n, (n,))[0], "https://huggingface.co/datasets/%s" % src.repo))
+        links.append(("題庫 %s" % DS_INFO.get(n, (n,))[0], src.browse_url))
     for m in c["env"].get("models", []):
         links.append(("模型 %s" % m["system"], "https://huggingface.co/%s" % m["repo"]))
     for x in c["env"].get("software", []):

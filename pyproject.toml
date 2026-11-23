@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "medqa-bench"
-version = "0.1.0"
+version = "0.2.0"
 description = "Reproducible medical question-answering benchmark for OpenAI-compatible LLM servers: pinned datasets, resumable runs, answer parsing, accuracy with confidence intervals, paired tests, speed and resource usage, and a Markdown report."
 readme = "README.md"
 license = { text = "MIT" }
@@ -18,6 +18,7 @@ dependencies = [
 [project.optional-dependencies]
 test = ["pytest>=7"]
 report = ["python-docx>=1.1", "matplotlib>=3.8"]
+build = ["pymupdf>=1.24"]  # medbench twmed-build (parsing the exam PDFs)
 
 [project.scripts]
 medbench = "medbench.cli:main"
