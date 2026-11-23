@@ -1,0 +1,308 @@
+{
+ "medbench_version": "0.2.0",
+ "git_rev": "bc10cac5a8957f75657059f7ff3be03f79945513",
+ "prompt_version": "v1.1",
+ "config": {
+  "name": "inkling2mini-iq4xs-prod-medium",
+  "label": "Inkling 2 Mini UD-IQ4_XS（正式服務）",
+  "base_url": "http://127.0.0.1:8081",
+  "model": "inkling",
+  "concurrency": 2,
+  "timeout_s": 3600,
+  "request": {
+   "max_tokens": 16384,
+   "temperature": 1.0,
+   "top_p": 1.0,
+   "top_k": 0,
+   "min_p": 0.0,
+   "chat_template_kwargs": {
+    "reasoning_effort": "medium"
+   }
+  },
+  "server_info": [
+   "/props",
+   "/v1/models"
+  ],
+  "processes": [
+   "Inkling-2-Mini"
+  ],
+  "system": {
+   "model": "Inkling-2-Mini（Thinking Machines Lab；MoE 26.2B 總參數、每 token 啟用 3.4B，中間 12 層重複 3 次，等效 5.4B）",
+   "weights": "Unsloth UD-IQ4_XS（Dynamic 3.0 imatrix），GGUF 14.65 GiB",
+   "engine": "Unsloth llama.cpp prebuilt b12631-mix-acc0843（CUDA 12.8），不用推測解碼",
+   "placement": "正式服務 :8081：全部層在 GPU，但第 20–22 層的專家在系統 RAM（-ot），KV q8_0、131,072 tokens 由 4 個 slot 共用（--kv-unified），-ub 64，flash-attn；評測用 2 個併發、保留 2 個 slot 給使用者",
+   "sampling": "temperature 1.0、top_p 1.0、top_k 0、min_p 0（模型作者建議，不截斷），逐題 seed"
+  }
+ },
+ "datasets": {
+  "medmcqa": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "91c6572c454088bf71b679ad90aa8dffcd0d5868",
+   "sha256": "b768a1ea34afc9f80d3106d9b21f80fa8a00ec450a1f6cd641af72ca9e591021",
+   "items_sha256": "1503df424c1b6d1bb860e271f812e1af153c1c08c30c181ef556b97516fa2ef0"
+  },
+  "mmlu_med": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+   "sha256": "b60fc4c011cbbdd5ef1146b7788cfc8fbd4de291eaeb818fce7b47d06c2350b4",
+   "items_sha256": "38ec41416c81e59e7c81f8355f970e4e52d041d45efdfc12ff4988c99aad226a"
+  },
+  "medxpertqa": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "7e7c465a68eb2b866926bfa59c8c9d17a8daba65",
+   "sha256": "07ea977f7e326909b51c883b65f6ad7f399fc6db07408ef3630f4e3048ec71b2",
+   "items_sha256": "294cf2d8ed89a95532f2036d1abdf795ab4dc6ac8123e35719587b441c64cd5f"
+  },
+  "medqa_mcmle": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+   "sha256": "ac9ddd6cf0e45f4ab224f4b1014c5945fbdb1ca67ad6a057ce5b0e4929c7a55c",
+   "items_sha256": "ee8a927d2d50d8b346564f2f17ea5bc25193b763edb12342c019c3335f93641e"
+  },
+  "tmmlu_med": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+   "sha256": "4f964eccc78fe831449af277e9c667d041b60ad53806f15d6e5fde9f60e73b79",
+   "items_sha256": "b3241febe1b1645b10ad89b74cf29f7dc36a62be012c6b6c4eda63a63f150b58"
+  },
+  "twmed_md": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "twmed-v1",
+   "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+   "items_sha256": "ab0844164dc81d02fe0adf7e4a690f5accb051634729cbf65e215c47ffe967eb"
+  },
+  "twmed_dent": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "twmed-v1",
+   "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+   "items_sha256": "25a0dbaa00de99bbb717d46267e1723eb5468df86f5df929ee3d68415723d037"
+  },
+  "twmed_tcm": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "twmed-v1",
+   "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+   "items_sha256": "925ecd4e8809c9420ea648d1e44896e4ae6a8b7e97ccaf6dc4096c1ec3a7b3e5"
+  },
+  "twmed_rx": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "twmed-v1",
+   "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+   "items_sha256": "1df1825e771446d8680df67a65ac40c3b979f399abfe48da5eca51d3c30abf5f"
+  },
+  "twmed_rn": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "twmed-v1",
+   "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+   "items_sha256": "78ab93f7bb529f1dae831bf0504e25deb2be0eebe74af70f6596ec18893bec88"
+  },
+  "twmed_allied": {
+   "n_items": 20,
+   "sample": 20,
+   "revision": "twmed-v1",
+   "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+   "items_sha256": "7df80ab928cd3a0982b69fa3fe408fe663cedb4003fdf486d83cb66ecc8fa967"
+  }
+ },
+ "host": {
+  "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+  "python": "3.12.14",
+  "kernel": "5.15.0-190-generic",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-13700",
+  "logical_cpus": 12,
+  "ram_gib": 54.9,
+  "swap_gib": 16.0,
+  "os": "Ubuntu 22.04.4 LTS",
+  "virtualization": "kvm",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB, 570.211.01",
+  "gpu_pcie": "Gen4 x16",
+  "cuda_driver_api": "12.8",
+  "disks": [
+   "QEMU HARDDISK 1T 0 disk"
+  ]
+ },
+ "server": {
+  "/props": {
+   "default_generation_settings": {
+    "params": {
+     "seed": 4294967295,
+     "temperature": 1.0,
+     "dynatemp_range": 0.0,
+     "dynatemp_exponent": 1.0,
+     "top_k": 0,
+     "top_p": 1.0,
+     "min_p": 0.0,
+     "top_n_sigma": -1.0,
+     "xtc_probability": 0.0,
+     "xtc_threshold": 0.10000000149011612,
+     "typical_p": 1.0,
+     "repeat_last_n": 64,
+     "repeat_penalty": 1.0,
+     "presence_penalty": 0.0,
+     "frequency_penalty": 0.0,
+     "penalize_prompt": true,
+     "dry_multiplier": 0.0,
+     "dry_base": 1.75,
+     "dry_allowed_length": 2,
+     "dry_penalty_last_n": 64,
+     "mirostat": 0,
+     "mirostat_tau": 5.0,
+     "mirostat_eta": 0.10000000149011612,
+     "adaptive_target": -1.0,
+     "adaptive_decay": 0.8999999761581421,
+     "max_tokens": -1,
+     "n_predict": -1,
+     "n_keep": 0,
+     "n_discard": 0,
+     "ignore_eos": false,
+     "stream": false,
+     "n_probs": 0,
+     "min_keep": 0,
+     "chat_format": "Content-only",
+     "reasoning_format": "none",
+     "reasoning_in_content": false,
+     "generation_prompt": "",
+     "samplers": [
+      "penalties",
+      "dry",
+      "top_n_sigma",
+      "top_k",
+      "typ_p",
+      "top_p",
+      "min_p",
+      "xtc",
+      "temperature"
+     ],
+     "speculative.types": "none",
+     "timings_per_token": false,
+     "post_sampling_probs": false,
+     "backend_sampling": false,
+     "lora": []
+    },
+    "n_ctx": 131072
+   },
+   "total_slots": 4,
+   "model_alias": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+   "model_ftype": "IQ4_XS - 4.25 bpw",
+   "model_path": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+   "modalities": {
+    "vision": false,
+    "video": false,
+    "audio": false
+   },
+   "media_marker": "<__media_hZFgVu0zM5r15vuUn703XPb8a1k0zUE9__>",
+   "endpoint_slots": true,
+   "endpoint_props": false,
+   "endpoint_metrics": false,
+   "ui": true,
+   "ui_settings": {},
+   "chat_template_caps": {
+    "supports_object_arguments": true,
+    "supports_parallel_tool_calls": true,
+    "supports_preserve_reasoning": true,
+    "supports_reasoning_effort": true,
+    "supports_string_content": true,
+    "supports_system_role": true,
+    "supports_tool_calls": true,
+    "supports_tools": true,
+    "supports_typed_content": true,
+    "reasoning_effort_levels": [
+     "none",
+     "minimal",
+     "low",
+     "medium",
+     "high",
+     "max"
+    ],
+    "reasoning_effort_rejected": []
+   },
+   "bos_token": "",
+   "eos_token": "<|content_model_end_sampling|>",
+   "build_info": "b12631-8ce00e057",
+   "is_sleeping": false,
+   "cors_proxy_enabled": false
+  },
+  "/v1/models": {
+   "models": [
+    {
+     "name": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+     "model": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+     "modified_at": "",
+     "size": "",
+     "digest": "",
+     "type": "model",
+     "description": "",
+     "tags": [
+      ""
+     ],
+     "capabilities": [
+      "completion"
+     ],
+     "parameters": "",
+     "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "",
+      "families": [
+       ""
+      ],
+      "parameter_size": "",
+      "quantization_level": ""
+     }
+    }
+   ],
+   "object": "list",
+   "data": [
+    {
+     "id": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+     "aliases": [
+      "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf"
+     ],
+     "tags": [],
+     "object": "model",
+     "architecture": {
+      "input_modalities": [
+       "text"
+      ],
+      "output_modalities": [
+       "text"
+      ]
+     },
+     "created": 1795453524,
+     "owned_by": "llamacpp",
+     "meta": {
+      "vocab_type": 2,
+      "n_vocab": 200058,
+      "n_ctx": 131072,
+      "n_ctx_train": 1048576,
+      "n_embd": 2304,
+      "n_params": 26070390272,
+      "size": 15721776512,
+      "ftype": "IQ4_XS - 4.25 bpw"
+     }
+    }
+   ]
+  }
+ },
+ "sessions": [
+  {
+   "baseline_start": 1795453524.1178718,
+   "todo": 220,
+   "git_rev": "bc10cac5a8957f75657059f7ff3be03f79945513",
+   "base_url": "http://127.0.0.1:8081",
+   "concurrency": 2,
+   "sample": 20,
+   "start": 1795453529.123068,
+   "end": 1795457237.5720112
+  }
+ ]
+}

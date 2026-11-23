@@ -83,6 +83,19 @@
   篩選規則、排除統計、法律依據與引用方式見 [datasets/twmed/README.md](datasets/twmed/README.md)。
   題庫檔在 repo 內，所以 `twmed_*` 要在 repo checkout（或 editable 安裝）中使用。
 
+**新題庫試跑（2026-11-23，驗證流程用）**：正式服務上的 Inkling 2 Mini UD-IQ4_XS，每個新題庫平均間隔抽 20 題（`--sample 20`，2 個併發）。
+220 題全部有可解析答案：0 題無答案、0 題截斷、0 個錯誤，包括 10 選 1、簡體與繁體作答。每庫只有 20 題，95% CI 很寬，**不代表模型的真實水準**。
+結果在 `results/inkling2mini-iq4xs-prod-medium/`，日後用同一設定、不加 `--sample` 即可接著跑完整題庫。
+
+| 題庫 | 正確 | | 題庫 | 正確 |
+|---|---:|---|---|---:|
+| medmcqa | 11/20 | | twmed_md | 19/20 |
+| mmlu_med | 18/20 | | twmed_dent | 19/20 |
+| medxpertqa（10 選 1） | 4/20 | | twmed_tcm | 13/20 |
+| medqa_mcmle（簡中） | 15/20 | | twmed_rx | 19/20 |
+| tmmlu_med | 15/20 | | twmed_rn | 17/20 |
+| | | | twmed_allied | 13/20 |
+
 引用：
 - Jin et al., *What Disease does this Patient Have?*（MedQA），Applied Sciences 2021。
 - Jin et al., *PubMedQA*，EMNLP 2019。

@@ -1,0 +1,1568 @@
+{
+ "run": "inkling2mini-iq4xs-prod-medium",
+ "label": "Inkling 2 Mini UD-IQ4_XS（正式服務）",
+ "config": {
+  "name": "inkling2mini-iq4xs-prod-medium",
+  "label": "Inkling 2 Mini UD-IQ4_XS（正式服務）",
+  "base_url": "http://127.0.0.1:8081",
+  "model": "inkling",
+  "concurrency": 2,
+  "timeout_s": 3600,
+  "request": {
+   "max_tokens": 16384,
+   "temperature": 1.0,
+   "top_p": 1.0,
+   "top_k": 0,
+   "min_p": 0.0,
+   "chat_template_kwargs": {
+    "reasoning_effort": "medium"
+   }
+  },
+  "server_info": [
+   "/props",
+   "/v1/models"
+  ],
+  "processes": [
+   "Inkling-2-Mini"
+  ],
+  "system": {
+   "model": "Inkling-2-Mini（Thinking Machines Lab；MoE 26.2B 總參數、每 token 啟用 3.4B，中間 12 層重複 3 次，等效 5.4B）",
+   "weights": "Unsloth UD-IQ4_XS（Dynamic 3.0 imatrix），GGUF 14.65 GiB",
+   "engine": "Unsloth llama.cpp prebuilt b12631-mix-acc0843（CUDA 12.8），不用推測解碼",
+   "placement": "正式服務 :8081：全部層在 GPU，但第 20–22 層的專家在系統 RAM（-ot），KV q8_0、131,072 tokens 由 4 個 slot 共用（--kv-unified），-ub 64，flash-attn；評測用 2 個併發、保留 2 個 slot 給使用者",
+   "sampling": "temperature 1.0、top_p 1.0、top_k 0、min_p 0（模型作者建議，不截斷），逐題 seed"
+  }
+ },
+ "datasets": {
+  "medmcqa": {
+   "n": 20,
+   "correct": 11,
+   "acc": 0.55,
+   "ci95": [
+    0.3420853410191274,
+    0.7418021429623598
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 35.7566,
+    "median": 17.817,
+    "p90": 82.07910000000004
+   },
+   "ttft_s_median": 0.498,
+   "completion_tokens": {
+    "mean": 1192.3,
+    "median": 659.5
+   },
+   "prompt_tokens_mean": 118.8,
+   "decode_tps_median": 37.185,
+   "subsets": {
+    "choice_type=multi": {
+     "n": 6,
+     "correct": 3,
+     "acc": 0.5,
+     "ci95": [
+      0.18761630498040816,
+      0.8123836950195918
+     ]
+    },
+    "choice_type=single": {
+     "n": 14,
+     "correct": 8,
+     "acc": 0.5714285714285714,
+     "ci95": [
+      0.3259064441752893,
+      0.7861920121957136
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 222.41297897109547,
+    "decode_tps_median": 37.04837811975494,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 4,
+    "B": 6,
+    "C": 8,
+    "D": 2
+   },
+   "gold_distribution": {
+    "A": 6,
+    "B": 4,
+    "C": 6,
+    "D": 4
+   },
+   "confusion": {
+    "A": {
+     "A": 3,
+     "B": 2,
+     "C": 1
+    },
+    "B": {
+     "A": 1,
+     "B": 3
+    },
+    "C": {
+     "B": 1,
+     "C": 4,
+     "D": 1
+    },
+    "D": {
+     "C": 3,
+     "D": 1
+    }
+   }
+  },
+  "mmlu_med": {
+   "n": 20,
+   "correct": 18,
+   "acc": 0.9,
+   "ci95": [
+    0.6989663528135878,
+    0.9721335190383086
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 18.7744,
+    "median": 10.9195,
+    "p90": 40.34090000000004
+   },
+   "ttft_s_median": 0.55,
+   "completion_tokens": {
+    "mean": 695.15,
+    "median": 400.0
+   },
+   "prompt_tokens_mean": 159.3,
+   "decode_tps_median": 38.875,
+   "subsets": {
+    "subject=anatomy": {
+     "n": 3,
+     "correct": 3,
+     "acc": 1.0,
+     "ci95": [
+      0.43850296436068037,
+      1.0
+     ]
+    },
+    "subject=clinical_knowledge": {
+     "n": 5,
+     "correct": 3,
+     "acc": 0.6,
+     "ci95": [
+      0.23072427940911855,
+      0.8823792268590028
+     ]
+    },
+    "subject=college_biology": {
+     "n": 2,
+     "correct": 2,
+     "acc": 1.0,
+     "ci95": [
+      0.3423802239546494,
+      1.0
+     ]
+    },
+    "subject=college_medicine": {
+     "n": 4,
+     "correct": 4,
+     "acc": 1.0,
+     "ci95": [
+      0.5101091596030786,
+      0.9999999999999999
+     ]
+    },
+    "subject=medical_genetics": {
+     "n": 2,
+     "correct": 2,
+     "acc": 1.0,
+     "ci95": [
+      0.3423802239546494,
+      1.0
+     ]
+    },
+    "subject=professional_medicine": {
+     "n": 4,
+     "correct": 4,
+     "acc": 1.0,
+     "ci95": [
+      0.5101091596030786,
+      0.9999999999999999
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 269.8492945125232,
+    "decode_tps_median": 38.83126698409154,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 3,
+    "B": 5,
+    "C": 3,
+    "D": 9
+   },
+   "gold_distribution": {
+    "A": 4,
+    "B": 6,
+    "C": 2,
+    "D": 8
+   },
+   "confusion": {
+    "A": {
+     "A": 3,
+     "D": 1
+    },
+    "B": {
+     "B": 5,
+     "C": 1
+    },
+    "C": {
+     "C": 2
+    },
+    "D": {
+     "D": 8
+    }
+   }
+  },
+  "medxpertqa": {
+   "n": 20,
+   "correct": 4,
+   "acc": 0.2,
+   "ci95": [
+    0.08065766201776073,
+    0.41601743409331715
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 54.978699999999996,
+    "median": 52.122,
+    "p90": 88.02060000000002
+   },
+   "ttft_s_median": 1.2315,
+   "completion_tokens": {
+    "mean": 2059.95,
+    "median": 1990.0
+   },
+   "prompt_tokens_mean": 375.3,
+   "decode_tps_median": 38.425,
+   "subsets": {
+    "question_type=Reasoning": {
+     "n": 16,
+     "correct": 3,
+     "acc": 0.1875,
+     "ci95": [
+      0.06591599019788683,
+      0.4300888116754912
+     ]
+    },
+    "question_type=Understanding": {
+     "n": 4,
+     "correct": 1,
+     "acc": 0.25,
+     "ci95": [
+      0.04558726029536886,
+      0.6993581599030918
+     ]
+    },
+    "medical_task=Basic Science": {
+     "n": 6,
+     "correct": 0,
+     "acc": 0.0,
+     "ci95": [
+      0.0,
+      0.39033429165637346
+     ]
+    },
+    "medical_task=Diagnosis": {
+     "n": 8,
+     "correct": 3,
+     "acc": 0.375,
+     "ci95": [
+      0.13684428473912286,
+      0.694257607346229
+     ]
+    },
+    "medical_task=Treatment": {
+     "n": 6,
+     "correct": 1,
+     "acc": 0.16666666666666666,
+     "ci95": [
+      0.030053369411815023,
+      0.5635028250257673
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 343.19051574721016,
+    "decode_tps_median": 38.40577967326856,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 3,
+    "C": 1,
+    "D": 3,
+    "E": 1,
+    "F": 2,
+    "G": 3,
+    "H": 3,
+    "J": 4
+   },
+   "gold_distribution": {
+    "A": 3,
+    "B": 2,
+    "C": 3,
+    "D": 2,
+    "E": 1,
+    "F": 4,
+    "G": 1,
+    "H": 2,
+    "I": 2
+   },
+   "confusion": {
+    "A": {
+     "A": 1,
+     "E": 1,
+     "G": 1
+    },
+    "B": {
+     "F": 1,
+     "J": 1
+    },
+    "C": {
+     "A": 1,
+     "C": 1,
+     "H": 1
+    },
+    "D": {
+     "G": 1,
+     "J": 1
+    },
+    "E": {
+     "H": 1
+    },
+    "F": {
+     "A": 1,
+     "D": 2,
+     "F": 1
+    },
+    "G": {
+     "G": 1
+    },
+    "H": {
+     "J": 2
+    },
+    "I": {
+     "D": 1,
+     "H": 1
+    }
+   }
+  },
+  "medqa_mcmle": {
+   "n": 20,
+   "correct": 15,
+   "acc": 0.75,
+   "ci95": [
+    0.5312991206074114,
+    0.8881382993000237
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 35.3581,
+    "median": 16.717,
+    "p90": 36.84260000000001
+   },
+   "ttft_s_median": 0.615,
+   "completion_tokens": {
+    "mean": 1272.5,
+    "median": 612.0
+   },
+   "prompt_tokens_mean": 158.55,
+   "decode_tps_median": 37.17,
+   "subsets": {},
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 273.76502647016787,
+    "decode_tps_median": 37.073707788860126,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 5,
+    "B": 6,
+    "C": 2,
+    "D": 7
+   },
+   "gold_distribution": {
+    "A": 5,
+    "B": 7,
+    "C": 2,
+    "D": 6
+   },
+   "confusion": {
+    "A": {
+     "A": 3,
+     "D": 2
+    },
+    "B": {
+     "A": 1,
+     "B": 6
+    },
+    "C": {
+     "A": 1,
+     "C": 1
+    },
+    "D": {
+     "C": 1,
+     "D": 5
+    }
+   }
+  },
+  "tmmlu_med": {
+   "n": 20,
+   "correct": 15,
+   "acc": 0.75,
+   "ci95": [
+    0.5312991206074114,
+    0.8881382993000237
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 33.39855,
+    "median": 19.012,
+    "p90": 59.02260000000001
+   },
+   "ttft_s_median": 0.6799999999999999,
+   "completion_tokens": {
+    "mean": 1179.05,
+    "median": 667.5
+   },
+   "prompt_tokens_mean": 165.6,
+   "decode_tps_median": 36.245000000000005,
+   "subsets": {
+    "subject=basic_medical_science": {
+     "n": 5,
+     "correct": 5,
+     "acc": 1.0,
+     "ci95": [
+      0.5655175313406071,
+      1.0
+     ]
+    },
+    "subject=dentistry": {
+     "n": 2,
+     "correct": 1,
+     "acc": 0.5,
+     "ci95": [
+      0.09453120463920084,
+      0.9054687953607992
+     ]
+    },
+    "subject=occupational_therapy_for_psychological_disorders": {
+     "n": 2,
+     "correct": 1,
+     "acc": 0.5,
+     "ci95": [
+      0.09453120463920084,
+      0.9054687953607992
+     ]
+    },
+    "subject=optometry": {
+     "n": 5,
+     "correct": 4,
+     "acc": 0.8,
+     "ci95": [
+      0.375534627029995,
+      0.9637758917743693
+     ]
+    },
+    "subject=pharmacology": {
+     "n": 3,
+     "correct": 3,
+     "acc": 1.0,
+     "ci95": [
+      0.43850296436068037,
+      1.0
+     ]
+    },
+    "subject=pharmacy": {
+     "n": 2,
+     "correct": 0,
+     "acc": 0.0,
+     "ci95": [
+      0.0,
+      0.6576197760453506
+     ]
+    },
+    "subject=traditional_chinese_medicine_clinical_medicine": {
+     "n": 1,
+     "correct": 1,
+     "acc": 1.0,
+     "ci95": [
+      0.2065493117918027,
+      1.0
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 270.1017974439063,
+    "decode_tps_median": 36.18228810254969,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 9,
+    "B": 4,
+    "C": 4,
+    "D": 3
+   },
+   "gold_distribution": {
+    "A": 8,
+    "B": 3,
+    "C": 5,
+    "D": 4
+   },
+   "confusion": {
+    "A": {
+     "A": 7,
+     "D": 1
+    },
+    "B": {
+     "A": 1,
+     "B": 2
+    },
+    "C": {
+     "B": 1,
+     "C": 4
+    },
+    "D": {
+     "A": 1,
+     "B": 1,
+     "D": 2
+    }
+   }
+  },
+  "twmed_md": {
+   "n": 20,
+   "correct": 19,
+   "acc": 0.95,
+   "ci95": [
+    0.7638688045357189,
+    0.9911185512976646
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 19.06085,
+    "median": 15.122,
+    "p90": 34.49520000000001
+   },
+   "ttft_s_median": 0.7324999999999999,
+   "completion_tokens": {
+    "mean": 670.3,
+    "median": 522.5
+   },
+   "prompt_tokens_mean": 193.9,
+   "decode_tps_median": 36.36,
+   "subsets": {
+    "year=2024": {
+     "n": 7,
+     "correct": 7,
+     "acc": 1.0,
+     "ci95": [
+      0.6456695613241317,
+      1.0
+     ]
+    },
+    "year=2025": {
+     "n": 7,
+     "correct": 6,
+     "acc": 0.8571428571428571,
+     "ci95": [
+      0.486872167860775,
+      0.9743203759421759
+     ]
+    },
+    "year=2026": {
+     "n": 6,
+     "correct": 6,
+     "acc": 1.0,
+     "ci95": [
+      0.6096657083436265,
+      1.0
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 286.2125142865023,
+    "decode_tps_median": 36.27670488182399,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 7,
+    "B": 4,
+    "C": 6,
+    "D": 3
+   },
+   "gold_distribution": {
+    "A": 7,
+    "B": 4,
+    "C": 5,
+    "D": 4
+   },
+   "confusion": {
+    "A": {
+     "A": 7
+    },
+    "B": {
+     "B": 4
+    },
+    "C": {
+     "C": 5
+    },
+    "D": {
+     "C": 1,
+     "D": 3
+    }
+   }
+  },
+  "twmed_dent": {
+   "n": 20,
+   "correct": 19,
+   "acc": 0.95,
+   "ci95": [
+    0.7638688045357189,
+    0.9911185512976646
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 35.1823,
+    "median": 25.8495,
+    "p90": 81.57580000000002
+   },
+   "ttft_s_median": 0.7475,
+   "completion_tokens": {
+    "mean": 1247.85,
+    "median": 931.0
+   },
+   "prompt_tokens_mean": 179.05,
+   "decode_tps_median": 36.275000000000006,
+   "subsets": {
+    "year=2024": {
+     "n": 7,
+     "correct": 7,
+     "acc": 1.0,
+     "ci95": [
+      0.6456695613241317,
+      1.0
+     ]
+    },
+    "year=2025": {
+     "n": 7,
+     "correct": 7,
+     "acc": 1.0,
+     "ci95": [
+      0.6456695613241317,
+      1.0
+     ]
+    },
+    "year=2026": {
+     "n": 6,
+     "correct": 5,
+     "acc": 0.8333333333333334,
+     "ci95": [
+      0.4364971749742326,
+      0.969946630588185
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 274.8822064046824,
+    "decode_tps_median": 36.24737282598094,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 5,
+    "B": 6,
+    "C": 5,
+    "D": 4
+   },
+   "gold_distribution": {
+    "A": 4,
+    "B": 7,
+    "C": 5,
+    "D": 4
+   },
+   "confusion": {
+    "A": {
+     "A": 4
+    },
+    "B": {
+     "A": 1,
+     "B": 6
+    },
+    "C": {
+     "C": 5
+    },
+    "D": {
+     "D": 4
+    }
+   }
+  },
+  "twmed_tcm": {
+   "n": 20,
+   "correct": 13,
+   "acc": 0.65,
+   "ci95": [
+    0.4328542750684442,
+    0.818808176876017
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 61.99565,
+    "median": 42.257,
+    "p90": 122.35860000000001
+   },
+   "ttft_s_median": 0.669,
+   "completion_tokens": {
+    "mean": 2392,
+    "median": 1596.5
+   },
+   "prompt_tokens_mean": 176.4,
+   "decode_tps_median": 39.545,
+   "subsets": {
+    "year=2024": {
+     "n": 7,
+     "correct": 5,
+     "acc": 0.7142857142857143,
+     "ci95": [
+      0.3589344495310541,
+      0.9177810767507166
+     ]
+    },
+    "year=2025": {
+     "n": 7,
+     "correct": 4,
+     "acc": 0.5714285714285714,
+     "ci95": [
+      0.25045836275303557,
+      0.8417801460075546
+     ]
+    },
+    "year=2026": {
+     "n": 6,
+     "correct": 4,
+     "acc": 0.6666666666666666,
+     "ci95": [
+      0.29999331299474324,
+      0.9032285897864654
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 304.4323828917301,
+    "decode_tps_median": 39.50968019918919,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 5,
+    "B": 5,
+    "C": 6,
+    "D": 4
+   },
+   "gold_distribution": {
+    "A": 6,
+    "B": 3,
+    "C": 9,
+    "D": 2
+   },
+   "confusion": {
+    "A": {
+     "A": 4,
+     "B": 1,
+     "D": 1
+    },
+    "B": {
+     "B": 3
+    },
+    "C": {
+     "A": 1,
+     "B": 1,
+     "C": 5,
+     "D": 2
+    },
+    "D": {
+     "C": 1,
+     "D": 1
+    }
+   }
+  },
+  "twmed_rx": {
+   "n": 20,
+   "correct": 19,
+   "acc": 0.95,
+   "ci95": [
+    0.7638688045357189,
+    0.9911185512976646
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 31.91365,
+    "median": 14.593,
+    "p90": 73.75670000000005
+   },
+   "ttft_s_median": 0.6365000000000001,
+   "completion_tokens": {
+    "mean": 1185.85,
+    "median": 544.5
+   },
+   "prompt_tokens_mean": 164.05,
+   "decode_tps_median": 38.480000000000004,
+   "subsets": {
+    "year=2024": {
+     "n": 7,
+     "correct": 7,
+     "acc": 1.0,
+     "ci95": [
+      0.6456695613241317,
+      1.0
+     ]
+    },
+    "year=2025": {
+     "n": 7,
+     "correct": 7,
+     "acc": 1.0,
+     "ci95": [
+      0.6456695613241317,
+      1.0
+     ]
+    },
+    "year=2026": {
+     "n": 6,
+     "correct": 5,
+     "acc": 0.8333333333333334,
+     "ci95": [
+      0.4364971749742326,
+      0.969946630588185
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 276.45579686692804,
+    "decode_tps_median": 38.39357653722306,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 4,
+    "B": 7,
+    "C": 6,
+    "D": 3
+   },
+   "gold_distribution": {
+    "A": 3,
+    "B": 8,
+    "C": 6,
+    "D": 3
+   },
+   "confusion": {
+    "A": {
+     "A": 3
+    },
+    "B": {
+     "A": 1,
+     "B": 7
+    },
+    "C": {
+     "C": 6
+    },
+    "D": {
+     "D": 3
+    }
+   }
+  },
+  "twmed_rn": {
+   "n": 20,
+   "correct": 17,
+   "acc": 0.85,
+   "ci95": [
+    0.6395811333571357,
+    0.9476312545132735
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 15.42085,
+    "median": 13.2025,
+    "p90": 26.342299999999998
+   },
+   "ttft_s_median": 0.644,
+   "completion_tokens": {
+    "mean": 569.15,
+    "median": 479.0
+   },
+   "prompt_tokens_mean": 170.4,
+   "decode_tps_median": 39.05,
+   "subsets": {
+    "year=2024": {
+     "n": 7,
+     "correct": 5,
+     "acc": 0.7142857142857143,
+     "ci95": [
+      0.3589344495310541,
+      0.9177810767507166
+     ]
+    },
+    "year=2025": {
+     "n": 7,
+     "correct": 7,
+     "acc": 1.0,
+     "ci95": [
+      0.6456695613241317,
+      1.0
+     ]
+    },
+    "year=2026": {
+     "n": 6,
+     "correct": 5,
+     "acc": 0.8333333333333334,
+     "ci95": [
+      0.4364971749742326,
+      0.969946630588185
+     ]
+    },
+    "profession=助產師": {
+     "n": 6,
+     "correct": 4,
+     "acc": 0.6666666666666666,
+     "ci95": [
+      0.29999331299474324,
+      0.9032285897864654
+     ]
+    },
+    "profession=護理師": {
+     "n": 14,
+     "correct": 13,
+     "acc": 0.9285714285714286,
+     "ci95": [
+      0.6853129533326209,
+      0.9872777848933957
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 293.67323279013976,
+    "decode_tps_median": 38.83834454211211,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 11,
+    "B": 4,
+    "C": 3,
+    "D": 2
+   },
+   "gold_distribution": {
+    "A": 11,
+    "B": 6,
+    "C": 2,
+    "D": 1
+   },
+   "confusion": {
+    "A": {
+     "A": 10,
+     "D": 1
+    },
+    "B": {
+     "A": 1,
+     "B": 4,
+     "C": 1
+    },
+    "C": {
+     "C": 2
+    },
+    "D": {
+     "D": 1
+    }
+   }
+  },
+  "twmed_allied": {
+   "n": 20,
+   "correct": 13,
+   "acc": 0.65,
+   "ci95": [
+    0.4328542750684442,
+    0.818808176876017
+   ],
+   "expected_items": 20,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 28.7957,
+    "median": 25.229,
+    "p90": 53.53180000000001
+   },
+   "ttft_s_median": 0.712,
+   "completion_tokens": {
+    "mean": 1070.8,
+    "median": 913.5
+   },
+   "prompt_tokens_mean": 173.45,
+   "decode_tps_median": 38.305,
+   "subsets": {
+    "year=2024": {
+     "n": 7,
+     "correct": 4,
+     "acc": 0.5714285714285714,
+     "ci95": [
+      0.25045836275303557,
+      0.8417801460075546
+     ]
+    },
+    "year=2025": {
+     "n": 7,
+     "correct": 5,
+     "acc": 0.7142857142857143,
+     "ci95": [
+      0.3589344495310541,
+      0.9177810767507166
+     ]
+    },
+    "year=2026": {
+     "n": 6,
+     "correct": 4,
+     "acc": 0.6666666666666666,
+     "ci95": [
+      0.29999331299474324,
+      0.9032285897864654
+     ]
+    },
+    "profession=公共衛生師": {
+     "n": 1,
+     "correct": 1,
+     "acc": 1.0,
+     "ci95": [
+      0.2065493117918027,
+      1.0
+     ]
+    },
+    "profession=呼吸治療師": {
+     "n": 1,
+     "correct": 0,
+     "acc": 0.0,
+     "ci95": [
+      0.0,
+      0.7934506882081973
+     ]
+    },
+    "profession=法醫師": {
+     "n": 1,
+     "correct": 1,
+     "acc": 1.0,
+     "ci95": [
+      0.2065493117918027,
+      1.0
+     ]
+    },
+    "profession=營養師": {
+     "n": 2,
+     "correct": 0,
+     "acc": 0.0,
+     "ci95": [
+      0.0,
+      0.6576197760453506
+     ]
+    },
+    "profession=牙體技術師": {
+     "n": 1,
+     "correct": 1,
+     "acc": 1.0,
+     "ci95": [
+      0.2065493117918027,
+      1.0
+     ]
+    },
+    "profession=物理治療師": {
+     "n": 3,
+     "correct": 2,
+     "acc": 0.6666666666666666,
+     "ci95": [
+      0.2076595988078242,
+      0.9385080559790691
+     ]
+    },
+    "profession=職能治療師": {
+     "n": 2,
+     "correct": 2,
+     "acc": 1.0,
+     "ci95": [
+      0.3423802239546494,
+      1.0
+     ]
+    },
+    "profession=臨床心理師": {
+     "n": 1,
+     "correct": 1,
+     "acc": 1.0,
+     "ci95": [
+      0.2065493117918027,
+      1.0
+     ]
+    },
+    "profession=語言治療師": {
+     "n": 1,
+     "correct": 0,
+     "acc": 0.0,
+     "ci95": [
+      0.0,
+      0.7934506882081973
+     ]
+    },
+    "profession=醫事放射師": {
+     "n": 3,
+     "correct": 2,
+     "acc": 0.6666666666666666,
+     "ci95": [
+      0.2076595988078242,
+      0.9385080559790691
+     ]
+    },
+    "profession=醫事檢驗師": {
+     "n": 3,
+     "correct": 3,
+     "acc": 1.0,
+     "ci95": [
+      0.43850296436068037,
+      1.0
+     ]
+    },
+    "profession=驗光生": {
+     "n": 1,
+     "correct": 0,
+     "acc": 0.0,
+     "ci95": [
+      0.0,
+      0.7934506882081973
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 20,
+    "prefill_tps_median": 289.6375640741353,
+    "decode_tps_median": 38.25509417934602,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 4,
+    "B": 6,
+    "C": 7,
+    "D": 3
+   },
+   "gold_distribution": {
+    "A": 1,
+    "B": 7,
+    "C": 6,
+    "D": 6
+   },
+   "confusion": {
+    "A": {
+     "A": 1
+    },
+    "B": {
+     "B": 6,
+     "C": 1
+    },
+    "C": {
+     "A": 3,
+     "C": 3
+    },
+    "D": {
+     "C": 3,
+     "D": 3
+    }
+   }
+  }
+ },
+ "overall": {
+  "n": 220,
+  "correct": 163,
+  "acc": 0.740909090909091,
+  "ci95": [
+   0.6792293878102094,
+   0.7943200633493823
+  ],
+  "wall_s": 3708.4489431381226,
+  "completion_tokens": 270698,
+  "throughput_tok_s": 72.99493781649126,
+  "questions_per_hour": 213.56637563137178,
+  "decode_tps_median": 37.89,
+  "latency_s_median": 19.721,
+  "concurrency": 2
+ },
+ "resources": {
+  "samples": 3707,
+  "baseline_samples": 6,
+  "gpu_mem_used_mib": {
+   "mean": 23125.000539519828,
+   "peak": 23127.0,
+   "baseline": 23123.0
+  },
+  "gpu_util_pct_mean": 55.334232533045586,
+  "gpu_power_w": {
+   "mean": 170.80739142163475,
+   "peak": 190.56,
+   "baseline_idle": 19.30666666666667
+  },
+  "gpu_energy_wh": 175.87228802082535,
+  "gpu_energy_wh_above_idle": 155.9940903902751,
+  "server_rss_mib": {
+   "mean": 31699.85543566226,
+   "peak": 40004.4
+  },
+  "ram_used_mib": {
+   "mean": 22770.588481251685,
+   "peak": 31265.6,
+   "baseline": 9374.816666666666
+  },
+  "cpu_pct_mean": 68.11176153223632,
+  "gpu_temp_c_peak": 53.0,
+  "external_load": {
+   "samples": 3707,
+   "share_with_other_requests": 0.0,
+   "mean_other_requests": 0.0
+  },
+  "gpu_energy_wh_per_question": 0.7994194910037516,
+  "gpu_energy_wh_per_correct": 1.0789710921523028
+ },
+ "manifest": {
+  "medbench_version": "0.2.0",
+  "git_rev": "bc10cac5a8957f75657059f7ff3be03f79945513",
+  "prompt_version": "v1.1",
+  "host": {
+   "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+   "python": "3.12.14",
+   "kernel": "5.15.0-190-generic",
+   "cpu": "13th Gen Intel(R) Core(TM) i7-13700",
+   "logical_cpus": 12,
+   "ram_gib": 54.9,
+   "swap_gib": 16.0,
+   "os": "Ubuntu 22.04.4 LTS",
+   "virtualization": "kvm",
+   "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB, 570.211.01",
+   "gpu_pcie": "Gen4 x16",
+   "cuda_driver_api": "12.8",
+   "disks": [
+    "QEMU HARDDISK 1T 0 disk"
+   ]
+  },
+  "server": {
+   "/props": {
+    "default_generation_settings": {
+     "params": {
+      "seed": 4294967295,
+      "temperature": 1.0,
+      "dynatemp_range": 0.0,
+      "dynatemp_exponent": 1.0,
+      "top_k": 0,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "xtc_threshold": 0.10000000149011612,
+      "typical_p": 1.0,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "penalize_prompt": true,
+      "dry_multiplier": 0.0,
+      "dry_base": 1.75,
+      "dry_allowed_length": 2,
+      "dry_penalty_last_n": 64,
+      "mirostat": 0,
+      "mirostat_tau": 5.0,
+      "mirostat_eta": 0.10000000149011612,
+      "adaptive_target": -1.0,
+      "adaptive_decay": 0.8999999761581421,
+      "max_tokens": -1,
+      "n_predict": -1,
+      "n_keep": 0,
+      "n_discard": 0,
+      "ignore_eos": false,
+      "stream": false,
+      "n_probs": 0,
+      "min_keep": 0,
+      "chat_format": "Content-only",
+      "reasoning_format": "none",
+      "reasoning_in_content": false,
+      "generation_prompt": "",
+      "samplers": [
+       "penalties",
+       "dry",
+       "top_n_sigma",
+       "top_k",
+       "typ_p",
+       "top_p",
+       "min_p",
+       "xtc",
+       "temperature"
+      ],
+      "speculative.types": "none",
+      "timings_per_token": false,
+      "post_sampling_probs": false,
+      "backend_sampling": false,
+      "lora": []
+     },
+     "n_ctx": 131072
+    },
+    "total_slots": 4,
+    "model_alias": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+    "model_ftype": "IQ4_XS - 4.25 bpw",
+    "model_path": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+    "modalities": {
+     "vision": false,
+     "video": false,
+     "audio": false
+    },
+    "media_marker": "<__media_hZFgVu0zM5r15vuUn703XPb8a1k0zUE9__>",
+    "endpoint_slots": true,
+    "endpoint_props": false,
+    "endpoint_metrics": false,
+    "ui": true,
+    "ui_settings": {},
+    "chat_template_caps": {
+     "supports_object_arguments": true,
+     "supports_parallel_tool_calls": true,
+     "supports_preserve_reasoning": true,
+     "supports_reasoning_effort": true,
+     "supports_string_content": true,
+     "supports_system_role": true,
+     "supports_tool_calls": true,
+     "supports_tools": true,
+     "supports_typed_content": true,
+     "reasoning_effort_levels": [
+      "none",
+      "minimal",
+      "low",
+      "medium",
+      "high",
+      "max"
+     ],
+     "reasoning_effort_rejected": []
+    },
+    "bos_token": "",
+    "eos_token": "<|content_model_end_sampling|>",
+    "build_info": "b12631-8ce00e057",
+    "is_sleeping": false,
+    "cors_proxy_enabled": false
+   },
+   "/v1/models": {
+    "models": [
+     {
+      "name": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+      "model": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+      "modified_at": "",
+      "size": "",
+      "digest": "",
+      "type": "model",
+      "description": "",
+      "tags": [
+       ""
+      ],
+      "capabilities": [
+       "completion"
+      ],
+      "parameters": "",
+      "details": {
+       "parent_model": "",
+       "format": "gguf",
+       "family": "",
+       "families": [
+        ""
+       ],
+       "parameter_size": "",
+       "quantization_level": ""
+      }
+     }
+    ],
+    "object": "list",
+    "data": [
+     {
+      "id": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+      "aliases": [
+       "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf"
+      ],
+      "tags": [],
+      "object": "model",
+      "architecture": {
+       "input_modalities": [
+        "text"
+       ],
+       "output_modalities": [
+        "text"
+       ]
+      },
+      "created": 1795453524,
+      "owned_by": "llamacpp",
+      "meta": {
+       "vocab_type": 2,
+       "n_vocab": 200058,
+       "n_ctx": 131072,
+       "n_ctx_train": 1048576,
+       "n_embd": 2304,
+       "n_params": 26070390272,
+       "size": 15721776512,
+       "ftype": "IQ4_XS - 4.25 bpw"
+      }
+     }
+    ]
+   }
+  },
+  "datasets": {
+   "medmcqa": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "91c6572c454088bf71b679ad90aa8dffcd0d5868",
+    "sha256": "b768a1ea34afc9f80d3106d9b21f80fa8a00ec450a1f6cd641af72ca9e591021",
+    "items_sha256": "1503df424c1b6d1bb860e271f812e1af153c1c08c30c181ef556b97516fa2ef0"
+   },
+   "mmlu_med": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+    "sha256": "b60fc4c011cbbdd5ef1146b7788cfc8fbd4de291eaeb818fce7b47d06c2350b4",
+    "items_sha256": "38ec41416c81e59e7c81f8355f970e4e52d041d45efdfc12ff4988c99aad226a"
+   },
+   "medxpertqa": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "7e7c465a68eb2b866926bfa59c8c9d17a8daba65",
+    "sha256": "07ea977f7e326909b51c883b65f6ad7f399fc6db07408ef3630f4e3048ec71b2",
+    "items_sha256": "294cf2d8ed89a95532f2036d1abdf795ab4dc6ac8123e35719587b441c64cd5f"
+   },
+   "medqa_mcmle": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+    "sha256": "ac9ddd6cf0e45f4ab224f4b1014c5945fbdb1ca67ad6a057ce5b0e4929c7a55c",
+    "items_sha256": "ee8a927d2d50d8b346564f2f17ea5bc25193b763edb12342c019c3335f93641e"
+   },
+   "tmmlu_med": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sha256": "4f964eccc78fe831449af277e9c667d041b60ad53806f15d6e5fde9f60e73b79",
+    "items_sha256": "b3241febe1b1645b10ad89b74cf29f7dc36a62be012c6b6c4eda63a63f150b58"
+   },
+   "twmed_md": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "twmed-v1",
+    "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+    "items_sha256": "ab0844164dc81d02fe0adf7e4a690f5accb051634729cbf65e215c47ffe967eb"
+   },
+   "twmed_dent": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "twmed-v1",
+    "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+    "items_sha256": "25a0dbaa00de99bbb717d46267e1723eb5468df86f5df929ee3d68415723d037"
+   },
+   "twmed_tcm": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "twmed-v1",
+    "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+    "items_sha256": "925ecd4e8809c9420ea648d1e44896e4ae6a8b7e97ccaf6dc4096c1ec3a7b3e5"
+   },
+   "twmed_rx": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "twmed-v1",
+    "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+    "items_sha256": "1df1825e771446d8680df67a65ac40c3b979f399abfe48da5eca51d3c30abf5f"
+   },
+   "twmed_rn": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "twmed-v1",
+    "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+    "items_sha256": "78ab93f7bb529f1dae831bf0504e25deb2be0eebe74af70f6596ec18893bec88"
+   },
+   "twmed_allied": {
+    "n_items": 20,
+    "sample": 20,
+    "revision": "twmed-v1",
+    "sha256": "169fabd030cf24939a33ac89920670b1d819a570f5d56c56668ad7bd35ab580a",
+    "items_sha256": "7df80ab928cd3a0982b69fa3fe408fe663cedb4003fdf486d83cb66ecc8fa967"
+   }
+  },
+  "sessions": [
+   {
+    "baseline_start": 1795453524.1178718,
+    "todo": 220,
+    "git_rev": "bc10cac5a8957f75657059f7ff3be03f79945513",
+    "base_url": "http://127.0.0.1:8081",
+    "concurrency": 2,
+    "sample": 20,
+    "start": 1795453529.123068,
+    "end": 1795457237.5720112
+   }
+  ]
+ }
+}

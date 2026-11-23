@@ -1,0 +1,32 @@
+{
+ "name": "inkling2mini-iq4xs-prod-medium",
+ "label": "Inkling 2 Mini UD-IQ4_XS（正式服務）",
+ "base_url": "http://127.0.0.1:8081",
+ "model": "inkling",
+ "concurrency": 2,
+ "timeout_s": 3600,
+ "request": {
+  "max_tokens": 16384,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "min_p": 0.0,
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "server_info": [
+  "/props",
+  "/v1/models"
+ ],
+ "processes": [
+  "Inkling-2-Mini"
+ ],
+ "system": {
+  "model": "Inkling-2-Mini（Thinking Machines Lab；MoE 26.2B 總參數、每 token 啟用 3.4B，中間 12 層重複 3 次，等效 5.4B）",
+  "weights": "Unsloth UD-IQ4_XS（Dynamic 3.0 imatrix），GGUF 14.65 GiB",
+  "engine": "Unsloth llama.cpp prebuilt b12631-mix-acc0843（CUDA 12.8），不用推測解碼",
+  "placement": "正式服務 :8081：全部層在 GPU，但第 20–22 層的專家在系統 RAM（-ot），KV q8_0、131,072 tokens 由 4 個 slot 共用（--kv-unified），-ub 64，flash-attn；評測用 2 個併發、保留 2 個 slot 給使用者",
+  "sampling": "temperature 1.0、top_p 1.0、top_k 0、min_p 0（模型作者建議，不截斷），逐題 seed"
+ }
+}
