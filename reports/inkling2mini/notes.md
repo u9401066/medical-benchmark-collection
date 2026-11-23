@@ -89,7 +89,7 @@
   - 8 slots：Bonsai 用 `-np 8` 時每個 slot 只剩 16k，19k 的提示會被拒絕；Inkling IQ4_XS 開 8 slots 在 8 併發時直接當機。
   - 2 slots：單一或兩個請求的速度和 4 slots 一樣，但同時能服務的人變少。
   - 4 併發時，Inkling 每個請求約 37 tok/s，Bonsai 約 74 tok/s。
-- **多輪對話快取**：Bonsai 從第 2 輪起每輪只重讀約 30 tokens；插入 3 個其他對話後再回到原對話，快取仍完整命中（`--cache-ram 24576`）。Inkling 的結果會在上線後補上。
+- **多輪對話快取**：Bonsai 從第 2 輪起每輪只重讀約 30 tokens；插入 3 個其他對話後再回到原對話，快取仍完整命中（`--cache-ram 24576`）。Inkling 一樣完整命中（見 6.7）。
 
 ### 6.5 VRAM 與 context 上限：IQ4_XS 要更長的 context 必須把部分專家放到 CPU
 
@@ -125,14 +125,34 @@
   - 82% context 的併發長提示壓力測試（1 / 2 / 4 個同時）；
   - 1 / 2 / 4 併發掃描；
   - 再做一次壓力測試與 4 併發。
-- **本報告產出時（15:25 UTC）**：131k 設定的穩定性測試仍在進行，正式服務暫停中，測試通過後自動上線。
-- **Sentinel（`med:`）**：llama-cot-sentinel 0.2.0 已支援 Inkling 的格式。Inkling 的思考段以特殊 token `<|end_message|>` 結束，llama-server 會從文字中移除它，所以改用 token id 判斷。已在正式環境更新，對 Inkling 實測 2 個臨床問題：思考與回答正確分開，回答為繁體中文。
-- **agent 端到端（基準）**：Bonsai 完成「找 2 篇 remimazolam ICU 鎮靜 RCT 存成 CSV」花 64.6 秒（7 次模型請求、輸出 4,667 tokens、126.8 tok/s）。Inkling 會在上線後用同一個任務量測（`llmapi_server/scripts/agent_smoke.py`）。
+- **穩定性測試結果**：全部通過。82% context 的 1 / 2 / 4 個同時長提示（107k tokens）、1 / 2 / 4 併發掃描、再一次 4 個同時長提示，峰值 23,861 MiB（24,564 中）。
+- **上線**：15:47 UTC 起在 :8081 提供服務：131,072 tokens、4 slots、41 個 PubMed MCP 工具；router（:8001）與對外網址都正常。
+  - 這個 llama.cpp 版本不允許在非 loopback 位址開 MCP 工具卻沒有 API key。內網不設 key 的部署（與原本 Bonsai 相同）需要加 `--allow-unauthenticated-tools`，`start_inkling.sh` 會自動處理。
+  - 第一次自動恢復因為缺這個參數而失敗，延長停機約 1 分鐘。
+- **多輪對話快取**（`scripts/prefix_cache.py`，系統提示約 1.2 萬 tokens）：
+  - 第 2 輪起每輪只重讀約 20 tokens（0.2 秒）。
+  - 插入 3 個其他對話後再回到原對話，仍完整命中。
+  - 但首次讀入 12,040 tokens 要 19.6 秒（614 tok/s）；Bonsai 讀 10,072 tokens 只要 3.6 秒。
+- **agent 端到端**（`agent_smoke.py`，「找 2 篇 remimazolam ICU 鎮靜 RCT 存成 CSV」）：
+
+| | Bonsai 27B | Inkling IQ4_XS（131k，3 層專家在 CPU） |
+|---|---:|---:|
+| 總時間 | **64.6 s** | 81.5 s |
+| 模型請求數 | 7 | 5 |
+| 重讀的提示 tokens（重用） | 34,402（170,573） | 18,875（70,258） |
+| 讀提示時間 | 14.5 s | **48.5 s** |
+| 輸出 tokens / 生成速度 | 4,667 / 126.8 tok/s | 1,220 / 53.7 tok/s |
+
+  - 兩者都完成任務、寫出 CSV。Inkling 用的步驟與輸出較少，但時間主要花在讀提示（每個 64-token 批次都要經 PCIe 搬 3 層專家）。
+  - Inkling 的回答把 remimazolam 寫成「舒素芬」，這個中文藥名應是幻覺。Bonsai 的回答則混入簡體字「机械」。
+- **Sentinel（`med:`）**：
+  - llama-cot-sentinel 0.2.0 已支援 Inkling 的格式。Inkling 的思考段以特殊 token `<|end_message|>` 結束，llama-server 會從文字中移除它，所以改用 token id 判斷。
+  - 經 router 實測主動脈剝離案例：檢查 4 個步驟、沒有介入，回答正確建議避免抗凝 / 抗血小板並立即影像檢查，總時間 7.9 秒。
 
 ### 6.8 結論
 
 1. **醫學知識與繁體中文：Inkling 2 Mini 明顯勝出**。醫學題 +8.6 個百分點（台灣國考 +15.2），回答幾乎沒有簡體字，每題耗能約一半。
-2. **工具呼叫與速度：Bonsai 勝出**。第一次選對工具的比例高約 6 個百分點（合併 162 題，p = 0.002）；單請求生成快 1.8 倍；prefill 是 131k 設定 Inkling 的 2.3 倍（Q3_K_XL）到 7 倍（IQ4_XS）。
+2. **工具呼叫與速度：Bonsai 勝出**。第一次選對工具的比例高約 6 個百分點（合併 162 題，p = 0.002）；單請求生成快 1.8 倍；prefill 是 131k 設定 Inkling 的 2.3 倍（Q3_K_XL）到 7 倍（IQ4_XS）。部署後的 agent 實測任務 64.6 秒對 81.5 秒，Inkling 的時間主要花在讀提示。
 3. **部署建議**：
    - 4 個 slot、131,072 tokens 共用。
    - IQ4_XS 需要把 3 層專家放 CPU；Q3_K_XL 可全放 GPU、速度較好。
