@@ -1,0 +1,44 @@
+{
+ "label": "Inkling 2 Mini UD-IQ4_XS, 4 slots, ctx 196608, -ub 64, experts of 6 layers on the CPU",
+ "url": "http://127.0.0.1:8091",
+ "request": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "min_p": 0.0,
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795446959.4287097,
+ "gpu_mem_idle_mib": 22511.0,
+ "levels": [
+  {
+   "concurrency": 1,
+   "requests": 2,
+   "wall_s": 20.1,
+   "completion_tokens": 737,
+   "aggregate_tok_s": 36.7,
+   "decode_tps_median": 43.0,
+   "ttft_s_median": 1.11,
+   "latency_s_median": 10.0,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 22577.0
+  }
+ ],
+ "prefill": [
+  {
+   "latency_s": 22.492711305618286,
+   "ttft_s": 20.892906427383423,
+   "completion_tokens": 64,
+   "prompt_tokens": 4941,
+   "decode_tps": 39.37980241034815,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 237.73821034274283,
+   "prompt_chars": 20000
+  }
+ ],
+ "gpu_mem_after_mib": 22583.0
+}

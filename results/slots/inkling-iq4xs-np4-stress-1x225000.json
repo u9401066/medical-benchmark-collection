@@ -1,0 +1,15 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 1,
+ "chars": 225000,
+ "max_tokens": 512,
+ "started": 1795436331.4838393,
+ "results": [
+  {
+   "error": "RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)"
+  }
+ ],
+ "wall_s": 0.2,
+ "ok": false,
+ "gpu_mem_peak_mib": 23053.0
+}

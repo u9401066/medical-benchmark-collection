@@ -1,0 +1,57 @@
+{
+ "label": "Inkling 2 Mini UD-IQ4_XS, 8 slots, no drafter, ctx 65536, -ub 256",
+ "url": "http://127.0.0.1:8091",
+ "request": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "min_p": 0.0,
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795429846.0337598,
+ "gpu_mem_idle_mib": 23731.0,
+ "levels": [
+  {
+   "concurrency": 1,
+   "requests": 4,
+   "wall_s": 25.4,
+   "completion_tokens": 1977,
+   "aggregate_tok_s": 77.9,
+   "decode_tps_median": 80.9,
+   "ttft_s_median": 0.24,
+   "latency_s_median": 6.9,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 23861.0
+  },
+  {
+   "concurrency": 2,
+   "requests": 8,
+   "wall_s": 54.2,
+   "completion_tokens": 5859,
+   "aggregate_tok_s": 108.1,
+   "decode_tps_median": 59.5,
+   "ttft_s_median": 0.39,
+   "latency_s_median": 11.8,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 23863.0
+  },
+  {
+   "concurrency": 4,
+   "requests": 16,
+   "wall_s": 58.8,
+   "completion_tokens": 8184,
+   "aggregate_tok_s": 139.2,
+   "decode_tps_median": 37.1,
+   "ttft_s_median": 0.43,
+   "latency_s_median": 13.7,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 24015.0
+  }
+ ],
+ "prefill": [],
+ "gpu_mem_after_mib": 6586.0,
+ "failed": "RemoteProtocolError: Server disconnected without sending a response."
+}

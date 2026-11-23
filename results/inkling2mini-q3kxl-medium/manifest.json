@@ -1,0 +1,266 @@
+{
+ "medbench_version": "0.1.0",
+ "git_rev": "ed1ce39abae1304a0e20f0cf2a410a12afcaa0bf",
+ "prompt_version": "v1",
+ "config": {
+  "name": "inkling2mini-q3kxl-medium",
+  "label": "Inkling 2 Mini UD-Q3_K_XL",
+  "base_url": "http://127.0.0.1:8091",
+  "model": "inkling",
+  "concurrency": 4,
+  "timeout_s": 3600,
+  "request": {
+   "max_tokens": 16384,
+   "temperature": 1.0,
+   "top_p": 1.0,
+   "top_k": 0,
+   "min_p": 0.0,
+   "chat_template_kwargs": {
+    "reasoning_effort": "medium"
+   }
+  },
+  "server_info": [
+   "/props",
+   "/v1/models"
+  ],
+  "processes": [
+   "Inkling-2-Mini"
+  ],
+  "launch": {
+   "server_script": "llmapi_server/scripts/start_inkling.sh",
+   "env": {
+    "INKLING_PORT": "8091",
+    "INKLING_HOST": "127.0.0.1",
+    "INKLING_SLOTS": "4",
+    "LLM_IGNORE_PAUSE": "1",
+    "INKLING_DRAFT": "none",
+    "INKLING_CTX": "131072",
+    "INKLING_UBATCH": "64",
+    "INKLING_MODEL": "Inkling-2-Mini-UD-Q3_K_XL.gguf"
+   },
+   "note": "run in a maintenance window: production (Bonsai on :8081) paused, Clef-Flash stays on the GPU"
+  },
+  "system": {
+   "model": "Inkling-2-Mini（Thinking Machines Lab；MoE 26.2B 總參數、每 token 啟用 3.4B，中間 12 層重複 3 次，等效 5.4B）",
+   "weights": "Unsloth UD-Q3_K_XL（Dynamic 3.0 imatrix），GGUF 12.70 GiB",
+   "engine": "Unsloth llama.cpp prebuilt b12631-mix-acc0843（上游 b12631 + looped-layer / DSpark 修補，CUDA 12.8），不用推測解碼",
+   "placement": "全部層在 GPU（-ngl all），KV q8_0、131,072 tokens 由 4 個 slot 共用（--kv-unified），-ub 64，flash-attn",
+   "sampling": "temperature 1.0、top_p 1.0、top_k 0、min_p 0（模型作者建議，不截斷），逐題 seed"
+  }
+ },
+ "datasets": {
+  "medqa_usmle": {
+   "n_items": 400,
+   "sample": 400,
+   "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+   "sha256": "b50b49fad2642c10ed343c6174d5ab0cb8efad434e7b66465ac471094eb57deb",
+   "items_sha256": "7e146f7c56c095543c08cdcbffe9005e4633d9e1921f034e53d5dc160635e59a"
+  },
+  "medqa_twmle": {
+   "n_items": 400,
+   "sample": 400,
+   "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+   "sha256": "9756921fcff39ee482d8e06488b4ff32c26c9b966ac4c67c07f854da583f34b0",
+   "items_sha256": "1c1b3492a0f1a52bdc4328d7a0c8f22ccb0d2569ab56832adc43f2c41ea9f440"
+  },
+  "pubmedqa": {
+   "n_items": 400,
+   "sample": 400,
+   "revision": "9001f2853fb87cab8d220904e0de81ac6973b318",
+   "sha256": "3d56bd1abc11884579ecc3aab9dd3cdfce8b7cf54715daeca93b8022b7be231c",
+   "items_sha256": "984471e93d38db10081104de19762fff197446ab7379b2e05005f4be163011a1"
+  }
+ },
+ "host": {
+  "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+  "python": "3.12.14",
+  "kernel": "5.15.0-190-generic",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-13700",
+  "logical_cpus": 12,
+  "ram_gib": 54.9,
+  "swap_gib": 16.0,
+  "os": "Ubuntu 22.04.4 LTS",
+  "virtualization": "kvm",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB, 570.211.01",
+  "gpu_pcie": "Gen4 x16",
+  "cuda_driver_api": "12.8",
+  "disks": [
+   "QEMU HARDDISK 1T 0 disk"
+  ]
+ },
+ "server": {
+  "/props": {
+   "default_generation_settings": {
+    "params": {
+     "seed": 4294967295,
+     "temperature": 1.0,
+     "dynatemp_range": 0.0,
+     "dynatemp_exponent": 1.0,
+     "top_k": 0,
+     "top_p": 1.0,
+     "min_p": 0.0,
+     "top_n_sigma": -1.0,
+     "xtc_probability": 0.0,
+     "xtc_threshold": 0.10000000149011612,
+     "typical_p": 1.0,
+     "repeat_last_n": 64,
+     "repeat_penalty": 1.0,
+     "presence_penalty": 0.0,
+     "frequency_penalty": 0.0,
+     "penalize_prompt": true,
+     "dry_multiplier": 0.0,
+     "dry_base": 1.75,
+     "dry_allowed_length": 2,
+     "dry_penalty_last_n": 64,
+     "mirostat": 0,
+     "mirostat_tau": 5.0,
+     "mirostat_eta": 0.10000000149011612,
+     "adaptive_target": -1.0,
+     "adaptive_decay": 0.8999999761581421,
+     "max_tokens": -1,
+     "n_predict": -1,
+     "n_keep": 0,
+     "n_discard": 0,
+     "ignore_eos": false,
+     "stream": false,
+     "n_probs": 0,
+     "min_keep": 0,
+     "chat_format": "Content-only",
+     "reasoning_format": "none",
+     "reasoning_in_content": false,
+     "generation_prompt": "",
+     "samplers": [
+      "penalties",
+      "dry",
+      "top_n_sigma",
+      "top_k",
+      "typ_p",
+      "top_p",
+      "min_p",
+      "xtc",
+      "temperature"
+     ],
+     "speculative.types": "none",
+     "timings_per_token": false,
+     "post_sampling_probs": false,
+     "backend_sampling": false,
+     "lora": []
+    },
+    "n_ctx": 131072
+   },
+   "total_slots": 4,
+   "model_alias": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+   "model_ftype": "Q3_K - Medium",
+   "model_path": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+   "modalities": {
+    "vision": false,
+    "video": false,
+    "audio": false
+   },
+   "media_marker": "<__media_vWKOezk4sR1cHCVCnvTLB47pZ9gwZMGG__>",
+   "endpoint_slots": true,
+   "endpoint_props": false,
+   "endpoint_metrics": false,
+   "ui": true,
+   "ui_settings": {},
+   "chat_template_caps": {
+    "supports_object_arguments": true,
+    "supports_parallel_tool_calls": true,
+    "supports_preserve_reasoning": true,
+    "supports_reasoning_effort": true,
+    "supports_string_content": true,
+    "supports_system_role": true,
+    "supports_tool_calls": true,
+    "supports_tools": true,
+    "supports_typed_content": true,
+    "reasoning_effort_levels": [
+     "none",
+     "minimal",
+     "low",
+     "medium",
+     "high",
+     "max"
+    ],
+    "reasoning_effort_rejected": []
+   },
+   "bos_token": "",
+   "eos_token": "<|content_model_end_sampling|>",
+   "build_info": "b12631-8ce00e057",
+   "is_sleeping": false,
+   "cors_proxy_enabled": false
+  },
+  "/v1/models": {
+   "models": [
+    {
+     "name": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+     "model": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+     "modified_at": "",
+     "size": "",
+     "digest": "",
+     "type": "model",
+     "description": "",
+     "tags": [
+      ""
+     ],
+     "capabilities": [
+      "completion"
+     ],
+     "parameters": "",
+     "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "",
+      "families": [
+       ""
+      ],
+      "parameter_size": "",
+      "quantization_level": ""
+     }
+    }
+   ],
+   "object": "list",
+   "data": [
+    {
+     "id": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+     "aliases": [
+      "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf"
+     ],
+     "tags": [],
+     "object": "model",
+     "architecture": {
+      "input_modalities": [
+       "text"
+      ],
+      "output_modalities": [
+       "text"
+      ]
+     },
+     "created": 1795441863,
+     "owned_by": "llamacpp",
+     "meta": {
+      "vocab_type": 2,
+      "n_vocab": 200058,
+      "n_ctx": 131072,
+      "n_ctx_train": 1048576,
+      "n_embd": 2304,
+      "n_params": 26070390272,
+      "size": 13619799296,
+      "ftype": "Q3_K - Medium"
+     }
+    }
+   ]
+  }
+ },
+ "sessions": [
+  {
+   "baseline_start": 1795441863.4731953,
+   "todo": 1200,
+   "git_rev": "ed1ce39abae1304a0e20f0cf2a410a12afcaa0bf",
+   "base_url": "http://127.0.0.1:8091",
+   "concurrency": 4,
+   "sample": 400,
+   "start": 1795441878.4884467,
+   "end": 1795446752.2551801
+  }
+ ]
+}

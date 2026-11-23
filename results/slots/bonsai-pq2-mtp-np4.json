@@ -1,0 +1,75 @@
+{
+ "label": "Bonsai 27B PQ2_0, 4 slots, MTP (production)",
+ "url": "http://127.0.0.1:8081",
+ "request": {
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795427790.7572503,
+ "gpu_mem_idle_mib": 21211.0,
+ "levels": [
+  {
+   "concurrency": 1,
+   "requests": 4,
+   "wall_s": 27.8,
+   "completion_tokens": 3897,
+   "aggregate_tok_s": 140.0,
+   "decode_tps_median": 145.7,
+   "ttft_s_median": 0.27,
+   "latency_s_median": 6.8,
+   "draft_acceptance": 0.636,
+   "gpu_mem_peak_mib": 21211.0
+  },
+  {
+   "concurrency": 2,
+   "requests": 8,
+   "wall_s": 38.1,
+   "completion_tokens": 8192,
+   "aggregate_tok_s": 215.0,
+   "decode_tps_median": 111.9,
+   "ttft_s_median": 0.39,
+   "latency_s_median": 9.5,
+   "draft_acceptance": 0.599,
+   "gpu_mem_peak_mib": 21211.0
+  },
+  {
+   "concurrency": 4,
+   "requests": 16,
+   "wall_s": 57.5,
+   "completion_tokens": 15593,
+   "aggregate_tok_s": 271.0,
+   "decode_tps_median": 73.5,
+   "ttft_s_median": 0.47,
+   "latency_s_median": 14.0,
+   "draft_acceptance": 0.613,
+   "gpu_mem_peak_mib": 21211.0
+  }
+ ],
+ "prefill": [
+  {
+   "latency_s": 3.03660249710083,
+   "ttft_s": 2.6081438064575195,
+   "completion_tokens": 64,
+   "prompt_tokens": 4948,
+   "decode_tps": 147.03867928412998,
+   "draft_n": 51,
+   "draft_accepted": 37,
+   "server_prefill_tps": 2764.242721516512,
+   "prompt_chars": 20000
+  },
+  {
+   "latency_s": 7.380316972732544,
+   "ttft_s": 6.96558403968811,
+   "completion_tokens": 64,
+   "prompt_tokens": 18691,
+   "decode_tps": 151.90498506481114,
+   "draft_n": 48,
+   "draft_accepted": 39,
+   "server_prefill_tps": 2787.140651067467,
+   "prompt_chars": 80000
+  }
+ ],
+ "gpu_mem_after_mib": 21211.0
+}

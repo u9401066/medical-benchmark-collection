@@ -1,0 +1,24 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 4,
+ "chars": 56287,
+ "max_tokens": 256,
+ "started": 1795437528.9862444,
+ "results": [
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  },
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  },
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  },
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  }
+ ],
+ "wall_s": 33.8,
+ "ok": false,
+ "gpu_mem_peak_mib": 24087.0
+}

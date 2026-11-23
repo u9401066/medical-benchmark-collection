@@ -1,0 +1,79 @@
+{
+ "label": "Inkling 2 Mini UD-Q3_K_XL, 4 slots, ctx 65536, -ub 128",
+ "url": "http://127.0.0.1:8091",
+ "request": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "min_p": 0.0,
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795439771.0486178,
+ "gpu_mem_idle_mib": 22857.0,
+ "levels": [
+  {
+   "concurrency": 1,
+   "requests": 4,
+   "wall_s": 27.8,
+   "completion_tokens": 2196,
+   "aggregate_tok_s": 79.0,
+   "decode_tps_median": 82.6,
+   "ttft_s_median": 0.25,
+   "latency_s_median": 6.5,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 22857.0
+  },
+  {
+   "concurrency": 2,
+   "requests": 8,
+   "wall_s": 56.5,
+   "completion_tokens": 6226,
+   "aggregate_tok_s": 110.1,
+   "decode_tps_median": 60.8,
+   "ttft_s_median": 0.41,
+   "latency_s_median": 13.9,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 22857.0
+  },
+  {
+   "concurrency": 4,
+   "requests": 16,
+   "wall_s": 70.6,
+   "completion_tokens": 9536,
+   "aggregate_tok_s": 135.0,
+   "decode_tps_median": 38.5,
+   "ttft_s_median": 0.44,
+   "latency_s_median": 13.1,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 22917.0
+  }
+ ],
+ "prefill": [
+  {
+   "latency_s": 4.0809407234191895,
+   "ttft_s": 3.287876605987549,
+   "completion_tokens": 64,
+   "prompt_tokens": 4941,
+   "decode_tps": 79.43872205948138,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 1588.2470362204544,
+   "prompt_chars": 20000
+  },
+  {
+   "latency_s": 13.457342624664307,
+   "ttft_s": 12.637833833694458,
+   "completion_tokens": 64,
+   "prompt_tokens": 18973,
+   "decode_tps": 76.87531933054993,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 1515.2817195672203,
+   "prompt_chars": 80000
+  }
+ ],
+ "gpu_mem_after_mib": 22917.0
+}

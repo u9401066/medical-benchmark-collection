@@ -1,0 +1,115 @@
+{
+ "collected_at": "2026-11-23 15:25 UTC",
+ "note": "Collected on llm01 during the Inkling 2 Mini evaluation (2026-11-23); Bonsai's medical QA run is the 2026-10-20/21 one (same host, same driver); tool-calling and slot measurements of both models are from 2026-11-23.",
+ "host": {
+  "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+  "python": "3.12.14",
+  "kernel": "5.15.0-190-generic",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-13700",
+  "logical_cpus": 12,
+  "ram_gib": 54.9,
+  "swap_gib": 16.0,
+  "os": "Ubuntu 22.04.4 LTS",
+  "virtualization": "kvm",
+  "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB, 570.211.01",
+  "gpu_pcie": "Gen4 x16",
+  "cuda_driver_api": "12.8",
+  "disks": [
+   "QEMU HARDDISK 1T 0 disk"
+  ]
+ },
+ "models": [
+  {
+   "system": "Bonsai 27B PQ2_0",
+   "repo": "BoldingBuilds/Ternary-Bonsai-2-27B-Abliterated-v2-PQ2_0-MTP-GGUF",
+   "revision": "e25d197aa62ce0a2f685fc65d76a41b2416c5e66",
+   "base": "prism-ml/Ternary-Bonsai-2-27B（Qwen3.8-27B 架構，dense）；Abliterated v2 為移除拒答方向的修改版",
+   "files": [
+    {
+     "name": "Ternary-Bonsai-2-27B-Abliterated-v2-PQ2_0-MTP.gguf",
+     "bytes": 7657489696,
+     "sha256": "a4e4c7b578131595c1694354bd6c74d00920df1f5082647a6126899753ebebf8"
+    }
+   ],
+   "verified": "本機檔案 sha256sum 與 Hugging Face LFS sha256 相同（2026-10-23）"
+  },
+  {
+   "system": "Inkling 2 Mini UD-IQ4_XS",
+   "repo": "unsloth/Inkling-2-Mini-GGUF",
+   "revision": "45fd08764f2b0bf16b03a5483a80e5c7aaec8772",
+   "base": "thinkingmachines/Inkling-2-Mini（Thinking Machines Lab，2026-11-20，Apache-2.0；MoE 26.2B／啟用 3.4B，24 層中 6–17 層重複 3 次）",
+   "files": [
+    {
+     "name": "Inkling-2-Mini-UD-IQ4_XS.gguf",
+     "bytes": 15733755232,
+     "sha256": "a861d21e7c6d7bc69d8cdcdfb9eb195fd37ef1cd2ab31499db61cd7d30d9b3a1"
+    }
+   ],
+   "verified": "本機檔案 sha256sum 與 Hugging Face LFS sha256 相同（2026-11-23）",
+   "note": "專家權重為 NVFP4（RTX 4090 沒有 FP4 tensor core），注意力權重 Q8_0"
+  },
+  {
+   "system": "Inkling 2 Mini UD-Q3_K_XL",
+   "repo": "unsloth/Inkling-2-Mini-GGUF",
+   "revision": "45fd08764f2b0bf16b03a5483a80e5c7aaec8772",
+   "base": "同上（同一個模型，較小的量化）",
+   "files": [
+    {
+     "name": "Inkling-2-Mini-UD-Q3_K_XL.gguf",
+     "bytes": 13631778016,
+     "sha256": "f72f396d1b479b14d76346df80baa449c8b1f399653bff38fa4764b359a40048"
+    }
+   ],
+   "verified": "本機檔案 sha256sum 與 Hugging Face LFS sha256 相同（2026-11-23）"
+  }
+ ],
+ "software": [
+  {
+   "name": "llama.cpp（PrismML fork）llama-server",
+   "version": "prism-b10787（build 73bfe6cc4）",
+   "note": "Bonsai 用；PQ2_0 量化需要此 fork"
+  },
+  {
+   "name": "llama.cpp（Unsloth prebuilt）llama-server",
+   "version": "b12631-mix-acc0843（上游 b12631 + 34 個 pin，CUDA 12.8、cuda12-newer）",
+   "url": "https://github.com/unslothai/llama.cpp/releases/tag/b12631-mix-acc0843",
+   "note": "Inkling 用；讀 Unsloth 的 looped GGUF 版面、量化 K/V 的 banded attention（unslothai#399）、DSpark"
+  },
+  {
+   "name": "NVIDIA driver",
+   "version": "570.211.01（CUDA driver API 12.8）"
+  },
+  {
+   "name": "作業系統",
+   "version": "Ubuntu 22.04.4 LTS，kernel 5.15.0-190-generic（KVM 虛擬機）"
+  },
+  {
+   "name": "medbench（本評測程式）",
+   "version": "0.1.0",
+   "url": "https://github.com/u9401066/medqa-bench"
+  }
+ ],
+ "co_resident": [
+  {
+   "name": "Clef-Flash 決策模型",
+   "detail": "upstream llama.cpp b11433，:8000，約 6.5 GB VRAM",
+   "during_runs": "兩次執行都常駐；評測期間沒有請求"
+  },
+  {
+   "name": "llama-mcp-router",
+   "detail": ":8001，對外 web UI / API 入口（轉送到 Bonsai :8081）",
+   "during_runs": "常駐；評測直接連 :8081，不經過 router"
+  },
+  {
+   "name": "llama-cot-sentinel",
+   "detail": ":8002",
+   "during_runs": "常駐；無請求"
+  }
+ ],
+ "launch": {
+  "Bonsai 27B PQ2_0": "llama-server -m Ternary-Bonsai-2-27B-Abliterated-v2-PQ2_0-MTP.gguf -ngl 99 -fa on -c 131072 -n -1 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --host 0.0.0.0 --port 8081 --chat-template-kwargs {\"reasoning_effort\":\"medium\"} --cache-ram 24576 --reasoning-effort-allow low,medium,xhigh --reasoning-effort-fallback xhigh -b 2048 -ub 512 --spec-type draft-mtp --spec-draft-n-max 2 --mcp-servers-config mcp.json",
+  "Inkling 2 Mini UD-IQ4_XS": "llama-server -m Inkling-2-Mini-UD-IQ4_XS.gguf -ngl all --fit off -fa on -c 65536 -np 4 --kv-unified -n -1 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --host 127.0.0.1 --port 8091 --temp 1.0 --top-p 1.0 --top-k 0 --min-p 0.0 --chat-template-kwargs {\"reasoning_effort\":\"medium\"} --cache-ram 24576 -b 2048 -ub 256 --mcp-servers-config mcp.json（llmapi_server/scripts/start_inkling.sh）",
+  "Inkling 2 Mini UD-Q3_K_XL": "llama-server -m Inkling-2-Mini-UD-Q3_K_XL.gguf -ngl all --fit off -fa on -c 131072 -np 4 --kv-unified -n -1 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --host 127.0.0.1 --port 8091 --temp 1.0 --top-p 1.0 --top-k 0 --min-p 0.0 --chat-template-kwargs {\"reasoning_effort\":\"medium\"} --cache-ram 24576 -b 2048 -ub 64 --mcp-servers-config mcp.json（llmapi_server/scripts/start_inkling.sh）",
+  "Inkling 2 Mini UD-IQ4_XS（正式部署，2026-11-23）": "llama-server -m Inkling-2-Mini-UD-IQ4_XS.gguf -ngl all --fit off -fa on -c 131072 -np 4 --kv-unified -n -1 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --host 0.0.0.0 --port 8081 --temp 1.0 --top-p 1.0 --top-k 0 --min-p 0.0 --chat-template-kwargs {\"reasoning_effort\":\"medium\"} --cache-ram 24576 -b 2048 -ub 64 -ot 'blk\\.(21|20|22)\\.ffn_(gate_up|down)_exps\\.=CPU' --mcp-servers-config mcp.json（config/inkling.env）"
+ }
+}

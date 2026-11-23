@@ -1,0 +1,90 @@
+{
+ "label": "Bonsai 27B PQ2_0, 8 slots (-np 8: 16,384 tokens per slot, KV not shared), MTP",
+ "url": "http://127.0.0.1:8091",
+ "request": {
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795436677.1312346,
+ "gpu_mem_idle_mib": 22835.0,
+ "levels": [
+  {
+   "concurrency": 1,
+   "requests": 4,
+   "wall_s": 28.2,
+   "completion_tokens": 3991,
+   "aggregate_tok_s": 141.7,
+   "decode_tps_median": 149.0,
+   "ttft_s_median": 0.27,
+   "latency_s_median": 7.1,
+   "draft_acceptance": 0.638,
+   "gpu_mem_peak_mib": 22859.0
+  },
+  {
+   "concurrency": 2,
+   "requests": 8,
+   "wall_s": 60.7,
+   "completion_tokens": 8073,
+   "aggregate_tok_s": 133.0,
+   "decode_tps_median": 61.5,
+   "ttft_s_median": 0.34,
+   "latency_s_median": 16.0,
+   "draft_acceptance": 0.579,
+   "gpu_mem_peak_mib": 22859.0
+  },
+  {
+   "concurrency": 4,
+   "requests": 16,
+   "wall_s": 99.8,
+   "completion_tokens": 15748,
+   "aggregate_tok_s": 157.7,
+   "decode_tps_median": 41.7,
+   "ttft_s_median": 0.42,
+   "latency_s_median": 24.8,
+   "draft_acceptance": 0.612,
+   "gpu_mem_peak_mib": 22865.0
+  },
+  {
+   "concurrency": 6,
+   "requests": 24,
+   "wall_s": 109.0,
+   "completion_tokens": 23868,
+   "aggregate_tok_s": 219.0,
+   "decode_tps_median": 40.1,
+   "ttft_s_median": 0.45,
+   "latency_s_median": 25.7,
+   "draft_acceptance": 0.59,
+   "gpu_mem_peak_mib": 22867.0
+  },
+  {
+   "concurrency": 8,
+   "requests": 32,
+   "wall_s": 93.4,
+   "completion_tokens": 30566,
+   "aggregate_tok_s": 327.1,
+   "decode_tps_median": 49.4,
+   "ttft_s_median": 0.44,
+   "latency_s_median": 21.0,
+   "draft_acceptance": 0.589,
+   "gpu_mem_peak_mib": 22867.0
+  }
+ ],
+ "prefill": [
+  {
+   "latency_s": 3.1508169174194336,
+   "ttft_s": 2.774258613586426,
+   "completion_tokens": 64,
+   "prompt_tokens": 4948,
+   "decode_tps": 167.30476889958211,
+   "draft_n": 45,
+   "draft_accepted": 40,
+   "server_prefill_tps": 2727.1775255879584,
+   "prompt_chars": 20000
+  }
+ ],
+ "gpu_mem_after_mib": 22867.0,
+ "failed": "HTTPStatusError: Client error '400 Bad Request' for url 'http://127.0.0.1:8091/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400",
+ "note": "start_bonsai.sh with BONSAI_EXTRA_ARGS='-np 8'; an explicit -np turns off llama-server's automatic --kv-unified, so -c 131072 is split into 8 x 16,384 and the 18,691-token prompt was rejected (HTTP 400)"
+}

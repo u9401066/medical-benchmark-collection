@@ -1,0 +1,38 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 4,
+ "chars": 27650,
+ "max_tokens": 256,
+ "started": 1795437914.8854375,
+ "results": [
+  {
+   "latency_s": 26.12641143798828,
+   "ttft_s": 21.365857362747192,
+   "completion_tokens": 156,
+   "prompt_tokens": 6619,
+   "decode_tps": 32.559235238211286,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 345.187212041949
+  },
+  {
+   "error": "RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)"
+  },
+  {
+   "latency_s": 25.667498111724854,
+   "ttft_s": 17.303385257720947,
+   "completion_tokens": 143,
+   "prompt_tokens": 6619,
+   "decode_tps": 16.977293644719836,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 496.1436989263013
+  },
+  {
+   "error": "RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)"
+  }
+ ],
+ "wall_s": 26.4,
+ "ok": false,
+ "gpu_mem_peak_mib": 24055.0
+}

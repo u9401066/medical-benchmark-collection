@@ -1,0 +1,4 @@
+{"tag":"inkling-iq4xs-np4","ctx":65536,"ub":256,"slots":4,"result":"ok","gpu_used_mib":23711,"estimate_model_ctx_compute_mib":"","log":"inkling-inkling-iq4xs-np4-c65536-20261123T102746Z.log"}
+{"tag":"inkling-iq4xs-np8","ctx":65536,"ub":256,"slots":8,"result":"sweep-failed","gpu_used_mib":6586,"estimate_model_ctx_compute_mib":"14524 1971 530","log":"inkling-inkling-iq4xs-np8-c65536-20261123T103040Z.log"}
+{"tag":"inkling-iq4xs-np2","ctx":65536,"ub":256,"slots":2,"result":"ok","gpu_used_mib":23309,"estimate_model_ctx_compute_mib":"14524 1311 1717","log":"inkling-inkling-iq4xs-np2-c65536-20261123T103352Z.log"}
+{"tag":"inkling-iq4xs-np4-dspark","ctx":32768,"ub":256,"slots":4,"result":"ok","gpu_used_mib":23735,"estimate_model_ctx_compute_mib":"","log":"inkling-inkling-iq4xs-np4-dspark-c32768-20261123T103543Z.log"}

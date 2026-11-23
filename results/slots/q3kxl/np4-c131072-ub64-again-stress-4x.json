@@ -1,0 +1,52 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 4,
+ "chars": 106650,
+ "max_tokens": 256,
+ "started": 1795440908.756798,
+ "results": [
+  {
+   "latency_s": 177.62156558036804,
+   "ttft_s": 130.89180159568787,
+   "completion_tokens": 200,
+   "prompt_tokens": 26159,
+   "decode_tps": 4.2585278210529784,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 214.36973809629856
+  },
+  {
+   "latency_s": 178.99359703063965,
+   "ttft_s": 169.08143210411072,
+   "completion_tokens": 256,
+   "prompt_tokens": 26159,
+   "decode_tps": 25.725964195522785,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 154.9433641104909
+  },
+  {
+   "latency_s": 178.5652048587799,
+   "ttft_s": 78.71209859848022,
+   "completion_tokens": 256,
+   "prompt_tokens": 26159,
+   "decode_tps": 2.5537513007883734,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 365.85901414009635
+  },
+  {
+   "latency_s": 177.26174330711365,
+   "ttft_s": 37.15700578689575,
+   "completion_tokens": 218,
+   "prompt_tokens": 26159,
+   "decode_tps": 1.5488412728990388,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 828.774293226675
+  }
+ ],
+ "wall_s": 179.0,
+ "ok": true,
+ "gpu_mem_peak_mib": 23971.0
+}

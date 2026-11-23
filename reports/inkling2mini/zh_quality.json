@@ -1,0 +1,50 @@
+{
+ "Bonsai 27B PQ2_0": {
+  "answer": {
+   "n": 400,
+   "simplified_share_mean": 0.03301079878882218,
+   "answers_with_simplified_chars": 0.2225,
+   "answers_mostly_english": 0.1,
+   "han_chars_median": 230.5
+  },
+  "reasoning": {
+   "n": 400,
+   "simplified_share_mean": 0.02870168833017597,
+   "answers_with_simplified_chars": 0.045,
+   "answers_mostly_english": 0.98,
+   "han_chars_median": 34.0
+  }
+ },
+ "Inkling 2 Mini UD-IQ4_XS": {
+  "answer": {
+   "n": 400,
+   "simplified_share_mean": 0.002117668710308304,
+   "answers_with_simplified_chars": 0.0025,
+   "answers_mostly_english": 0.105,
+   "han_chars_median": 60.5
+  },
+  "reasoning": {
+   "n": 400,
+   "simplified_share_mean": 0.02287456095735329,
+   "answers_with_simplified_chars": 0.0225,
+   "answers_mostly_english": 0.9975,
+   "han_chars_median": 14.0
+  }
+ },
+ "Inkling 2 Mini UD-Q3_K_XL": {
+  "answer": {
+   "n": 400,
+   "simplified_share_mean": 0.0009991765176912482,
+   "answers_with_simplified_chars": 0.0,
+   "answers_mostly_english": 0.125,
+   "han_chars_median": 63.0
+  },
+  "reasoning": {
+   "n": 400,
+   "simplified_share_mean": 0.021341608298808556,
+   "answers_with_simplified_chars": 0.025,
+   "answers_mostly_english": 0.9975,
+   "han_chars_median": 21.5
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 1,
+ "chars": 424542,
+ "max_tokens": 256,
+ "started": 1795447090.6631653,
+ "results": [
+  {
+   "latency_s": 270.1428859233856,
+   "ttft_s": 267.25866436958313,
+   "completion_tokens": 127,
+   "prompt_tokens": 101192,
+   "decode_tps": 43.68596435800313,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 379.0315188088342
+  }
+ ],
+ "wall_s": 270.2,
+ "ok": true,
+ "gpu_mem_peak_mib": 22881.0
+}

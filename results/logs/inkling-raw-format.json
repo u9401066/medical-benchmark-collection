@@ -1,0 +1,42 @@
+{
+ "medium": {
+  "rendered_tail": "<|message_system|><|content_text|>Thinking effort level: 0.7<|end_message|><|message_user|><|content_text|>A 60-year-old man has crushing chest pain for 30 minutes. What is the first test? One sentence.<|end_message|>",
+  "content": "The user asks: \"A 60-year-old man has crushing chest pain for 30 minutes. What is the first test? One sentence.\"\n\nThis is a medical question. Need answer likely ECG (12-lead ECG) as first test for acute chest pain. Need be careful: This is medical advice? The user likely wants educational answer. We can answer concise. Need one sentence. Mention emergency: immediate 12-lead ECG (and activate emergency response). Since crushing chest pain 30 min, first test is ECG, not troponin. Could say \"Get an immediate 12-lead ECG (while activating emergency/EMS).\" One sentence. Ensure not overclaim. No diagnosis. This is allowed. Final one sentence only.Get an immediate 12-lead ECG while activating emergency/EMS.",
+  "tokens_head": [
+   200001,
+   200008,
+   371,
+   150409,
+   171960,
+   25,
+   196980,
+   32,
+   220,
+   68273,
+   12,
+   1258
+  ],
+  "stop_type": "eos",
+  "n_tokens": 191
+ },
+ "None": {
+  "rendered_tail": "<|message_system|><|content_text|>Thinking effort level: 0.7<|end_message|><|message_user|><|content_text|>A 60-year-old man has crushing chest pain for 30 minutes. What is the first test? One sentence.<|end_message|>",
+  "content": "The user asks: \"A 60-year-old man has crushing chest pain for 30 minutes. What is the first test? One sentence.\"\n\nThis is a medical question. Need answer likely ECG (12-lead ECG) as first test for acute chest pain. Need be careful: This is medical advice? The user likely wants educational answer. We can answer concise. Need one sentence. Mention emergency: immediate 12-lead ECG (and activate emergency response). Since crushing chest pain 30 min, first test is ECG, not troponin. Could say \"Get an immediate 12-lead ECG (while activating emergency/EMS).\" One sentence. Ensure not overclaim. No diagnosis. This is allowed. Final one sentence only.Get an immediate 12-lead ECG while activating emergency/EMS.",
+  "tokens_head": [
+   200001,
+   200008,
+   371,
+   150409,
+   171960,
+   25,
+   196980,
+   32,
+   220,
+   68273,
+   12,
+   1258
+  ],
+  "stop_type": "eos",
+  "n_tokens": 191
+ }
+}

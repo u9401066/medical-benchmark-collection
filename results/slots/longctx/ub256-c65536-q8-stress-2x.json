@@ -1,0 +1,18 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 2,
+ "chars": 112575,
+ "max_tokens": 256,
+ "started": 1795437418.5976517,
+ "results": [
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  },
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  }
+ ],
+ "wall_s": 12.5,
+ "ok": false,
+ "gpu_mem_peak_mib": 24085.0
+}

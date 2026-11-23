@@ -1,0 +1,33 @@
+{
+ "label": "Inkling 2 Mini UD-IQ4_XS, 4 slots, ub64-c65536-q8",
+ "url": "http://127.0.0.1:8091",
+ "request": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "min_p": 0.0,
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795437771.6967318,
+ "gpu_mem_idle_mib": 24053.0,
+ "levels": [
+  {
+   "concurrency": 1,
+   "requests": 3,
+   "wall_s": 18.2,
+   "completion_tokens": 1410,
+   "aggregate_tok_s": 77.4,
+   "decode_tps_median": 81.3,
+   "ttft_s_median": 0.29,
+   "latency_s_median": 6.0,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 24053.0
+  }
+ ],
+ "prefill": [],
+ "gpu_mem_after_mib": 6586.0,
+ "failed": "RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)"
+}

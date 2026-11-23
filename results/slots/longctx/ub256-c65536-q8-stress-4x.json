@@ -1,0 +1,24 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 4,
+ "chars": 56287,
+ "max_tokens": 256,
+ "started": 1795437431.219157,
+ "results": [
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  },
+  {
+   "error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'http://127.0.0.1:8091/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+  },
+  {
+   "error": "HTTPError: server error in stream: {\"code\": 500, \"message\": \"Compute error.\", \"type\": \"server_error\"}"
+  },
+  {
+   "error": "HTTPStatusError: Server error '500 Internal Server Error' for url 'http://127.0.0.1:8091/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+  }
+ ],
+ "wall_s": 13.2,
+ "ok": false,
+ "gpu_mem_peak_mib": 24075.0
+}

@@ -1,0 +1,594 @@
+{
+ "run": "inkling2mini-iq4xs-medium",
+ "label": "Inkling 2 Mini UD-IQ4_XS",
+ "config": {
+  "name": "inkling2mini-iq4xs-medium",
+  "label": "Inkling 2 Mini UD-IQ4_XS",
+  "base_url": "http://127.0.0.1:8091",
+  "model": "inkling",
+  "concurrency": 4,
+  "timeout_s": 3600,
+  "request": {
+   "max_tokens": 16384,
+   "temperature": 1.0,
+   "top_p": 1.0,
+   "top_k": 0,
+   "min_p": 0.0,
+   "chat_template_kwargs": {
+    "reasoning_effort": "medium"
+   }
+  },
+  "server_info": [
+   "/props",
+   "/v1/models"
+  ],
+  "processes": [
+   "Inkling-2-Mini"
+  ],
+  "launch": {
+   "server_script": "llmapi_server/scripts/start_inkling.sh",
+   "env": {
+    "INKLING_PORT": "8091",
+    "INKLING_HOST": "127.0.0.1",
+    "INKLING_SLOTS": "4",
+    "LLM_IGNORE_PAUSE": "1",
+    "INKLING_DRAFT": "none",
+    "INKLING_CTX": "65536",
+    "INKLING_UBATCH": "256"
+   },
+   "note": "run in a maintenance window: production (Bonsai on :8081) paused, Clef-Flash stays on the GPU"
+  },
+  "system": {
+   "model": "Inkling-2-Mini（Thinking Machines Lab；MoE 26.2B 總參數、每 token 啟用 3.4B，中間 12 層重複 3 次，等效 5.4B）",
+   "weights": "Unsloth UD-IQ4_XS（Dynamic 3.0 imatrix），GGUF 14.65 GiB",
+   "engine": "Unsloth llama.cpp prebuilt b12631-mix-acc0843（上游 b12631 + looped-layer / DSpark 修補，CUDA 12.8），不用推測解碼",
+   "placement": "全部層在 GPU（-ngl all），KV q8_0、65,536 tokens 由 4 個 slot 共用（--kv-unified），-ub 256，flash-attn",
+   "sampling": "temperature 1.0、top_p 1.0、top_k 0、min_p 0（模型作者建議，不截斷），逐題 seed"
+  }
+ },
+ "datasets": {
+  "medqa_usmle": {
+   "n": 428,
+   "correct": 394,
+   "acc": 0.9205607476635514,
+   "ci95": [
+    0.8910414653681249,
+    0.9425978080184454
+   ],
+   "expected_items": 1273,
+   "missing_items": 845,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 22.99113551401869,
+    "median": 15.854,
+    "p90": 45.65860000000001
+   },
+   "ttft_s_median": 0.388,
+   "completion_tokens": {
+    "mean": 817.0280373831775,
+    "median": 566.5
+   },
+   "prompt_tokens_mean": 284.99532710280374,
+   "decode_tps_median": 36.45,
+   "subsets": {
+    "step1": {
+     "n": 231,
+     "correct": 220,
+     "acc": 0.9523809523809523,
+     "ci95": [
+      0.9167568999959778,
+      0.9732052088906052
+     ]
+    },
+    "step2&3": {
+     "n": 197,
+     "correct": 174,
+     "acc": 0.883248730964467,
+     "ci95": [
+      0.8309061856301697,
+      0.9209306156014226
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 428,
+    "prefill_tps_median": 895.719082096536,
+    "decode_tps_median": 36.36303675017872,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 110,
+    "B": 117,
+    "C": 109,
+    "D": 92
+   },
+   "gold_distribution": {
+    "A": 115,
+    "B": 114,
+    "C": 108,
+    "D": 91
+   },
+   "confusion": {
+    "A": {
+     "A": 101,
+     "B": 5,
+     "C": 8,
+     "D": 1
+    },
+    "B": {
+     "A": 3,
+     "B": 107,
+     "C": 1,
+     "D": 3
+    },
+    "C": {
+     "A": 3,
+     "B": 3,
+     "C": 100,
+     "D": 2
+    },
+    "D": {
+     "A": 3,
+     "B": 2,
+     "D": 86
+    }
+   }
+  },
+  "medqa_twmle": {
+   "n": 400,
+   "correct": 378,
+   "acc": 0.945,
+   "ci95": [
+    0.9181325519428594,
+    0.9634015059673307
+   ],
+   "expected_items": 1413,
+   "missing_items": 1013,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 19.0863625,
+    "median": 12.8485,
+    "p90": 34.573600000000035
+   },
+   "ttft_s_median": 0.3025,
+   "completion_tokens": {
+    "mean": 687.8875,
+    "median": 472.0
+   },
+   "prompt_tokens_mean": 184.08,
+   "decode_tps_median": 36.91,
+   "subsets": {
+    "standalone": {
+     "n": 392,
+     "correct": 372,
+     "acc": 0.9489795918367347,
+     "ci95": [
+      0.9225124428493874,
+      0.9667324608926358
+     ]
+    },
+    "depends_on_previous (承上題)": {
+     "n": 8,
+     "correct": 6,
+     "acc": 0.75,
+     "ci95": [
+      0.40927542792725174,
+      0.9285207879020445
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 400,
+    "prefill_tps_median": 825.721435224326,
+    "decode_tps_median": 36.7986155898856,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 101,
+    "B": 104,
+    "C": 104,
+    "D": 91
+   },
+   "gold_distribution": {
+    "A": 97,
+    "B": 104,
+    "C": 109,
+    "D": 90
+   },
+   "confusion": {
+    "A": {
+     "A": 95,
+     "C": 2
+    },
+    "B": {
+     "A": 1,
+     "B": 98,
+     "C": 2,
+     "D": 3
+    },
+    "C": {
+     "A": 3,
+     "B": 3,
+     "C": 100,
+     "D": 3
+    },
+    "D": {
+     "A": 2,
+     "B": 3,
+     "D": 85
+    }
+   }
+  },
+  "pubmedqa": {
+   "n": 400,
+   "correct": 292,
+   "acc": 0.73,
+   "ci95": [
+    0.6844571283551331,
+    0.7711672161827179
+   ],
+   "expected_items": 1000,
+   "missing_items": 600,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 14.28797,
+    "median": 12.461,
+    "p90": 23.274000000000004
+   },
+   "ttft_s_median": 0.497,
+   "completion_tokens": {
+    "mean": 487.535,
+    "median": 426.0
+   },
+   "prompt_tokens_mean": 429.8075,
+   "decode_tps_median": 35.375,
+   "subsets": {
+    "gold=yes": {
+     "n": 205,
+     "correct": 160,
+     "acc": 0.7804878048780488,
+     "ci95": [
+      0.7189545085146458,
+      0.8317024377450775
+     ]
+    },
+    "gold=no": {
+     "n": 148,
+     "correct": 111,
+     "acc": 0.75,
+     "ci95": [
+      0.6745116951432933,
+      0.8128387330283066
+     ]
+    },
+    "gold=maybe": {
+     "n": 47,
+     "correct": 21,
+     "acc": 0.44680851063829785,
+     "ci95": [
+      0.3141096617157729,
+      0.5875454026742175
+     ]
+    },
+    "macro_f1": 0.6456176201522065
+   },
+   "server_timings": {
+    "n": 400,
+    "prefill_tps_median": 1068.028588045157,
+    "decode_tps_median": 35.27995064434036,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "maybe": 82,
+    "no": 132,
+    "yes": 186
+   },
+   "gold_distribution": {
+    "maybe": 47,
+    "no": 148,
+    "yes": 205
+   },
+   "confusion": {
+    "maybe": {
+     "maybe": 21,
+     "no": 9,
+     "yes": 17
+    },
+    "no": {
+     "maybe": 28,
+     "no": 111,
+     "yes": 9
+    },
+    "yes": {
+     "maybe": 33,
+     "no": 12,
+     "yes": 160
+    }
+   }
+  }
+ },
+ "overall": {
+  "n": 1228,
+  "correct": 1064,
+  "acc": 0.8664495114006515,
+  "ci95": [
+   0.8462762815818069,
+   0.8843372186468185
+  ],
+  "wall_s": 5803.443795681,
+  "completion_tokens": 819857,
+  "throughput_tok_s": 141.27077453737874,
+  "questions_per_hour": 761.7545987591054,
+  "decode_tps_median": 36.33,
+  "latency_s_median": 13.555,
+  "concurrency": 4
+ },
+ "resources": {
+  "samples": 5801,
+  "baseline_samples": 32,
+  "gpu_mem_used_mib": {
+   "mean": 23935.167902085846,
+   "peak": 24045.0,
+   "baseline": 23556.0
+  },
+  "gpu_util_pct_mean": 81.89329425961041,
+  "gpu_power_w": {
+   "mean": 239.0779555249095,
+   "peak": 299.75,
+   "baseline_idle": 90.2940625
+  },
+  "gpu_energy_wh": 385.1825233388705,
+  "gpu_energy_wh_above_idle": 239.71176578295228,
+  "server_rss_mib": {
+   "mean": 22980.78531287709,
+   "peak": 26437.1
+  },
+  "ram_used_mib": {
+   "mean": 27434.625133597656,
+   "peak": 30871.2,
+   "baseline": 17647.675
+  },
+  "cpu_pct_mean": 9.599086364419927,
+  "gpu_temp_c_peak": 65.0,
+  "external_load": {
+   "samples": 5801,
+   "share_with_other_requests": 0.0,
+   "mean_other_requests": 0.0
+  },
+  "gpu_energy_wh_per_question": 0.3136665499502203,
+  "gpu_energy_wh_per_correct": 0.36201364975457756
+ },
+ "manifest": {
+  "medbench_version": "0.1.0",
+  "git_rev": "ed1ce39abae1304a0e20f0cf2a410a12afcaa0bf",
+  "prompt_version": "v1",
+  "host": {
+   "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+   "python": "3.12.14",
+   "kernel": "5.15.0-190-generic",
+   "cpu": "13th Gen Intel(R) Core(TM) i7-13700",
+   "logical_cpus": 12,
+   "ram_gib": 54.9,
+   "swap_gib": 16.0,
+   "os": "Ubuntu 22.04.4 LTS",
+   "virtualization": "kvm",
+   "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB, 570.211.01",
+   "gpu_pcie": "Gen4 x16",
+   "cuda_driver_api": "12.8",
+   "disks": [
+    "QEMU HARDDISK 1T 0 disk"
+   ]
+  },
+  "server": {
+   "/props": {
+    "default_generation_settings": {
+     "params": {
+      "seed": 4294967295,
+      "temperature": 1.0,
+      "dynatemp_range": 0.0,
+      "dynatemp_exponent": 1.0,
+      "top_k": 0,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "xtc_threshold": 0.10000000149011612,
+      "typical_p": 1.0,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "penalize_prompt": true,
+      "dry_multiplier": 0.0,
+      "dry_base": 1.75,
+      "dry_allowed_length": 2,
+      "dry_penalty_last_n": 64,
+      "mirostat": 0,
+      "mirostat_tau": 5.0,
+      "mirostat_eta": 0.10000000149011612,
+      "adaptive_target": -1.0,
+      "adaptive_decay": 0.8999999761581421,
+      "max_tokens": -1,
+      "n_predict": -1,
+      "n_keep": 0,
+      "n_discard": 0,
+      "ignore_eos": false,
+      "stream": false,
+      "n_probs": 0,
+      "min_keep": 0,
+      "chat_format": "Content-only",
+      "reasoning_format": "none",
+      "reasoning_in_content": false,
+      "generation_prompt": "",
+      "samplers": [
+       "penalties",
+       "dry",
+       "top_n_sigma",
+       "top_k",
+       "typ_p",
+       "top_p",
+       "min_p",
+       "xtc",
+       "temperature"
+      ],
+      "speculative.types": "none",
+      "timings_per_token": false,
+      "post_sampling_probs": false,
+      "backend_sampling": false,
+      "lora": []
+     },
+     "n_ctx": 65536
+    },
+    "total_slots": 4,
+    "model_alias": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+    "model_ftype": "IQ4_XS - 4.25 bpw",
+    "model_path": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+    "modalities": {
+     "vision": false,
+     "video": false,
+     "audio": false
+    },
+    "media_marker": "<__media_7PkT6AaCBgocqLbzB9jiqz9su4Vx7Guy__>",
+    "endpoint_slots": true,
+    "endpoint_props": false,
+    "endpoint_metrics": false,
+    "ui": true,
+    "ui_settings": {},
+    "chat_template_caps": {
+     "supports_object_arguments": true,
+     "supports_parallel_tool_calls": true,
+     "supports_preserve_reasoning": true,
+     "supports_reasoning_effort": true,
+     "supports_string_content": true,
+     "supports_system_role": true,
+     "supports_tool_calls": true,
+     "supports_tools": true,
+     "supports_typed_content": true,
+     "reasoning_effort_levels": [
+      "none",
+      "minimal",
+      "low",
+      "medium",
+      "high",
+      "max"
+     ],
+     "reasoning_effort_rejected": []
+    },
+    "bos_token": "",
+    "eos_token": "<|content_model_end_sampling|>",
+    "build_info": "b12631-8ce00e057",
+    "is_sleeping": false,
+    "cors_proxy_enabled": false
+   },
+   "/v1/models": {
+    "models": [
+     {
+      "name": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+      "model": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+      "modified_at": "",
+      "size": "",
+      "digest": "",
+      "type": "model",
+      "description": "",
+      "tags": [
+       ""
+      ],
+      "capabilities": [
+       "completion"
+      ],
+      "parameters": "",
+      "details": {
+       "parent_model": "",
+       "format": "gguf",
+       "family": "",
+       "families": [
+        ""
+       ],
+       "parameter_size": "",
+       "quantization_level": ""
+      }
+     }
+    ],
+    "object": "list",
+    "data": [
+     {
+      "id": "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf",
+      "aliases": [
+       "/home/eric/inkling/models/Inkling-2-Mini-UD-IQ4_XS.gguf"
+      ],
+      "tags": [],
+      "object": "model",
+      "architecture": {
+       "input_modalities": [
+        "text"
+       ],
+       "output_modalities": [
+        "text"
+       ]
+      },
+      "created": 1795436096,
+      "owned_by": "llamacpp",
+      "meta": {
+       "vocab_type": 2,
+       "n_vocab": 200058,
+       "n_ctx": 65536,
+       "n_ctx_train": 1048576,
+       "n_embd": 2304,
+       "n_params": 26070390272,
+       "size": 15721776512,
+       "ftype": "IQ4_XS - 4.25 bpw"
+      }
+     }
+    ]
+   }
+  },
+  "datasets": {
+   "medqa_usmle": {
+    "n_items": 1273,
+    "sample": null,
+    "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+    "sha256": "b50b49fad2642c10ed343c6174d5ab0cb8efad434e7b66465ac471094eb57deb",
+    "items_sha256": "7e146f7c56c095543c08cdcbffe9005e4633d9e1921f034e53d5dc160635e59a"
+   },
+   "medqa_twmle": {
+    "n_items": 1413,
+    "sample": null,
+    "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+    "sha256": "9756921fcff39ee482d8e06488b4ff32c26c9b966ac4c67c07f854da583f34b0",
+    "items_sha256": "1c1b3492a0f1a52bdc4328d7a0c8f22ccb0d2569ab56832adc43f2c41ea9f440"
+   },
+   "pubmedqa": {
+    "n_items": 1000,
+    "sample": null,
+    "revision": "9001f2853fb87cab8d220904e0de81ac6973b318",
+    "sha256": "3d56bd1abc11884579ecc3aab9dd3cdfce8b7cf54715daeca93b8022b7be231c",
+    "items_sha256": "984471e93d38db10081104de19762fff197446ab7379b2e05005f4be163011a1"
+   }
+  },
+  "sessions": [
+   {
+    "baseline_start": 1795430408.9456003,
+    "todo": 1200,
+    "git_rev": "ed1ce39abae1304a0e20f0cf2a410a12afcaa0bf",
+    "start": 1795430423.9606872,
+    "end": 1795436096.4635065
+   },
+   {
+    "baseline_start": 1795436096.7150786,
+    "todo": 2486,
+    "git_rev": "ed1ce39abae1304a0e20f0cf2a410a12afcaa0bf",
+    "start": 1795436111.7303262,
+    "end": 1795436242.6713026
+   }
+  ]
+ }
+}

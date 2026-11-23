@@ -1,0 +1,585 @@
+{
+ "run": "inkling2mini-q3kxl-medium",
+ "label": "Inkling 2 Mini UD-Q3_K_XL",
+ "config": {
+  "name": "inkling2mini-q3kxl-medium",
+  "label": "Inkling 2 Mini UD-Q3_K_XL",
+  "base_url": "http://127.0.0.1:8091",
+  "model": "inkling",
+  "concurrency": 4,
+  "timeout_s": 3600,
+  "request": {
+   "max_tokens": 16384,
+   "temperature": 1.0,
+   "top_p": 1.0,
+   "top_k": 0,
+   "min_p": 0.0,
+   "chat_template_kwargs": {
+    "reasoning_effort": "medium"
+   }
+  },
+  "server_info": [
+   "/props",
+   "/v1/models"
+  ],
+  "processes": [
+   "Inkling-2-Mini"
+  ],
+  "launch": {
+   "server_script": "llmapi_server/scripts/start_inkling.sh",
+   "env": {
+    "INKLING_PORT": "8091",
+    "INKLING_HOST": "127.0.0.1",
+    "INKLING_SLOTS": "4",
+    "LLM_IGNORE_PAUSE": "1",
+    "INKLING_DRAFT": "none",
+    "INKLING_CTX": "131072",
+    "INKLING_UBATCH": "64",
+    "INKLING_MODEL": "Inkling-2-Mini-UD-Q3_K_XL.gguf"
+   },
+   "note": "run in a maintenance window: production (Bonsai on :8081) paused, Clef-Flash stays on the GPU"
+  },
+  "system": {
+   "model": "Inkling-2-Mini（Thinking Machines Lab；MoE 26.2B 總參數、每 token 啟用 3.4B，中間 12 層重複 3 次，等效 5.4B）",
+   "weights": "Unsloth UD-Q3_K_XL（Dynamic 3.0 imatrix），GGUF 12.70 GiB",
+   "engine": "Unsloth llama.cpp prebuilt b12631-mix-acc0843（上游 b12631 + looped-layer / DSpark 修補，CUDA 12.8），不用推測解碼",
+   "placement": "全部層在 GPU（-ngl all），KV q8_0、131,072 tokens 由 4 個 slot 共用（--kv-unified），-ub 64，flash-attn",
+   "sampling": "temperature 1.0、top_p 1.0、top_k 0、min_p 0（模型作者建議，不截斷），逐題 seed"
+  }
+ },
+ "datasets": {
+  "medqa_usmle": {
+   "n": 400,
+   "correct": 369,
+   "acc": 0.9225,
+   "ci95": [
+    0.892095045690633,
+    0.9448670654712891
+   ],
+   "expected_items": 400,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 26.472885,
+    "median": 16.602,
+    "p90": 51.89160000000006
+   },
+   "ttft_s_median": 0.513,
+   "completion_tokens": {
+    "mean": 924.105,
+    "median": 566.5
+   },
+   "prompt_tokens_mean": 284.7175,
+   "decode_tps_median": 35.97,
+   "subsets": {
+    "step1": {
+     "n": 216,
+     "correct": 208,
+     "acc": 0.9629629629629629,
+     "ci95": [
+      0.928631103847048,
+      0.9811154062868325
+     ]
+    },
+    "step2&3": {
+     "n": 184,
+     "correct": 161,
+     "acc": 0.875,
+     "ci95": [
+      0.8194187282746497,
+      0.9152433682713921
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 400,
+    "prefill_tps_median": 659.5702713443461,
+    "decode_tps_median": 35.873075143689164,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 103,
+    "B": 112,
+    "C": 107,
+    "D": 78
+   },
+   "gold_distribution": {
+    "A": 109,
+    "B": 109,
+    "C": 103,
+    "D": 79
+   },
+   "confusion": {
+    "A": {
+     "A": 97,
+     "B": 4,
+     "C": 6,
+     "D": 2
+    },
+    "B": {
+     "A": 2,
+     "B": 101,
+     "C": 3,
+     "D": 3
+    },
+    "C": {
+     "A": 2,
+     "B": 3,
+     "C": 98
+    },
+    "D": {
+     "A": 2,
+     "B": 4,
+     "D": 73
+    }
+   }
+  },
+  "medqa_twmle": {
+   "n": 400,
+   "correct": 371,
+   "acc": 0.9275,
+   "ci95": [
+    0.8978175064777341,
+    0.9490494817393587
+   ],
+   "expected_items": 400,
+   "missing_items": 0,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 21.61336,
+    "median": 13.818,
+    "p90": 42.4562
+   },
+   "ttft_s_median": 0.408,
+   "completion_tokens": {
+    "mean": 772.43,
+    "median": 486.0
+   },
+   "prompt_tokens_mean": 184.08,
+   "decode_tps_median": 36.74,
+   "subsets": {
+    "standalone": {
+     "n": 392,
+     "correct": 367,
+     "acc": 0.9362244897959183,
+     "ci95": [
+      0.9075501457494111,
+      0.956432118681759
+     ]
+    },
+    "depends_on_previous (承上題)": {
+     "n": 8,
+     "correct": 4,
+     "acc": 0.5,
+     "ci95": [
+      0.21521606069626764,
+      0.7847839393037324
+     ]
+    }
+   },
+   "server_timings": {
+    "n": 400,
+    "prefill_tps_median": 550.3857468522358,
+    "decode_tps_median": 36.64119266794504,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "A": 98,
+    "B": 105,
+    "C": 107,
+    "D": 90
+   },
+   "gold_distribution": {
+    "A": 97,
+    "B": 104,
+    "C": 109,
+    "D": 90
+   },
+   "confusion": {
+    "A": {
+     "A": 91,
+     "B": 3,
+     "C": 1,
+     "D": 2
+    },
+    "B": {
+     "A": 1,
+     "B": 97,
+     "C": 3,
+     "D": 3
+    },
+    "C": {
+     "A": 3,
+     "B": 2,
+     "C": 101,
+     "D": 3
+    },
+    "D": {
+     "A": 3,
+     "B": 3,
+     "C": 2,
+     "D": 82
+    }
+   }
+  },
+  "pubmedqa": {
+   "n": 14,
+   "correct": 10,
+   "acc": 0.7142857142857143,
+   "ci95": [
+    0.45350915474002584,
+    0.8827862143729825
+   ],
+   "expected_items": 400,
+   "missing_items": 386,
+   "errors": 0,
+   "no_answer": 0,
+   "truncated": 0,
+   "latency_s": {
+    "mean": 14.761214285714285,
+    "median": 13.756,
+    "p90": 23.441300000000002
+   },
+   "ttft_s_median": 0.6174999999999999,
+   "completion_tokens": {
+    "mean": 488.35714285714283,
+    "median": 453.0
+   },
+   "prompt_tokens_mean": 392.2142857142857,
+   "decode_tps_median": 34.445,
+   "subsets": {
+    "gold=yes": {
+     "n": 9,
+     "correct": 7,
+     "acc": 0.7777777777777778,
+     "ci95": [
+      0.4525889666922117,
+      0.9367748934594303
+     ]
+    },
+    "gold=no": {
+     "n": 5,
+     "correct": 3,
+     "acc": 0.6,
+     "ci95": [
+      0.23072427940911855,
+      0.8823792268590028
+     ]
+    },
+    "gold=maybe": {
+     "n": 0,
+     "correct": 0,
+     "acc": null,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "macro_f1": 0.5092592592592592
+   },
+   "server_timings": {
+    "n": 14,
+    "prefill_tps_median": 784.0151607914195,
+    "decode_tps_median": 34.36452563676204,
+    "draft_acceptance": null,
+    "draft_tokens": 0
+   },
+   "pred_distribution": {
+    "maybe": 2,
+    "no": 3,
+    "yes": 9
+   },
+   "gold_distribution": {
+    "no": 5,
+    "yes": 9
+   },
+   "confusion": {
+    "no": {
+     "no": 3,
+     "yes": 2
+    },
+    "yes": {
+     "maybe": 2,
+     "yes": 7
+    }
+   }
+  }
+ },
+ "overall": {
+  "n": 814,
+  "correct": 750,
+  "acc": 0.9213759213759214,
+  "ci95": [
+   0.9008444898047742,
+   0.9379488882398673
+  ],
+  "wall_s": 4873.766733407974,
+  "completion_tokens": 685451,
+  "throughput_tok_s": 140.64091235665262,
+  "questions_per_hour": 601.2597976659671,
+  "decode_tps_median": 36.29,
+  "latency_s_median": 14.718499999999999,
+  "concurrency": 4
+ },
+ "resources": {
+  "samples": 4873,
+  "baseline_samples": 15,
+  "gpu_mem_used_mib": {
+   "mean": 23153.00164169916,
+   "peak": 23157.0,
+   "baseline": 23153.0
+  },
+  "gpu_util_pct_mean": 81.29468499897393,
+  "gpu_power_w": {
+   "mean": 243.70572953006362,
+   "peak": 324.61,
+   "baseline_idle": 79.19200000000001
+  },
+  "gpu_energy_wh": 329.8818318938114,
+  "gpu_energy_wh_above_idle": 222.69392004768866,
+  "server_rss_mib": {
+   "mean": 25507.38850810589,
+   "peak": 26968.1
+  },
+  "ram_used_mib": {
+   "mean": 29982.575661809973,
+   "peak": 32125.5,
+   "baseline": 15885.72
+  },
+  "cpu_pct_mean": 9.592222450235994,
+  "gpu_temp_c_peak": 66.0,
+  "external_load": {
+   "samples": 4872,
+   "share_with_other_requests": 0.0,
+   "mean_other_requests": 0.0
+  },
+  "gpu_energy_wh_per_question": 0.40526023574178305,
+  "gpu_energy_wh_per_correct": 0.43984244252508187
+ },
+ "manifest": {
+  "medbench_version": "0.1.0",
+  "git_rev": "ed1ce39abae1304a0e20f0cf2a410a12afcaa0bf",
+  "prompt_version": "v1",
+  "host": {
+   "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+   "python": "3.12.14",
+   "kernel": "5.15.0-190-generic",
+   "cpu": "13th Gen Intel(R) Core(TM) i7-13700",
+   "logical_cpus": 12,
+   "ram_gib": 54.9,
+   "swap_gib": 16.0,
+   "os": "Ubuntu 22.04.4 LTS",
+   "virtualization": "kvm",
+   "gpu": "NVIDIA GeForce RTX 4090, 24564 MiB, 570.211.01",
+   "gpu_pcie": "Gen4 x16",
+   "cuda_driver_api": "12.8",
+   "disks": [
+    "QEMU HARDDISK 1T 0 disk"
+   ]
+  },
+  "server": {
+   "/props": {
+    "default_generation_settings": {
+     "params": {
+      "seed": 4294967295,
+      "temperature": 1.0,
+      "dynatemp_range": 0.0,
+      "dynatemp_exponent": 1.0,
+      "top_k": 0,
+      "top_p": 1.0,
+      "min_p": 0.0,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "xtc_threshold": 0.10000000149011612,
+      "typical_p": 1.0,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "penalize_prompt": true,
+      "dry_multiplier": 0.0,
+      "dry_base": 1.75,
+      "dry_allowed_length": 2,
+      "dry_penalty_last_n": 64,
+      "mirostat": 0,
+      "mirostat_tau": 5.0,
+      "mirostat_eta": 0.10000000149011612,
+      "adaptive_target": -1.0,
+      "adaptive_decay": 0.8999999761581421,
+      "max_tokens": -1,
+      "n_predict": -1,
+      "n_keep": 0,
+      "n_discard": 0,
+      "ignore_eos": false,
+      "stream": false,
+      "n_probs": 0,
+      "min_keep": 0,
+      "chat_format": "Content-only",
+      "reasoning_format": "none",
+      "reasoning_in_content": false,
+      "generation_prompt": "",
+      "samplers": [
+       "penalties",
+       "dry",
+       "top_n_sigma",
+       "top_k",
+       "typ_p",
+       "top_p",
+       "min_p",
+       "xtc",
+       "temperature"
+      ],
+      "speculative.types": "none",
+      "timings_per_token": false,
+      "post_sampling_probs": false,
+      "backend_sampling": false,
+      "lora": []
+     },
+     "n_ctx": 131072
+    },
+    "total_slots": 4,
+    "model_alias": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+    "model_ftype": "Q3_K - Medium",
+    "model_path": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+    "modalities": {
+     "vision": false,
+     "video": false,
+     "audio": false
+    },
+    "media_marker": "<__media_vWKOezk4sR1cHCVCnvTLB47pZ9gwZMGG__>",
+    "endpoint_slots": true,
+    "endpoint_props": false,
+    "endpoint_metrics": false,
+    "ui": true,
+    "ui_settings": {},
+    "chat_template_caps": {
+     "supports_object_arguments": true,
+     "supports_parallel_tool_calls": true,
+     "supports_preserve_reasoning": true,
+     "supports_reasoning_effort": true,
+     "supports_string_content": true,
+     "supports_system_role": true,
+     "supports_tool_calls": true,
+     "supports_tools": true,
+     "supports_typed_content": true,
+     "reasoning_effort_levels": [
+      "none",
+      "minimal",
+      "low",
+      "medium",
+      "high",
+      "max"
+     ],
+     "reasoning_effort_rejected": []
+    },
+    "bos_token": "",
+    "eos_token": "<|content_model_end_sampling|>",
+    "build_info": "b12631-8ce00e057",
+    "is_sleeping": false,
+    "cors_proxy_enabled": false
+   },
+   "/v1/models": {
+    "models": [
+     {
+      "name": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+      "model": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+      "modified_at": "",
+      "size": "",
+      "digest": "",
+      "type": "model",
+      "description": "",
+      "tags": [
+       ""
+      ],
+      "capabilities": [
+       "completion"
+      ],
+      "parameters": "",
+      "details": {
+       "parent_model": "",
+       "format": "gguf",
+       "family": "",
+       "families": [
+        ""
+       ],
+       "parameter_size": "",
+       "quantization_level": ""
+      }
+     }
+    ],
+    "object": "list",
+    "data": [
+     {
+      "id": "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf",
+      "aliases": [
+       "/home/eric/inkling/models/Inkling-2-Mini-UD-Q3_K_XL.gguf"
+      ],
+      "tags": [],
+      "object": "model",
+      "architecture": {
+       "input_modalities": [
+        "text"
+       ],
+       "output_modalities": [
+        "text"
+       ]
+      },
+      "created": 1795441863,
+      "owned_by": "llamacpp",
+      "meta": {
+       "vocab_type": 2,
+       "n_vocab": 200058,
+       "n_ctx": 131072,
+       "n_ctx_train": 1048576,
+       "n_embd": 2304,
+       "n_params": 26070390272,
+       "size": 13619799296,
+       "ftype": "Q3_K - Medium"
+      }
+     }
+    ]
+   }
+  },
+  "datasets": {
+   "medqa_usmle": {
+    "n_items": 400,
+    "sample": 400,
+    "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+    "sha256": "b50b49fad2642c10ed343c6174d5ab0cb8efad434e7b66465ac471094eb57deb",
+    "items_sha256": "7e146f7c56c095543c08cdcbffe9005e4633d9e1921f034e53d5dc160635e59a"
+   },
+   "medqa_twmle": {
+    "n_items": 400,
+    "sample": 400,
+    "revision": "484a6c066fe8e75c83edea0c88b5169316714fcd",
+    "sha256": "9756921fcff39ee482d8e06488b4ff32c26c9b966ac4c67c07f854da583f34b0",
+    "items_sha256": "1c1b3492a0f1a52bdc4328d7a0c8f22ccb0d2569ab56832adc43f2c41ea9f440"
+   },
+   "pubmedqa": {
+    "n_items": 400,
+    "sample": 400,
+    "revision": "9001f2853fb87cab8d220904e0de81ac6973b318",
+    "sha256": "3d56bd1abc11884579ecc3aab9dd3cdfce8b7cf54715daeca93b8022b7be231c",
+    "items_sha256": "984471e93d38db10081104de19762fff197446ab7379b2e05005f4be163011a1"
+   }
+  },
+  "sessions": [
+   {
+    "baseline_start": 1795441863.4731953,
+    "todo": 1200,
+    "git_rev": "ed1ce39abae1304a0e20f0cf2a410a12afcaa0bf",
+    "base_url": "http://127.0.0.1:8091",
+    "concurrency": 4,
+    "sample": 400,
+    "start": 1795441878.4884467,
+    "end": 1795446752.2551801
+   }
+  ]
+ }
+}

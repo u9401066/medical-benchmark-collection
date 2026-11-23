@@ -1,0 +1,32 @@
+{
+ "label": "Inkling 2 Mini UD-Q3_K_XL, 4 slots, ctx 65536, -ub 128, after stress",
+ "url": "http://127.0.0.1:8091",
+ "request": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "min_p": 0.0,
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795440004.5011032,
+ "gpu_mem_idle_mib": 22917.0,
+ "levels": [
+  {
+   "concurrency": 4,
+   "requests": 16,
+   "wall_s": 81.0,
+   "completion_tokens": 11683,
+   "aggregate_tok_s": 144.2,
+   "decode_tps_median": 38.6,
+   "ttft_s_median": 0.29,
+   "latency_s_median": 16.4,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 22917.0
+  }
+ ],
+ "prefill": [],
+ "gpu_mem_after_mib": 22917.0
+}
