@@ -2,8 +2,8 @@
 
 可重現的醫學問答評測流程，適用於任何 OpenAI 相容（`/v1/chat/completions` 串流）的本地 LLM 伺服器（llama.cpp、Strata、vLLM…）。
 
-- **固定資料**：3 個公開題庫共 3,686 題，從 Hugging Face 固定 revision 下載並比對 SHA-256。
-- **同一協定**：零樣本、單一 user 訊息、思考開啟、相同取樣參數、逐題固定 seed、只評分最終回答。
+- **固定資料**：14 個題庫。8 個公開學術題庫（英文、繁體／簡體中文）從 Hugging Face 固定 revision 下載並比對 SHA-256；另有自建的台灣醫事人員國考繁體中文題庫 **twmed**（2024–2026，32,528 題，依職類分 6 組，見 [datasets/twmed](datasets/twmed/README.md)）。題庫組：`@core`（原本 3 個，3,686 題）、`@academic`、`@zh-tw`、`@all`。
+- **同一協定**：零樣本、單一 user 訊息、思考開啟、逐題固定 seed、只評分最終回答（提示詞 v1.1；原 3 個題庫的提示詞與 v1 逐字相同）。
 - **可續跑**：每題完成就寫入 `predictions.jsonl`；中斷後重跑同一指令會跳過已完成題、重試失敗題。
 - **完整紀錄**：設定、程式 git 版本、伺服器 `/props`、資料雜湊、主機資訊、執行時段寫進 `manifest.json`；完整思考與回答在 `raw.jsonl`。
 - **統計**：Wilson 95% CI、McNemar 精確檢定、配對 bootstrap 差異 CI、子集分析、PubMedQA macro-F1。
@@ -53,23 +53,55 @@
 
 ## 資料集
 
+`medbench datasets` 列出全部題庫與題庫組。`--datasets` 可混用名稱與 `@組名`，例如 `--datasets @core,twmed_md`。
+
 | 名稱 | 內容 | 題數 | 來源（固定 revision） | 授權 |
 |---|---|---:|---|---|
+| **@core** | | **3,686** | | |
 | `medqa_usmle` | MedQA 美國醫師執照考試，英文，4 選 1（Step 1：679；Step 2&3：594） | 1,273 | `bigbio/med_qa@484a6c0` `med_qa_en_4options_source/test` | MIT |
 | `medqa_twmle` | MedQA 台灣醫師國考，繁體中文，4 選 1（24 題為「承上題」） | 1,413 | `bigbio/med_qa@484a6c0` `med_qa_tw_source/test` | MIT |
 | `pubmedqa` | PubMedQA-L 專家標註，英文摘要閱讀，yes/no/maybe（552/338/110） | 1,000 | `qiaojin/PubMedQA@9001f28` `pqa_labeled` | MIT |
-| `medmcqa`（選用） | MedMCQA validation 單選題，英文 | 2,816 | `openlifescienceai/medmcqa` | Apache-2.0 |
+| **@academic**（= @core 加上下列） | | **14,834** | | |
+| `medmcqa` | MedMCQA validation，印度 AIIMS／NEET-PG 入學考，英文，4 選 1（另報 single／multi 子集） | 4,183 | `openlifescienceai/medmcqa@91c6572` | Apache-2.0 |
+| `mmlu_med` | MMLU 醫學 6 科 test：解剖、臨床知識、大學生物、大學醫學、醫學遺傳、專業醫學（各科子集） | 1,089 | `cais/mmlu@c30699e`（6 檔） | MIT |
+| `medxpertqa` | MedXpertQA Text test，專家級醫學推理，英文，**10 選 1**（Reasoning／Understanding、診斷／治療／基礎科學子集） | 2,450 | `TsinghuaC3I/MedXpertQA@7e7c465` `Text/test.jsonl` | MIT |
+| `medqa_mcmle` | MedQA 中國大陸醫師資格考，**簡體中文**，4 選 1 | 3,426 | `bigbio/med_qa@484a6c0` `med_qa_zh_4options_source/test` | MIT |
+| **@zh-tw**（繁體中文） | | **38,092** | | |
+| `medqa_twmle` | 同上 | 1,413 | | |
+| `tmmlu_med` | TMMLU+ 醫學 8 科 test：基礎醫學、藥理、藥學、臨床心理、牙醫、中醫臨床、驗光、職能治療（各科子集） | 4,151 | `ikala/tmmluplus@639a64d`（8 檔） | MIT |
+| `twmed_md` | **自建**：考選部專技高考 2024–2026 醫師（一）（二） | 2,872 | [datasets/twmed](datasets/twmed/README.md) | 不受著作權保護（著作權法 §9 I ⑤） |
+| `twmed_dent` | 自建：牙醫師（一）（二） | 2,645 | 同上 | 同上 |
+| `twmed_tcm` | 自建：中醫師（一）（二） | 2,821 | 同上 | 同上 |
+| `twmed_rx` | 自建：藥師（一）（二） | 2,518 | 同上 | 同上 |
+| `twmed_rn` | 自建：護理師、助產師 | 3,072 | 同上 | 同上 |
+| `twmed_allied` | 自建：醫檢、放射、物理／職能／呼吸／語言治療、營養、心理、聽力、驗光、牙體技術、公衛、法醫 | 18,600 | 同上 | 同上 |
 
-引用：Jin et al., *What Disease does this Patient Have?*（MedQA），Applied Sciences 2021；Jin et al., *PubMedQA*，EMNLP 2019。
+- `@all` 是全部 14 個題庫（51,513 題，`medqa_twmle` 只算一次）。twmed 各組都另報年份與職類子集。
+  2026 年的題目在多數模型的訓練截止日之後，可以和 2024 年的題目比較，作為資料汙染的參考。
+- 不收：HEAD-QA（只有自動轉換分支，且含圖片題）、MMLU-Pro health（改編自 MMLU 醫學題，和 `mmlu_med` 重複）。
+- twmed 的建置：`medbench twmed-build`（需要 `[build]` extra 的 PyMuPDF，會連考選部，每秒最多 1 個請求）。
+  篩選規則、排除統計、法律依據與引用方式見 [datasets/twmed/README.md](datasets/twmed/README.md)。
+  題庫檔在 repo 內，所以 `twmed_*` 要在 repo checkout（或 editable 安裝）中使用。
+
+引用：
+- Jin et al., *What Disease does this Patient Have?*（MedQA），Applied Sciences 2021。
+- Jin et al., *PubMedQA*，EMNLP 2019。
+- Pal et al., *MedMCQA*，CHIL 2022。
+- Hendrycks et al., *MMLU*，ICLR 2021。
+- Zuo et al., *MedXpertQA*，ICML 2025。
+- Tam et al., *TMMLU+*，2024。
+- 考選部考畢試題查詢平臺。
 
 ## 安裝與使用
 
 ```bash
 git clone https://github.com/u9401066/medqa-bench && cd medqa-bench
 uv venv && uv pip install -e '.[test,report]'   # 或 python -m venv .venv && pip install -e '.[test,report]'（report = Word 報告用的 python-docx、matplotlib）
-.venv/bin/pytest -q                         # 34 個測試（解析器、統計、假伺服器端到端、中斷續跑、Word 報告）
+.venv/bin/pytest -q                         # 42 個測試（解析器、題庫正規化、考題解析、統計、假伺服器端到端、中斷續跑、Word 報告）
 
-medbench prepare                                                    # 下載、驗證、正規化到 data/
+medbench datasets                                                   # 列出題庫與題庫組
+medbench prepare                                                    # 下載、驗證、正規化到 data/（預設 @core；--datasets @all 全部）
+medbench run --config configs/inkling2mini-iq4xs-prod-medium.json --datasets @academic,@zh-tw --sample 20   # 新題庫試跑
 medbench run --config configs/bonsai27b-pq2-medium.json --sample 10 --out results/pilot-bonsai   # 先試跑
 medbench run --config configs/bonsai27b-pq2-medium.json             # 全部 3,686 題，可中斷續跑
 medbench score results/bonsai27b-pq2-medium results/strata-flashnext-iq3s-medium
@@ -103,7 +135,7 @@ medbench docx results/bonsai27b-pq2-medium results/strata-flashnext-iq3s-medium 
 
 ## 作答與評分協定
 
-- 提示詞見 [medbench/prompts.py](medbench/prompts.py)（`PROMPT_VERSION = "v1"`），三種範本（英文 MCQ、繁中 MCQ、PubMedQA），都要求最後一行 `Answer: X`。
+- 提示詞見 [medbench/prompts.py](medbench/prompts.py)（`PROMPT_VERSION = "v1.1"`），四種範本（英文 MCQ、繁中 MCQ、簡中 MCQ、PubMedQA），都要求最後一行 `Answer: X`；選項可到 A–J。v1.1 只新增簡中範本與 D 以後的選項，原 3 個題庫的提示詞與 v1 逐字相同（測試鎖定）。
 - 只解析最終回答（`content`）的最後一個 `Answer: X`／`答案：X`；思考內容不評分。解析不到 = 答錯，另計「無答案」。
 - 逐題 seed = SHA-256(題目 ID) 前 31 bits；同一題在每個系統用同一 seed。
 - `finish_reason=length`（截斷）仍解析並另外計數；請求錯誤重試 2 次，續跑時再重試。
@@ -118,7 +150,8 @@ PARALLEL=1 STRATA_CONFIG=configs/engine/strata-iq3_s-32k.json scripts/strata_win
 
 ## 限制
 
-- 題庫公開多年，可能出現在模型訓練資料中（資料汙染），分數宜視為相對比較而非絕對能力。
+- 公開題庫多年前就已釋出，可能出現在模型訓練資料中（資料汙染），分數宜視為相對比較而非絕對能力；twmed 的 2026 年子集較新，可作為對照。
+- twmed 只收純文字題（有圖、表格、公式的題目已排除），所以偏向記憶與文字推理，不代表國考的完整難度分佈。
 - 單次取樣（非多次平均）；溫度 1.0 下單題結果有隨機性，配對檢定已反映此不確定性。
 - 共用伺服器上的速度會受其他使用者影響；`resources.csv` 的 `server_busy` 與 `inflight` 可量化此影響。
 - 零樣本、無外部工具（無檢索、無 MCP），測的是模型本身的醫學知識與推理。
