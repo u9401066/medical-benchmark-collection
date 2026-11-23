@@ -1,5 +1,6 @@
 """Figures for the Word report (PNG bytes): accuracy with 95% CI, per-question output length and latency, resource use
-over the run. Labels are in English so they render without CJK fonts."""
+over the run. Axis labels are in English; system labels come from the configs and may be Chinese, so a CJK font installed
+on the system (e.g. Noto Sans/Serif CJK) is used as a fallback."""
 from __future__ import annotations
 
 import csv
@@ -12,10 +13,16 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+from matplotlib import font_manager  # noqa: E402
 from matplotlib.patches import Patch  # noqa: E402
 
+_CJK = sorted({f.name for f in font_manager.fontManager.ttflist if "CJK" in f.name and (" TC" in f.name or " SC" in f.name)})
+plt.rcParams["font.family"] = ["DejaVu Sans"] + _CJK[:2]  # per-glyph fallback (matplotlib >= 3.6)
+
 COLORS = ["#4472C4", "#ED7D31", "#70AD47", "#7F7F7F"]
-SHORT = {"medqa_usmle": "MedQA-USMLE", "medqa_twmle": "MedQA-TWMLE", "pubmedqa": "PubMedQA", "medmcqa": "MedMCQA"}
+SHORT = {"medqa_usmle": "MedQA-USMLE", "medqa_twmle": "MedQA-TWMLE", "pubmedqa": "PubMedQA", "medmcqa": "MedMCQA", "mmlu_med": "MMLU-Med",
+         "medxpertqa": "MedXpertQA", "medqa_mcmle": "MedQA-MCMLE", "tmmlu_med": "TMMLU+ Med",
+         **{"twmed_" + k: "twmed-" + k for k in ("md", "dent", "tcm", "rx", "rn", "allied")}}
 
 
 def _png(fig) -> bytes:
@@ -29,7 +36,8 @@ def accuracy(S: List[Dict[str, Any]], names: List[str], majority: Dict[str, floa
     groups = names + ["ALL"]
     k = len(S)
     w = 0.8 / k
-    fig, ax = plt.subplots(figsize=(10, 4.2))
+    many = len(groups) > 6
+    fig, ax = plt.subplots(figsize=(max(10, 0.85 * len(groups)), 4.2))
     for si, s in enumerate(S):
         accs, lo, hi = [], [], []
         for g in groups:
@@ -47,7 +55,7 @@ def accuracy(S: List[Dict[str, Any]], names: List[str], majority: Dict[str, floa
             ax.hlines(100 * majority[g], i - 0.45, i + 0.45, colors="black", linestyles="dashed", linewidth=1)
     ax.set_xticks(range(len(groups)))
     ax.set_xticklabels(["%s\n(n=%d)" % (SHORT.get(g, g), S[0]["datasets"][g]["n"]) if g != "ALL" else "All\n(n=%d)" % S[0]["overall"]["n"]
-                        for g in groups])
+                        for g in groups], rotation=30 if many else 0, ha="right" if many else "center", fontsize=8 if many else None)
     ax.set_ylim(0, 105)
     ax.set_ylabel("Accuracy (%)")
     ax.grid(axis="y", alpha=0.3)
