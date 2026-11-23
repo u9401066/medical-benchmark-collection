@@ -1,0 +1,56 @@
+{
+ "label": "Inkling 2 Mini UD-IQ4_XS, ctx 131072, noopoff",
+ "url": "http://127.0.0.1:8091",
+ "request": {
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "top_k": 0,
+  "min_p": 0.0,
+  "chat_template_kwargs": {
+   "reasoning_effort": "medium"
+  }
+ },
+ "max_tokens": 1024,
+ "started": 1795449300.890327,
+ "gpu_mem_idle_mib": 22793.0,
+ "levels": [
+  {
+   "concurrency": 1,
+   "requests": 2,
+   "wall_s": 28.1,
+   "completion_tokens": 1241,
+   "aggregate_tok_s": 44.2,
+   "decode_tps_median": 46.2,
+   "ttft_s_median": 0.61,
+   "latency_s_median": 14.0,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 22861.0
+  },
+  {
+   "concurrency": 4,
+   "requests": 8,
+   "wall_s": 64.4,
+   "completion_tokens": 5546,
+   "aggregate_tok_s": 86.1,
+   "decode_tps_median": 26.3,
+   "ttft_s_median": 2.43,
+   "latency_s_median": 29.1,
+   "draft_acceptance": null,
+   "gpu_mem_peak_mib": 22997.0
+  }
+ ],
+ "prefill": [
+  {
+   "latency_s": 12.069321155548096,
+   "ttft_s": 10.961275100708008,
+   "completion_tokens": 64,
+   "prompt_tokens": 4941,
+   "decode_tps": 56.85684247943295,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 457.9071557793471,
+   "prompt_chars": 20000
+  }
+ ],
+ "gpu_mem_after_mib": 22999.0
+}

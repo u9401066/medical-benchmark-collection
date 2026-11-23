@@ -35,7 +35,7 @@ serve() {  # serve <tag> <ctx> <cpu layers>
   local tag=$1 ctx=$2 k=$3
   local slog="$LOGS/inkling-iq4xs-$tag-$(date -u +%Y%m%dT%H%M%SZ).log"
   log "starting $tag: ctx $ctx, -ub $UB, experts of layers [$(layers "$k")] on the CPU"
-  env LLM_IGNORE_PAUSE=1 INKLING_PORT=$PORT INKLING_HOST=127.0.0.1 INKLING_MODEL="$MODEL" INKLING_DRAFT=none INKLING_SLOTS=4 \
+  env LLM_IGNORE_PAUSE=1 INKLING_ENV_FILE=none INKLING_PORT=$PORT INKLING_HOST=127.0.0.1 INKLING_MODEL="$MODEL" INKLING_DRAFT=none INKLING_SLOTS=4 \
     INKLING_CTX="$ctx" INKLING_UBATCH=$UB INKLING_CPU_MOE_LAYERS="$(layers "$k")" \
     setsid bash "$PROD_REPO/scripts/start_inkling.sh" >> "$slog" 2>&1 < /dev/null &
   SRV=$!

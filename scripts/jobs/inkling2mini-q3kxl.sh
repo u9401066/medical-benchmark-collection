@@ -29,7 +29,7 @@ serve() {  # serve <tag> VAR=value ...
   local tag=$1; shift
   local slog="$LOGS/inkling-q3kxl-$tag-$(date -u +%Y%m%dT%H%M%SZ).log"
   log "starting $tag: $*"
-  env LLM_IGNORE_PAUSE=1 INKLING_PORT=$PORT INKLING_HOST=127.0.0.1 INKLING_MODEL="$Q3" INKLING_DRAFT=none "$@" \
+  env LLM_IGNORE_PAUSE=1 INKLING_ENV_FILE=none INKLING_PORT=$PORT INKLING_HOST=127.0.0.1 INKLING_MODEL="$Q3" INKLING_DRAFT=none "$@" \
     setsid bash "$PROD_REPO/scripts/start_inkling.sh" >> "$slog" 2>&1 < /dev/null &
   SRV=$!
   for _ in $(seq 180); do
