@@ -12,6 +12,23 @@
 
 最新報告：[reports/REPORT.docx](reports/REPORT.docx)（Word，給技術人員分享：含測試環境、模型檔案雜湊、參考基準、圖表）、[reports/REPORT.md](reports/REPORT.md)（Markdown）、數據 [reports/REPORT.json](reports/REPORT.json)、環境紀錄 [reports/environment.json](reports/environment.json)
 
+## 2026-11-23：Bonsai 27B vs Inkling 2 Mini
+
+報告：[reports/inkling2mini/REPORT.docx](reports/inkling2mini/REPORT.docx)（Word）、[REPORT.md](reports/inkling2mini/REPORT.md)、討論與部署
+[notes.md](reports/inkling2mini/notes.md)、環境 [environment.json](reports/inkling2mini/environment.json)。Inkling 每個題庫抽 400 題（`--sample 400`），
+比較只用兩邊都作答的 1,228 題（`medbench report` / `docx` 會自動限縮並註明）。
+
+| | Bonsai 27B PQ2_0 | Inkling 2 Mini UD-IQ4_XS |
+|---|---:|---:|
+| 醫學題（1,228 題） | 78.1% | **86.6%**（+8.6，p < 0.001） |
+| MedQA-TWMLE（繁中，400 題） | 79.2% | **94.5%** |
+| 第一次選對工具（[results/toolbench](results/toolbench/README.md)） | **98.1%**（held-out 52 題） | 92.3%（Q3_K_XL 合併 162 題 87.7% vs 93.8%，p = 0.002） |
+| 回答含簡體字（TWMLE 400 題） | 22.2% | **0.2%** |
+| 單請求生成 / prefill（同條件掃描） | **146 / 2,764 tok/s** | 81 / 2,375（65k 全 GPU）；部署的 131k（3 層專家在 CPU）56 / 393 |
+
+量測腳本：`scripts/gpu_window.sh` + `scripts/jobs/inkling2mini*.sh`（維護時段）、`slot_sweep.py`、`stress_long.py`、`slot_table.py`、
+`prefix_cache.py`、`zh_quality.py --common`、`toolbench_compare.py`；結果在 `results/slots/`、`results/toolbench/`。
+
 ## 結果摘要（2026-10-21，RTX 4090 KVM 虛擬機）
 
 零樣本、思考 effort medium、相同取樣參數與逐題 seed，3,686 題全部作答：

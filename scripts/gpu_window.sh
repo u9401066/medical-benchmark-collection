@@ -27,13 +27,13 @@ restore() {
   trap - EXIT INT TERM
   log "stopping test servers ($TEST_PATTERN)"
   # only llama-server processes: the shell that started this window may carry the pattern in its own command line
-  test_pids() { for p in $(pgrep -f "$TEST_PATTERN"); do [ "$(cat /proc/$p/comm 2>/dev/null)" = llama-server ] && echo "$p"; done; }
+  test_pids() { for p in $(pgrep -f -- "$TEST_PATTERN"); do [ "$(cat /proc/$p/comm 2>/dev/null)" = llama-server ] && echo "$p"; done; }
   for p in $(test_pids); do kill -TERM "$p"; done
   for _ in $(seq 30); do [ -z "$(test_pids)" ] && break; sleep 1; done
   for p in $(test_pids); do kill -9 "$p"; done
   log "restoring production"
   rm -f "$PAUSE"
-  if ! prod_systemd && ! pgrep -f "$PROD_PATTERN" >/dev/null; then
+  if ! prod_systemd && ! pgrep -f -- "$PROD_PATTERN" >/dev/null; then
     setsid nohup bash "$PROD_REPO/scripts/start_bonsai.sh" >> "$HOME/.local/share/bonsai-manual.log" 2>&1 < /dev/null &
   fi
   for _ in $(seq 120); do
@@ -48,12 +48,12 @@ trap 'exit 130' INT TERM
 
 log "pausing production ($PROD_PATTERN)"
 touch "$PAUSE"
-for p in $(pgrep -f "$PROD_PATTERN"); do
+for p in $(pgrep -f -- "$PROD_PATTERN"); do
   # SIGKILL: a clean exit would leave a systemd unit with Restart=on-failure stopped; this way it restarts and waits on the pause file
   [ "$(cat /proc/$p/comm 2>/dev/null)" = llama-server ] && kill -9 "$p"
 done
 before="$(gpu_used)"
-for _ in $(seq 60); do pgrep -f "$PROD_PATTERN" >/dev/null || break; sleep 1; done
+for _ in $(seq 60); do pgrep -f -- "$PROD_PATTERN" >/dev/null || break; sleep 1; done
 sleep 3
 log "GPU memory used: ${before} -> $(gpu_used) MiB"
 log "job: $JOB $*"

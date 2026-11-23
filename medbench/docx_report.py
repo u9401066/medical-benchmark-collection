@@ -204,7 +204,7 @@ def _summary(b: DocBuilder, c: Dict[str, Any]) -> None:
                 caption="主要結果（中括號為 95% 信賴區間）")
     if pair_row:
         b.merge_row(t, pair_row[0], 1, len(S), pair_row[1], size=9)
-    concl = _notes_section(c["notes"], "### 6.4")
+    concl = _notes_section(c["notes"], next((ln for ln in c["notes"].splitlines() if ln.startswith("### ") and "結論" in ln), "### 6.4"))
     if concl:
         b.heading("結論與建議", 2)
         b.markdown(concl)
@@ -228,8 +228,9 @@ def _methods(b: DocBuilder, c: Dict[str, Any]) -> None:
     S, names, labels, data_dir = c["S"], c["names"], c["labels"], c["data_dir"]
     b.heading("1. 測試方法與環境", 1)
     b.heading("1.1 基準測試題庫", 2)
-    b.para("三個公開題庫全部題目都納入（不抽樣）。資料從 Hugging Face 的固定 revision 下載，下載後比對 SHA-256，題數不符即中止，"
-           "所以任何人重跑都會拿到逐位元相同的題目。")
+    scope = ("三個公開題庫全部題目都納入（不抽樣）。" if c["only"] is None else
+             "有系統只跑了抽樣（每個題庫平均間隔取題，`--sample`），所以比較限於所有系統都作答的 %s 題（各題庫題數見下表）。" % _n(len(c["only"])))
+    b.para(scope + "資料從 Hugging Face 的固定 revision 下載，下載後比對 SHA-256，題數不符即中止，所以任何人重跑都會拿到逐位元相同的題目。")
     rows = []
     for n in names:
         src, info = SOURCES[n], DS_INFO.get(n, (n, "", "", None))

@@ -6,7 +6,7 @@ Traditional-only (tw2s changes them), and Latin letters. Characters used anywher
 (authentic Taiwanese text, e.g. 床 群 灶 台) and a few one-to-many characters (干 后 里 于 余 ...) are never counted as Simplified. Reported per run: mean Simplified share of the distinct-script characters, the share
 of answers with any Simplified-only character (>= 3), and the share of answers written mostly in English.
 
-  python scripts/zh_quality.py results/bonsai27b-pq2-medium results/inkling2mini-iq4xs-medium --out results/zh_quality.json
+  python scripts/zh_quality.py --common results/bonsai27b-pq2-medium results/inkling2mini-iq4xs-medium --out results/zh_quality.json
 """
 from __future__ import annotations
 
@@ -73,6 +73,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("runs", nargs="+")
     ap.add_argument("--dataset", default="medqa_twmle")
+    ap.add_argument("--common", action="store_true", help="only the items every run answered")
     ap.add_argument("--out")
     ap.add_argument("--data", default=str(Path(__file__).resolve().parents[1] / "data"))
     a = ap.parse_args()
@@ -80,13 +81,15 @@ def main() -> None:
         for line in f:
             it = json.loads(line)
             ALLOWED.update(HAN.findall(it["question"] + "".join((it.get("options") or {}).values())))
+    rows = {r: {row["id"]: row for row in raw_rows(Path(r)) if row["id"].startswith(a.dataset)} for r in a.runs}  # last try wins
+    keep = set.intersection(*(set(v) for v in rows.values())) if a.common else None
     res = {}
     for r in a.runs:
         run = Path(r)
         label = json.loads((run / "manifest.json").read_text())["config"].get("label", run.name)
         content, reasoning = [], []
-        for row in raw_rows(run):
-            if not row["id"].startswith(a.dataset):
+        for i, row in rows[r].items():
+            if keep is not None and i not in keep:
                 continue
             content.append(measure(row.get("content", "")))
             reasoning.append(measure(row.get("reasoning", "")))
