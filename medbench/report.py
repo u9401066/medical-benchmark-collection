@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional
 
 from .datasets import SOURCES, load
 from .prompts import PROMPT_VERSION, TEMPLATES
-from .score import compare, score_run
+from .score import common_items, compare, score_run
 
 DATASET_TITLES = {
     "medqa_usmle": "MedQA-USMLE（英文，4 選 1）",
@@ -39,8 +39,39 @@ def _ci(d: Dict[str, Any]) -> str:
     return "%s [%s–%s]" % (_p(d["acc"]), _p(d["ci95"][0]), _p(d["ci95"][1]))
 
 
+def _same_setup(S: List[Dict[str, Any]]) -> str:
+    """'same prompts, sampling and seeds' when every run sampled alike, otherwise say that sampling follows each model."""
+    def sampling(s):
+        return {k: v for k, v in (s["config"].get("request") or {}).items() if k in ("temperature", "top_p", "top_k", "min_p")}
+    if all(sampling(s) == sampling(S[0]) for s in S):
+        return "同一份題目、提示詞、取樣參數與逐題種子"
+    return "同一份題目、提示詞、思考強度與逐題種子；取樣參數各用模型作者的建議值（見 1.4）"
+
+
+def run_commands(S: List[Dict[str, Any]]) -> List[str]:
+    """Shell commands that rerun each system: Strata through its GPU window, a launched llama-server through its script,
+    otherwise straight against the configured server; a sampled run gets its --sample."""
+    cmds: List[str] = []
+    for s in S:
+        cfg, launch = s["config"], s["config"].get("launch") or {}
+        sample = {d.get("sample") for d in (s["manifest"].get("datasets") or {}).values()} - {None}
+        flag = " --sample %d" % sample.pop() if len(sample) == 1 else ""
+        if launch.get("engine_config"):
+            cmds.append("# %s 需要整張 GPU：暫停正式服務、啟動受測伺服器、跑完自動恢復" % s["label"])
+            cmds.append("PARALLEL=%s STRATA_CONFIG=%s scripts/strata_window.sh configs/%s.json" % (
+                launch.get("parallel", 1), launch["engine_config"], cfg["name"]))
+        elif launch.get("server_script"):
+            cmds.append("# %s：%s" % (s["label"], launch.get("note") or "以下列環境變數啟動受測伺服器"))
+            cmds.append("%s bash %s &" % (" ".join("%s=%s" % kv for kv in sorted((launch.get("env") or {}).items())), launch["server_script"]))
+            cmds.append("medbench run --config configs/%s.json%s   # 可中斷續跑" % (cfg["name"], flag))
+        else:
+            cmds.append("medbench run --config configs/%s.json%s   # 可中斷續跑" % (cfg["name"], flag))
+    return cmds
+
+
 def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes: Optional[Path] = None) -> Path:
-    S = [score_run(r, data_dir) for r in runs]
+    only = common_items(runs)
+    S = [score_run(r, data_dir, only) for r in runs]
     labels = [s["label"] for s in S]
     names = [n for n in S[0]["datasets"] if all(n in s["datasets"] for s in S)]
     L: List[str] = []
@@ -56,8 +87,11 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
     w("## 摘要")
     w("")
     tot = sum(S[0]["datasets"][n]["n"] for n in names)
-    w("以 %d 題公開醫學題庫（%s）在單張 RTX 4090 上做零樣本（zero-shot）評測，同一份題目、提示詞、取樣參數與逐題種子。" % (
-        tot, "、".join("%s %d 題" % (n, S[0]["datasets"][n]["n"]) for n in names)))
+    w("以 %d 題公開醫學題庫（%s）在單張 RTX 4090 上做零樣本（zero-shot）評測，%s。" % (
+        tot, "、".join("%s %d 題" % (n, S[0]["datasets"][n]["n"]) for n in names), _same_setup(S)))
+    if only is not None:
+        w("")
+        w("各系統作答的題目不完全相同（有抽樣執行），所有正確率與配對比較都限於**每個系統都作答的 %d 題**；吞吐與能耗仍是各自整次執行的數字。" % len(only))
     w("")
     for s in S:
         o = s["overall"]
@@ -66,7 +100,7 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
             s["label"], _ci(o), o["correct"], o["n"], _f(o["decode_tps_median"]),
             _f(o["latency_s_median"]), _f(o["questions_per_hour"], 0), _f(res.get("gpu_energy_wh_per_question"), 2)))
     if len(S) >= 2:
-        c = compare(runs[0], runs[1])
+        c = compare(runs[0], runs[1], only=only)
         if "ALL" in c:
             a = c["ALL"]
             w("- 配對比較（%s − %s）：差 %+.1f 個百分點，bootstrap 95%% CI [%+.1f, %+.1f]，McNemar 精確檢定 p = %s（不一致題 %d vs %d）。" % (
@@ -143,7 +177,7 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
     w("| 資料集 | n | 多數類別基準 | %s |" % " | ".join(labels))
     w("|---|---:|---:|%s|" % "|".join("---:" for _ in S))
     for n in names:
-        golds = [it["answer"] for it in load(data_dir, n)]
+        golds = [it["answer"] for it in load(data_dir, n) if only is None or it["id"] in only]
         top = max(set(golds), key=golds.count)
         w("| %s | %d | %s（%s） | %s |" % (n, S[0]["datasets"][n]["n"], _p(golds.count(top) / len(golds)), top,
                                          " | ".join(_ci(s["datasets"][n]) for s in S)))
@@ -166,7 +200,7 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
         w("### 2.2 配對比較")
         w("")
         for a_i, b_i in combinations(range(len(S)), 2):
-            c = compare(runs[a_i], runs[b_i])
+            c = compare(runs[a_i], runs[b_i], only=only)
             w("**%s（A） vs %s（B）**" % (labels[a_i], labels[b_i]))
             w("")
             w("| 資料集 | n | A | B | A − B（95% CI） | 都對 | 只有 A 對 | 只有 B 對 | 都錯 | McNemar p |")
@@ -280,16 +314,10 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
     w("git clone https://github.com/u9401066/medqa-bench && cd medqa-bench")
     w("uv venv && uv pip install -e '.[test]'")
     w("medbench prepare                       # 下載、驗證 SHA-256、正規化成 data/*.jsonl")
-    for s in S:
-        launch = s["config"].get("launch")
-        if launch:
-            w("# %s 需要整張 GPU：暫停正式服務、啟動受測伺服器、跑完自動恢復" % s["label"])
-            w("PARALLEL=%s STRATA_CONFIG=%s scripts/strata_window.sh configs/%s.json" % (
-                launch.get("parallel", 1), launch.get("engine_config", "<engine config>"), s["config"]["name"]))
-        else:
-            w("medbench run --config configs/%s.json   # 可中斷續跑" % s["config"]["name"])
-    w("medbench score %s" % " ".join("results/%s" % s["config"]["name"] for s in S))
-    w("medbench report %s --notes reports/notes.md" % " ".join("results/%s" % s["config"]["name"] for s in S))
+    for cmd in run_commands(S):
+        w(cmd)
+    w("medbench score %s" % " ".join("results/%s" % s["run"] for s in S))
+    w("medbench report %s --out %s%s" % (" ".join("results/%s" % s["run"] for s in S), out, " --notes %s" % notes if notes else ""))
     w("```")
     w("")
     w("每個 `results/<run>/` 內含 `manifest.json`（設定、git 版本、伺服器 /props、資料雜湊、主機資訊、執行時段）、`predictions.jsonl`（逐題答案與時間）、`raw.jsonl.gz`（完整思考與回答）、`resources.csv`（每秒資源）、`summary.json`。")

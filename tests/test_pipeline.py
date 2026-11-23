@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 from medbench.cli import main
-from medbench.score import compare, macro_f1, mcnemar_exact, score_run, wilson
+from medbench.score import common_items, compare, macro_f1, mcnemar_exact, score_run, wilson
 
 
 def test_wilson_known_values():
@@ -188,6 +188,31 @@ def test_session_without_end_is_closed_at_last_item():
     ok = [{"t_start": 10.0, "latency_s": 5.0}, {"t_start": 12.0, "latency_s": 9.0}, {"t_start": 105.0, "latency_s": 1.0}]
     out = _close_sessions([{"baseline_start": 0, "start": 5.0}, {"baseline_start": 90.0, "start": 100.0, "end": 110.0}], ok)
     assert out[0]["end"] == 21.0 and out[0]["end_inferred"] and out[1]["end"] == 110.0
+
+
+def test_sampled_run_is_compared_on_the_shared_items(tmp_path, fake_server):
+    data = _data(tmp_path)
+    runs = []
+    for name, extra in (("full", []), ("pilot", ["--sample", "2"])):
+        out = tmp_path / "results" / name
+        assert main(["--data", str(data), "run", "--config", str(_cfg(tmp_path, fake_server, name)), "--datasets", "medqa_usmle,pubmedqa",
+                     "--out", str(out), "--baseline-s", "0"] + extra) == 0
+        runs.append(out)
+    only = common_items(runs)
+    assert only is not None and len(only) == 4 and common_items([runs[0], runs[0]]) is None
+    whole = score_run(runs[0], data)
+    part = score_run(runs[0], data, only)
+    assert part["overall"]["n"] == 4 and part["restricted_to"] == 4 and whole["overall"]["n"] == 9
+    assert part["datasets"]["pubmedqa"]["missing_items"] == 0
+    assert part["overall"]["questions_per_hour"] == whole["overall"]["questions_per_hour"]  # run-level, not per subset
+    assert json.loads((runs[0] / "summary.json").read_text())["overall"]["n"] == 9  # restricted scoring leaves summary.json alone
+    assert compare(runs[0], runs[1], only=only)["ALL"]["n"] == 4
+
+    rep = tmp_path / "REPORT.md"
+    assert main(["--data", str(data), "report", str(runs[0]), str(runs[1]), "--out", str(rep)]) == 0
+    text = rep.read_text()
+    assert "每個系統都作答的 4 題" in text and "| **全部** | 4 |" in text
+    assert "medbench run --config configs/pilot.json --sample 2" in text and "medbench run --config configs/full.json   #" in text
 
 
 def test_docx_report(tmp_path, fake_server):

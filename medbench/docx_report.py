@@ -15,8 +15,8 @@ from . import docx_figures as figs
 from .datasets import SOURCES, load
 from .docx_base import DocBuilder
 from .prompts import PROMPT_VERSION, TEMPLATES
-from .report import _ci, _f, _p, _pv
-from .score import compare, load_predictions, score_run
+from .report import _ci, _f, _p, _pv, _same_setup, run_commands
+from .score import common_items, compare, load_predictions, score_run
 
 REPO_URL = "https://github.com/u9401066/medqa-bench"
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,12 +59,15 @@ DS_INFO = {
 
 GLOSSARY = [
     ("零樣本（zero-shot）", "提示詞不附範例題，模型直接作答。"),
-    ("思考強度（reasoning effort）", "控制模型在回答前「思考」多長的設定；本評測兩邊都用 medium。"),
+    ("思考強度（reasoning effort）", "控制模型在回答前「思考」多長的設定；本評測各系統都用 medium。"),
     ("MoE（mixture of experts）", "每層有很多「專家」子網路、每個 token 只用其中少數幾個的模型架構；總參數大、每步計算量小。"),
-    ("專家快取 / 低 RAM 模式", "Strata 把常用的專家放 VRAM、其餘放系統 RAM，需要時經 PCIe 搬到 GPU。"),
-    ("MTP 推測解碼", "模型附帶的草稿頭一次預測多個 token，主模型一次驗證；「草稿接受率」越高越快。"),
-    ("PQ2_0（三元量化）", "PrismML 的權重格式，權重只取 −1 / 0 / +1 再乘縮放係數；Bonsai 27B 的權重檔約 7.1 GiB。"),
-    ("IQ3_S / GSQ-RCO", "IQ3_S 是 llama.cpp 的 i-quant 量化等級；本模型為 ISTA-DASLab 的 GSQ-RCO 重量化，各層專家混用 IQ2_S～IQ3_S 與 IQ4_NL。"),
+    ("專家快取 / 低 RAM 模式", "Strata 把常用的專家放 VRAM、其餘放系統 RAM，需要時經 PCIe 搬到 GPU。", "Strata"),
+    ("MTP 推測解碼", "模型附帶的草稿頭一次預測多個 token，主模型一次驗證；「草稿接受率」越高越快。", "Bonsai"),
+    ("PQ2_0（三元量化）", "PrismML 的權重格式，權重只取 −1 / 0 / +1 再乘縮放係數；Bonsai 27B 的權重檔約 7.1 GiB。", "Bonsai"),
+    ("IQ3_S / GSQ-RCO", "IQ3_S 是 llama.cpp 的 i-quant 量化等級；本模型為 ISTA-DASLab 的 GSQ-RCO 重量化，各層專家混用 IQ2_S～IQ3_S 與 IQ4_NL。", "Strata"),
+    ("迴圈層（looped layers）", "Inkling 2 Mini 24 層中的第 6–17 層每個 token 重複執行 3 次：26.2B 總參數、每 token 啟用 3.4B，計算量約等於 5.4B 的模型。", "Inkling"),
+    ("UD-Q3_K_XL / UD-IQ4_XS", "Unsloth Dynamic 量化：依各層重要性混用不同位元數；Inkling 2 Mini 的 Q3_K_XL 檔 12.7 GiB、IQ4_XS 檔 14.7 GiB。", "Inkling"),
+    ("slot / --kv-unified", "llama-server 同時處理請求的槽位數；unified KV 讓所有 slot 共用一個 context 池（單一長請求可用到整個池），而不是平均切分。", "Inkling"),
     ("TTFT", "從送出請求到收到第一個 token（思考或回答）的時間。"),
     ("prefill / 解碼", "prefill：讀入提示詞；解碼：逐 token 產生輸出。速度單位 tok/s。"),
     ("Wilson 信賴區間", "比例（正確率）的 95% 信賴區間，在樣本數有限或接近 0%/100% 時比常態近似準確。"),
@@ -95,20 +98,21 @@ def _n(x: Optional[float], d: int = 0) -> str:
 
 def write_docx(runs: List[Path], data_dir: Path, out: Path, title: str, notes: Optional[Path] = None,
                env: Optional[Path] = None, repo_url: str = REPO_URL) -> Path:
-    S = [score_run(r, data_dir) for r in runs]
-    preds = [load_predictions(r) for r in runs]
+    only = common_items(runs)
+    S = [score_run(r, data_dir, only) for r in runs]
+    preds = [{i: x for i, x in load_predictions(r).items() if only is None or i in only} for r in runs]
     names = [n for n in S[0]["datasets"] if all(n in s["datasets"] for s in S)]
     majority, majority_label = {}, {}
     for n in names:
-        golds = [it["answer"] for it in load(data_dir, n)]
+        golds = [it["answer"] for it in load(data_dir, n) if only is None or it["id"] in only]
         majority_label[n] = max(sorted(set(golds)), key=golds.count)
         majority[n] = golds.count(majority_label[n]) / len(golds)
-    ctx = {"runs": runs, "S": S, "preds": preds, "names": names, "majority": majority, "majority_label": majority_label, "data_dir": data_dir,
+    ctx = {"runs": runs, "S": S, "preds": preds, "names": names, "majority": majority, "majority_label": majority_label, "data_dir": data_dir, "only": only,
            "labels": [s["label"] for s in S], "repo_url": repo_url, "title": title,
            "env": json.loads(env.read_text(encoding="utf-8")) if env and env.exists() else {},
-           "notes": notes.read_text(encoding="utf-8") if notes and notes.exists() else "",
+           "notes": notes.read_text(encoding="utf-8") if notes and notes.exists() else "", "notes_path": notes, "env_path": env, "out": out,
            "results_commit": _git("log", "-1", "--format=%H", "--", "results") or _git("rev-parse", "HEAD") or "unknown",
-           "pairs": {(i, j): compare(runs[i], runs[j]) for i in range(len(runs)) for j in range(i + 1, len(runs))}}
+           "pairs": {(i, j): compare(runs[i], runs[j], only=only) for i in range(len(runs)) for j in range(i + 1, len(runs))}}
     b = DocBuilder("%s — %s" % (title, " vs ".join(ctx["labels"])))
     _cover(b, ctx)
     _summary(b, ctx)
@@ -157,7 +161,7 @@ def _cover(b: DocBuilder, c: Dict[str, Any]) -> None:
         ("測試主機", _host_line(host)),
         ("程式、原始資料與結果", "[%s](%s)" % (c["repo_url"], c["repo_url"])),
         ("結果資料版本", "[commit %s](%s/tree/%s)（results/ 的最後一次修改）" % (c["results_commit"][:7], c["repo_url"], c["results_commit"])),
-        ("產生方式", "`medbench docx`（medbench %s，提示詞 %s）從 results/ 自動產生；數字與 reports/REPORT.md 相同" % (__version__, PROMPT_VERSION)),
+        ("產生方式", "`medbench docx`（medbench %s，提示詞 %s）從 results/ 自動產生；數字與 %s 相同" % (__version__, PROMPT_VERSION, c["out"].with_suffix(".md"))),
     ]
     b.table(["項目", "內容"], rows, align="ll", widths=[3.6, 13.4], size=9.5)
     b.page_break()
@@ -170,9 +174,12 @@ def _cover(b: DocBuilder, c: Dict[str, Any]) -> None:
 def _summary(b: DocBuilder, c: Dict[str, Any]) -> None:
     S, names, labels = c["S"], c["names"], c["labels"]
     b.heading("摘要", 1)
-    b.para("本報告在同一台 RTX 4090 主機上，用 %s 題公開醫學題庫比較 %s。兩邊使用同一份題目、提示詞、取樣參數、思考強度與逐題 seed，"
+    b.para("本報告在同一台 RTX 4090 主機上，用 %s 題公開醫學題庫比較 %s。各系統使用%s，"
            "評分只看最終回答。所有程式、設定、逐題輸出與每秒資源紀錄都在 [%s](%s)，可依第 8 節完整重現。"
-           % (_n(S[0]["overall"]["n"]), "與".join("**%s**" % lab for lab in labels), c["repo_url"], c["repo_url"]))
+           % (_n(S[0]["overall"]["n"]), "與".join("**%s**" % lab for lab in labels), _same_setup(S), c["repo_url"], c["repo_url"]))
+    if c["only"] is not None:
+        b.para("各系統作答的題目不完全相同（有抽樣執行），所有正確率與配對比較都限於每個系統都作答的 %s 題；吞吐與能耗仍是各自整次執行的數字。"
+               % _n(len(c["only"])))
     rows = [[DS_INFO.get(n, (n,))[0]] + [_ci(s["datasets"][n]) for s in S] for n in names]
     rows.append(["**整體**"] + ["**%s**" % _ci(s["overall"]) for s in S])
     pair_row = None
@@ -238,7 +245,7 @@ def _methods(b: DocBuilder, c: Dict[str, Any]) -> None:
             widths=[2.6, 7.4, 7.0], size=7.5, caption="資料來源與雜湊（下載時驗證）")
     rows = []
     for n in names:
-        golds = [it["answer"] for it in load(data_dir, n)]
+        golds = [it["answer"] for it in load(data_dir, n) if c["only"] is None or it["id"] in c["only"]]
         keys = sorted(set(golds), key=lambda k: (len(k), k)) if n != "pubmedqa" else ["yes", "no", "maybe"]
         rows.append([DS_INFO.get(n, (n,))[0], "、".join("%s %d" % (k, golds.count(k)) for k in keys)])
     b.table(["題庫", "正確答案分佈"], rows, align="ll", widths=[3.0, 14.0], caption="正確答案分佈")
@@ -258,10 +265,10 @@ def _methods(b: DocBuilder, c: Dict[str, Any]) -> None:
     b.table(["題庫", "參考點", "正確率", "出處"], rows, align="llrl", widths=[2.6, 9.6, 2.0, 2.8], caption="參考基準與本評測結果")
 
     b.heading("1.3 作答協定", 2)
-    for t in ("單一 user 訊息、零樣本、不給範例題；模型思考（reasoning）開啟，兩邊的思考強度都是 **medium**。",
+    for t in ("單一 user 訊息、零樣本、不給範例題；模型思考（reasoning）開啟，各系統的思考強度都是 **medium**。",
               "提示詞要求最後一行以 `Answer: X` 作答（三種範本見附錄 B）。只解析最終回答（`content`）的最後一個 `Answer: X`／`答案：X`；"
               "思考內容不評分。解析不到視為答錯，並計入「無可解析答案」。",
-              "每題的 seed = SHA-256(題目 ID) 的前 31 bits，兩邊同一題用同一個 seed；兩個引擎的亂數實作不同，所以不會產生相同的取樣路徑。",
+              "每題的 seed = SHA-256(題目 ID) 的前 31 bits，各系統同一題用同一個 seed；不同引擎與模型的亂數實作不同，所以不會產生相同的取樣路徑。",
               "`max_tokens` = 16,384（思考＋回答）。達上限而截斷（`finish_reason=length`）的輸出照樣解析並另外計數。",
               "HTTP / 串流錯誤重試 2 次；中斷後重跑同一指令會跳過已完成的題目、重做失敗與進行中的題目，每題只保留一筆結果。"):
         b.bullet(t)
@@ -305,7 +312,7 @@ def _methods(b: DocBuilder, c: Dict[str, Any]) -> None:
 
     b.heading("1.5 統計與量測方法", 2)
     for t in ("正確率的 95%% 信賴區間：Wilson score interval %s。" % cite("wilson1927"),
-              "兩系統比較：只用兩邊都有作答的同一批題目；McNemar 精確檢定（雙尾，看「一邊對一邊錯」的題目）%s；"
+              "兩兩比較：只用雙方都有作答的同一批題目；McNemar 精確檢定（雙尾，看「一邊對一邊錯」的題目）%s；"
               "正確率差的 95%% 信賴區間用配對 bootstrap（10,000 次，seed 0）%s。" % (cite("mcnemar1947"), cite("efron1993")),
               "PubMedQA 另報 macro-F1（yes / no / maybe 各自 F1 的平均）。",
               "延遲：從送出請求到串流結束（含排隊與 prefill）。TTFT：到第一個思考或回答 token。"
@@ -420,8 +427,9 @@ def _speed(b: DocBuilder, c: Dict[str, Any]) -> None:
             ["題 / 小時"] + [_n(s["overall"]["questions_per_hour"]) for s in S]]
     b.table(["全部題目"] + labels, rows, align="l" + "r" * len(S), widths=[5.0] + [12.0 / len(S)] * len(S), size=9, caption="整體吞吐")
     b.figure(figs.speed(c["preds"], labels, names), "每題輸出 tokens（左）與每題延遲（右）的分佈")
-    b.note("單請求解碼以用戶端收到的串流計時（含網路與排隊）；伺服器端數字為 llama.cpp 格式的 timings。兩邊的併發設定不同（見第 5 節），"
-           "比較速度時請同時看單請求解碼速度與題 / 小時。")
+    differ = len({s["overall"]["concurrency"] for s in S}) > 1
+    b.note("單請求解碼以用戶端收到的串流計時（含網路與排隊）；伺服器端數字為 llama.cpp 格式的 timings。%s"
+           "比較速度時請同時看單請求解碼速度與題 / 小時。" % ("各系統的併發設定不同（見第 5 節），" if differ else ""))
 
 
 def _resources(b: DocBuilder, c: Dict[str, Any]) -> None:
@@ -466,22 +474,17 @@ def _reproduce(b: DocBuilder, c: Dict[str, Any]) -> None:
     S, repo = c["S"], c["repo_url"]
     b.heading("8. 重現步驟與資料檔案", 1)
     b.para("全部程式、設定、逐題結果與資源紀錄都在 [%s](%s)（公開）。需要 Python ≥ 3.10、能連 Hugging Face，以及一個 OpenAI 相容的"
-           "串流 API 伺服器（llama.cpp、Strata、vLLM 等）；要重跑本報告的兩個系統，需要 24 GB VRAM 的 NVIDIA GPU，Strata 另需約 55 GB RAM。" % (repo, repo))
+           "串流 API 伺服器（llama.cpp、Strata、vLLM 等）；要重跑本報告的系統，需要 24 GB VRAM 的 NVIDIA GPU%s。"
+           % (repo, repo, "，Strata 另需約 55 GB RAM" if any("Strata" in lab for lab in c["labels"]) else ""))
     cmds = ["git clone %s && cd medqa-bench" % repo,
             "uv venv && uv pip install -e '.[test,report]'   # 或 python -m venv .venv && pip install -e '.[test,report]'",
             "medbench prepare            # 下載、驗證 SHA-256、正規化成 data/*.jsonl"]
-    for s in S:
-        launch = s["config"].get("launch")
-        if launch:
-            cmds.append("# %s 需要整張 GPU：暫停正式服務、啟動受測伺服器、跑完自動恢復" % s["label"])
-            cmds.append("PARALLEL=%s STRATA_CONFIG=%s scripts/strata_window.sh configs/%s.json" % (
-                launch.get("parallel", 1), launch.get("engine_config", "<engine config>"), s["config"]["name"]))
-        else:
-            cmds.append("medbench run --config configs/%s.json   # 可中斷續跑" % s["config"]["name"])
-    paths = " ".join("results/%s" % s["config"]["name"] for s in S)
+    cmds += run_commands(S)
+    paths = " ".join("results/%s" % s["run"] for s in S)
+    notes = " --notes %s" % c["notes_path"] if c["notes_path"] else ""
     cmds += ["medbench score %s" % paths,
-             "medbench report %s --notes reports/notes.md" % paths,
-             "medbench docx %s --notes reports/notes.md --env reports/environment.json" % paths]
+             "medbench report %s --out %s%s" % (paths, c["out"].with_suffix(".md"), notes),
+             "medbench docx %s --out %s%s --env %s" % (paths, c["out"], notes, c["env_path"] or "reports/environment.json")]
     b.code("\n".join(cmds))
     b.para("驗證方式：在全新 clone 執行 `medbench prepare`，資料雜湊會與表 2 相同；不必重跑模型，直接執行 `medbench report` / `medbench docx`，"
            "就會從 repo 內的逐題結果重新算出本文件的所有數字（本文件發布前已用全新 clone 如此驗證）。")
@@ -497,9 +500,10 @@ def _reproduce(b: DocBuilder, c: Dict[str, Any]) -> None:
             size = p.stat().st_size if p.exists() else None
             rows.append(["`results/%s/%s`" % (run.name, fn), "—" if size is None else "%.1f MB" % (size / 1e6) if size >= 1e6
                          else "%.0f KB" % (size / 1e3), d])
-    rows.append(["`reports/REPORT.md` / `REPORT.json`", "", "Markdown 版報告與全部統計數字"])
-    rows.append(["`reports/environment.json`", "", "測試環境、模型檔案來源與雜湊、軟體版本、同機服務、啟動參數"])
-    rows.append(["`results/logs/*.log.gz`", "", "Strata 伺服器 log（試跑與正式執行）"])
+    md = c["out"].with_suffix(".md")
+    rows.append(["`%s` / `%s`" % (md, md.with_suffix(".json").name), "", "Markdown 版報告與全部統計數字"])
+    rows.append(["`%s`" % (c["env_path"] or "reports/environment.json"), "", "測試環境、模型檔案來源與雜湊、軟體版本、同機服務、啟動參數"])
+    rows.append(["`results/logs/*.log.gz`", "", "伺服器與評測窗口 log（試跑與正式執行）"])
     b.table(["檔案", "大小", "內容"], rows, align="lrl", widths=[6.6, 1.6, 8.8], size=8, caption="repo 內的結果檔案")
 
 
@@ -528,7 +532,8 @@ def _appendices(b: DocBuilder, c: Dict[str, Any]) -> None:
         b.code(v.strip(), size=8)
 
     b.heading("附錄 C：名詞解釋", 1)
-    b.table(["名詞", "說明"], GLOSSARY, align="ll", widths=[4.4, 12.6], size=8.5)
+    systems = " ".join(c["labels"])
+    b.table(["名詞", "說明"], [g[:2] for g in GLOSSARY if len(g) < 3 or g[2] in systems], align="ll", widths=[4.4, 12.6], size=8.5)
 
     b.heading("附錄 D：參考文獻與連結", 1)
     for i, key in enumerate(REF_ORDER):

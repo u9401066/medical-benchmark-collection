@@ -7,7 +7,7 @@ import math
 import random
 import statistics
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 from .datasets import load
 
@@ -182,11 +182,24 @@ def _close_sessions(sessions: List[Dict[str, Any]], ok: List[Dict[str, Any]]) ->
     return out
 
 
-def score_run(run: Path, data_dir: Path) -> Dict[str, Any]:
+def common_items(runs: List[Path]) -> Optional[Set[str]]:
+    """Items every run answered, or None when all runs answered the same items (then nothing needs restricting)."""
+    sets = [set(load_predictions(r)) for r in runs]
+    if all(s == sets[0] for s in sets[1:]):
+        return None
+    return set.intersection(*sets)
+
+
+def score_run(run: Path, data_dir: Path, only: Optional[Set[str]] = None) -> Dict[str, Any]:
+    """Score a run (writes <run>/summary.json). With ``only``, item statistics cover just those items (a comparison with a
+    sampled run); run-level throughput and energy still describe the whole run, and summary.json is not written."""
     manifest = json.loads((run / "manifest.json").read_text())
-    preds = load_predictions(run)
+    every = load_predictions(run)
+    preds = every if only is None else {i: r for i, r in every.items() if i in only}
     result: Dict[str, Any] = {"run": run.name, "label": manifest["config"].get("label", manifest["config"]["name"]),
                               "config": manifest["config"], "datasets": {}}
+    if only is not None:
+        result["restricted_to"] = len(preds)
     all_rows: List[Dict[str, Any]] = []
     for name, dinfo in manifest["datasets"].items():
         items = {it["id"]: it for it in load(data_dir, name)}
@@ -195,9 +208,10 @@ def score_run(run: Path, data_dir: Path) -> Dict[str, Any]:
         ok = [r for r in rows if not r.get("error")]
         lat = [r["latency_s"] for r in ok]
         d = _acc(rows)
+        expected = dinfo["n_items"] if only is None else sum(1 for i in only if i in items)
         d.update({
-            "expected_items": dinfo["n_items"],
-            "missing_items": dinfo["n_items"] - len(rows),
+            "expected_items": expected,
+            "missing_items": expected - len(rows),
             "errors": sum(1 for r in rows if r.get("error")),
             "no_answer": sum(1 for r in ok if r.get("pred") is None),
             "truncated": sum(1 for r in ok if r.get("finish_reason") == "length"),
@@ -215,30 +229,36 @@ def score_run(run: Path, data_dir: Path) -> Dict[str, Any]:
         })
         result["datasets"][name] = d
     ok = [r for r in all_rows if not r.get("error")]
-    sessions = _close_sessions(manifest.get("sessions", []), ok)
+    run_ok = [r for r in every.values() if not r.get("error")]  # the whole run, for run-level throughput and energy
+    sessions = _close_sessions(manifest.get("sessions", []), run_ok)
     busy = sum(max(0.0, s.get("end", s["start"]) - s["start"]) for s in sessions)
     tokens = sum(r["completion_tokens"] for r in ok)
+    run_tokens = sum(r["completion_tokens"] for r in run_ok)
     result["overall"] = {**_acc(all_rows), "wall_s": busy, "completion_tokens": tokens,
-                         "throughput_tok_s": tokens / busy if busy else None,
-                         "questions_per_hour": 3600 * len(ok) / busy if busy else None,
+                         "throughput_tok_s": run_tokens / busy if busy else None,
+                         "questions_per_hour": 3600 * len(run_ok) / busy if busy else None,
                          "decode_tps_median": _pct([r.get("decode_tps") for r in ok], 0.5),
                          "latency_s_median": _pct([r["latency_s"] for r in ok], 0.5),
                          "concurrency": manifest["config"].get("concurrency", 1)}
     res = _resources(run, sessions)
     if res:
-        res["gpu_energy_wh_per_question"] = res["gpu_energy_wh"] / len(ok) if ok else None
-        k = result["overall"]["correct"]
+        res["gpu_energy_wh_per_question"] = res["gpu_energy_wh"] / len(run_ok) if run_ok else None
+        k = sum(1 for r in run_ok if r.get("correct"))
         res["gpu_energy_wh_per_correct"] = res["gpu_energy_wh"] / k if k else None
         result["resources"] = res
     result["manifest"] = {k: manifest.get(k) for k in ("medbench_version", "git_rev", "prompt_version", "host", "server", "datasets")}
     result["manifest"]["sessions"] = sessions
-    (run / "summary.json").write_text(json.dumps(result, indent=1, ensure_ascii=False, default=float))
+    if only is None:
+        (run / "summary.json").write_text(json.dumps(result, indent=1, ensure_ascii=False, default=float))
     return result
 
 
-def compare(a: Path, b: Path, seed: int = 0, n_boot: int = 10000) -> Dict[str, Any]:
-    """Paired comparison on the items both runs answered: McNemar exact test and a bootstrap 95% CI of the accuracy difference."""
+def compare(a: Path, b: Path, seed: int = 0, n_boot: int = 10000, only: Optional[Set[str]] = None) -> Dict[str, Any]:
+    """Paired comparison on the items both runs answered (and in ``only``, if given): McNemar exact test and a bootstrap 95% CI
+    of the accuracy difference."""
     pa, pb = load_predictions(a), load_predictions(b)
+    if only is not None:
+        pa = {i: r for i, r in pa.items() if i in only}
     out: Dict[str, Any] = {}
     datasets = sorted({r["dataset"] for r in pa.values()} & {r["dataset"] for r in pb.values()})
     rng = random.Random(seed)
