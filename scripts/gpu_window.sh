@@ -10,6 +10,8 @@
 #   PROD_PATTERN  command-line pattern of the production llama-server (any model on :8081)       [llama-server .*--port 8081]
 #   PROD_URL      production health URL                                                         [http://127.0.0.1:8081/health]
 #   TEST_PATTERN  command-line pattern of the test servers, killed when the window ends         (required)
+#   PAUSE_CLEF=1  also pause the decision model (Clef-Flash on :8000, laya.service) for the whole GPU; needs a start_clef.sh
+#                 that waits on config/clef.pause. CLEF_PATTERN / CLEF_URL                [Clef-Flash.*--port 8000 / :8000/health]
 set -u
 JOB="${1:?usage: gpu_window.sh <job script> [args...]}"
 shift
@@ -18,6 +20,10 @@ PROD_REPO="${PROD_REPO:-$HOME/llmapi_server}"
 PROD_PATTERN="${PROD_PATTERN:-llama-server .*--port 8081}"
 PROD_URL="${PROD_URL:-http://127.0.0.1:8081/health}"
 PAUSE="$PROD_REPO/config/bonsai.pause"
+PAUSE_CLEF="${PAUSE_CLEF:-0}"
+CLEF_PAUSE="$PROD_REPO/config/clef.pause"
+CLEF_PATTERN="${CLEF_PATTERN:-Clef-Flash.*--port 8000}"
+CLEF_URL="${CLEF_URL:-http://127.0.0.1:8000/health}"
 JOB="$(realpath "$JOB")"
 log() { echo "[window $(date -u +%H:%M:%S)] $*"; }
 prod_systemd() { [ "$(systemctl show -p ActiveState --value bonsai 2>/dev/null)" = active ]; }
@@ -43,8 +49,27 @@ restore() {
   log "WARNING: production did not become healthy within 10 min; check $PROD_REPO"
   return 1
 }
-trap restore EXIT
+restore_clef() {
+  [ "$PAUSE_CLEF" = 1 ] || return 0
+  log "restoring the decision model"
+  rm -f "$CLEF_PAUSE"
+  for _ in $(seq 120); do
+    if curl -sf -m 3 "$CLEF_URL" >/dev/null; then log "decision model healthy again"; return 0; fi
+    sleep 5
+  done
+  log "WARNING: decision model ($CLEF_URL) did not become healthy within 10 min"
+  return 1
+}
+trap 'restore; restore_clef' EXIT
 trap 'exit 130' INT TERM
+
+if [ "$PAUSE_CLEF" = 1 ]; then
+  log "pausing the decision model ($CLEF_PATTERN)"
+  touch "$CLEF_PAUSE"
+  # SIGKILL for the same reason as below; its llama-server runs under a private ld.so, so match the command line only
+  for p in $(pgrep -f -- "$CLEF_PATTERN"); do grep -qa -- "llama-server" "/proc/$p/cmdline" 2>/dev/null && kill -9 "$p"; done
+  for _ in $(seq 30); do pgrep -f -- "$CLEF_PATTERN" >/dev/null || break; sleep 1; done
+fi
 
 log "pausing production ($PROD_PATTERN)"
 touch "$PAUSE"
