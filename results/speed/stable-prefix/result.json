@@ -1,0 +1,35 @@
+{
+ "url": "http://127.0.0.1:8081",
+ "started": "2026-11-24 17:54 (production :8081, router 0.13 still running; _stable_prefix applied by the script)",
+ "slot": 0,
+ "raw_A": {
+  "prompt_n": 17256,
+  "cache_n": 0,
+  "prompt_ms": 6903,
+  "wall_s": 7.21
+ },
+ "raw_B": {
+  "prompt_n": 17256,
+  "cache_n": 0,
+  "prompt_ms": 6766,
+  "wall_s": 15.98
+ },
+ "stable_A": {
+  "prompt_n": 17256,
+  "cache_n": 0,
+  "prompt_ms": 6650,
+  "wall_s": 8.85
+ },
+ "stable_B": {
+  "prompt_n": 542,
+  "cache_n": 16714,
+  "prompt_ms": 437,
+  "wall_s": 9.39
+ },
+ "stable_E": {
+  "prompt_n": 542,
+  "cache_n": 16714,
+  "prompt_ms": 430,
+  "wall_s": 2.64
+ }
+}

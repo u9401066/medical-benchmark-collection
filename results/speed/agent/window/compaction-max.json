@@ -1,0 +1,50 @@
+{
+ "label": "compaction-max",
+ "url": "http://127.0.0.1:8091",
+ "trace": "/home/eric/medqa-bench/results/speed/agent/trace-xhigh.jsonl",
+ "requests": "14",
+ "effort": "max",
+ "max_tokens": 16384,
+ "budget": "cap",
+ "parallel": 1,
+ "wall_s": 40.2,
+ "runs": [
+  {
+   "requests": 1,
+   "ok": 1,
+   "prompt_tokens": 43473,
+   "prefill_s": 20.7,
+   "prefill_tps": 2099.4,
+   "output_tokens": 1592,
+   "decode_s": 19.4,
+   "decode_tps": 82.13,
+   "wall_s": 40.2,
+   "recorded_prompt_tokens": 1454,
+   "recorded_output_tokens": 2121,
+   "modeled_task_s": 26.5,
+   "modeled_prefill_share": 0.026
+  }
+ ],
+ "rows": [
+  [
+   {
+    "i": 14,
+    "nonce": "11825f1876",
+    "max_tokens": 16384,
+    "prompt_n": 43473,
+    "cache_n": 0,
+    "prompt_ms": 20707.787,
+    "prefill_tps": 2099.4,
+    "predicted_n": 1592,
+    "predicted_ms": 19382.75,
+    "decode_tps": 82.08,
+    "draft_n": null,
+    "draft_n_accepted": null,
+    "wall_s": 40.16,
+    "ttft_s": 20.811,
+    "finish_reason": "stop",
+    "error": null
+   }
+  ]
+ ]
+}

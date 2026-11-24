@@ -1,0 +1,38 @@
+{
+ "note": "production after the router 0.14.0 restart (2026-11-24 17:59): agent_smoke.py through :8001 (DeepSeek Harness, effort max), task 'Reply with exactly the word OK. Do not use any tools.'; journal: slot selection lines",
+ "sessions": [
+  {
+   "case": "first session after restart (cold slot 0)",
+   "slot": 0,
+   "selection": "LRU, empty slot",
+   "wall_s": 17.7,
+   "prompt_n": 35346,
+   "cache_n": 0,
+   "prompt_ms": 13612.395,
+   "predicted_n": 172,
+   "predicted_per_second": 85.71431419080206
+  },
+  {
+   "case": "second, new session (slot 0)",
+   "slot": 0,
+   "selection": "LCP similarity f_sim 0.988, f_keep 0.983",
+   "wall_s": 3.5,
+   "prompt_n": 455,
+   "cache_n": 34887,
+   "prompt_ms": 343.463,
+   "predicted_n": 108,
+   "predicted_per_second": 85.09880522853362
+  },
+  {
+   "case": "new session while slot 0 is busy (cold slot 1)",
+   "slot": 1,
+   "selection": "LRU, empty slot (nothing in the RAM prompt cache yet)",
+   "wall_s": 17.8,
+   "prompt_n": 35338,
+   "cache_n": 0,
+   "prompt_ms": 14047.733,
+   "predicted_n": 116,
+   "predicted_per_second": 61.10820788590887
+  }
+ ]
+}
