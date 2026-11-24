@@ -393,6 +393,8 @@ PubMedQA 混淆矩陣（列 = 正確答案，欄 = 模型回答）：
 
 ### 6.8 加速研究：設定層面能做的有限，主要空間在 KV 量化、引擎更新或改用 Q3_K_XL
 
+> **2026-11-24 更新**：之後的 agent 模式加速研究已改用引擎 b12651、全部放 GPU、2 個 slot 各自 131k，並修正 agent 端（llama-mcp-router v0.13／v0.14）。同一個最高思考等級的任務從 1,278 s 仍未完成變成 285 s 完成。見 [AGENT-SPEED.md](AGENT-SPEED.md)；本節是 2026-11-23 的量測。
+
 量測方式：`scripts/jobs/inkling2mini-iq4xs-speed.sh`，維護時段 15:53–16:13 UTC。基準為部署設定：131k、`-ub 64`、3 層專家在 CPU。
 
 | 變體 | 單請求 tok/s | 4 併發合計 tok/s | prefill（5k tokens） | 結論 |

@@ -29,6 +29,15 @@
 量測腳本：`scripts/gpu_window.sh` + `scripts/jobs/inkling2mini*.sh`（維護時段）、`slot_sweep.py`、`stress_long.py`、`slot_table.py`、
 `prefix_cache.py`、`zh_quality.py --common`、`toolbench_compare.py`；結果在 `results/slots/`、`results/toolbench/`。
 
+**Agent 模式加速（2026-11-24）**：[reports/inkling2mini/AGENT-SPEED.md](reports/inkling2mini/AGENT-SPEED.md)。
+
+- 同一個最高思考等級的文獻任務，從 1,278 s 仍未完成，變成 285 s 完成。
+- 改動：
+  - 引擎 b12651、全 GPU、2 slot 各自 131k；
+  - llama-mcp-router v0.13／v0.14（`stable_prefix` 讓新 session 只重算幾百 tokens）；
+  - 決策模型移到 CPU。
+- 錄製與重播：`agent_capture_proxy.py`、`agent_replay.py`、`stable_prefix_check.py`、`scripts/jobs/inkling2mini-agent-speed{,2,3}.sh`；結果在 `results/speed/`。
+
 ## 結果摘要（2026-10-21，RTX 4090 KVM 虛擬機）
 
 零樣本、思考 effort medium、相同取樣參數與逐題 seed，3,686 題全部作答：
