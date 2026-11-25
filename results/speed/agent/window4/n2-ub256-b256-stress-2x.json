@@ -1,0 +1,32 @@
+{
+ "url": "http://127.0.0.1:8091",
+ "n": 2,
+ "chars": 491846,
+ "max_tokens": 256,
+ "started": 1795601234.9851787,
+ "results": [
+  {
+   "latency_s": 114.11769199371338,
+   "ttft_s": 110.97811579704285,
+   "completion_tokens": 227,
+   "prompt_tokens": 116848,
+   "decode_tps": 71.98423794895285,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 1058.8082305449448
+  },
+  {
+   "latency_s": 76.70527672767639,
+   "ttft_s": 53.952367305755615,
+   "completion_tokens": 185,
+   "prompt_tokens": 116848,
+   "decode_tps": 8.086877883965439,
+   "draft_n": null,
+   "draft_accepted": null,
+   "server_prefill_tps": 2197.4046335923495
+  }
+ ],
+ "wall_s": 114.1,
+ "ok": true,
+ "gpu_mem_peak_mib": 23112.0
+}
