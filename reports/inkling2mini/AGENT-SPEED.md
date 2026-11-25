@@ -1,6 +1,6 @@
 # Inkling 2 Mini 在 agent 模式（最高思考等級）的加速研究
 
-- 日期：2026-11-24（llm01，伺服器時鐘為台灣時間）
+- 日期：2026-11-24（llm01，伺服器時鐘為台灣時間）；2026-11-25 補充 `-b 256` 測試窗（第 5 節）與 router v0.15（9.3 節）
 - 範圍：Web UI 的 agent 模式（DeepSeek Harness + 41 個 PubMed MCP 工具），思考等級 xhigh（`reasoning_effort: max`），prefill 與 decode 都要變快
 - 相關報告：同一模型的醫學題評估見 [REPORT.md](REPORT.md)；agent 端的修正也寫在 [llama-mcp-router README](https://github.com/u9401066/llama-mcp-router#v013-long-agent-runs-at-high-reasoning-effort--what-made-them-slow)
 
@@ -37,7 +37,11 @@
 - ngram 投機解碼；
 - 4 個 slot 共用 KV 時加大或縮小 `-b`；
 - 3 個 slot（VRAM 不足）；
-- Clef 放 CPU（選工具要 20 s）。
+- Clef 放 CPU（選工具要 20 s）；
+- 2 個 slot 時把 `-b` 從 2048 降到 256（2026-11-25 第四個測試窗，第 5 節）。
+
+2026-11-25 的後續（router v0.15，9.3 節）：llama-server 重啟後由 router 先把共用前綴算進空的 slot（新 session 第一個請求 13 s → 0.4 s）；
+單一工具結果上限 16,000 字元（DSH 不截斷 MCP 結果，曾一次讀進 48k 字元而觸發壓縮）。同一任務的總時間現在主要取決於外部 API（約 280 s 在工具呼叫）。
 
 ## 1. 測試環境與版本
 
@@ -203,6 +207,24 @@
 
 3 個 slot 各自 131k（`-ub 128`）：啟動時 CUDA OOM（要多 2.5 GB），所以 **2 個 slot 是這張卡在 IQ4_XS + 131k 下的上限**。
 
+### 第四個測試窗（2026-11-25）：`-b 256` 沒有改善
+
+假設：`-b 2048` 時，一個 slot 的長 prefill 每一步最多 2,048 tokens（約 1 s），另一個 slot 的 decode 要等它（第 10 節第 2 點）；
+`-b 256` 每步最多 256 tokens，decode 應該更流暢。同一個測試窗內、已部署設定（b12651、2 slot 各自 131k、`-ub 256`）只改 `-b`：
+
+| `-b` | 單一 agent：實際 s／decode tok/s | 兩個 agent 同時：實際 s | 兩個同時：各自 decode tok/s | 兩個同時：合計 prefill／decode tok/s | GPU 峰值 MiB |
+|---:|---|---|---|---|---:|
+| **2048（已部署）** | **75.6／85.2** | **142.6／119.1** | 25.0／31.5 | **1,922／24.7** | 23,174 |
+| 256 | 78.5／85.4 | 146.6／133.5 | 32.4／23.4 | 1,869／21.8 | 23,112 |
+
+- 單一 agent 沒有差別；兩個同時時 `-b 256` 反而略慢（合計 decode 24.7 → 21.8 tok/s），各自 decode 的差異方向也不一致。
+- 推測：`-b 2048` 一次 `llama_decode` 呼叫裡本來就分成 8 個 256-token 的 micro-batch（`-ub 256`），`-b 256` 只是把它拆成 8 次呼叫，
+  多了每次呼叫的排程與取樣開銷，GPU 的總工作量不變。
+- `-b 256` 的 2 × 約 125k tokens 壓力測試通過（GPU 峰值 23,112 MiB）。
+- 結論：**維持 `-b 2048`**。已部署設定兩次量測一致（window2：116.5／138.6 s；window4：142.6／119.1 s，兩個 agent 誰先誰後不同）。
+
+結果檔：[results/speed/agent/window4](../../results/speed/agent/window4)（`summary.md`）；job：[scripts/jobs/inkling2mini-batch.sh](../../scripts/jobs/inkling2mini-batch.sh)。
+
 結果檔：[results/speed/agent/window](../../results/speed/agent/window)、[window2](../../results/speed/agent/window2)、[window3](../../results/speed/agent/window3)，各有 `summary.md`；伺服器紀錄在 [results/logs](../../results/logs)。
 
 ## 6. 投機解碼：MTP（DSpark）與 ngram 都沒有幫助
@@ -304,16 +326,41 @@ router（`:8001`）的 agent 設定：
   - 其餘約 59 s 是 PubMed 工具呼叫與 agent 本身。
 - 生成成為主要瓶頸。這是最高思考等級的本質：15,436 個輸出 tokens 中大部分是思考。
 
+### 9.3 router v0.15 與新的 DSH 設定（2026-11-25）
+
+DSH 設定（`agent.patch.yml`）的修正：模型名稱 `inkling`（系統提示原本寫著 bonsai）、停用用不到的功能（DeepSeek 網路搜尋、goal、workflow、subagent fork、
+MCP resources）讓它們的說明離開 prompt、`get_fulltext` 內文上限 6,000 字元。同一任務在測試 router 上跑（正式的 llama-server）：
+
+| | 9.2（v0.14） | 新 DSH 設定、v0.14 | 新 DSH 設定、v0.15 |
+|---|---:|---:|---:|
+| 總時間 | 285.3 s | 585.4 s | 598.9 s |
+| 模型請求 | 21 | 26 | 26 |
+| 重算 prompt tokens（時間） | 43,121（22.1 s） | 84,567（42.4 s） | 95,095（46.0 s） |
+| 生成 tokens（時間，速度） | 15,436（203.8 s，75.8 tok/s） | 20,556（268.9 s，76.4 tok/s） | 20,840（266.6 s，78.2 tok/s） |
+| 壓縮 | 0 | 1 | **0** |
+| 工具呼叫與 agent 本身 | 約 59 s | 約 274 s | 約 286 s（30 次工具呼叫共 279.6 s） |
+
+- **總時間變長不是模型變慢**：模型時間（prefill + 生成）約 226／311／313 s，prefill 與 decode 速度都相同；多出來的是外部 API：
+  Semantic Scholar 的速率限制（每次冷卻 30 s）與 Europe PMC 逾時。這兩次的 agent 也做了更多事（讀全文、核對、改稿），生成 tokens 多約 35%。
+- **新發現：DSH 不會截斷 MCP 工具結果**。v0.14 那次 agent 用 `read_session` 一次讀進 48,076 與 39,056 字元
+  （讀的是 JSON 跳脫過、含 metadata 的 `payload.json`），context 46k → 72k → 90k tokens 而觸發壓縮（生成 4,291 tokens、58 s）。
+  v0.15 加上 `tool_result_max_chars: 16000`（固定的頭 + 說明 + 尾，之後每個請求都一樣，不影響前綴快取）與 `read-fulltext` skill 後沒有壓縮；
+  DSH 自己的 tool-result pruner 在第 20 個請求免費修剪舊的工具結果（重算 46,457 tokens 中 34,588 用快取，20.8 s，沒有額外的摘要呼叫）。
+- **冷 slot 預熱**（v0.15 `warmup`）：2026-11-25 第四個測試窗結束、llama-server 重啟後，router 在 40 s 內依序把共用前綴算進兩個 slot
+  （各 34,592 tokens，13.2 s 與 13.4 s，背景優先序）；接著的新 session 第一個請求只重算 **509 tokens（34,588 沿用），0.4 s**。
+  - 上線時發現並修正兩個問題：DSH 的第一個請求是 system + 3 則 user 訊息（v0.15.1）；llama-server 讀 `max_completion_tokens` 優先於 `max_tokens`，
+    錄下的請求帶著 DSH 的 16,384，預熱會生成上千個思考 token（v0.15.2，在 b12651 上實測確認）。
+- 可再加快的選項（未變更，取捨在涵蓋率）：設定 `SEMANTIC_SCHOLAR_API_KEY`，或 `PUBMED_SEARCH_DISABLED_SOURCES=semantic_scholar`。
+
 ## 10. 限制與後續
 
 1. **最多 2 個 slot**：第 3 個同時的 agent 要排隊。
    - 需要更多人同時用時，可以改回 4 slot 共用（見第 8 節），但每個人都會變慢。
 2. **一個 slot 做長 prefill 時，另一個 slot 的 decode 幾乎停住**：
-   - 原因：`-b 2048`，每一步要等對方最多 2,048 tokens 的 prefill（約 1 s）才輪到一個 decode token。
-   - `stable_prefix` 之後新 session 只需重算幾百 tokens，這種長 prefill 大幅減少，但仍會出現在冷 slot、長工具結果與壓縮之後。
-   - 下一個實驗：`-b 256`（`INKLING_BATCH=256`），用 `agent_replay.py --parallel 2` 比較兩個 agent 同時的 decode 速度與總時間。
-   - 4 slot 共用時 `-b 512` 沒有改善總時間，因為 GPU 總工作量不變；改善的會是 decode 的流暢度。
-3. **冷 slot**：重啟後每個 slot 的第一個 agent session 要算一次完整前綴（約 14 s）。
+   - 原因：每一步要等對方的 prefill 才輪到一個 decode token。
+   - `stable_prefix` 之後新 session 只需重算幾百 tokens，這種長 prefill 大幅減少；v0.15 的預熱與工具結果上限又再減少冷 slot 與長工具結果的情況。
+   - `-b 256` 已實測沒有改善（第 5 節第四個測試窗），4 slot 共用時的 `-b 512` 也沒有。剩下的方向是 llama.cpp 上游的排程改進（例如 decode 優先的 batch 組成）。
+3. **冷 slot**：已由 router v0.15 的預熱處理（9.3 節）；預熱在 llama-server 重啟後約 30 s 內開始，期間來的第一個 session 仍要自己算前綴。
 4. **`stable_prefix` 依賴 DSH 系統提示的格式**（含 session 路徑的行）。升級 DSH 後要用 `scripts/stable_prefix_check.py` 重測一次。
 5. **決策模型**：
    - Laya 在 CPU 上選工具約 1.2 s，召回率 92.3%（Clef 在 GPU 時為 100%）；
@@ -340,6 +387,9 @@ git clone https://github.com/u9401066/medqa-bench && cd medqa-bench && uv sync
 
 # 3. GPU 測試窗（會暫停正式服務；job 內含每個設定的參數）
 env PAUSE_CLEF=1 "TEST_PATTERN=--port 809[14]" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-agent-speed2.sh
+
+# 3b. -b 2048 vs -b 256（第四個測試窗；job 結束時寫 window4/summary.md）
+env "TEST_PATTERN=--port 8091" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-batch.sh
 
 # 4. 新 session 是否沿用前一個 session 的 cache（約 30 s 的單一 slot 時間；需要 llama-mcp-router >= 0.14，用它的 Python 執行）
 ~/llama-mcp-router/.venv/bin/python scripts/stable_prefix_check.py --url http://127.0.0.1:8081 \
