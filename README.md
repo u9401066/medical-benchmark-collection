@@ -8,6 +8,8 @@
 
 首輪批次實驗以 Qwen2.5 1.5B 在 CPU 上回答兩組各 12 題的英文解剖學題。兩組都以獨立併發 2 最快。Test 組單題與雙題共用提示的總分均為 9/12，逐題比較卻有一題由對改錯、另一題由錯改對。[實測數字與逐題回覆](reports/anatomy-batch-pilot/README.md) · [後續實驗](docs/roadmap.md#批次作答的速度與題間干擾)
 
+第二輪將目標題位置與鄰題分開輪替。同一模型的六題單獨重跑時都維持原選項，搭配指定鄰題 B 並移至第二位時，有兩題改選。臺灣成人預防保健另有可直接複審的雙語題及來源檢索任務，可檢查模型是否引用詢問日已公布、已生效且適用於該族群的依據。[題位與鄰題實驗](reports/anatomy-batch-pilot/position-neighbor/README.md) · [雙語審題單](docs/review/tw-adult-preventive.md) · [政策來源檢索](reports/tw-preventive-source-pilot/README.md)
+
 同一模型回答臺灣公費篩檢的歷史與現行問法時，限定 JSON Schema 後，美式英文可解析回覆從 0/6 增為 6/6。兩種設定下，各 12 份作答都沒有可解析且符合該日期編者擬答的選項。24 份原始作答均保留，供醫師核對回答理由與雙語用詞。[日期與輸出格式實測](reports/tw-fit-date-probe/README.md)
 
 臺灣醫學會已按科別整理，附官網核對狀態、部定專科及次專科的來源，以及學會公開甄審試題、樣題與答案的入口。[依科別找學會](datasets/tw-societies/by-specialty.md) · [直接找考試資料](datasets/tw-societies/exam-sources.tsv)

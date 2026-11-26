@@ -1,0 +1,40 @@
+[
+  {
+    "draft": "mbc-tw-adult-0001",
+    "source": "hpa-adult-2024",
+    "cache": "adult-preventive/old.html"
+  },
+  {
+    "draft": "mbc-tw-adult-0001",
+    "source": "hpa-adult-order",
+    "cache": "adult-preventive/order.pdf",
+    "format": "pdf"
+  },
+  {
+    "draft": "mbc-tw-adult-0001",
+    "source": "hpa-adult-expansion",
+    "cache": "adult-preventive/change.html"
+  },
+  {
+    "draft": "mbc-tw-adult-0001",
+    "source": "hpa-adult-faq",
+    "cache": "adult-preventive/faq.html"
+  },
+  {
+    "draft": "mbc-tw-adult-0001",
+    "source": "hpa-adult-service",
+    "cache": "adult-preventive/current.html"
+  },
+  {
+    "draft": "mbc-tw-fit-0002",
+    "source": "hpa-tw-fit-2024",
+    "cache": "old.html",
+    "xpath": "//div[@class='htmlBlock']//p[contains(.,'29%') and contains(.,'糞便')]",
+    "version_date": "2024-11-18"
+  },
+  {
+    "draft": "mbc-tw-fit-0002",
+    "source": "hpa-tw-fit-current",
+    "cache": "current.html"
+  }
+]

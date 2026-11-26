@@ -1,0 +1,1029 @@
+{
+  "started_utc": "2026-11-26T13:59:00.265488+00:00",
+  "source_sha256": "208f9eb5252cceef95ab71e7ff17dd530ad9820167078b7483cb6447c6eb8ca8",
+  "plan_seed": 2026112606,
+  "parameters": {
+    "model": "qwen2.5-1.5b-local",
+    "temperature": 0,
+    "seed": 20261126,
+    "max_tokens": 128,
+    "response_format": {
+      "type": "json_object"
+    },
+    "stream": false
+  },
+  "target_gold": {
+    "anatomy-test-056": "D",
+    "anatomy-test-074": "A",
+    "anatomy-test-050": "C",
+    "anatomy-test-047": "B",
+    "anatomy-test-051": "D",
+    "anatomy-test-104": "B"
+  },
+  "calls": [
+    {
+      "round": 1,
+      "arm": "single_repeat",
+      "target": "anatomy-test-056",
+      "ids": [
+        "anatomy-test-056"
+      ],
+      "prompt_sha256": "41e0f3da6445a6a78878ff8f412d7b3c8da72ec3707bf6cc32e51d9bed4eadfe",
+      "max_tokens": 128,
+      "latency_s": 4.203396800032351,
+      "response_sha256": "1b4e686e372eb3d77d857af093de0aae74f3cc4f2a45dc7bfa6b22f28e41137d",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-056": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 135,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-056\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 1,
+      "arm": "second_a",
+      "target": "anatomy-test-104",
+      "ids": [
+        "anatomy-test-045",
+        "anatomy-test-104"
+      ],
+      "prompt_sha256": "786ef0d687d83a84721ffe78bce5056344880e82daa4283d5ee4b8e557f76553",
+      "max_tokens": 128,
+      "latency_s": 6.708265499968547,
+      "response_sha256": "30404399fc2bf926c751f01f2e6f14e14ce14e58c103e081d1a3fce4d7851269",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-045": "A",
+        "anatomy-test-104": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 280,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-045\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-test-104\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 1,
+      "arm": "second_b",
+      "target": "anatomy-test-047",
+      "ids": [
+        "anatomy-test-125",
+        "anatomy-test-047"
+      ],
+      "prompt_sha256": "578c253e298d5be4b727a1052990d9e27afc3f6eeded9e81c79bbc07a779166a",
+      "max_tokens": 128,
+      "latency_s": 5.852699599985499,
+      "response_sha256": "fa8d011d9a9f7d33799b0de9b7fa93c51d1da7f5535c36a8915105180a6c382f",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-125": "A",
+        "anatomy-test-047": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 232,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-125\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-test-047\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 1,
+      "arm": "first_a",
+      "target": "anatomy-test-051",
+      "ids": [
+        "anatomy-test-051",
+        "anatomy-test-125"
+      ],
+      "prompt_sha256": "b7fd214cbf035742b9b727c617ac0986320b99c95e89169a63dac7a4a72df844",
+      "max_tokens": 128,
+      "latency_s": 5.469824699976016,
+      "response_sha256": "f6442b2f6052c1efd196aec0064d164fb6ba2edfbc8d43777a843b604c3e1c3e",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-051": "D",
+        "anatomy-test-125": "A"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 228,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-051\",\n      \"answer\": \"D\"\n    },\n    {\n      \"id\": \"anatomy-test-125\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 1,
+      "arm": "single",
+      "target": "anatomy-test-074",
+      "ids": [
+        "anatomy-test-074"
+      ],
+      "prompt_sha256": "2184d1d007a785ed7570a43f25ee4b510a9eeb1286dc29f03979a8fd26cddb62",
+      "max_tokens": 128,
+      "latency_s": 4.375431300024502,
+      "response_sha256": "9b678f243d8447985e89faa57531dbd6cf1307fe647dcb48c487d7254792336e",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-074": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 208,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-074\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 1,
+      "arm": "first_b",
+      "target": "anatomy-test-050",
+      "ids": [
+        "anatomy-test-050",
+        "anatomy-test-035"
+      ],
+      "prompt_sha256": "86535820dd6713e8323f7b4789bdcc6c692617dd45d2c37560796d533525d45a",
+      "max_tokens": 128,
+      "latency_s": 6.70458919997327,
+      "response_sha256": "d6bf48fdc53a4bfa9073b351647c74d22868ac0700ed1ae251f0ec09ce52d067",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-050": "C",
+        "anatomy-test-035": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 298,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-050\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-035\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 2,
+      "arm": "first_a",
+      "target": "anatomy-test-047",
+      "ids": [
+        "anatomy-test-047",
+        "anatomy-test-035"
+      ],
+      "prompt_sha256": "ba0e500f8980257fee103072e3ce3f6a45f23bf96b924bb5143e560673cf52b9",
+      "max_tokens": 128,
+      "latency_s": 6.610009299998637,
+      "response_sha256": "0a663dc3d2f1de9307f410d8bb10c7b12179b6a2b79bf98c06d1e4e9b26e7880",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-047": "B",
+        "anatomy-test-035": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-047\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-035\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 2,
+      "arm": "single",
+      "target": "anatomy-test-056",
+      "ids": [
+        "anatomy-test-056"
+      ],
+      "prompt_sha256": "41e0f3da6445a6a78878ff8f412d7b3c8da72ec3707bf6cc32e51d9bed4eadfe",
+      "max_tokens": 128,
+      "latency_s": 3.0618325999821536,
+      "response_sha256": "1b4e686e372eb3d77d857af093de0aae74f3cc4f2a45dc7bfa6b22f28e41137d",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-056": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 135,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-056\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 2,
+      "arm": "first_b",
+      "target": "anatomy-test-074",
+      "ids": [
+        "anatomy-test-074",
+        "anatomy-test-017"
+      ],
+      "prompt_sha256": "4ffc837987d15b3bb7e23971ac74d3c5090df9e105bce7151994b0bebf15c50b",
+      "max_tokens": 128,
+      "latency_s": 6.782352300011553,
+      "response_sha256": "eea11a0350d9c9a131e56a9e2bcdb1b05c2922790d21bf36957567e803378e87",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-074": "B",
+        "anatomy-test-017": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 292,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-074\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-017\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 2,
+      "arm": "second_a",
+      "target": "anatomy-test-051",
+      "ids": [
+        "anatomy-test-125",
+        "anatomy-test-051"
+      ],
+      "prompt_sha256": "f460f2d53688cfe9b8b643a5cdff27b43a8a58f860e5f15784bcd86974ea8951",
+      "max_tokens": 128,
+      "latency_s": 5.080920000036713,
+      "response_sha256": "b3225775bd376c6f7c1d7c93c0a5e5eb0082164af0ba12d2adbb950d7222bfce",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-125": "D",
+        "anatomy-test-051": "D"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 227,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-125\",\n      \"answer\": \"D\"\n    },\n    {\n      \"id\": \"anatomy-test-051\",\n      \"answer\": \"D\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 2,
+      "arm": "single_repeat",
+      "target": "anatomy-test-104",
+      "ids": [
+        "anatomy-test-104"
+      ],
+      "prompt_sha256": "cc2e154761dbe169832e290ab82e37283c7d03031a115f7af0ab5cda61c88c20",
+      "max_tokens": 128,
+      "latency_s": 3.396673200011719,
+      "response_sha256": "7b086251960a88160765b2890528d2be2f6ebe3688717ac21bdc5db41f20fe71",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-104": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 156,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-104\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 2,
+      "arm": "second_b",
+      "target": "anatomy-test-050",
+      "ids": [
+        "anatomy-test-035",
+        "anatomy-test-050"
+      ],
+      "prompt_sha256": "af610b1373b632c37837849ec5f7e5e7b6b5328c0aa0f99478f23becd9cf817f",
+      "max_tokens": 128,
+      "latency_s": 7.066025199950673,
+      "response_sha256": "b317a19855e1b2f5242ed2e36458bf1ae2feb6a31cb267de3cce34c33d3e4031",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-035": "C",
+        "anatomy-test-050": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 298,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-035\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-050\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 3,
+      "arm": "first_b",
+      "target": "anatomy-test-047",
+      "ids": [
+        "anatomy-test-047",
+        "anatomy-test-125"
+      ],
+      "prompt_sha256": "32db2e3d8ed64728590fabd486ce1a0bad5f35032d3dd6f4e9296ef23b2722bb",
+      "max_tokens": 128,
+      "latency_s": 6.059441100049298,
+      "response_sha256": "bd7626b217e41d58141940615b055805f9faaf4f49de83b4251736359a6ae460",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-047": "B",
+        "anatomy-test-125": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 233,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-047\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-125\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 3,
+      "arm": "second_b",
+      "target": "anatomy-test-051",
+      "ids": [
+        "anatomy-test-045",
+        "anatomy-test-051"
+      ],
+      "prompt_sha256": "ec02991ea2aa8aa82f701191a35a2cd3337cb21cf092732c0fe7abfcc9a92ee0",
+      "max_tokens": 128,
+      "latency_s": 4.7525744999875315,
+      "response_sha256": "c0493bc8d6aa8ee4632183be86de0b504b0df5cb0600d69896251690ca3fbed1",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-045": "A",
+        "anatomy-test-051": "D"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 274,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-045\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-test-051\",\n      \"answer\": \"D\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 3,
+      "arm": "single",
+      "target": "anatomy-test-050",
+      "ids": [
+        "anatomy-test-050"
+      ],
+      "prompt_sha256": "44088bc2a170e8599d860c999243703170b9be6d51f996da24599430cbff98f2",
+      "max_tokens": 128,
+      "latency_s": 2.23426339996513,
+      "response_sha256": "2f27bfcbf2aa6742cb70aa5ba60a361d8904a3ba633a1de1b156f62f18742789",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-050": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 205,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-050\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 3,
+      "arm": "single_repeat",
+      "target": "anatomy-test-074",
+      "ids": [
+        "anatomy-test-074"
+      ],
+      "prompt_sha256": "2184d1d007a785ed7570a43f25ee4b510a9eeb1286dc29f03979a8fd26cddb62",
+      "max_tokens": 128,
+      "latency_s": 2.439745199983008,
+      "response_sha256": "9b678f243d8447985e89faa57531dbd6cf1307fe647dcb48c487d7254792336e",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-074": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 208,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-074\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 3,
+      "arm": "second_a",
+      "target": "anatomy-test-056",
+      "ids": [
+        "anatomy-test-087",
+        "anatomy-test-056"
+      ],
+      "prompt_sha256": "b402a80239a129d6e426260416c6bab9b81eaec959c4436d228355455590c1fc",
+      "max_tokens": 128,
+      "latency_s": 7.1371560000116006,
+      "response_sha256": "55501bf75785a87147af5cb2d3fc6d18b5426e170b08419ae1c326b8b9493e6b",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-087": "C",
+        "anatomy-test-056": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 264,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-087\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-056\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 3,
+      "arm": "first_a",
+      "target": "anatomy-test-104",
+      "ids": [
+        "anatomy-test-104",
+        "anatomy-test-045"
+      ],
+      "prompt_sha256": "39472eb6433282aaaf0c09d8c83d7e36167c0c79547fa816c0029daae7ce3176",
+      "max_tokens": 128,
+      "latency_s": 7.433832800015807,
+      "response_sha256": "691f1998c1134f7731caece5d90bd86ce910be9200a05715a19a770b356f9448",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-104": "C",
+        "anatomy-test-045": "A"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 281,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-104\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-045\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 4,
+      "arm": "first_a",
+      "target": "anatomy-test-050",
+      "ids": [
+        "anatomy-test-050",
+        "anatomy-test-017"
+      ],
+      "prompt_sha256": "ce375cc0f206c5a66e386e737226f12c5cf398d682eac642dfc8983db9a904ee",
+      "max_tokens": 128,
+      "latency_s": 5.951499299961142,
+      "response_sha256": "9f748540699ffc37b40db319b267bfdbcc3270ccccf0f1bd59945cd9c977904d",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-050": "C",
+        "anatomy-test-017": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 289,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-050\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-017\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 4,
+      "arm": "single_repeat",
+      "target": "anatomy-test-051",
+      "ids": [
+        "anatomy-test-051"
+      ],
+      "prompt_sha256": "472d7f048aae5972cbdaa940801d4ba1aafbf9675530ace808fd361ddd6b3820",
+      "max_tokens": 128,
+      "latency_s": 3.5158774000010453,
+      "response_sha256": "b1b9e73a5447ccdfb2d1f4f1ead51217e5e2095bb01b3e78e6e81532c909e56e",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-051": "D"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 150,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-051\",\n      \"answer\": \"D\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 4,
+      "arm": "second_a",
+      "target": "anatomy-test-047",
+      "ids": [
+        "anatomy-test-035",
+        "anatomy-test-047"
+      ],
+      "prompt_sha256": "12eb7521c366b052722174c1fcea416388a89724c873368b179ec529461f7ddb",
+      "max_tokens": 128,
+      "latency_s": 6.56811450002715,
+      "response_sha256": "ae56a439250d70bfb66e8bf044758fae1f41d791536c83e0eaed473abc742fc8",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-035": "C",
+        "anatomy-test-047": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 248,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-035\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-047\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 4,
+      "arm": "second_b",
+      "target": "anatomy-test-074",
+      "ids": [
+        "anatomy-test-017",
+        "anatomy-test-074"
+      ],
+      "prompt_sha256": "4c2b79829b5fe76368c0ebda5b5b65b31b5fdc428ea39c3d71132fc4a7f79357",
+      "max_tokens": 128,
+      "latency_s": 7.994886200001929,
+      "response_sha256": "c0ca3e8889e5a6445d263b2c5d92f611ca450dea3c8eaec92eb757aa5c58e5f4",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-017": "B",
+        "anatomy-test-074": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 293,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-017\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-074\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 4,
+      "arm": "first_b",
+      "target": "anatomy-test-056",
+      "ids": [
+        "anatomy-test-056",
+        "anatomy-test-012"
+      ],
+      "prompt_sha256": "ae748f2d7f423f8754c0a6276424e75f78eb57b112cb8f9f2ce7365d29a1bf86",
+      "max_tokens": 128,
+      "latency_s": 8.58543010003632,
+      "response_sha256": "e8a9234bc66159b47b0d5fc76bbbb2f77da339bf926c65ea68ef155530142deb",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-056": "B",
+        "anatomy-test-012": "A"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 256,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-056\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-012\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 4,
+      "arm": "single",
+      "target": "anatomy-test-104",
+      "ids": [
+        "anatomy-test-104"
+      ],
+      "prompt_sha256": "cc2e154761dbe169832e290ab82e37283c7d03031a115f7af0ab5cda61c88c20",
+      "max_tokens": 128,
+      "latency_s": 3.3320729000261053,
+      "response_sha256": "7b086251960a88160765b2890528d2be2f6ebe3688717ac21bdc5db41f20fe71",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-104": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 156,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-104\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 5,
+      "arm": "single_repeat",
+      "target": "anatomy-test-050",
+      "ids": [
+        "anatomy-test-050"
+      ],
+      "prompt_sha256": "44088bc2a170e8599d860c999243703170b9be6d51f996da24599430cbff98f2",
+      "max_tokens": 128,
+      "latency_s": 2.453054899990093,
+      "response_sha256": "2f27bfcbf2aa6742cb70aa5ba60a361d8904a3ba633a1de1b156f62f18742789",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-050": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 205,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-050\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 5,
+      "arm": "first_b",
+      "target": "anatomy-test-051",
+      "ids": [
+        "anatomy-test-051",
+        "anatomy-test-045"
+      ],
+      "prompt_sha256": "0915ddef38b9d4d884f368f2e75d6db66b35f20ed54c4d10c8cda4f6749285af",
+      "max_tokens": 128,
+      "latency_s": 7.163808099983726,
+      "response_sha256": "0e9aa23884b4633fcaf4d4b06f18b3eaa2d5d1e3da9e70ad2f324eb07e8c5ca3",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-051": "D",
+        "anatomy-test-045": "A"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 275,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-051\",\n      \"answer\": \"D\"\n    },\n    {\n      \"id\": \"anatomy-test-045\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 5,
+      "arm": "second_b",
+      "target": "anatomy-test-104",
+      "ids": [
+        "anatomy-test-087",
+        "anatomy-test-104"
+      ],
+      "prompt_sha256": "5624ac5af756024f4a7ac9daf6970d02ea2b7b00217f7a326b9aa77a7ef67dfa",
+      "max_tokens": 128,
+      "latency_s": 5.48743530001957,
+      "response_sha256": "4fdfa4cb4e8ac8f580827ea813b6ee36f1fc0361b8fbecc23cd573c86a819a32",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-087": "B",
+        "anatomy-test-104": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 285,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-087\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-104\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 5,
+      "arm": "second_a",
+      "target": "anatomy-test-074",
+      "ids": [
+        "anatomy-test-012",
+        "anatomy-test-074"
+      ],
+      "prompt_sha256": "f0f4daa8edba13ef88a98f5aa3b41c7b1ee42003dc043a49841bea3cd276d42c",
+      "max_tokens": 128,
+      "latency_s": 7.734454599965829,
+      "response_sha256": "5402cb262a8a000d5bb8ade4de1c8ac06f42a8262baed4c7ba2e4ce3f54f422f",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-012": "A",
+        "anatomy-test-074": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 329,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-012\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-test-074\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 5,
+      "arm": "first_a",
+      "target": "anatomy-test-056",
+      "ids": [
+        "anatomy-test-056",
+        "anatomy-test-087"
+      ],
+      "prompt_sha256": "8dc4ef222109ba93031db6da86ae714174aa2ebb0cc4f24b54159cb41205e295",
+      "max_tokens": 128,
+      "latency_s": 7.015540399996098,
+      "response_sha256": "3d99543802003001c395c07c50d664c1908011dfcfdc4a78319b58173c8c23f2",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-056": "B",
+        "anatomy-test-087": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 264,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-056\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-087\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 5,
+      "arm": "single",
+      "target": "anatomy-test-047",
+      "ids": [
+        "anatomy-test-047"
+      ],
+      "prompt_sha256": "090bba926e514c954a778dd5351a5c031deda205772bd560233eb08f63db1a44",
+      "max_tokens": 128,
+      "latency_s": 2.8193341000005603,
+      "response_sha256": "cdb84b2673975d45b5c52cb1aa82d26a6059daf14b1affbf13de15d10b1c7028",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-047": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 155,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-047\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 6,
+      "arm": "single_repeat",
+      "target": "anatomy-test-047",
+      "ids": [
+        "anatomy-test-047"
+      ],
+      "prompt_sha256": "090bba926e514c954a778dd5351a5c031deda205772bd560233eb08f63db1a44",
+      "max_tokens": 128,
+      "latency_s": 2.4646047000424005,
+      "response_sha256": "cdb84b2673975d45b5c52cb1aa82d26a6059daf14b1affbf13de15d10b1c7028",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-047": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 155,
+        "completion_tokens": 38
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-047\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 6,
+      "arm": "first_a",
+      "target": "anatomy-test-074",
+      "ids": [
+        "anatomy-test-074",
+        "anatomy-test-012"
+      ],
+      "prompt_sha256": "681d6c1dc8499efe2bd4140252e54e4d57aa3ea6e924fd95746d1e7e25e22918",
+      "max_tokens": 128,
+      "latency_s": 8.115593000024091,
+      "response_sha256": "b34fc43c7c848412376bad122506049e629fa94223b30e85384aae51d965a92c",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-074": "B",
+        "anatomy-test-012": "A"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 328,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-074\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-012\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 6,
+      "arm": "first_b",
+      "target": "anatomy-test-104",
+      "ids": [
+        "anatomy-test-104",
+        "anatomy-test-087"
+      ],
+      "prompt_sha256": "2638510c4a20df10954fcbc2a6526db6f6e5952061c468bfb0b1b245c1ff0b2c",
+      "max_tokens": 128,
+      "latency_s": 6.510382600012235,
+      "response_sha256": "a23f4c21fe62efb487d4a0c9b3700c52cc90aaa716f71d432c811a558da844a0",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-104": "C",
+        "anatomy-test-087": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 285,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-104\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-087\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 6,
+      "arm": "second_a",
+      "target": "anatomy-test-050",
+      "ids": [
+        "anatomy-test-017",
+        "anatomy-test-050"
+      ],
+      "prompt_sha256": "3a2c02603756eb9c7048f602d8160a486a6e65f603b4f617b2ce89795f67e0d6",
+      "max_tokens": 128,
+      "latency_s": 6.422142800001893,
+      "response_sha256": "8aa96442f7949cfcf53aad2369b6441355f685b32bb1194e799cc7ced7e1b40d",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-017": "B",
+        "anatomy-test-050": "C"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 290,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-017\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-050\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+    },
+    {
+      "round": 6,
+      "arm": "single",
+      "target": "anatomy-test-051",
+      "ids": [
+        "anatomy-test-051"
+      ],
+      "prompt_sha256": "472d7f048aae5972cbdaa940801d4ba1aafbf9675530ace808fd361ddd6b3820",
+      "max_tokens": 128,
+      "latency_s": 1.3903299000230618,
+      "response_sha256": "66cae796636c148be5b4b6267c849b9fd00293843982fff6ae1fb0472d83b2df",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-051": "D"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 150,
+        "completion_tokens": 19
+      },
+      "raw": "{\"answers\":[{\"id\":\"anatomy-test-051\",\"answer\":\"D\"}]}"
+    },
+    {
+      "round": 6,
+      "arm": "second_b",
+      "target": "anatomy-test-056",
+      "ids": [
+        "anatomy-test-012",
+        "anatomy-test-056"
+      ],
+      "prompt_sha256": "6c1106d229ffe57ca913b7ff8661704548e1f64463aa7b72a29668232373da35",
+      "max_tokens": 128,
+      "latency_s": 4.832621000008658,
+      "response_sha256": "557467cfbf642a6c343c4f072871ad442041bd191bd953b8af6fd88f744c007e",
+      "finish_reason": "stop",
+      "predictions": {
+        "anatomy-test-012": "A",
+        "anatomy-test-056": "B"
+      },
+      "errors": [],
+      "usage": {
+        "prompt_tokens": 256,
+        "completion_tokens": 62
+      },
+      "raw": "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-012\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-test-056\",\n      \"answer\": \"B\"\n    }\n  ]\n}"
+    }
+  ],
+  "summary": {
+    "arms": {
+      "single": {
+        "assigned": 6,
+        "parsed": 6,
+        "correct_source_key": 2,
+        "missing_ids": []
+      },
+      "single_repeat": {
+        "assigned": 6,
+        "parsed": 6,
+        "correct_source_key": 2,
+        "missing_ids": []
+      },
+      "first_a": {
+        "assigned": 6,
+        "parsed": 6,
+        "correct_source_key": 3,
+        "missing_ids": []
+      },
+      "second_a": {
+        "assigned": 6,
+        "parsed": 6,
+        "correct_source_key": 3,
+        "missing_ids": []
+      },
+      "first_b": {
+        "assigned": 6,
+        "parsed": 6,
+        "correct_source_key": 3,
+        "missing_ids": []
+      },
+      "second_b": {
+        "assigned": 6,
+        "parsed": 6,
+        "correct_source_key": 2,
+        "missing_ids": []
+      }
+    },
+    "comparisons": {
+      "single_vs_single_repeat": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 0,
+        "flipped_ids": [],
+        "correct_to_wrong": 0,
+        "wrong_to_correct": 0,
+        "wrong_to_wrong": 0,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "first_a_vs_second_a": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 0,
+        "flipped_ids": [],
+        "correct_to_wrong": 0,
+        "wrong_to_correct": 0,
+        "wrong_to_wrong": 0,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "first_b_vs_second_b": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 2,
+        "flipped_ids": [
+          "anatomy-test-074",
+          "anatomy-test-050"
+        ],
+        "correct_to_wrong": 1,
+        "wrong_to_correct": 0,
+        "wrong_to_wrong": 1,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "first_a_vs_first_b": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 0,
+        "flipped_ids": [],
+        "correct_to_wrong": 0,
+        "wrong_to_correct": 0,
+        "wrong_to_wrong": 0,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "second_a_vs_second_b": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 2,
+        "flipped_ids": [
+          "anatomy-test-074",
+          "anatomy-test-050"
+        ],
+        "correct_to_wrong": 1,
+        "wrong_to_correct": 0,
+        "wrong_to_wrong": 1,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "single_vs_first_a": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 1,
+        "flipped_ids": [
+          "anatomy-test-050"
+        ],
+        "correct_to_wrong": 0,
+        "wrong_to_correct": 1,
+        "wrong_to_wrong": 0,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "single_vs_second_a": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 1,
+        "flipped_ids": [
+          "anatomy-test-050"
+        ],
+        "correct_to_wrong": 0,
+        "wrong_to_correct": 1,
+        "wrong_to_wrong": 0,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "single_vs_first_b": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 1,
+        "flipped_ids": [
+          "anatomy-test-050"
+        ],
+        "correct_to_wrong": 0,
+        "wrong_to_correct": 1,
+        "wrong_to_wrong": 0,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      },
+      "single_vs_second_b": {
+        "assigned": 6,
+        "both_parsed": 6,
+        "flips": 1,
+        "flipped_ids": [
+          "anatomy-test-074"
+        ],
+        "correct_to_wrong": 0,
+        "wrong_to_correct": 0,
+        "wrong_to_wrong": 1,
+        "missing_left_only": [],
+        "missing_right_only": [],
+        "missing_both": []
+      }
+    }
+  }
+}

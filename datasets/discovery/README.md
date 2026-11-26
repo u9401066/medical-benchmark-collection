@@ -17,7 +17,7 @@ python -m medbench.discovery_queue --latest data/discovery/pubmed-20261126.json 
 
 首批檢索涵蓋 2026-11-13 至 2026-11-26，命中 206 篇，已取得全部 206 筆 PMID 與標題。這是供編者篩選的文獻數，一份資料集可能對應多篇論文，有些論文只使用既有題庫。每週的 Actions 執行保留當批搜尋檔；正式登錄來源時，把版次、可取得的材料與權利一起存回此目錄。[首批 PubMed 候選與可重跑查詢](pubmed/2026-11-26.json)
 
-**文獻初篩進度為 42／206，尚有 164 篇。** 首輪核對 TCM-BEST4SDT 與 RheumBench，前者可取得採 CC BY 4.0 的 Figshare 第 8 版，後者須向作者申請。第二輪按快照原順序查核第 1 至 10 篇，與首輪兩篇均無重複。四篇公開研究附件，兩篇的研究資料須申請，兩篇是可供追查上游文獻的綜述，一篇整合既有資源，一篇公開固定版本的評分重現套件。這些是按研究材料判定的筆數；同一篇也可能公開評分程式、限制病人資料取用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability)
+**文獻初篩進度為 52／206，尚有 154 篇。** 首輪核對 TCM-BEST4SDT 與 RheumBench，前者可取得採 CC BY 4.0 的 Figshare 第 8 版，後者須向作者申請。第二輪按快照原順序查核第 1 至 10 篇，與首輪兩篇均無重複。四篇公開研究附件，兩篇的研究資料須申請，兩篇是可供追查上游文獻的綜述，一篇整合既有資源，一篇公開固定版本的評分重現套件。這些是按研究材料判定的筆數；同一篇也可能公開評分程式、限制病人資料取用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability)
 
 抗生素管理研究的 Zenodo v1.2 可用來查提示、評分規則及聚合結果，病人層級的輸入與作答受限。動脈瘤性蜘蛛膜下腔出血研究的公開附件含土耳其文原題及英文翻譯，逐筆模型答案與醫師分數須另行申請。核對表的 `dataset` 欄填作者名稱或材料描述，綜述沒有具名材料時留空。另已實算 MedChangeQA 的 512 筆新舊配對，可用於時效問題的分層抽樣。[抗生素管理重現套件](https://doi.org/10.5281/zenodo.24194665) · [蜘蛛膜下腔出血問答附表](https://www.mdpi.com/article/10.3390/jcm15228896/s1) · [MedChangeQA 標籤交叉表](../../docs/review/medchange-audit.md)
 
@@ -29,7 +29,9 @@ python -m medbench.discovery_queue --latest data/discovery/pubmed-20261126.json 
 
 牙科研究的 13 份 PDF 中，第 2、6、10 檔各有 33 次原始問答，對應 11 個 PICO 問題、3 個模型、3 天重測。中國臨床醫學考試研究的附七可重算 1,644 題、16,440 次作答與 14 次格式衝突，並可追到每題使用的答案版本。作者無權重發完整考題。另一項急診研究的公開矩陣有 305 筆就診，保留評分而將生命徵象改成常數。[牙科研究與附件](https://doi.org/10.1038/s41432-026-01287-z) · [中英逐題配對、格式衝突與分組分母](../../docs/review/bilingual-exam-audit.md) · [中國醫學考試的資料聲明與附表](https://pmc.ncbi.nlm.nih.gov/articles/PMC13792588/) · [急診檢傷資料範圍](https://pmc.ncbi.nlm.nih.gov/articles/PMC13795786/)
 
-第五輪核對快照第 31–40 篇。腫瘤會診研究公開九面向評分規準，可用來比較醫師與模型評審；研究中 108 次會診的 324 份回答受病人保密限制。耳鼻喉科試驗的評讀量表藏在附三 Word 文件的內嵌文件，兩位醫師盲評的逐筆紀錄須申請。胸部 X 光綜述公開 1,000 筆文獻匯出與 776 筆重跑書目紀錄，可回查各影像庫的標註來源。護理綜述則逐項列出 23 篇研究的查核材料，其中 13 篇以中文發表。下一批從快照第 41 筆 PMID `43080534` 接續。[腫瘤科評分規準](https://pmc-oa-opendata.s3.amazonaws.com/PMC13801721.1/curroncol-33-00721-s001.zip) · [耳鼻喉科評讀量表](https://pmc-oa-opendata.s3.amazonaws.com/PMC13792887.1/formative-v10-e99015-s003.docx) · [護理評測材料索引](https://pmc-oa-opendata.s3.amazonaws.com/PMC13793833.1/Table_1.docx)
+第五輪核對快照第 31–40 篇。腫瘤會診研究公開九面向評分規準，可用來比較醫師與模型評審；研究中 108 次會診的 324 份回答受病人保密限制。耳鼻喉科試驗的評讀量表藏在附三 Word 文件的內嵌文件，兩位醫師盲評的逐筆紀錄須申請。胸部 X 光綜述公開 1,000 筆文獻匯出與 776 筆重跑書目紀錄，可回查各影像庫的標註來源。護理綜述則逐項列出 23 篇研究的查核材料，其中 13 篇以中文發表。[腫瘤科評分規準](https://pmc-oa-opendata.s3.amazonaws.com/PMC13801721.1/curroncol-33-00721-s001.zip) · [耳鼻喉科評讀量表](https://pmc-oa-opendata.s3.amazonaws.com/PMC13792887.1/formative-v10-e99015-s003.docx) · [護理評測材料索引](https://pmc-oa-opendata.s3.amazonaws.com/PMC13793833.1/Table_1.docx)
+
+第六輪核對快照第 41–51 筆，跳過已登錄的第 46 筆 RheumBench，共新增 10 篇。EHRNavigator 的 Yale 代理任務公開 100 個編號問題，移除題號後有 99 種題文，第 67、68 題相同；研究的雙人盲評與病歷完整度需另查原文。MedGuard 原文及作者 README 均提到中文遠距醫療評測集，但核對的 GitHub 提交未含所列目錄，1,665 段對話及 7,589 個人工標註主張仍屬研究報告數。另核實可查閱 14 頁耳鳴實證推理情境，以及放射物理模擬出題提示。下一批從快照第 52 筆 PMID `43077174` 接續。[EHRNavigator 逐題定位、重複組與重建方式](ehrnavigator/README.md) · [作者的問題檔](https://github.com/BIDS-Xu-Lab/EHRNavigator/blob/be9d5181272bee487b78404ce60a849b7d24a419/YNHHQA.txt) · [MedGuard 作者庫固定版本](https://github.com/XMUDM/MedGuard/tree/4f2778d11dae8ab336202eeb9168d544ce05a461) · [耳鳴情境與原始評量設計](https://doi.org/10.1007/s10459-026-10602-3)
 
 收錄單位可以是一份資料集、評測平台或作者分享的文件。同一作品在 Google、Hugging Face 或 GitHub 建立的不同入口共用一個來源身分。來源目錄、可下載樣本、作者釋出的正式 benchmark 與本專案醫師審定的案例各有不同用途。首批查核日期為 2026-11-26。
 

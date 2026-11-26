@@ -108,6 +108,23 @@ def test_pharmacy_workshop_stations_remain_examples_from_a_hospital_department()
     assert all(r["artifact_kind"] == "workshop_osce_station" for r in sources)
 
 
+def test_occupational_therapy_forms_are_counted_once_across_pdf_editions():
+    root = societies.ROOT
+    evidence = societies.records(root / "sources" / "ot-epa.tsv")
+    forms = [r for r in evidence if r["asset_role"] == "workplace_observation_form"]
+    assert len({r["evidence_sha256"] for r in evidence}) == 6
+    assert len({(r["domain"], r["activity_code"]) for r in forms}) == len(forms) == 18
+    assert sum(int(r["numbered_items"]) for r in forms) == 166
+    assert {r["asset_role"] for r in evidence if not r["exam_url"]} == {
+        "template",
+        "compilation",
+    }
+    catalog = societies.records(root / "exam-sources.tsv")
+    assert {r["exam_url"] for r in catalog if r["source_file"] == "ot-epa.tsv"} == {
+        r["exam_url"] for r in forms
+    }
+
+
 def test_directory_preserves_identity_and_multiple_exam_sources(tmp_path):
     societies.write_table(
         tmp_path / "registry-screen.tsv",

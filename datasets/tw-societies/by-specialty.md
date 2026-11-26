@@ -682,7 +682,7 @@
 | 台灣神經復健醫學會 | 學會 | [已核對主體](https://www.tsnr.org.tw/) | 待查 |
 | 台灣聽力語言學會 | 學會 | [已核對主體](https://www.slh.org.tw/) | 待查 |
 | 臺灣物理治療學會 | 學會 | [已核對主體](https://www.tpta.org.tw/) | 待查 |
-| 臺灣職能治療學會 | 學會 | [已核對主體](https://www.ot.org.tw/) | [甄審或考試公告](https://www.ot.org.tw/index.php?action=regulation&id=15) |
+| 臺灣職能治療學會 | 學會 | [已核對主體](https://www.ot.org.tw/) | [公開臨床評量表](https://www.ot.org.tw/filedown.php?file=%E7%A4%BE%E5%9C%98%E6%B3%95%E4%BA%BA%E8%87%BA%E7%81%A3%E8%81%B7%E8%83%BD%E6%B2%BB%E7%99%82%E5%AD%B8%E6%9C%83%E5%8F%AF%E4%BF%A1%E8%B3%B4%E5%B0%88%E6%A5%AD%E6%B4%BB%E5%8B%95%28EPAs%29-1130812%E5%88%9D%E7%89%88V1.4-%E5%85%92%E7%AB%A5.pdf&site=dXBsb2FkLzIwMjQvMDgvMjAyNDA4MTYxNTA3NTk2NDYucGRm#page=4) |
 | 中華民國物理治療學會 | 學會 | [名錄列址，待核對](http://www.ptaroc.org.tw/) | 待查 |
 | 台灣復健工程暨輔具科技學會 | 學會 | [名錄列址，待核對](http://www.treats.org.tw/index.php) | 待查 |
 | 中華民國聽力語言學會 | 學會 | 待查 | 待查 |

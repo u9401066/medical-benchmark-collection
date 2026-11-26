@@ -1,0 +1,91 @@
+{
+  "checked_on": "2026-11-26",
+  "sources": [
+    {
+      "url": "https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-recommendations-for-the-early-detection-of-breast-cancer.html",
+      "watch_xpath": "//p[contains(.,'average risk if')]/parent::div",
+      "expected_sha256": "98e7bd19c9304dbb90cc97274461da5430a4f413a0de8d262ea1be4aed1eab8c",
+      "concepts": [
+        "mbc-us-mammo-0001",
+        "mbc-us-mammo-0003",
+        "mbc-us-mammo-0004"
+      ],
+      "family_ids": [
+        "mbc-us-mammo-0001"
+      ],
+      "observed_sha256": "98e7bd19c9304dbb90cc97274461da5430a4f413a0de8d262ea1be4aed1eab8c",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=189",
+      "watch_xpath": "//div[@class='htmlBlock']//span[starts-with(normalize-space(.),'為維護國人健康')]",
+      "expected_sha256": "ec6d15e6cf3e9aaf87a2ee40d938e9b0eb76bcc2dd8b1ba594ed7c069d6a4f2f",
+      "concepts": [
+        "mbc-tw-adult-0001",
+        "mbc-tw-adult-0002"
+      ],
+      "family_ids": [
+        "mbc-tw-adult-0001"
+      ],
+      "observed_sha256": "ec6d15e6cf3e9aaf87a2ee40d938e9b0eb76bcc2dd8b1ba594ed7c069d6a4f2f",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=190",
+      "watch_xpath": "//div[@class='htmlBlock']//tr[td[contains(.,'大腸癌篩檢')]]",
+      "expected_sha256": "56927a8f408be0f136590074de682b03a47f35cfc9b4c14c50ccd491ba7e7585",
+      "concepts": [
+        "mbc-tw-fit-0001",
+        "mbc-tw-fit-0002",
+        "mbc-tw-fit-0003"
+      ],
+      "family_ids": [
+        "mbc-tw-fit-0001"
+      ],
+      "observed_sha256": "56927a8f408be0f136590074de682b03a47f35cfc9b4c14c50ccd491ba7e7585",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=221",
+      "watch_xpath": "//p[contains(.,'代謝症候群判定標準為')]",
+      "expected_sha256": "af8b6e35c7cd9b8637fa8f149dafb176b4e7569f7b26757b696e7eff1e9e0c63",
+      "concepts": [
+        "mbc-tw-mets-0001",
+        "mbc-tw-mets-0002"
+      ],
+      "family_ids": [
+        "mbc-tw-mets-0001"
+      ],
+      "observed_sha256": "af8b6e35c7cd9b8637fa8f149dafb176b4e7569f7b26757b696e7eff1e9e0c63",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening",
+      "watch_xpath": "//tr[td[1][normalize-space(.)='To whom does this recommendation apply?']]",
+      "expected_sha256": "8b3a93517fe94d91061a716afa5cf54658c1d8edba8ae2183060404fa7fd0139",
+      "concepts": [
+        "mbc-us-mammo-0001",
+        "mbc-us-mammo-0002"
+      ],
+      "family_ids": [
+        "mbc-us-mammo-0001"
+      ],
+      "observed_sha256": "8b3a93517fe94d91061a716afa5cf54658c1d8edba8ae2183060404fa7fd0139",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening",
+      "watch_xpath": "//tr[td[1][normalize-space(.)='Women aged 40 to 74 years']]",
+      "expected_sha256": "586402d76c4bf15ae7946a22e63bdaf186d1b8d274fd9b739862836d2031694e",
+      "concepts": [
+        "mbc-us-mammo-0001",
+        "mbc-us-mammo-0002"
+      ],
+      "family_ids": [
+        "mbc-us-mammo-0001"
+      ],
+      "observed_sha256": "586402d76c4bf15ae7946a22e63bdaf186d1b8d274fd9b739862836d2031694e",
+      "status": "unchanged"
+    }
+  ]
+}

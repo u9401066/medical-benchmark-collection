@@ -1,8 +1,7 @@
 """Read unambiguous JSON and publish fresh files without replacing existing work."""
 
 import os
-from pathlib import Path
-from tempfile import TemporaryDirectory
+from uuid import uuid4
 
 
 def unique_keys(pairs):
@@ -17,7 +16,12 @@ def unique_keys(pairs):
 def write_new(path, data):
     """Publish complete bytes to a new path, including when two writers race."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    with TemporaryDirectory(dir=path.parent) as directory:
-        staged = Path(directory) / "output"
-        staged.write_bytes(data)
+    # A private temporary directory can propagate an owner-only Windows ACL to the final hard link.
+    staged = path.parent / (".medbench-" + uuid4().hex + ".tmp")
+    stream = staged.open("xb")
+    try:
+        with stream:
+            stream.write(data)
         os.link(staged, path)
+    finally:
+        staged.unlink(missing_ok=True)

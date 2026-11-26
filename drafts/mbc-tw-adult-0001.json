@@ -1,0 +1,233 @@
+{
+  "concept_id": "mbc-tw-adult-0001",
+  "family_id": "mbc-tw-adult-0001",
+  "revision": 1,
+  "origin": "original_policy_comparison_case",
+  "kind": "mcq",
+  "assessed_skill": "Apply the general funding interval in force on the specified date.",
+  "clinical_scope": {
+    "jurisdiction": "TW",
+    "population": "Asymptomatic, insured 36-year-olds asking about public funding for the HPA adult preventive health service; the case specifies polio eligibility."
+  },
+  "split": "public_development",
+  "permitted_uses": [
+    "development"
+  ],
+  "source_rights": {
+    "origin": "project_original",
+    "status": "cleared",
+    "allowed_uses": [
+      "development"
+    ],
+    "attribution": "案例與雙語題文由 Medical Benchmark Collection 自編。政策事實引用行政院公報刊載的衛生福利部令、國民健康署及其慢性疾病防治組。",
+    "license": "國健署網站資料依政府資料開放授權條款第 1 版及個別聲明使用。",
+    "terms_url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=92&pid=5141&sid=5140",
+    "scope": "本題授權範圍為專案原創內容的公開開發。衛生福利部令及附表的政策事實依行政院公報原件定位，國健署網頁依各頁來源標示。",
+    "checked_on": "2026-11-26"
+  },
+  "review": {
+    "status": "pending_clinician_review",
+    "reviewer": null,
+    "reviewed_on": null,
+    "question_for_reviewer": "請核對新舊制度的資格、一般間隔與例外資格重疊時的最短公費間隔，並分別核對繁中與美式英文用語。"
+  },
+  "variants": [
+    {
+      "id": "mbc-tw-adult-0001-zh-TW",
+      "lang": "zh-TW",
+      "question": "以 2024 年 12 月 31 日為準，臺灣一位 36 歲、參加全民健保的民眾到診所詢問國健署公費成人預防保健服務。他沒有不適，從未使用這項服務，沒有小兒麻痺病史。依題示年齡與身分，這項服務最短每隔多久可獲補助？若目前不符合資格，請選對應項目。請說明依據。",
+      "options": {
+        "A": "每年一次",
+        "B": "每三年一次",
+        "C": "每五年一次",
+        "D": "目前不符合這項服務的補助資格"
+      },
+      "answer": "D",
+      "rationale": "2024 年底一般民眾從 40 歲起符合資格。年滿 35 歲的特別資格適用於具小兒麻痺身分者。本例未符合該條件，當時尚無此項補助。",
+      "historical_basis": {
+        "comparison": "same_decision_single_option",
+        "as_of": "2024-12-31",
+        "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4809&pid=18071",
+        "locator": "慢性疾病防治組，正文第 2 段，成人預防保健服務對象及年度檢查資格。"
+      },
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "TW",
+        "question": "以 2026 年 11 月 26 日為準，臺灣一位 36 歲、參加全民健保的民眾到診所詢問國健署公費成人預防保健服務。他沒有不適，從未使用這項服務，沒有小兒麻痺病史。依題示年齡與身分，這項服務最短每隔多久可獲補助？若目前不符合資格，請選對應項目。請說明依據。",
+        "outcome": "single_valid_option",
+        "valid_options": [
+          "C"
+        ],
+        "answer": "C",
+        "rationale": "選 C。一般 30 至 39 歲者現在每五年可接受一次，36 歲符合資格。題幹已排除可改為每年一次的小兒麻痺身分。",
+        "claims": [
+          {
+            "text": "30 至 39 歲的一般服務間隔為每 5 年一次。",
+            "evidence_ids": [
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-faq"
+            ]
+          },
+          {
+            "text": "年滿 35 歲且具小兒麻痺身分者，公費方案可每年提供一次成人預防保健服務。",
+            "evidence_ids": [
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-faq"
+            ]
+          },
+          {
+            "text": "自 2025 年 1 月 1 日起，方案新增 30 至 39 歲的一般民眾。",
+            "evidence_ids": [
+              "hpa-adult-order",
+              "hpa-adult-expansion"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "hpa-adult-order",
+          "hpa-adult-service",
+          "hpa-adult-faq",
+          "hpa-adult-expansion"
+        ]
+      }
+    },
+    {
+      "id": "mbc-tw-adult-0001-en-US",
+      "lang": "en-US",
+      "question": "As of December 31, 2024, a 36-year-old adult enrolled in Taiwan’s National Health Insurance asks about the Health Promotion Administration’s publicly funded adult preventive health service. He has no symptoms, has never used this service, and has no history of polio. At his current age, what is the shortest routine interval covered for someone in his eligibility category? If he is currently ineligible, select that option. Explain your answer.",
+      "options": {
+        "A": "Once a year",
+        "B": "Once every three years",
+        "C": "Once every five years",
+        "D": "Not currently eligible for funding under this program"
+      },
+      "answer": "D",
+      "rationale": "In December 2024 general eligibility began at age 40. The polio provision for adults age 35 or older did not apply to this patient. He was ineligible at age 36.",
+      "historical_basis": {
+        "comparison": "same_decision_single_option",
+        "as_of": "2024-12-31",
+        "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4809&pid=18071",
+        "locator": "慢性疾病防治組，正文第 2 段，成人預防保健服務對象及年度檢查資格。"
+      },
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "TW",
+        "question": "As of November 26, 2026, a 36-year-old adult enrolled in Taiwan’s National Health Insurance asks about the Health Promotion Administration’s publicly funded adult preventive health service. He has no symptoms, has never used this service, and has no history of polio. At his current age, what is the shortest routine interval covered for someone in his eligibility category? If he is currently ineligible, select that option. Explain your answer.",
+        "outcome": "single_valid_option",
+        "valid_options": [
+          "C"
+        ],
+        "answer": "C",
+        "rationale": "C. At age 36 he qualifies under the general provision for ages 30 through 39, which covers one screening every five years. The annual polio provision does not apply.",
+        "claims": [
+          {
+            "text": "The general interval for adults ages 30 through 39 is once every five years.",
+            "evidence_ids": [
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-faq"
+            ]
+          },
+          {
+            "text": "People in the program’s polio category qualify annually starting at age 35.",
+            "evidence_ids": [
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-faq"
+            ]
+          },
+          {
+            "text": "The general eligibility expansion to ages 30 through 39 took effect on January 1, 2025.",
+            "evidence_ids": [
+              "hpa-adult-order",
+              "hpa-adult-expansion"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "hpa-adult-order",
+          "hpa-adult-service",
+          "hpa-adult-faq",
+          "hpa-adult-expansion"
+        ]
+      }
+    }
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [
+    {
+      "id": "hpa-adult-2024",
+      "role": "historical_policy",
+      "title": "儲健康好本 成人健檢有效4步驟 定期健檢、重視數據、追蹤紅字、改善異常",
+      "version": "國健署發布與更新日期 2024-04-22",
+      "published_on": "2024-04-22",
+      "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4809&pid=18071",
+      "locator": "慢性疾病防治組，正文第 2 段，成人預防保健服務對象及年度檢查資格。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "1072348c1fc9560105d787b31a4921185f465db543b22faf0a16258d33909fb6",
+      "passage_xpath": "//div[@class='htmlBlock']//p[contains(.,'凡年滿40')]",
+      "passage_sha256": "02dec6e4f48404b69abd0ec999abf5e3a2feeb0991b35a8a8c3781909ab3180f"
+    },
+    {
+      "id": "hpa-adult-order",
+      "role": "policy_transition",
+      "title": "衛生福利部令修正「醫事服務機構辦理預防保健服務注意事項」，附表六之二「健康署成人預防保健服務對象、時程、服務內容及補助金額」",
+      "version": "衛授國字第1131461539號，行政院公報第030卷第242期衛生勞動篇",
+      "published_on": "2024-12-25",
+      "effective_from": "2025-01-01",
+      "url": "https://gazette.nat.gov.tw/EG_FileManager/eguploadpub/eg030242/ch08/type2/gov70/num26/Eg.pdf",
+      "locator": "PDF 第 1 頁第一點為生效條款。附表六之二「服務對象及時程」欄，第 101 頁醫令代碼 3D、3E（就醫序號 IC3D）共用的資格格列一般年齡與五年間隔，第 102 頁醫令代碼 25、26（就醫序號 IC23）共用的資格格列小兒麻痺身分、年齡與年度間隔。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "bfa6cd369b47faa5fa33e61cec81524093577e64ebc12177a657e4e5938d634f",
+      "passage_sha256": "b7e31f3c2c6e73a7838ef04213293490c4af01dac77d8c80edcede3aa369cbb8",
+      "coordinate_system": "1-based PDF page; unrotated PyMuPDF points from the top left, [x0, y0, x1, y1]",
+      "passage_regions": [
+        {"page": 1, "rect": [68, 136, 518, 171], "label": "第一點生效條款"},
+        {"page": 101, "rect": [183, 258, 232, 309], "label": "3D／3E 共用的服務對象及時程欄"},
+        {"page": 102, "rect": [183, 334, 232, 397], "label": "25／26 共用的服務對象及時程欄"}
+      ]
+    },
+    {
+      "id": "hpa-adult-expansion",
+      "role": "policy_transition",
+      "title": "成人預防保健升級 30歲開啟健康檢查新里程",
+      "version": "國健署發布與更新日期 2025-01-14",
+      "published_on": "2025-01-14",
+      "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4878&pid=18755",
+      "locator": "「篩檢年齡下修至30歲，擴大受惠族群」小節第 1 段，含生效日與新增對象。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "8ad430b46e87ebacdfaff14d4a8285dd61b3670711a168f358c956861e4dde18",
+      "passage_xpath": "//div[@class='htmlBlock']//p[contains(.,'自114年1月1日') and contains(.,'民國84年')]",
+      "passage_sha256": "3d37a34cd28bb9798382ddac6a1afa91a63397ca4506b83aa707a863fb148fa3"
+    },
+    {
+      "id": "hpa-adult-faq",
+      "role": "current_policy_explanation",
+      "title": "沒症狀就不用做成人健康檢查？",
+      "version": "國健署發布與更新日期 2026-07-01",
+      "published_on": "2026-07-01",
+      "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=19970",
+      "locator": "正文列出服務對象及檢查頻率的三點清單。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "48e99b5a8e82a4fc249bc0c3582df9d94056c4707ba29d76b464bdd1ab9fa819",
+      "passage_xpath": "//div[@class='htmlBlock']//p[contains(.,'服務對象及檢查頻率如下')]",
+      "passage_sha256": "4ff00fe814aa49d56cd2fc930b8eb1b5a77774c574867c4cf7f0ea30571e36e1"
+    },
+    {
+      "id": "hpa-adult-service",
+      "role": "current_program",
+      "title": "成人預防保健",
+      "version": "國健署服務資格說明，2026-11-26 觀察版本",
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=189",
+      "locator": "服務表前的資格與頻率說明，含年齡層及年度給付的特殊身分。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "f7a72a4f42a8470a524c5eaa4bc09448c7221b6333706df45ac9f85c94b82737",
+      "watch_xpath": "//div[@class='htmlBlock']//span[starts-with(normalize-space(.),'為維護國人健康')]",
+      "passage_sha256": "ec6d15e6cf3e9aaf87a2ee40d938e9b0eb76bcc2dd8b1ba594ed7c069d6a4f2f"
+    }
+  ]
+}

@@ -1,0 +1,1662 @@
+{
+  "family": "mbc-tw-adult-0001",
+  "rubric_status": "pending_clinician_review",
+  "sources": 7,
+  "index_sha256": "6647a033ed9f065587acce71e24fabae7c81991ff7039a93b89edb8cb9eb98f3",
+  "comparisons": {
+    "with_order": {
+      "lexical": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 3,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 2,
+            "supported_at_3": 3,
+            "unanswerable_with_candidate": 0
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 1,
+            "future_at_1": 1,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 0,
+            "supported_at_3": 0,
+            "unanswerable_with_candidate": 0
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-current",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-tw-fit-current",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      },
+      "dated_lexical": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 2,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 3,
+            "supported_at_3": 5,
+            "unanswerable_with_candidate": 0
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 1,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 0,
+            "supported_at_3": 0,
+            "unanswerable_with_candidate": 0
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": true
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": true
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      },
+      "dated_glossary": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 2,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 3,
+            "supported_at_3": 5,
+            "unanswerable_with_candidate": 0
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 2,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 3,
+            "supported_at_3": 5,
+            "unanswerable_with_candidate": 0
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": true
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": true
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": true
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": true
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      },
+      "dated_effective_glossary": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 5,
+            "supported_at_3": 5,
+            "unanswerable_with_candidate": 0
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 5,
+            "supported_at_1": 5,
+            "supported_at_3": 5,
+            "unanswerable_with_candidate": 0
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [
+              "hpa-adult-order"
+            ],
+            "ranking": [
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-order",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-order",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      }
+    },
+    "without_order": {
+      "lexical": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 3,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 2,
+            "supported_at_3": 4,
+            "unanswerable_with_candidate": 1
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 1,
+            "future_at_1": 1,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 0,
+            "supported_at_3": 0,
+            "unanswerable_with_candidate": 1
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-current",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-tw-fit-current",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": true,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      },
+      "dated_lexical": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 4,
+            "supported_at_3": 4,
+            "unanswerable_with_candidate": 1
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 1,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 0,
+            "supported_at_3": 0,
+            "unanswerable_with_candidate": 1
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      },
+      "dated_glossary": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 4,
+            "supported_at_3": 4,
+            "unanswerable_with_candidate": 1
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 4,
+            "supported_at_3": 4,
+            "unanswerable_with_candidate": 1
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      },
+      "dated_effective_glossary": {
+        "by_language": {
+          "zh-TW": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 4,
+            "supported_at_3": 4,
+            "unanswerable_with_candidate": 1
+          },
+          "en-US": {
+            "assigned": 5,
+            "with_candidate": 5,
+            "future_at_1": 0,
+            "not_yet_effective_at_1": 0,
+            "missing_rankings": 0,
+            "answerable_in_corpus": 4,
+            "supported_at_1": 4,
+            "supported_at_3": 4,
+            "unanswerable_with_candidate": 1
+          }
+        },
+        "rows": [
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "e9c5cc8c285f739873d51e617f97387c7353bb936281c77e0dbde2d4732d9603",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2025-01-02",
+            "lang": "zh-TW",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "cb0b3bcbcf4f46bbe9c6537f9a4ab9624fdfd37da041fab60000a8371a5216cc",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "711995a9142cafe275f8b8db6e8bc5cf570a12f21c6507dd26da8215fe9488e2",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "dcc848bb796828693b25fe9789042db4fe6bf4bbc6fc7bd967a6b67425137d16",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2025-01-02",
+            "lang": "en-US",
+            "cutoff": "2025-01-02",
+            "prompt_sha256": "5ac7cec4b5aa932ba3db0ba7d24bf23201f9744c70c6b27cf9555a060fba3a51",
+            "accepted_sources": [],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0001-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "ddc362326faf9d4b10cccfb14495caa65920df1b8053dc18e47632142d068d46",
+            "accepted_sources": [
+              "hpa-adult-expansion",
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2024-12-31",
+            "lang": "zh-TW",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "9272f3b4a01b2780fa7510114962c34c27a7b7e9c2d781bed44e0d8a374c144c",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-zh-TW@2026-11-26",
+            "lang": "zh-TW",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "969d73df126105552c96539f420c5c5eb53590a41c8efff20bf313c182de3c97",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-2024",
+              "hpa-adult-expansion",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2024-12-31",
+            "lang": "en-US",
+            "cutoff": "2024-12-31",
+            "prompt_sha256": "00386cf27e2c9ca1a1d843b2dbe226e92c2c953e87b6bbfcf7291fe644d878f5",
+            "accepted_sources": [
+              "hpa-adult-2024"
+            ],
+            "ranking": [
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          },
+          {
+            "id": "mbc-tw-adult-0002-en-US@2026-11-26",
+            "lang": "en-US",
+            "cutoff": "2026-11-26",
+            "prompt_sha256": "5ce49624cf0fa9f689665ed68373d259d2b5308d857e1f2b803bbfd8e422cf71",
+            "accepted_sources": [
+              "hpa-adult-faq",
+              "hpa-adult-service"
+            ],
+            "ranking": [
+              "hpa-adult-faq",
+              "hpa-adult-service",
+              "hpa-adult-expansion",
+              "hpa-adult-2024",
+              "hpa-tw-fit-2024",
+              "hpa-tw-fit-current"
+            ],
+            "missing_ranking": false,
+            "future_at_1": false,
+            "not_yet_effective_at_1": false
+          }
+        ]
+      }
+    }
+  }
+}
