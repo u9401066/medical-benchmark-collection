@@ -67,6 +67,55 @@ def test_fetch_retries_timeouts_and_passes_through_definitive_failures(monkeypat
     assert delays == [1]
 
 
+def test_cli_file_report_logs_affected_passages_without_exposing_transport_secrets(
+    tmp_path, monkeypatch, capsys
+):
+    stable = {"status": "unchanged", "url": "https://agency.example/stable"}
+    changed = {
+        "status": "changed",
+        "url": URL + "?nodeid=189",
+        "watch_xpath": XPATH,
+        "family_ids": ["case-one", "case-two"],
+        "expected_sha256": "a" * 64,
+        "observed_sha256": "b" * 64,
+    }
+    unavailable = {
+        "status": "unavailable",
+        "url": "https://user:password@agency.example/info?token=fake-secret",
+        "watch_xpath": "//main/p[1]",
+        "family_ids": ["case-three"],
+        "error": "HTTP Error 403: refused for fake-secret",
+    }
+    report = {"checked_on": "2026-11-26", "sources": [stable, changed, unavailable]}
+    monkeypatch.setattr(evidence_watch, "check", lambda drafts: report)
+    path = tmp_path / "result.json"
+    args = ["--drafts", str(tmp_path)]
+    assert evidence_watch.main([*args, "--out", str(path)]) == 1
+    output = capsys.readouterr()
+    assert output.out == "" and json.loads(path.read_bytes()) == report
+    summary, left, right = output.err.splitlines()
+    assert summary == "Evidence passages checked = 3"
+    assert json.loads(left) == changed
+    assert json.loads(right) == {
+        **unavailable,
+        "url": "https://agency.example/info",
+        "error": "HTTP 403",
+    }
+    assert (
+        "password" not in output.err
+        and "fake-secret" not in output.err
+        and stable["url"] not in output.err
+    )
+    assert evidence_watch.main(args) == 1
+    output = capsys.readouterr()
+    assert json.loads(output.out) == report and output.err == ""
+
+    report["sources"] = [stable]
+    assert evidence_watch.main([*args, "--out", str(path)]) == 0
+    output = capsys.readouterr()
+    assert output.out == "" and output.err.strip() == "Evidence passages checked = 1"
+
+
 def test_tracks_only_reviewed_passage_and_preserves_affected_families(tmp_path):
     expected = hashlib.sha256("資格 45".encode()).hexdigest()
     for concept in ("first", "second", "third"):

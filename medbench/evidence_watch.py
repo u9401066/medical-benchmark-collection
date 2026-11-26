@@ -6,13 +6,14 @@ import hashlib
 import io
 import json
 import re
+import sys
 import time
 import zlib
 from datetime import date
 from http.client import HTTPException
 from pathlib import Path
 from urllib.error import HTTPError
-from urllib.parse import urlsplit
+from urllib.parse import parse_qsl, urlencode, urlsplit
 from urllib.request import Request, urlopen
 
 from lxml import etree, html
@@ -135,17 +136,81 @@ def check(folder, download=fetch):
     return {"checked_on": date.today().isoformat(), "sources": rows}
 
 
-def main():
+def log_failure(row):
+    # Signed URLs, proxy details and server-provided error messages can contain credentials.
+    try:
+        url = urlsplit(row["url"])
+        public_query = [
+            (key, value)
+            for key, value in parse_qsl(url.query)
+            if key.lower() in {"nodeid", "pid", "sid"} and value.isdecimal()
+        ]
+        source = url._replace(
+            netloc=url.netloc.rsplit("@", 1)[-1],
+            query=urlencode(public_query),
+            fragment="",
+        ).geturl()
+    except ValueError:
+        source = "(invalid source URL)"
+    detail = {
+        "status": row["status"],
+        "url": source,
+        "watch_xpath": row["watch_xpath"],
+        "family_ids": row["family_ids"],
+    }
+    if row["status"] == "changed":
+        detail.update(
+            expected_sha256=row["expected_sha256"],
+            observed_sha256=row["observed_sha256"],
+        )
+    else:
+        error = row.get("error", "")
+        http_status = re.search(r"\bHTTP Error (\d{3})\b", error)
+        if http_status:
+            reason = "HTTP " + http_status[1]
+        else:
+            messages = (
+                ("timed out", "Request timed out"),
+                ("timeout", "Request timed out"),
+                ("name resolution", "DNS lookup failed"),
+                ("getaddrinfo failed", "DNS lookup failed"),
+                ("name or service not known", "DNS lookup failed"),
+                ("certificate", "TLS certificate error"),
+                ("connection reset", "Connection reset"),
+                ("network is unreachable", "Network unreachable"),
+                ("connection refused", "Connection refused"),
+                (
+                    "must match exactly one html element",
+                    "Locator did not match exactly one HTML element",
+                ),
+                ("identified passage is empty", "Located passage was empty"),
+                ("html fetch limit", "HTML response exceeded size limit"),
+                ("gzip", "Invalid gzip response"),
+                ("content-encoding", "Unsupported content encoding"),
+            )
+            reason = next(
+                (label for needle, label in messages if needle in error.lower()),
+                "Source download or HTML parsing failed",
+            )
+        detail["error"] = reason
+    print(json.dumps(detail, ensure_ascii=False), file=sys.stderr)
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--drafts", type=Path, default=Path("drafts"))
     parser.add_argument("--out", type=Path)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if not args.drafts.is_dir():
         parser.error(f"Draft folder does not exist: {args.drafts}")
     report = check(args.drafts)
     output = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
     if args.out:
         atomic(args.out, output.encode("utf-8"))
+        print(f"Evidence passages checked = {len(report['sources'])}", file=sys.stderr)
+        for row in report["sources"]:
+            if row["status"] != "unchanged":
+                log_failure(row)
     else:
         print(output, end="")
     return int(any(row["status"] != "unchanged" for row in report["sources"]))
