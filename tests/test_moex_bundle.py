@@ -2,7 +2,7 @@ import io
 import hashlib
 import zipfile
 
-from medbench.moex_bundle import archived, bundle_path, fetch_batch, groups, match_bundle
+from medbench.moex_bundle import archived, bundle_path, correction_batches, fetch_batch, groups, match_bundle
 
 
 def row(cat="004", subject="c024", kind="Q"):
@@ -46,6 +46,23 @@ def test_each_batch_limits_eight_and_avoids_repeated_subject_codes_across_catego
         subject_codes = {r["subject_code"] for r in b}
         assert len(subject_codes) <= 8
         assert len(subject_codes) == len({(r["category_code"], r["subject_code"]) for r in b})
+
+
+def test_shared_subject_codes_use_the_minimum_number_of_official_requests():
+    papers = [row(cat=cat, subject=code) for cat, code in [
+        ("001", "1000"), ("002", "1000"), ("003", "2000"), ("004", "2000")]]
+    batches = list(groups(papers))
+    assert [[r["subject_code"] for r in batch] for batch in batches] == [["1000", "2000"], ["1000", "2000"]]
+    assert {r["source_url"] for batch in batches for r in batch} == {r["source_url"] for r in papers}
+
+
+def test_correction_sample_keeps_question_original_key_and_correction_together():
+    first = [row(subject=code, kind=kind) for code in ("1000", "2000") for kind in ("Q", "S", "M")]
+    other_exam = [{**row(kind=kind), "exam_code": "081020"} for kind in ("Q", "M")]
+    batches = correction_batches([*other_exam, row(subject="9999"), *first], 1)
+    assert len(batches) == 1
+    assert sorted(r["source_url"] for r in batches[0]) == sorted(r["source_url"] for r in first)
+    assert correction_batches([row()], 1) == []
 
 
 def test_receipt_resolves_to_exact_original_zip_and_member(tmp_path):

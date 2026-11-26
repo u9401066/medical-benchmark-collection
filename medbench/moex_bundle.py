@@ -34,15 +34,28 @@ def groups(rows, limit=8):
         papers = exams[row["exam_code"]]
         papers.setdefault((row["category_code"], row["subject_code"]), []).append(row)
     for exam in sorted(exams):
-        batch, codes = [], set()
+        by_code = defaultdict(list)
         for (_, code), paper in sorted(exams[exam].items()):
-            if len(codes) == limit or code in codes:
-                yield batch
-                batch, codes = [], set()
-            batch.extend(paper)
-            codes.add(code)
-        if batch:
-            yield batch
+            by_code[code].append(paper)
+        # Each occurrence of a code requires its own batch. Deal consecutive
+        # occurrences across the bins so no code collides and loads differ by at most one.
+        count = max((len(exams[exam]) + limit - 1) // limit, max(map(len, by_code.values())))
+        batches = [[] for _ in range(count)]
+        offset = 0
+        for code in sorted(by_code):
+            for paper in by_code[code]:
+                batches[offset % count].extend(paper)
+                offset += 1
+        yield from batches
+
+
+def correction_batches(rows, limit):
+    """Sample the batches containing the most corrected papers for a given year's pending rows."""
+    corrected = {(r["exam_code"], r["category_code"], r["subject_code"]) for r in rows if r["asset_type"] == "M"}
+    selected = [r for r in rows if (r["exam_code"], r["category_code"], r["subject_code"]) in corrected]
+    batches = list(groups(selected))
+    batches.sort(key=lambda batch: (-sum(r["asset_type"] == "M" for r in batch), -len(batch)))
+    return batches[:limit]
 
 
 def decoded_name(info):
@@ -205,6 +218,8 @@ def main(argv=None):
     p.add_argument("--years", required=True, help="ROC range, e.g. 81-112")
     p.add_argument("--scopes", default="medical")
     p.add_argument("--max-batches", type=int, help="stop after this many bundle requests")
+    p.add_argument("--correction-batches-per-year", type=int, metavar="N",
+                   help="sample up to N batches of papers with a pending official correction in each year")
     p.add_argument("--delay", type=float, default=1.0)
     p.add_argument("--wait-for-index", action="store_true",
                    help="process years oldest first as coverage.tsv becomes available, waiting up to three hours per year")
@@ -212,6 +227,8 @@ def main(argv=None):
     bounds = [int(s) for s in args.years.split("-")]
     if len(bounds) not in (1, 2) or bounds[-1] < bounds[0]:
         p.error("--years must be a single year or an ascending range")
+    if args.correction_batches_per_year is not None and args.correction_batches_per_year < 1:
+        p.error("--correction-batches-per-year must be a positive integer")
     selected = set(args.scopes.split(","))
     known = {r["url"]: r["sha256"] for r in archive.read_tsv(args.seed)} if args.seed.is_file() else {}
     forms = Forms(args.delay)
@@ -230,7 +247,12 @@ def main(argv=None):
                    and not archived(args.cache, r["source_url"])]
         for r in pending:
             r["prior_sha256"] = known.get(r["source_url"], "")
-        for batch in groups(pending):
+        batches = correction_batches(pending, args.correction_batches_per_year) if args.correction_batches_per_year else groups(pending)
+        for batch in batches:
+            # Other queues can finish an overlapping paper after this year's plan was loaded.
+            batch = [r for r in batch if not archived(args.cache, r["source_url"])]
+            if not batch:
+                continue
             if args.max_batches is not None and attempts >= args.max_batches:
                 return int(errors != 0)
             receipts, error = fetch_batch(batch, args.cache, forms)

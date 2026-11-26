@@ -1,0 +1,298 @@
+{
+  "as_of": "2026-11-26",
+  "scope": "source transcription for audit; no clinical re-keying or scored-suite inclusion",
+  "render": {
+    "bbox_coordinates": "display PDF points from top left",
+    "matrix_scale": [
+      4,
+      4
+    ],
+    "colorspace": "grayscale",
+    "alpha": false,
+    "pymupdf_version": "2.2",
+    "mupdf_version": "1.28.6",
+    "digest_of": "PNG bytes from Page.get_pixmap(...).tobytes(\"png\")"
+  },
+  "transcription_conventions": "選項標籤統一為 A–D，可見版面換行與中英間距整理為單行。原圖、原表、OCR 草稿及決議各自保存。",
+  "items": [
+    {
+      "paper_id": "090040-001-2004",
+      "item_id": "090040-001-2004-010",
+      "question_number": 10,
+      "decision_id": "moex-case-230-surgery-010",
+      "question_source": "rendered_scan",
+      "transcription_review": "visually_checked_by_agent_against_numbered_Q_region",
+      "clinical_review": "pending_physician_review",
+      "question": "在傷口癒合過程中，膠原蛋白(collagen)最早出現在傷口中的時間，是在組織受傷後多久？",
+      "options": {
+        "A": "1至2天",
+        "B": "4至5天",
+        "C": "一週左右",
+        "D": "二週左右"
+      },
+      "Q": {
+        "asset_id": "moex-090040-001-2004-Q-1",
+        "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=090040&c=001&s=2004&q=1",
+        "sha256": "ec70e4e50bf46c9854134bc28ecef0cd0564c6619563345f429df182a30b9b79",
+        "printed_paper_code": "012",
+        "header_and_instructions": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            23,
+            32,
+            565,
+            156
+          ],
+          "rendered_png_sha256": "749fd232cc133bd4ce42932dbfa891a6f5ca53eb9249891f534b8c56c6ffe34a"
+        },
+        "numbered_question_and_options": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            23,
+            430.5,
+            555,
+            454
+          ],
+          "rendered_png_sha256": "383af5c69aefe2d9880d26f62f007df35f62423d972835dcc54f35574607936d"
+        },
+        "separate_ocr_draft": {
+          "path_relative_to_moex": "ocr/90/moex-090040-001-2004-Q-1.jsonl.gz",
+          "pdf_page": 1,
+          "status": "ocr_draft"
+        }
+      },
+      "M": {
+        "asset_id": "moex-090040-001-2004-M-1",
+        "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=090040&c=001&s=2004&q=1",
+        "sha256": "70d84b36068296871c0e6e5338fbb32268c08af24cf24d0e5f18c611d121995e",
+        "printed_paper_code": "012",
+        "header_and_paper_code": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            48,
+            29,
+            555,
+            146
+          ],
+          "rendered_png_sha256": "32d110089b14403ad770413abfed14ae7846ae6e5f6a6a9a3b7a88ebb4aa93cc"
+        },
+        "number_and_answer_cell": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            290,
+            152,
+            313,
+            188
+          ],
+          "rendered_png_sha256": "671ab1e486bb06063144d34e413cb4402ed2765a95c003a9bb6098be6f3b24a9"
+        },
+        "notes_region": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            51,
+            329,
+            535,
+            357
+          ],
+          "rendered_png_sha256": "c1e582b7d8ecf1da2403ac4e9a3b89187778bea15b8a3fa721c830b78f0fc442"
+        },
+        "answer_cell_token": "#",
+        "item_specific_note": "第10題答A或答B者均給分"
+      },
+      "separate_original_S": "not_listed_in_current_manifest",
+      "rule_from_Q_and_M": {
+        "kind": "any_of",
+        "choices": [
+          "A",
+          "B"
+        ],
+        "unlisted_combinations": "requires_review"
+      }
+    },
+    {
+      "paper_id": "090040-001-3004",
+      "item_id": "090040-001-3004-013",
+      "question_number": 13,
+      "decision_id": "moex-case-230-obgyn-013",
+      "question_source": "rendered_scan",
+      "transcription_review": "visually_checked_by_agent_against_numbered_Q_region",
+      "clinical_review": "pending_physician_review",
+      "question": "子宮肌瘤之大小於妊娠期間保持不變之機率約為：",
+      "options": {
+        "A": "90%",
+        "B": "60%",
+        "C": "30%",
+        "D": "小於10%"
+      },
+      "Q": {
+        "asset_id": "moex-090040-001-3004-Q-1",
+        "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=090040&c=001&s=3004&q=1",
+        "sha256": "8bfdc3c64f99f35a51a9d702cab3c752f93237c3ef7556e0240fe6ee66d0cd46",
+        "printed_paper_code": "013",
+        "header_and_instructions": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            20,
+            44,
+            568,
+            181
+          ],
+          "rendered_png_sha256": "3dbdbb0cb993ffc773add82afa91a1bda4191b34cccfb7a6a19e689543e785a2"
+        },
+        "numbered_question_and_options": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            27,
+            495.75,
+            547,
+            520
+          ],
+          "rendered_png_sha256": "e16380d65b2fc0eb9292ccb4c7380fc0c7e46c99f721efcbf5fa339eee999531"
+        },
+        "separate_ocr_draft": {
+          "path_relative_to_moex": "ocr/90/moex-090040-001-3004-Q-1.jsonl.gz",
+          "pdf_page": 1,
+          "status": "ocr_draft"
+        }
+      },
+      "M": {
+        "asset_id": "moex-090040-001-3004-M-1",
+        "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=090040&c=001&s=3004&q=1",
+        "sha256": "2d0498e14335819876386890dd7e45acaa3281ae0cbe69b12c236f5cd2830f87",
+        "printed_paper_code": "013",
+        "header_and_paper_code": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            48,
+            29,
+            555,
+            146
+          ],
+          "rendered_png_sha256": "8debb9724588d6ef4e9e646f072684a9028da2a9391a7e5765b008f8ae1b8ad6"
+        },
+        "number_and_answer_cell": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            361,
+            164,
+            383,
+            200
+          ],
+          "rendered_png_sha256": "415b33b8853d36645817a117f33d49b88880417b10cb64d8bb01a6f0af01b1a4"
+        },
+        "notes_region": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            51,
+            341,
+            373,
+            358
+          ],
+          "rendered_png_sha256": "9595ea57bfc8587aecd4a64130b4c22768fc28b5568bb53ce9bb3edf004dca55"
+        },
+        "answer_cell_token": "A",
+        "item_specific_note": null,
+        "other_item_numbers_in_notes": [
+          7,
+          29
+        ]
+      },
+      "separate_original_S": "not_listed_in_current_manifest",
+      "rule_from_Q_and_M": {
+        "kind": "single",
+        "choices": [
+          "A"
+        ]
+      }
+    },
+    {
+      "paper_id": "099130-101-200",
+      "item_id": "099130-101-200-004",
+      "question_number": 4,
+      "decision_id": "moex-compendium-6-10-medical-science-004",
+      "question_source": "native_text_and_rendered_page",
+      "transcription_review": "visually_checked_by_agent_against_numbered_Q_region",
+      "clinical_review": "pending_physician_review",
+      "question": "正常人體能感受環境溫度變化，以便做適度的因應。下列有關 thermoreceptor 的敘述何者錯誤？",
+      "options": {
+        "A": "Thermoreceptor 可分為 cold receptor 與 warm receptor 兩種",
+        "B": "大部分的 warm receptor fiber 屬於 C fiber",
+        "C": "Cold receptor 及 warm receptor 均屬於 slowly adapting receptors",
+        "D": "受到高於 45℃的溫度刺激時，warm receptors 興奮性增加，warm fibers 的動作電位頻率大增，此時 warm receptors 可同時偵測痛覺"
+      },
+      "Q": {
+        "asset_id": "moex-099130-101-200-Q-1",
+        "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=099130&c=101&s=200&q=1",
+        "sha256": "a569924724a49efb63f083d6ad09048d4dfe664f1cffc8270afa7ec09307e2b7",
+        "printed_paper_code": "2101",
+        "header_and_instructions": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            45,
+            53,
+            563,
+            240
+          ],
+          "rendered_png_sha256": "8f965aa3bea4a49a93e0865f5cf20b49bbe220d67aac2bf9154e9960ffcfc280"
+        },
+        "numbered_question_and_options": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            46,
+            336,
+            563,
+            414
+          ],
+          "rendered_png_sha256": "1ac5e92f6c37e514599dbe1d521a107b18421e0e9aa357d6c7c406be798d5bdc"
+        }
+      },
+      "M": {
+        "asset_id": "moex-099130-101-200-M-1",
+        "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=099130&c=101&s=200&q=1",
+        "sha256": "5f5fecc94be9a105e30b148893ef2db00e3a7cc5e2b92fad40cb65820ab5dcb9",
+        "printed_paper_code": "2101",
+        "header_and_paper_code": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            48,
+            50,
+            545,
+            185
+          ],
+          "rendered_png_sha256": "b9086ac7b641e536730dbcf9a3475f431886611ecd731faf0627c620a9a13115"
+        },
+        "number_and_answer_cell": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            156,
+            208,
+            177,
+            251
+          ],
+          "rendered_png_sha256": "d592aef1f0ec4eb4cc7005edfa1eb9a87b7f8dcd2faa6809779a9f1baf724073"
+        },
+        "notes_region": {
+          "pdf_page": 1,
+          "bbox_pt": [
+            55,
+            496,
+            266,
+            512
+          ],
+          "rendered_png_sha256": "12db432e919cd4d84749ea0059ae5729bc784eac0f197e3d34a029f79ce96fbe"
+        },
+        "answer_cell_token": "#",
+        "item_specific_note": "第4題答C或D者均給分"
+      },
+      "separate_original_S": "not_listed_in_current_manifest",
+      "rule_from_Q_and_M": {
+        "kind": "any_of",
+        "choices": [
+          "C",
+          "D"
+        ],
+        "unlisted_combinations": "requires_review"
+      }
+    }
+  ]
+}

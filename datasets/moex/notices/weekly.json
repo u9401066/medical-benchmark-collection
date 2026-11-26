@@ -76,7 +76,11 @@
       ],
       "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
       "scope": "general_challenge_procedure",
-      "file_status": "pending"
+      "sha256": "9d2981f8374a47eb3432ace70ce5747a836eefe87ac7a2d875f70441c354c05a",
+      "bytes": 1072992,
+      "media": "pdf",
+      "cache_key": "attachment-54971d882dff612b2c7b.bin",
+      "file_status": "verified"
     },
     {
       "title": "試題疑義處理辦法修正　試題子題錯誤明確規範",
@@ -263,7 +267,11 @@
       ],
       "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
       "scope": "general_challenge_procedure",
-      "file_status": "pending"
+      "sha256": "51b890225097f720d841156aa3f336582be7f6f855efc3107c8525e4e80fe15d",
+      "bytes": 1645572,
+      "media": "pdf",
+      "cache_key": "attachment-e8ca9eb44b550b4fac44.bin",
+      "file_status": "verified"
     },
     {
       "title": "試題疑義處理辦法通過　維護應考人權益為目的　兼顧考試結果之公信力",
@@ -274,7 +282,11 @@
       ],
       "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
       "scope": "general_challenge_procedure",
-      "file_status": "pending"
+      "sha256": "280fb3eb256f47f51d5e4821b82ff183afd3a72603c5bf1270b14e5e03a409d9",
+      "bytes": 1271758,
+      "media": "pdf",
+      "cache_key": "attachment-d27f4cf8cd81257afb13.bin",
+      "file_status": "verified"
     },
     {
       "title": "公務人員考試試題疑義處理辦法",
@@ -292,18 +304,6 @@
     {
       "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13953",
       "error": "not cached: attachment-573217e2d397b75fee24.bin"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=10959",
-      "error": "not cached: attachment-54971d882dff612b2c7b.bin"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=8523",
-      "error": "not cached: attachment-d27f4cf8cd81257afb13.bin"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=7660",
-      "error": "not cached: attachment-e8ca9eb44b550b4fac44.bin"
     }
   ]
 }

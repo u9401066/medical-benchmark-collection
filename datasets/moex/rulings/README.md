@@ -15,4 +15,15 @@
 
 對照程式以官方試卷代碼、題號與來源 SHA-256 定位，並比對已提取紀錄引用的答案檔版本。案件中披露的請求、初步說明與決議保留各自的出處。僅公布全國合計的公告保存在 [scope.json](scope.json)，不分配至單題。逐案整理的來源清單在 [decisions.json](../notices/decisions.json)。
 
+民國 90 年兩題與 99 年醫學（二）第 4 題另有原件逐題摘錄。用 `item_id` 或 `decision_id` 可將摘錄連回本目錄的對照紀錄。每題保存 Q 上可見的完整題幹與四個選項、Q／M 的卷首代號、題號、M 對應儲存格與備註位置。90 年兩題逐字核對掃描圖，99 年第 4 題同時核對原生文字與圖面。摘錄中的給分規則只表達歷屆考試的處理方式，臨床審查仍待進行。[逐題摘錄及裁切區域雜湊](question-excerpts.json) · [原卷掃描的逐頁 OCR 草稿](../ocr/90/)
+
+要從原始 PDF 重現一處摘錄，先對照 `Q.sha256` 或 `M.sha256` 核實原檔。使用摘錄記錄的 PyMuPDF 版本開啟該檔，以 `pdf_page - 1` 取頁，左上角為原點，單位是 PDF 點。以下以 `region` 表示該題的 `Q.numbered_question_and_options` 或 `M.number_and_answer_cell`。
+
+```python
+page = doc[region["pdf_page"] - 1]
+crop = page.get_pixmap(matrix=pymupdf.Matrix(4, 4), clip=pymupdf.Rect(*region["bbox_pt"]),
+                       colorspace=pymupdf.csGRAY, alpha=False)
+assert hashlib.sha256(crop.tobytes("png")).hexdigest() == region["rendered_png_sha256"]
+```
+
 在 repo 根目錄執行 `python -m medbench.moex_rulings` 即可由已公布的官方索引、附件清冊、逐題紀錄與決議重建對照。使用其他批次時可分別指定 `--index`、`--manifest`、`--items`、`--decisions` 及 `--out`。

@@ -17,20 +17,18 @@
     "emergency": 0
   },
   "unique_articles": 638,
-  "bodies_scanned": 616,
-  "bodies_pending": 22,
+  "bodies_scanned": 638,
+  "bodies_pending": 0,
   "empty_bodies": 0,
   "article_statuses": {
-    "article_element_missing": 1,
-    "pending": 21,
-    "text_scanned": 616
+    "text_scanned": 638
   },
-  "attachment_links": 346,
-  "unique_attachment_urls": 340,
+  "attachment_links": 376,
+  "unique_attachment_urls": 370,
   "attachment_statuses": {
-    "no_extractable_text": 1,
-    "pending": 318,
-    "text_scanned": 21
+    "no_extractable_text": 34,
+    "pending": 280,
+    "text_scanned": 56
   },
   "listing_pages": [
     {

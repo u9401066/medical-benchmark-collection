@@ -1,0 +1,47 @@
+{
+  "checked_on": "2026-11-26",
+  "method": "兩件整期掃描 PDF 逐頁目視定位，編冊索引標題導至整期影像。",
+  "summaries": [
+    {
+      "id": "moex-weekly-13587",
+      "issue": 969,
+      "date": "2004-06-17",
+      "page": 4,
+      "region": "左半跨欄，版面中央直排標題下方暨左上至左中內文",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13587",
+      "sha256": "6b0f35026f12a07078c201f190520715023df43bf12e739fdd334b4b1626c836",
+      "kind": "aggregate_only",
+      "fact": "報導民國90至92年醫師考試試題分析，指更正集中於少數子科目，無逐題改答。"
+    },
+    {
+      "id": "moex-weekly-15111",
+      "issue": 1085,
+      "date": "2006-09-21",
+      "page": 4,
+      "region": "右側中央〈本年第二次專技醫事人員考試榜示〉，文章最末段（右欄最後一段）",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=15111",
+      "sha256": "18c3771be1992fcdf90bc41681ec8a0515133dff0e261606d62b364898d41a2d",
+      "kind": "aggregate_only",
+      "denominator": "各該年度第二次醫事人員考試提出試題疑義的題數",
+      "numerator": "更正答案或一律給分的題數",
+      "percent_by_exam": [
+        {
+          "roc_year": 93,
+          "sitting": 2,
+          "percent": 25.17
+        },
+        {
+          "roc_year": 94,
+          "sitting": 2,
+          "percent": 23.58
+        },
+        {
+          "roc_year": 95,
+          "sitting": 2,
+          "percent": 18.58
+        }
+      ],
+      "note": "報導沒有逐題明細，且資料含同場獸醫類科，不能當作純人類醫事或醫師單科分母。"
+    }
+  ]
+}

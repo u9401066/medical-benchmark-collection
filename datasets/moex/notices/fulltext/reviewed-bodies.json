@@ -1,0 +1,81 @@
+{
+  "as_of": "2026-11-26",
+  "sources": 638,
+  "signal_hits": 8,
+  "manually_discovered_additional_preliminary": 1,
+  "notes": "????????????????",
+  "articles": [
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=7892",
+      "sha256": "6db17a511b8495a6fc64526a2a039ddd68ac9ad34c9c7667898034665c6aaeca",
+      "publication_date": "2026-11-19",
+      "locator": "{\"block-1\": [\"challenge\", \"key_revision\", \"award\"], \"block-2\": [\"challenge\", \"key_revision\"]}",
+      "status": "aggregate_only",
+      "review": "?????????????????"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=2&menu_id=41&news_id=7861",
+      "sha256": "73400567c3de6d2637cd63d432da5e7a6f80d38a92f3ba56c783ed0c7389a7e6",
+      "publication_date": "2026-10-13",
+      "locator": "{\"block-20\": [\"award\"]}",
+      "status": "eligibility",
+      "review": "?????????????????????"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=2&menu_id=41&news_id=7854",
+      "sha256": "2469f45be91a8139fc938c2ec1cb757d07cd9add019ce81c71d64da00f06e68b",
+      "publication_date": "2026-09-22",
+      "locator": "{\"block-40\": [\"award\"]}",
+      "status": "eligibility",
+      "review": "?????????????????"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=2&menu_id=41&news_id=7822",
+      "sha256": "8914ce436f347f3acad9e01c4c747b55d1e11d30974b1a83f472b8920eecf9bc",
+      "publication_date": "2026-08-07",
+      "locator": "{\"block-15\": [\"award\"]}",
+      "status": "eligibility",
+      "review": "?????????????????"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=6048",
+      "sha256": "99f3477ec1ea9a8f44cb27e81cf656556fe83a553602a01f389736580aa53126",
+      "publication_date": "2023-09-21",
+      "locator": "{\"block-3\": [\"challenge\"]}",
+      "status": "procedure",
+      "review": "?????????????????????"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=5979",
+      "sha256": "0d4dfb0bc380ba96245718397559f7a03f4f15ef99a8055711c3e13031487a56",
+      "publication_date": "2023-08-02",
+      "locator": "{\"block-1\": [\"challenge\", \"award\"], \"block-2\": [\"challenge\", \"award\"]}",
+      "status": "boundary_final_item_ruling",
+      "review": "????34???????????M?"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=5976",
+      "sha256": "198fbf59336b58a2f6301f817f0ac3d152487cb62a097f255fcdf4771b47e375",
+      "publication_date": "2023-07-31",
+      "locator": "{}",
+      "status": "boundary_preliminary",
+      "review": "????????????????????????????????"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=5950",
+      "sha256": "d0f3e23dd2891c3fbe1007175e44f958b50362fd6f439e024fe38d9b263c4419",
+      "publication_date": "2023-07-06",
+      "locator": "{\"block-3\": [\"challenge\"]}",
+      "status": "procedure",
+      "review": "????????????????????"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=4887",
+      "sha256": "42d0b6843d30d0637e1ffd650fcf65011d8823cc92cbb2ee1153c09ce24a1ffb",
+      "publication_date": "2023-04-27",
+      "locator": "{\"block-1\": [\"challenge\"], \"block-2\": [\"challenge\"]}",
+      "status": "research",
+      "review": "?????????????????????????"
+    }
+  ]
+}

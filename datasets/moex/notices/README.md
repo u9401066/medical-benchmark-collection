@@ -25,9 +25,11 @@
 
 35 年共列 879 場，以考試名稱或人類醫事類科篩得的 400 場均已核對試務頁回應。58 場有可辨識的試務頁，342 場由官方傳回找不到頁面。在 58 個有效頁面的連結標題中未找到直接的改答或給分公告。[分年明細](coverage.tsv)
 
-《考選周刊》索引顯示 15,334 篇文章。本批用六個標題詞逐頁查核，共命中 17 篇不重複文章。已取得 2004-06-17 醫師國考試題分析與 2006-09-21 第二次醫事考試放榜報導的掃描 PDF。兩篇標題反映更正趨勢，取得的影像版面仍須人工定位，故沒有據此登錄個別題目。其餘文章依醫事相關性及一般試題疑義程序決定是否取件。[查詢和檔案指紋](weekly.json) · [2004 年原刊](https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13587) · [2006 年原刊](https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=15111)
+《考選周刊》索引顯示 15,334 篇文章，以六個標題詞逐頁查核後取得 17 篇不重複結果。兩份醫事報導均已從整期掃描定位到第 4 版。第 969 期（2004-06-17）報導醫師國考試題品質研究，第 1085 期（2006-09-21）則列民國 93、94、95 年第二次醫事考試更正答案或一律給分的比率，分別為 25.17%、23.58%、18.58%。分母為該次考試提出疑義的題數，且同場含獸醫類科。兩篇均未列逐題答案。[查詢與檔案指紋](weekly.json) · [版面位置及指標分母](weekly-reviewed.json) · [2004 年原刊第 4 版](https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13587#page=4) · [2006 年原刊第 4 版](https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=15111#page=4)
 
 ## 逐題核對
+
+638 篇公告正文全部可讀，含先前被導向暫時錯誤頁的 2023-09-07 口試新聞。8 篇正文觸發搜尋詞，人工複核後，1 篇是社工師單題決議、1 篇是全國總體統計、3 篇處理應考資格、2 篇說明護理師試務程序、1 篇是信效度研究。另有 1 篇社工師初步說明由標題查詢發現。附件與圖片有獨立的下載和抽取進度。[逐篇複核記錄](fulltext/reviewed-bodies.json) · [全文與附件進度](fulltext/coverage.json)
 
 - **民國 83 年、86 年醫師考試的兩個待查案例**。考選部 2011 年出版的《各種考試事件參考案例暨處理情形彙編》有兩處無法逐題對應。案例 6-9（PDF 第 12 頁）記載 83 年第一次「基礎醫學（一）」更正答案，未寫題號，同科更正表列第 49 與 79 題。案例 6-8（第 11 頁）寫 86 年「公共衛生學」第 86 題可答 B 或 C，但同年醫師試卷的更正表只有 80 題，且其第 68 題接受 B 或 BC。兩筆均保留原件差異及查核線索。[官方出版目錄](https://wwwc.moex.gov.tw/Main/Publication/wfrmPublication.aspx?kind=1&menu_id=62&pub_id=171) · [彙編原件](https://wwwc.moex.gov.tw/Main/Publication/wHandPub_File.ashx?file_id=64) · [83 年更正表](https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=083020&c=004&s=c084&q=1) · [86 年更正表](https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=086260&c=239&s=7004&q=1)
 - **民國 90 年第一次醫事人員檢覈筆試，醫師第二階段**。考試院（90）考台訴決字第057號記載外科學等科第 10 題原為 B，疑義會議接受 B 或 A。婦產科學等科第 13 題維持 A。案件過程中曾出現一律給分的主張。決定 PDF 第 3 頁「事實」與 Word 第 21 段可對照案情。場次 `090040` 的外科更正表載 A 或 B，婦產科更正表第 13 題列 A，備註只有第 7 及 29 題。兩科的索引都只有考題與更正表。[官方案件與附件](https://wwwc.moex.gov.tw/main/ExamLaws/wfrmExamLaws.aspx?kind=7&menu_id=1933&laws_id=230) · [該場試卷](https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=090040&y=2001)
