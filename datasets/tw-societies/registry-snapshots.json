@@ -1,0 +1,36 @@
+[
+  {
+    "dataset_id": "13603",
+    "source_url": "https://data.gov.tw/dataset/13603",
+    "download_url": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/DA99D92C-531A-40B2-AFF6-D5C1C7AEE022/resource/6CD84A67-522B-4811-96B8-3E7942AE3C1B/download",
+    "sha256": "bc4700434d571f617a420a9617cf1ec681a08c9535d7cba69d58af92cc32762e",
+    "bytes": 2418547,
+    "rows": 23210,
+    "screening": {
+      "adjacent_name": 106,
+      "animal_related": 192,
+      "linked_directory_name": 394,
+      "name_candidate": 437,
+      "other_organization": 19728,
+      "other_society_name": 2343,
+      "outside_medical_scope": 10
+    }
+  },
+  {
+    "dataset_id": "147595",
+    "source_url": "https://data.gov.tw/dataset/147595",
+    "download_url": "https://quality.data.gov.tw/dq_download_csv.php?nid=147595&md5_url=f3ef04c20c043bca773a6439e3659c71",
+    "sha256": "bf8f2add9578750a0dcd89df8d29bae36f223d4edbfffcbdd4ba30298d7709a7",
+    "bytes": 2227599,
+    "rows": 23864,
+    "screening": {
+      "adjacent_name": 105,
+      "animal_related": 178,
+      "linked_directory_name": 382,
+      "name_candidate": 425,
+      "other_organization": 20271,
+      "other_society_name": 2491,
+      "outside_medical_scope": 12
+    }
+  }
+]

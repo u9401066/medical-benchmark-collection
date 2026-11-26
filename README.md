@@ -4,6 +4,8 @@
 
 ## 現有評測工具
 
+臺灣醫學會已按科別整理，附官網核對狀態、部定專科及次專科的來源，以及學會公開甄審試題、樣題與答案的入口。[依科別找學會](datasets/tw-societies/by-specialty.md) · [直接找考試資料](datasets/tw-societies/exam-sources.tsv)
+
 本庫也收錄文獻查核、臨床對話、報告判讀與醫療代理任務。來源先登錄作者、任務與可用範圍；可改編的材料再整理為可追溯的草稿。醫師逐一審查答案、用語與證據，定版後可按用途匯出訓練案例、開發案例及獨立評測。[多來源目錄](datasets/discovery/README.md) · [複審與資料匯出](docs/editorial-workflow.md#審查紀錄與資料匯出)
 
 臺灣考選部歷年試卷已分批建檔。2026-11-26 暫停收集，已發布的試卷、這台工作機額外收到的原件，以及恢復時第一個步驟都記在交接頁。[暫停與續作紀錄](datasets/moex/RESUME.md) · [年度覆蓋、官方原檔與更正答案](datasets/moex/README.md)

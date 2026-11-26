@@ -18,7 +18,7 @@ dependencies = [
 [project.optional-dependencies]
 test = ["pytest>=7"]
 report = ["python-docx>=1.1", "matplotlib>=3.8"]
-build = ["pymupdf>=1.24"]  # medbench twmed-build (parsing the exam PDFs)
+build = ["pymupdf>=1.24", "lxml>=4.9"]  # PDF and HTML source ingestion
 
 [project.scripts]
 medbench = "medbench.cli:main"
@@ -28,3 +28,4 @@ packages = ["medbench"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]

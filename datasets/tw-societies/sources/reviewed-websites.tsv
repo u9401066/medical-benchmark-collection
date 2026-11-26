@@ -1,0 +1,7 @@
+source_id	source_url	name	website	locator	website_check	destination_sha256	checked_date
+site-review	https://www.tma.tw/about/index02_Info.asp?/2.html	台北市醫師公會	http://www.tma.org.tw/	全聯會列出地方公會同一網址，實際首頁標題及會務公告顯示台北市醫師公會	identity_verified	efc0590266d5da43f55cce14b42a0d44fcaaca144188f39e28994b24dd59f537	2026-11-26
+site-review	https://t-s-c.org.tw/	台灣大腸直腸醫學會	https://t-s-c.org.tw/	首頁中英文全稱、章程與會員專區	identity_verified	547f6c5e5015e635dff12d23bc141ff256df3f82b43c57919345c4d374f51004	2026-11-26
+site-review	http://taot.org.tw/	臺北市職能治療師公會	http://taot.org.tw/	首頁標題、歷屆理監事與會員專區	identity_verified	0d88831e11d0a270aa7dc4bbf2da40fb1ad0f40ddc10213b99462462f0eca00e	2026-11-26
+site-review	https://twtm.tw/	中華民國中醫師公會全國聯合會	https://twtm.tw/	公會官網提供全國聯合會會務及會員服務	identity_verified	611bec1532e8248e84ce7b73d5601329261fd15b1e5495d8e6625780fc1026e7	2026-11-26
+site-review	http://www.bcrstaiwan.com/	中華民國生醫材料及藥物制放學會	http://www.bcrstaiwan.com/	網站抬頭寫「與」，內政部登記用「及」。網站有理監事、跨年會訊以及獨立 2026 年會的連結。	identity_verified	4f3da4206fe5a20354b62f71cc87e7df37a67a1ebbbfb7dee197664b8116e21c	2026-11-26
+site-review	https://fvr.tmuh.org.tw/center/cat/131	台灣復健工程暨輔具科技學會	http://www.treats.org.tw/index.php	北醫列出的學會網址，當次重導後回應 HTTP 500。	directory_only		2026-11-26

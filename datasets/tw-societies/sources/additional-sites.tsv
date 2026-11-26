@@ -1,0 +1,29 @@
+source_id	source_url	name	website	locator	website_check	website_evidence	group
+additional-first-party	https://www.ahqroc.org.tw/Default.aspx	臺灣醫療品質協會	https://www.ahqroc.org.tw/Default.aspx	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.ahqroc.org.tw/Default.aspx	
+additional-first-party	https://www.hospicemed.org.tw/	台灣安寧緩和醫學學會	https://www.hospicemed.org.tw/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.hospicemed.org.tw/	
+additional-first-party	https://www.pain.org.tw/	台灣疼痛醫學會	https://www.pain.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.pain.org.tw/	
+additional-first-party	https://www.tds.org.tw/ap/index.aspx	台灣臨床失智症學會	https://www.tds.org.tw/ap/index.aspx	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.tds.org.tw/ap/index.aspx	
+additional-first-party	https://www.dest.org.tw/about/	台灣消化系內視鏡醫學會	https://www.dest.org.tw/about/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.dest.org.tw/about/	
+additional-first-party	https://tssm.org.tw/	台灣睡眠醫學學會	https://tssm.org.tw/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://tssm.org.tw/	
+additional-first-party	https://www.sumroc.org.tw/	中華民國醫用超音波學會	https://www.sumroc.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.sumroc.org.tw/	
+additional-first-party	https://www.rheumatology.org.tw/about/ab_01.asp	中華民國風濕病醫學會	https://www.rheumatology.org.tw/about/ab_01.asp	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.rheumatology.org.tw/about/ab_01.asp	
+additional-first-party	https://www.hematology.org.tw/	中華民國血液病學會	https://www.hematology.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.hematology.org.tw/	
+additional-first-party	https://www.tlcs.org.tw/	台灣肺癌學會	https://www.tlcs.org.tw/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.tlcs.org.tw/	
+additional-first-party	https://www.obesity.org.tw/	台灣肥胖醫學會	https://www.obesity.org.tw/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.obesity.org.tw/	
+additional-first-party	https://www.tuoa.org.tw/	台灣泌尿腫瘤醫學會	https://www.tuoa.org.tw/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.tuoa.org.tw/	
+additional-first-party	https://www.tago.org.tw/	台灣婦癌醫學會	https://www.tago.org.tw/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.tago.org.tw/	
+additional-first-party	https://www.tbmt.org.tw/	中華民國血液及骨髓移植學會	https://www.tbmt.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.tbmt.org.tw/	
+additional-first-party	https://www.toa1997.org.tw/	中華民國骨質疏鬆症學會	https://www.toa1997.org.tw/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.toa1997.org.tw/	
+additional-first-party	https://www.tcns.org.tw/	台灣小兒神經醫學會	https://www.tcns.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.tcns.org.tw/	
+additional-first-party	https://www.tsop.org.tw/	台灣周產期醫學會	https://www.tsop.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.tsop.org.tw/	
+additional-first-party	https://twscn.wordpress.com/	台灣臨床神經生理學學會	https://twscn.wordpress.com/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://twscn.wordpress.com/	
+additional-first-party	https://www.tebma.org.tw/	台灣實證醫學學會	https://www.tebma.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.tebma.org.tw/	
+additional-first-party	https://tcfp.org.tw/node/17	台灣家庭醫學教育研究學會	https://tcfp.org.tw/node/17	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://tcfp.org.tw/node/17	
+additional-first-party	https://www.immunology.org.tw/	中華民國免疫醫學會	https://www.immunology.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.immunology.org.tw/	
+additional-first-party	https://gi-cwm.org.tw/	臺灣中西整合消化醫學會	https://gi-cwm.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://gi-cwm.org.tw/	
+additional-first-party	https://www.tscma.org.tw/society-introduction/	台灣中醫男科學會	https://www.tscma.org.tw/society-introduction/	搜尋索引載有學會署名；首頁直接回應待核	indexed_first_party	https://www.tscma.org.tw/society-introduction/	
+additional-first-party	https://www.tsitc.org.tw/link	台灣免疫暨腫瘤學會	https://www.tsitc.org.tw/link	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://www.tsitc.org.tw/link	
+additional-first-party	https://weightmed.org.tw/	臺灣體重管理與營養醫學會	https://weightmed.org.tw/	學會首頁或學會介紹頁顯示團體全名	identity_verified	https://weightmed.org.tw/	
+additional-first-party	https://www.taipei-cma.org/cma/freePage/13/29	中華醫學會	https://www.taipei-cma.org/cma/	學會章程第 1 條載本會全名，首頁設學會與雜誌業務兩個入口	identity_verified	https://www.taipei-cma.org/cma/freePage/13/29	
+additional-first-party	https://www.fma.org.tw/fweb/fma_intro.jsp	臺灣醫學會	https://www.fma.org.tw/fweb/fma_intro.jsp	網站標題及學會簡介顯示臺灣醫學會與 Formosan Medical Association	identity_verified	https://www.fma.org.tw/fweb/fma_intro.jsp	
+additional-first-party	https://www.tma.tw/index.asp	中華民國醫師公會全國聯合會	https://www.tma.tw/	公會網站標題與組織全名相符	identity_verified	https://www.tma.tw/index.asp	
