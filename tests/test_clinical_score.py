@@ -212,6 +212,7 @@ def test_evidence_review_reports_observed_support_and_unresolved_citations_witho
     assert partial["evidence_review"]["complete_audits"] == 0
     assert [r["evidence_audit_status"] for r in partial["items"]] == ["pending", "not_reviewed"]
     assert [r["evidence_audit_status"] for r in result["items"]] == ["complete", "complete", "not_reviewed"]
+    assert [r["fabricated_citation"] for r in result["items"]] == [True, None, None]
     with pytest.raises(ValueError, match="practice worksheet"):
         score([row], [pred], evidence_reviews=[{**sheet, "use": "public_development_review_practice"}])
     other = deepcopy(sheet)
@@ -221,7 +222,11 @@ def test_evidence_review_reports_observed_support_and_unresolved_citations_witho
                                     "locator": "Table 3", "available_on": row["clinical_as_of"]}]
     audit = score([row], [pred], evidence_reviews=[other])["evidence_review"]
     assert audit["fabricated_response_rate_among_audited"]["rate"] == 0 and audit["reference_claim_support"]["rate"] == 0
+    assert score([row], [pred], evidence_reviews=[other])["items"][0]["fabricated_citation"] is False
     other["additional_evidence"][0]["available_on"] = "2026-10-02"
+    with pytest.raises(ValueError, match="supplemental"):
+        score([row], [pred], evidence_reviews=[other])
+    other["additional_evidence"][0].update(available_on="2026-09-30", effective_from="2026-10-02")
     with pytest.raises(ValueError, match="supplemental"):
         score([row], [pred], evidence_reviews=[other])
 
@@ -237,6 +242,9 @@ def test_failed_lookup_is_not_affirmative_fabrication_and_sources_must_precede_c
         score([row], [pred], evidence_reviews=[sheet])
     row["evidence"][0]["published_on"] = "2099-11-26"
     with pytest.raises(ValueError, match="published after"):
+        score([row], [pred])
+    row["evidence"][0].update(published_on="2026-09-25", effective_from="2026-10-02")
+    with pytest.raises(ValueError, match="not yet in effect"):
         score([row], [pred])
 
 

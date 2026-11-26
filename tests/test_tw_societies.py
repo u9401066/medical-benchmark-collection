@@ -125,6 +125,31 @@ def test_occupational_therapy_forms_are_counted_once_across_pdf_editions():
     }
 
 
+def test_clinical_workplace_forms_and_blueprints_have_separate_denominators():
+    root = societies.ROOT
+    evidence = societies.records(root / "sources" / "clinical-workplace.tsv")
+    forms = [r for r in evidence if r["exam_evidence"] == "public_assessment_form"]
+    blueprints = [r for r in evidence if r["exam_evidence"] == "public_assessment_blueprint"]
+    assert len(forms) == 20 and len(blueprints) == 11
+    assert len({r["evidence_sha256"] for r in evidence}) == 3
+    assert sum(int(r["scored_observation_rows"]) for r in forms) == 164
+    assert all(not r["scored_observation_rows"] for r in blueprints)
+    assert {int(r["page_start"]) for r in forms} == set(range(1, 21))
+    by_code = {r["component_id"]: r["page_start"] for r in forms}
+    assert "PC12" not in by_code
+    assert (by_code["PC13"], by_code["SPB2"], by_code["SPB3"]) == ("12", "15", "16")
+    speech = [r for r in blueprints if r["asset_id"] == "slpu-notice"]
+    assert len(speech) == 4 and {r["numbered_task_descriptions"] for r in speech} == {"9"}
+    assert {r["coauthor"] for r in speech} == {"台灣聽力語言學會"}
+    for r in evidence:
+        assert r["exam_url"] == r["evidence_url"] + "#page=" + r["page_start"]
+        assert r["evidence_url"].startswith("https://") and r["verified_bytes_url"].startswith("https://")
+    catalog = societies.records(root / "exam-sources.tsv")
+    assert {r["source_id"] for r in catalog if r["source_file"] == "clinical-workplace.tsv"} == {
+        r["source_id"] for r in evidence
+    }
+
+
 def test_directory_preserves_identity_and_multiple_exam_sources(tmp_path):
     societies.write_table(
         tmp_path / "registry-screen.tsv",

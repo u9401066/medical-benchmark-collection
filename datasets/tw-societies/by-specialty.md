@@ -687,7 +687,7 @@
 | 台灣復健工程暨輔具科技學會 | 學會 | [名錄列址，待核對](http://www.treats.org.tw/index.php) | 待查 |
 | 中華民國聽力語言學會 | 學會 | 待查 | 待查 |
 | 中華民國聽力師公會全國聯合會 | 公會 | [已核對主體](https://www.audiologist.org.tw/) | 待查 |
-| 中華民國語言治療師公會全國聯合會 | 公會 | [已核對主體](https://www.taiwanslpu.org.tw/) | 待查 |
+| 中華民國語言治療師公會全國聯合會 | 公會 | [已核對主體](https://www.taiwanslpu.org.tw/) | [公開臨床評量藍圖](https://www.taiwanslpu.org.tw/image/files/%E5%8F%B0%E7%81%A3%E8%AA%9E%E8%A8%80%E6%B2%BB%E7%99%82%E5%B8%AB%E5%8F%AF%E4%BF%A1%E8%B3%B4%E5%B0%88%E6%A5%AD%E6%B4%BB%E5%8B%95%28EPAs%29%E7%AC%AC%E4%B8%80%E7%89%88%281%29.pdf#page=3) |
 | 南投縣物理治療師公會 | 公會 | [已核對主體](https://nantou.pt.org.tw/) | 待查 |
 | 台中市物理治療師公會 | 公會 | [已核對主體](https://www.tcpt.org.tw/) | 待查 |
 | 台中市語言治療師公會 | 公會 | [已核對主體](https://tcslp.org/) | 待查 |

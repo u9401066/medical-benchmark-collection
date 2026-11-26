@@ -49,6 +49,8 @@
 
 ### 審查紀錄與資料匯出
 
+醫師可從公開審查本選題，同頁閱讀歷史問法、當期題文、編者擬答、主張及第一手證據位置。直接在對話回覆題號、語言、修訂版、決議及理由即可。[2026-11-26 雙語審查本](review/queue-2026-11-26.md)
+
 醫師可直接在討論中用「案例與語言／原句／核准、修訂或撤回／理由／證據定位」回覆。編者保存原始版本，將經確認的判定記入 `docs/review/decisions.jsonl`，每行為一個決議。Git 保留修前／修後差異。同一病例的翻譯或重寫沿用 `family_id`，資料用途由整個病例家族共同決定。
 
 執行 `python -m medbench.curation queue` 可以看到待審版本與內容 SHA-256。決議欄位包含 `variant_id`、`revision`、`content_sha256`、`reviewer`、`date`、`decision`（`approve`／`revise`／`withdraw`）、`reason`、`evidence_locator`、`checked` 與 `approved_uses`。同一語言版本以最新決議為準。核准時要能指出已檢視的臨床內容與語言（`clinical`、`language`）。修改題幹、答案、依據、評分條件或資料用途後，舊核准會顯示 `stale_review`。
@@ -62,6 +64,17 @@
 考選部複審清單中的 4 道醫師題保留在[暫停交接](../datasets/moex/RESUME.md)。當期的來源蒐集、時效複審與評估進度列在 [roadmap](roadmap.md)。
 
 ## 臨床時效維護
+
+需要集中回填時，可用 `medbench.review_packet` 產生 JSON 工作表。編者將具名決議記入各列的 `review`。只完成一個語言就填該版，其餘列維持空白。`approve` 須列出核准用途與已核對項目，當期題需包含 `clinical`、`language`、`temporal`。`revise` 或 `withdraw` 記下理由與依據，`approved_uses` 留空。
+
+```sh
+python -m medbench.evidence_watch --out data/clinical-watch/latest.json
+python -m medbench.review_packet prepare --watch-report data/clinical-watch/latest.json --family mbc-tw-adult-0001 --out data/review/worksheet.json
+python -m medbench.review_packet candidate --packet data/review/worksheet.json --watch-report data/clinical-watch/latest.json --out data/review/candidate-decisions.jsonl
+python -m medbench.curation queue --decisions data/review/candidate-decisions.jsonl --watch-report data/clinical-watch/latest.json
+```
+
+跨日送回時，以驗證候選檔當天的監測報告複核。程式比對工作表的原題、選項順序、內容指紋與上一筆決議，也核對證據生效日、授權及正式匯出條件。通過後會產生含既有紀錄及新決議的候選檔，供維護者確認後登錄。供閱讀的公開工作表可用 `prepare --markdown` 重建。
 
 題目要保留兩個能獨立還原的判斷。原考題保存出題日、原題、原答案或給分公告及其出處。自編的歷史情境要明示是依當年資料重建。現行問法則寫出判斷日期、醫療管轄區、適用人群及版本。翻譯美式英文時仍可考臺灣制度。原題限定「依 2024 年規則」時，原答案繼續按 2024 年判分。
 

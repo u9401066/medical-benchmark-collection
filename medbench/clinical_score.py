@@ -67,6 +67,8 @@ def validate_gold(row, score_as_of):
     dates = [date.fromisoformat(row[k]) for k in ("clinical_as_of", "decision_date", "export_as_of", "review_due")]
     if any("published_on" in s and date.fromisoformat(s["published_on"]) > dates[0] for s in sources):
         raise ValueError(f"{key}: cited source published after clinical cutoff")
+    if any("effective_from" in s and date.fromisoformat(s["effective_from"]) > dates[0] for s in sources):
+        raise ValueError(f"{key}: cited source was not yet in effect at clinical cutoff")
     if not dates[0] <= dates[1] <= dates[2] < dates[3]:
         raise ValueError(f"{key}: approval is outside the clinical validity window")
     if dates[2] > score_as_of:
@@ -160,15 +162,21 @@ def rate(count, total):
     return {"numerator": count, "denominator": total, "rate": count / total if total else None}
 
 
+def fabrication_status(audit):
+    if audit is None:
+        return None
+    statuses = {row["status"] for row in audit["citations"]}
+    if "confirmed_fabricated" in statuses:
+        return True
+    return None if "unresolved" in statuses else False
+
+
 def evidence_summary(audits, readable):
     required = Counter(row["status"] for a in audits for row in a["reference_claims"])
     extra = Counter(row["status"] for a in audits for row in a["additional_claims"])
     citations = Counter(row["status"] for a in audits for row in a["citations"])
-    fabricated = sum(any(c["status"] == "confirmed_fabricated" for c in a["citations"]) for a in audits)
-    unresolved_only = sum(
-        any(c["status"] == "unresolved" for c in a["citations"])
-        and not any(c["status"] == "confirmed_fabricated" for c in a["citations"]) for a in audits
-    )
+    findings = Counter(fabrication_status(audit) for audit in audits)
+    fabricated, unresolved_only = findings[True], findings[None]
     minutes = [a["minutes"] for a in audits if a.get("minutes") is not None]
     with_reference = sum(bool(a["reference_claims"]) for a in audits)
     return {"readable_responses": readable, "complete_audits": len(audits),
@@ -247,6 +255,7 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None, evidence_revi
             "historical_relation": relation, "selected_obsolete_option": selected_old,
             "review_verdict": verdict, "clinical_result": clinical,
             "evidence_audit_status": evidence_reviews[key]["state"] if key in evidence_reviews else "not_reviewed",
+            "fabricated_citation": fabrication_status(audit),
         })
 
     assigned = len(rows)

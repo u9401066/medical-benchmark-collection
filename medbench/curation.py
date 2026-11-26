@@ -23,12 +23,14 @@ def digest(draft):
     return hashlib.sha256(payload).hexdigest()
 
 
-def decisions(path, as_of=None):
-    if not path.is_file():
-        return {}
+def decisions(path, as_of=None, *, raw=None):
+    if raw is None:
+        if not path.is_file():
+            return {}
+        raw = path.read_bytes()
     latest = {}
     last_date = {}
-    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+    for number, line in enumerate(raw.splitlines(), 1):
         if not line.strip():
             continue
         try:
@@ -183,6 +185,8 @@ def clinical_sources(draft, variant):
             raise ValueError(f"{vid}: current evidence URL must identify an HTTP(S) source")
         if "published_on" in source and date.fromisoformat(source["published_on"]) > assessed:
             raise ValueError(f"{vid}: cited source was published after clinical as_of")
+        if "effective_from" in source and date.fromisoformat(source["effective_from"]) > assessed:
+            raise ValueError(f"{vid}: cited source was not yet in effect at clinical as_of")
         if "watch_xpath" in source and not (
             has_text(source["watch_xpath"]) and isinstance(source.get("passage_sha256"), str)
             and re.fullmatch(r"[a-f0-9]{64}", source["passage_sha256"])

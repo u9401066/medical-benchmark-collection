@@ -147,8 +147,12 @@ def validate(review, item, prediction, prediction_sha256, as_of):
             or not all(
                 has_text(source.get(k)) for k in ("version", "locator", "available_on")
             )
-            or date.fromisoformat(source["available_on"])
-            > date.fromisoformat(item["clinical_as_of"])
+            or any(
+                date.fromisoformat(source[key])
+                > date.fromisoformat(item["clinical_as_of"])
+                for key in ("available_on", "effective_from")
+                if key in source
+            )
         ):
             raise ValueError(
                 f"{key}: supplemental clinical evidence needs a distinct ID and a dated source locator"
