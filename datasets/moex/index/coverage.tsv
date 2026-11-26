@@ -1,0 +1,36 @@
+year_roc	year_ad	status	menu_exams	official_exams	parsed_exams	official_categories	parsed_categories	official_subjects	parsed_subjects	detail	category_codes_without_heading	confirmed_empty_exams	accounted_exams
+81	1992	verified	1	1	1	46	46	375	375		0	0	1
+82	1993	unresolved	28	28	28	915	914	5599	5594	official results totals missing or different. Individual exam totals differ: 082030,082040,082240	0	0	28
+83	1994	unresolved	32	32	32	711	711	4476	4475	official results totals missing or different	0	0	32
+84	1995	unresolved	32	32	32	878	878	5533	5532	official results totals missing or different. Individual exam totals differ: 084280	0	0	32
+85	1996	unresolved	34	34	34	686	684	4416	4409	official totals aggregated from each individual exam. Individual exam totals differ: 085040,085320	0	0	34
+86	1997	verified	26	26	26	769	769	4852	4852		0	0	26
+87	1998	verified	30	30	30	782	782	4621	4621	official totals aggregated from each individual exam	0	0	30
+88	1999	verified	32	32	32	1081	1081	6001	6001	annual query exceeded official 6000-record limit. official totals aggregated from each individual exam	0	0	32
+89	2000	unresolved	28	28	28	763	763	4397	4396	official results totals missing or different. Individual exam totals differ: 089180	0	0	28
+90	2001	unresolved	32	32	32	983	982	5484	5484	official results totals missing or different	1	0	32
+91	2002	verified	31	31	31	569	569	3167	3167		0	0	31
+92	2003	verified	31	31	31	923	923	5301	5301		0	0	31
+93	2004	unresolved	33	29	29	713	713	3892	3891	official results totals missing or different. Individual exam totals differ: 093141	0	4	33
+94	2005	unresolved	32	28	28	1022	1021	5714	5701	official results totals missing or different. Individual exam totals differ: 094050,094231,094260	0	4	32
+95	2006	verified	25	25	25	577	577	3502	3502		0	0	25
+96	2007	verified	27	27	27	787	787	4753	4753		0	0	27
+97	2008	unresolved	26	26	26	651	650	3963	3963	official results totals missing or different	1	0	26
+98	2009	verified	24	24	24	789	789	4766	4766		0	0	24
+99	2010	verified	26	26	26	692	692	4125	4125		0	0	26
+100	2011	verified	26	26	26	940	940	5430	5430		0	0	26
+101	2012	verified	23	23	23	716	716	4437	4437	official totals aggregated from each individual exam	0	0	23
+102	2013	unresolved	25	25	25	915	903	5393	5354	official results totals missing or different. Individual exam totals differ: 102170	5	0	25
+103	2014	verified	23	23	23	745	745	4554	4554		0	0	23
+104	2015	verified	22	22	22	925	925	5445	5445		0	0	22
+105	2016	verified	20	20	20	719	719	4391	4391		0	0	20
+106	2017	verified	22	22	22	916	916	5275	5275		0	0	22
+107	2018	verified	21	21	21	690	690	4230	4230		0	0	21
+108	2019	verified	20	20	20	909	909	5375	5375		0	0	20
+109	2020	verified	21	21	21	672	672	4093	4093		0	0	21
+110	2021	verified	22	22	22	769	769	4649	4649		0	0	22
+111	2022	verified	20	20	20	668	668	4057	4057	official totals aggregated from each individual exam	0	0	20
+112	2023	verified	23	23	23	780	780	4721	4721		0	0	23
+113	2024	unresolved	21	21	21	639	638	3568	3566	official results totals missing or different. Individual exam totals differ: 113040	0	0	21
+114	2025	verified	21	21	21	759	759	4218	4218		0	0	21
+115	2026	verified	19	19	19	540	540	2956	2956		0	0	19

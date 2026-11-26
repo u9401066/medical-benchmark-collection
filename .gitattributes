@@ -1,0 +1,5 @@
+# Preserve CRLF inside quoted official titles and trailing tabs for empty fields.
+datasets/moex/**/*.tsv -text -whitespace
+datasets/moex/**/*.json text eol=lf
+datasets/moex/**/*.jsonl text eol=lf
+datasets/moex/**/*.jsonl.gz binary

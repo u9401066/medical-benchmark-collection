@@ -4,6 +4,8 @@
 
 ## 現有評測工具
 
+臺灣考選部歷年試卷的 [年度覆蓋、官方原檔與更正答案](datasets/moex/README.md) 已開始分批建檔，可按場次、類科與科目找出缺件，並追溯逐題給分依據。
+
 `medbench` 提供可重現的醫學問答評測流程，適用於任何 OpenAI 相容（`/v1/chat/completions` 串流）的本地 LLM 伺服器（llama.cpp、Strata、vLLM…）。安裝後可用 `medbench datasets` 列出目前能執行的題庫。
 
 - **固定資料**：14 個題庫。8 個公開學術題庫（英文、繁體／簡體中文）從 Hugging Face 固定 revision 下載並比對 SHA-256；另有自建的台灣醫事人員國考繁體中文題庫 **twmed**（2024–2026，32,528 題，依職類分 6 組，見 [datasets/twmed](datasets/twmed/README.md)）。題庫組：`@core`（原本 3 個，3,686 題）、`@academic`、`@zh-tw`、`@all`。

@@ -1,0 +1,127 @@
+{
+  "as_of": "2026-11-26",
+  "ocr_model_sha256": "529c5b5797d64b126065cd55f2bb4c7fd7b15790798091b1ff259941a829330b",
+  "reported": {
+    "latest_news": 630,
+    "exam_bulletins": 8,
+    "emergency": 0
+  },
+  "indexed": {
+    "latest_news": 630,
+    "exam_bulletins": 8,
+    "emergency": 0
+  },
+  "unindexed": {
+    "latest_news": 0,
+    "exam_bulletins": 0,
+    "emergency": 0
+  },
+  "unique_articles": 638,
+  "bodies_scanned": 212,
+  "bodies_pending": 426,
+  "empty_bodies": 0,
+  "article_statuses": {
+    "pending": 426,
+    "text_scanned": 212
+  },
+  "attachment_links": 55,
+  "unique_attachment_urls": 53,
+  "attachment_statuses": {
+    "no_extractable_text": 1,
+    "pending": 51,
+    "text_scanned": 1
+  },
+  "listing_pages": [
+    {
+      "channel": "latest_news",
+      "query": null,
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42",
+      "cache_key": "latest_news-all-1.html",
+      "sha256": "c373f62b7d4c97dc9402723cd62bdf1c7218c8e1df30934136d4bfba1df5367f",
+      "rows": 100,
+      "reported_total": 630
+    },
+    {
+      "channel": "latest_news",
+      "query": null,
+      "page": 2,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42",
+      "cache_key": "latest_news-all-2.html",
+      "sha256": "73129ddf8085e21cc5e83c96416b1cc1bf57dd97c1d032166d4037003155b107",
+      "rows": 100,
+      "reported_total": 630
+    },
+    {
+      "channel": "latest_news",
+      "query": null,
+      "page": 3,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42",
+      "cache_key": "latest_news-all-3.html",
+      "sha256": "405789dafd88fd768e1325b276ac0b312635551fdc80996eb58292a84e6870c3",
+      "rows": 100,
+      "reported_total": 630
+    },
+    {
+      "channel": "latest_news",
+      "query": null,
+      "page": 4,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42",
+      "cache_key": "latest_news-all-4.html",
+      "sha256": "5d53f7dc27f1eb23610b54cd3cdb35a2eca5a52e862283e85042ce6f28f3663c",
+      "rows": 100,
+      "reported_total": 630
+    },
+    {
+      "channel": "latest_news",
+      "query": null,
+      "page": 5,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42",
+      "cache_key": "latest_news-all-5.html",
+      "sha256": "4622537466eb291693dec6b90c67cfe43f74443c01e275f8e38420ff29424a65",
+      "rows": 100,
+      "reported_total": 630
+    },
+    {
+      "channel": "latest_news",
+      "query": null,
+      "page": 6,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42",
+      "cache_key": "latest_news-all-6.html",
+      "sha256": "3a3405fb1a9031674720a787d98090b98813474dd07c1ca2cf5a4396bc2dea4b",
+      "rows": 100,
+      "reported_total": 630
+    },
+    {
+      "channel": "latest_news",
+      "query": null,
+      "page": 7,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42",
+      "cache_key": "latest_news-all-7.html",
+      "sha256": "0aa0d849b2728dd5c5ebe49356a1240d18da65d1b9b91b11d0da9b2bca92c35a",
+      "rows": 30,
+      "reported_total": 630
+    },
+    {
+      "channel": "exam_bulletins",
+      "query": null,
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=2&menu_id=41",
+      "cache_key": "exam_bulletins.html",
+      "sha256": "150a6d8ffd43962de6eed519a1e27806ca45b4c9fd2319bd2848b22add4d08cf",
+      "rows": 8,
+      "reported_total": 8
+    },
+    {
+      "channel": "emergency",
+      "query": null,
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=1&menu_id=5",
+      "cache_key": "emergency.html",
+      "sha256": "a51685ebdde103e05bdacf02ee5bd2e62639b5b042b83bcfcd13b30719f159ae",
+      "rows": 0,
+      "reported_total": null
+    }
+  ],
+  "listing_gaps": []
+}

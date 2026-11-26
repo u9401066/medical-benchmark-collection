@@ -1,0 +1,28 @@
+{
+  "files": {
+    "assets.tsv": "46f62469af2a9e82b363667a191bedce98b1c9d9367df6ef1d3c9c34e37ee01e",
+    "categories.tsv": "44e4b8a05562ffe2d210bfeaaaa5fbc533ed371fe645b94f87eb1cd41016b5ee",
+    "coverage.tsv": "54a25ecfebb424f2356c1f1f76d829f33b1f711ec9ce5b456218d41e58658cd3",
+    "exam_assets.tsv": "2847fc4a56531ab0f94525181ce43326a31e3b62582dee9e0d4397b828ea4b34",
+    "exam_coverage.tsv": "5b2a3eae922b24e17ba9fcc692873e1db7ad4813daaa9c662ac5c98a224b6864",
+    "exams.tsv": "624d768aa650f2ba30ad68d19c8c5b1d328d30bc171f62997ccf3e73fa8847f4",
+    "pages.tsv": "be805e7979ec7e34af00a8fa0840127ac37d159ab6856f75a0710137eb2bc74d",
+    "subjects.tsv": "c01432d2b64f9a96fd6f4f2852db16dbe243b9985efe054cccfec1cabbbbcabc"
+  },
+  "menu_years": 35,
+  "menu_exams": 879,
+  "fully_accounted_years": 35,
+  "confirmed_empty_exams": 8,
+  "category_codes_without_heading": 7,
+  "verified_years": 24,
+  "listed_exams": 871,
+  "listed_categories": 26627,
+  "listed_subjects_all_scopes": 157659,
+  "indexed_subjects": 23359,
+  "indexed_assets": {
+    "medical": 25156,
+    "boundary": 13619
+  },
+  "exam_assets": 360,
+  "source_pages": 457
+}

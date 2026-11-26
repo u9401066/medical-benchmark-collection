@@ -1,0 +1,133 @@
+{
+  "as_of": "2026-11-26",
+  "asset_set_digest_format": "依 asset_id 排序，每列為 asset_id、TAB、來源 PDF 小寫 SHA-256、LF，UTF-8。",
+  "by_year": {
+    "81": {
+      "counts": {
+        "asset_associations": 27,
+        "distinct_PDF_bytes": 46581551,
+        "distinct_source_PDFs": 23,
+        "distinct_source_pages": 89,
+        "existing_text_layer": 0,
+        "gzip_bytes": 2229408,
+        "no_text_recognized": 0,
+        "ocr_draft": 89,
+        "ocr_error": 0,
+        "pages_in_associations": 99,
+        "recognized_words": 83391,
+        "resumable_page_cache_bytes": 2038207,
+        "words_below_60": 36414
+      },
+      "distinct_pages_by_model_and_psm": {
+        "chi_tra/psm6": 88,
+        "chi_tra_vert/psm5": 1
+      },
+      "scope": {
+        "boundary": {
+          "indexed_Q": 30,
+          "verified_Q": 0
+        },
+        "medical": {
+          "indexed_Q": 76,
+          "verified_Q": 27
+        }
+      }
+    },
+    "82": {
+      "counts": {
+        "asset_associations": 115,
+        "distinct_PDF_bytes": 70581205,
+        "distinct_source_PDFs": 93,
+        "distinct_source_pages": 280,
+        "existing_text_layer": 0,
+        "gzip_bytes": 8102359,
+        "no_text_recognized": 0,
+        "ocr_draft": 280,
+        "ocr_error": 0,
+        "pages_in_associations": 350,
+        "recognized_words": 263417,
+        "resumable_page_cache_bytes": 6399813,
+        "words_below_60": 81520
+      },
+      "distinct_pages_by_model_and_psm": {
+        "chi_tra/psm3": 2,
+        "chi_tra/psm6": 263,
+        "chi_tra_vert/psm5": 11,
+        "eng+chi_tra/psm6": 4
+      },
+      "scope": {
+        "boundary": {
+          "indexed_Q": 283,
+          "verified_Q": 0
+        },
+        "medical": {
+          "indexed_Q": 485,
+          "verified_Q": 115
+        }
+      }
+    }
+  },
+  "counting": "附件頁按官方 Q 關聯計；辨識、詞元、低信心與版面數按來源 PDF SHA-256 + 頁次去重。跨年相同檔案依較早年度計一次。",
+  "execution": {
+    "dpi": 300,
+    "engine": "local Tesseract TSV",
+    "paid_api_calls": 0,
+    "prior_draft_assets": 8,
+    "prior_draft_pages": 29,
+    "stages": [
+      {
+        "associations": 119,
+        "source_pages_by_worker": [
+          107,
+          105,
+          106
+        ],
+        "sources": 94,
+        "wall_seconds": 580.31,
+        "workers": 3
+      },
+      {
+        "associations": 16,
+        "source_pages_by_worker": [
+          15,
+          18
+        ],
+        "sources": 16,
+        "wall_seconds": 89.85,
+        "workers": 2
+      },
+      {
+        "associations": 2,
+        "source_pages_by_worker": [
+          2
+        ],
+        "sources": 2,
+        "wall_seconds": 2.85,
+        "workers": 1
+      },
+      {
+        "associations": 5,
+        "source_pages_by_worker": [
+          12,
+          8
+        ],
+        "sources": 5,
+        "wall_seconds": 52.11,
+        "workers": 2
+      }
+    ],
+    "tesseract_threads_per_worker": 1,
+    "timing_scope": "各本機批次完整執行的實測秒數，包含可重用的頁快取；部分批次重疊執行。"
+  },
+  "integrity_checks": {
+    "all_page_numbers_and_word_bboxes": true,
+    "all_source_pdfs_rehashed": true,
+    "first_page_png_hashes_rerendered": 116
+  },
+  "status": "unreviewed_ocr_drafts",
+  "verified_asset_set_sha256": "bcb75665925897206e5aac8917d82e2e9e2cecdef6e09c2de4466c0225155c96",
+  "years_roc": [
+    81,
+    82
+  ]
+}

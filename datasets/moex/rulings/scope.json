@@ -1,0 +1,29 @@
+{
+  "aggregate_only_documents": {
+    "moex-news-7892": {
+      "kind": "aggregate_only",
+      "locator": "說明第一點，民國 114 年全國測驗式國考，1,533 題被提出疑義，1,342 題維持原答案，191 題更正答案或一律給分。",
+      "publication_date": "2026-11-19",
+      "scope": "全國考試合計；本文未提供個別場次、科目及題號。",
+      "sha256": "6db17a511b8495a6fc64526a2a039ddd68ac9ad34c9c7667898034665c6aaeca",
+      "url": "https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=7892"
+    }
+  },
+  "curation_as_of": "2026-11-26",
+  "default_item_notice_status": "not_reviewed_against_independent_notices",
+  "grid_comparison": {
+    "agrees": 2,
+    "agrees_on_listed_responses": 2,
+    "unmapped": 2,
+    "upheld_on_sheet_with_other_corrections": 1
+  },
+  "mapping": {
+    "identified": 5,
+    "no_official_paper_identifier": 2
+  },
+  "records": 7,
+  "relation": {
+    "decision_on_this_item": 4,
+    "other_item_on_same_correction_sheet": 3
+  }
+}

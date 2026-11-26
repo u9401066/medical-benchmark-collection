@@ -1,0 +1,458 @@
+year_roc	request	source_url	cache_file	bytes	sha256
+	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	search.html	30777	ff20cc92f4b820b08998590dff10c8152482efe0ac9fe99a853cebb556d50af6
+81	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1992.html	24424	3f182f588cefe5b11308dac75715537cd96043c24397221247d89e020df836db
+81	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-1992.html	544616	613e5cdfa061761917f26b253f48ebf2090d94b928ec18d4fcb8ead8ae60e75b
+82	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1993.html	31721	ddbf23f72e2037297ab65f70dd3471f2517f13c23b597083b26b348ca6bcf641
+82	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-1993.html	8770158	6199babaed148cca276046dccc188a4cf6840bfe40220656bba25c3efe708e91
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082010&y=1993	exam-1993-082010.html	323060	ce333a5dcfa7fac9e262513a9cd610257a3fa30b73b3468b13d280fea6a5220b
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082020&y=1993	exam-1993-082020.html	196423	bb5e9994ef842cfb3077bde3b2e79ce1d9fbade8c517f96910af61a887f83393
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082030&y=1993	exam-1993-082030.html	183372	32354e66e9d3a267728f67144529147b7ef2535a4cafbc8f2b1ad8608513d524
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082040&y=1993	exam-1993-082040.html	68218	d370969cc60767fee3888d59e5766544b411f5588343cd251de0ce2a97181ce9
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082050&y=1993	exam-1993-082050.html	335485	a5404c7193dd200003cdcfa7bcfe3a079bf005256150bffe8bfa6fc1e47aabb1
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082060&y=1993	exam-1993-082060.html	197885	eed8a7d94731084613248ce653c87c0e856f1c6115816e498bc85c260e772ba8
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082070&y=1993	exam-1993-082070.html	42055	c468ee12516bed268ea3c46b06d8d05a78a81da739905187c1303c937d2ef05f
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082080&y=1993	exam-1993-082080.html	2381691	908f8738cf3b2c8879eeb394e1f904d87cfe0068bc8cadb01146902f13814755
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082090&y=1993	exam-1993-082090.html	212491	ae32239d4da723c7e746c716110a26fef6af80d8e745feb7a13c0a3486b635fa
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082100&y=1993	exam-1993-082100.html	44813	96c1f6581b5dca431052bd5065c7170f8c9225daed84ea6ca27a01f723803216
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082110&y=1993	exam-1993-082110.html	58359	4fae2e223a7f7400d2b472aebcf754a8ba3738702536db9d7dc1860f0a6eec72
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082120&y=1993	exam-1993-082120.html	500042	86a20e6aebf82b23bc79067035f58c3649ab27e8a228e78f06486322e462dc78
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082130&y=1993	exam-1993-082130.html	59514	39273b589cde833b9f7f20f8ac9b40cc9ac2796f64cc3dcf0208624228a119e6
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082140&y=1993	exam-1993-082140.html	202604	a8d05fdbc85b23d4188219d864b921e8ce4d1ac4fb341488eb08dc8e01b25ed7
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082150&y=1993	exam-1993-082150.html	165144	44362c34684eacecac48f2b7d306f3fdd32a64b5f948941ec9def8f428d2100c
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082160&y=1993	exam-1993-082160.html	756925	03786468c4945c38f7880cd70fe0c4d00cae7ab9792064bc8da3b06e79320bb7
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082170&y=1993	exam-1993-082170.html	155308	969513751560f8eed0da06d8b00162051e1fd3e1b7daaee3a738d60cc217b382
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082180&y=1993	exam-1993-082180.html	269408	05fe54b5ce33d00acaf9b5c5bc858187955b6417001261e2ca8ccfdf22b8e550
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082190&y=1993	exam-1993-082190.html	203586	7dac393d3014188b37e18d638ebf3bda07bfb59a62f647e47d7b5214d8753381
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082200&y=1993	exam-1993-082200.html	52442	edfd5631653685986ab1759b5508f2f13805a064d32a5b759e6e3b47522dc70e
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082210&y=1993	exam-1993-082210.html	1129613	eac09d61b2f4769ca87da25213b250a2d94096fbd873ac11ff4d26bf48287d21
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082220&y=1993	exam-1993-082220.html	556661	5ca0b3ceb77d96833a3de0db24a3a77f460c026dfad2b9a72c8822d2c8c6e944
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082230&y=1993	exam-1993-082230.html	102485	cda9503739983f1bb6a47f5894353059ba94490726268a1c8830abc7a99a1318
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082240&y=1993	exam-1993-082240.html	261877	39b227224b41a5f5fa72804388606d92c07808e04addeab2a942090a9b0b1c12
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082250&y=1993	exam-1993-082250.html	144933	7f9885bcf4b0f5b1cd96e7e296b115546ecb257499e610ef7386731cca8a5637
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082260&y=1993	exam-1993-082260.html	123952	bde4c822c0103cc6dbc52cdd6c6635687e0c16d451c57d511cfab0358dcb8593
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082270&y=1993	exam-1993-082270.html	319332	223e00349e83380ccc214addfae6868740208cc3da19630722f0de48eb6a1150
+82	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=082280&y=1993	exam-1993-082280.html	613956	abef5031a9e1d19518b59f93da90dd438a7d6586b664418d31e0fb7fdf8a9dd7
+83	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1994.html	33099	0c2f940dedc3e5c9e2c8208004f7c3dccd1cb44d91b73c21b117100c7aa0ca8b
+83	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-1994.html	7017263	3aa9260b5437c316098358d1cdb2744faacb3acaa180c1581969526aa1635462
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083010&y=1994	exam-1994-083010.html	40069	95f1158345e0d4344de91252af1ff512bda4f1b2a0497188a252dde5723c3673
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083020&y=1994	exam-1994-083020.html	203931	d433f862af7b506c033b06f3aadae9623b782dde40cc9957639e719e5a159b45
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083030&y=1994	exam-1994-083030.html	193039	e855107e231f68fb84a3fb1dabec30b9331df3c72776a7e2b2e6ffa2a1e48d26
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083040&y=1994	exam-1994-083040.html	447864	cd34634cd321cdb87a0f08e83c157193e6454db2fb7b3e217324061efe77b925
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083050&y=1994	exam-1994-083050.html	60171	a842f049639657e5ff5e8c6bee8685ab51d0dc478d3cb0218df2501868a36d08
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083060&y=1994	exam-1994-083060.html	278366	368c4cfe64565a5bc34b8bc0320cbc934f09ce2a4e830fdadb1fee97c7d58731
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083070&y=1994	exam-1994-083070.html	45291	48c04796eeec4c30f28448c6adef24bb4d4151d41d0526fa66a01a87e1eea319
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083080&y=1994	exam-1994-083080.html	166255	fd12673d65709fee00a406e31e274a0266620033208aef86696661ea0d55f794
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083090&y=1994	exam-1994-083090.html	81780	f3abadc41b6da3655fa5f7f7d47aa12e213ed446d005673d9f3490a408b77b14
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083100&y=1994	exam-1994-083100.html	265866	7322321eccb446b432d97f90fd92138b2e92cd92e1b50e07ea087ef6314bbf77
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083110&y=1994	exam-1994-083110.html	155117	504804f9e833fcaae57f21d788f5a86a01ff916e695151340d48250ddc434370
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083120&y=1994	exam-1994-083120.html	102555	2522643bb55221f7b8b52931614761ba3f0a5f1a3c4ce216bbc08c95dfd6d392
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083130&y=1994	exam-1994-083130.html	105911	b115722a60da5bae8c6d60e3920fae612dd0558e4455a9eed98b82d53a299abe
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083140&y=1994	exam-1994-083140.html	153018	e60993f50d0686254ad3caa18ca0281bab6059429dc42392d3883d89831e4283
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083150&y=1994	exam-1994-083150.html	754556	cebebf86bf5740559dde2266d8331424baefb52fff8d272be901912ec8f71a68
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083160&y=1994	exam-1994-083160.html	49729	7d1a898873caaeccd376e2b52215b23ce6306790807db2098ee03c6a51ba3b5e
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083170&y=1994	exam-1994-083170.html	199072	26877ed0818c1c4d94d86abdbf89665a876f25ce2ac96f672e0fc561be1e4f13
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083180&y=1994	exam-1994-083180.html	198126	85e98ec809cc4309da7834e86d52d504652628fa32d21b6b924ce39b3a491b74
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083190&y=1994	exam-1994-083190.html	81318	337794ef6a1015f38abaac568c5c324a4d0437742a91004e0b1ffc4225929e06
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083210&y=1994	exam-1994-083210.html	254190	eaa55f26456129062139fcbd5a3231604b8f8ac3b6f03d215fda4e097facee31
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083220&y=1994	exam-1994-083220.html	346416	1a922dcae84bb351c2ea6ecfdb23c5350712f3f6e642e03eecb1738b8f127661
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083230&y=1994	exam-1994-083230.html	235865	123978243aa52993b0a8223e51dccaea6a2335e14a166ac1818e960e46b80d7c
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083240&y=1994	exam-1994-083240.html	165675	b6fb60ff2619496320fba9b4738af79054c2749ad3bb3ca13ad660dae91487e9
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083250&y=1994	exam-1994-083250.html	100943	19b692b37789be8aeaec4e81c20aa8b82610448b4af901c321ebb064a2a3db81
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083260&y=1994	exam-1994-083260.html	58591	2023a62fe87dc50f33afacb39a4e594ee8e9f9697211ec2408972659ddd66f1a
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083270&y=1994	exam-1994-083270.html	105613	bae5a364d3cfce885b7ceee3a8a6867a7d9640280597506b97e8337e3d2117bd
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083280&y=1994	exam-1994-083280.html	363247	21c1a9a580c71055fd1d046a84cd8d107e2b58ccd2532f40b298e50c1038eec1
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083290&y=1994	exam-1994-083290.html	168452	2e55adc1632716f0261978a3589f4bd43ad30b0b7e10f1308d393108ff176364
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083300&y=1994	exam-1994-083300.html	267691	292108bbd693ca82cd1bb35eb6c845e0bd03b3ef727e1908d3b0e1a740063bb5
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083320&y=1994	exam-1994-083320.html	81754	2a9e3ca5c17a052fa199e42bed200938c3bc48e3532355dbfda2a52686c9faa0
+83	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=083330&y=1994	exam-1994-083330.html	602930	81f4407a468fcd42903b1360f8f5741031582a47d269c0d4bca4526860f28cd3
+84	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1995.html	32611	27f88fbbdb81102ca05fdb2d8de1fb3bc31f2c5febb2bb5571f129a1aac60a58
+84	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-1995.html	8607759	03f6ab9b995a22a012862fcca4effaf63b0ec20016d5d6954111441e88bcc2ae
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084010&y=1995	exam-1995-084010.html	73188	7e0107f558bf2edd92ed50be14ada1b30dc1510d8a3e6f30f497bcc979d6a075
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084020&y=1995	exam-1995-084020.html	104879	bdfa5bd5ac9b8fd8ac7130fe58ae1978c3783ca61f9e8529de3a1ade5dbe40db
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084030&y=1995	exam-1995-084030.html	198268	7e9ac031a5029945dd32f7fd9e5c024393671567f1e122535cf47df89cc9b012
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084040&y=1995	exam-1995-084040.html	187859	e47b2da10692a9d658198536ea89ea5a0f9a5df601b5fbb00747fd79dc7cd5bc
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084050&y=1995	exam-1995-084050.html	227488	42cd1e4a90a5e7849c68298b3caf0f2d89b8e99cbd5c754a1438f29e5e22206b
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084060&y=1995	exam-1995-084060.html	162040	1a40d2eb1c915867585d6847ca390d27a26ec287afee4803ba557ba1ab4a2298
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084070&y=1995	exam-1995-084070.html	185554	b3171d7c90f64d6a525e006955016bbc2865c39e5c53c9ec44379c269dcdc74a
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084080&y=1995	exam-1995-084080.html	400108	1afc3cf4e82a56dd6d5bd33fbbdc498d9ca74cfef388d62e81550cd65b03d597
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084090&y=1995	exam-1995-084090.html	2623443	14273289791cfc914fb320691f916885a30283d090c06c3565ba16c8db6de630
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084100&y=1995	exam-1995-084100.html	45199	a3529a1feddb8a747ae160bd9de8a648449f94ff2894f644c7bac7ac46cbfad6
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084110&y=1995	exam-1995-084110.html	255947	e589406a5b99b1d2ecafb8c613c171c57eea757ab9cf7bf1438e95113bfdc047
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084120&y=1995	exam-1995-084120.html	70314	716ab56e7d71c005022f9678b4ca29aa1af20d45d39db134435e73665154d9ad
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084130&y=1995	exam-1995-084130.html	181397	2a4d7109442b9c2da2064ff5dbe7be1bbc6e3ddf091aed5e3fbd0c19360ff8e4
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084140&y=1995	exam-1995-084140.html	204135	9efaa5344995426230431b8e688cb84d50fe25612eb39d67d3c6c336bd570485
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084150&y=1995	exam-1995-084150.html	44550	c3ba1de15d202f7bff449105102b11ed8881afa4fcce35ce0e0ff73cad7c660c
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084160&y=1995	exam-1995-084160.html	1280276	a97e74f481f58288e707ba8907758f9da7540b109674d6320f786b53be17f26e
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084170&y=1995	exam-1995-084170.html	178244	5316076fa6b6b293d680f0d4fc8aa838fd82053aca96a8e2a4ace15c91947c88
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084180&y=1995	exam-1995-084180.html	233705	c9872233cb50512a3998e6f39da3b31fd6bb97fcc9cc5359c239d286c272509c
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084190&y=1995	exam-1995-084190.html	46569	fba6b0609f6b439b98a59e275434b6ac965547e6bb05ca015f1a993fb622a8a2
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084200&y=1995	exam-1995-084200.html	50751	0130af79bb66aa3b35de3a1c047958e0730b288b9705f57a7d1faa2641b3ac56
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084210&y=1995	exam-1995-084210.html	105173	3ec4c08370d855f85f3698439e3697313d18cf56f7956e7f9746ca5517b70a84
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084220&y=1995	exam-1995-084220.html	53412	385234c359366a8d293e09b12fe94f2ac385d9fc907bdfb78e0ceb1731696112
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084230&y=1995	exam-1995-084230.html	59707	d7014f16f3580628f89af13a11070d6fb5c09b804292b39fa14fb4b0ca0e69c6
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084240&y=1995	exam-1995-084240.html	555253	0ad7176cc6b6dabda604afa6fabaae079b69490cfdc00523ae0be7e0af142e7b
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084250&y=1995	exam-1995-084250.html	215239	551218d31ba4131a23dbb1d99ab1f05eac2bfb1e739bafa9b3a62d3c1a00c735
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084260&y=1995	exam-1995-084260.html	128540	e42a96c6e02102ac044dbc4fe67fa658ec6335948dbbf0237373fcad32767dc6
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084270&y=1995	exam-1995-084270.html	51314	98f6d6b5f3618f069faa90cc709e237a028fbcc5724422740b79bd730e5c7a72
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084280&y=1995	exam-1995-084280.html	576012	a7d21cc957485a6d0a72d1ac15ec9d63750956aacd7514baabc9fb21be71d269
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084290&y=1995	exam-1995-084290.html	288861	977397cc8561bb2c69f5f556bd424aa60ac853b0dbeab217bacd21a73213bed5
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084300&y=1995	exam-1995-084300.html	206081	881b3f34224283d82f75185fffd42909af7701672ba16e8730f1a600fa124651
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084310&y=1995	exam-1995-084310.html	42431	c3a252d6293631f28526f52f2bf8c3fe6cbbc2072bba4903aacc71bc83852b8c
+84	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=084320&y=1995	exam-1995-084320.html	623789	3ac6658b6847d3c10f1e15a0057b359c4839b84e451771dbedb5e02fd20621a4
+85	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1996.html	33022	2018c70e17b9637de44b5f7b6e34a4f79dc333e76d1bce58b481cbfff7f71b4d
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085010&y=1996	exam-1996-085010.html	132406	68dedd219b6049c51ae7f62c4de4c8074055ff3917e3e5faefb6bf43dd0fdf4d
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085020&y=1996	exam-1996-085020.html	179720	59dbb0929d87268a5b95aaf3cf4adf6b0e6b344c29ea58fb9a311cdd2cf605de
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085030&y=1996	exam-1996-085030.html	385201	9e3f72ec84af10dc550f9690fa2f61f0622011b9aeb8bcf5ae178cd81dbbac17
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085040&y=1996	exam-1996-085040.html	199261	7664f456e480dfe372f10495d162455a210748ac33cfe625c8fe5268b48db567
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085050&y=1996	exam-1996-085050.html	119139	62b132c606852d42a1e07a2ad33529d6a9cb6359dd506da3b8ed33c5b99747d2
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085060&y=1996	exam-1996-085060.html	254263	6c16280416f78cb1d636b4a3d1a09dcbf85eef9a09dfbaa92e53439fdf018802
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085070&y=1996	exam-1996-085070.html	202073	b2160de4e42908da5ba7957ef5760f8209bec8042570b3fcb87b125634c8f451
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085080&y=1996	exam-1996-085080.html	133800	a8a0591c21a2dd41fdc9564c6517b8ef59d1f9af5058cfbd7e8120d85dbe63bf
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085090&y=1996	exam-1996-085090.html	38622	fa1144655787e51a464693db97e5f1317e2edce85c6a52138189775d80fc977b
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085100&y=1996	exam-1996-085100.html	51328	d8dfbf5706b4206a570c095aaa1ae50e6a86070ed9272d87d1ccbb032f8dbdfe
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085110&y=1996	exam-1996-085110.html	111822	98446e9e197cf11ccba6156bbb1598cf9670586952af53d31969bf9f8f78bf2d
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085120&y=1996	exam-1996-085120.html	459114	4bcce4f8389d2d17422bf63647de7b05b5e0f83d79e87370dfc335e22ca4fa09
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085130&y=1996	exam-1996-085130.html	59570	7fb2b20d6abc445c0da6c4e5bdfff28b838e00fdc9f403bf9dbe780d48ef9e61
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085140&y=1996	exam-1996-085140.html	50281	840c26222d8b40ad22a03e23b360c768d53cd0bc586e8534ec6997dce416ec12
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085150&y=1996	exam-1996-085150.html	204734	e8c3cd9c35f48de820dbaf7d639b3d0eeca4874fe6ac39f0ab206578be214ef1
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085160&y=1996	exam-1996-085160.html	118230	33a3752e17184edcef3dad73c8d98fef16ff11358f1a7de5af4bffa427ae0815
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085170&y=1996	exam-1996-085170.html	192395	f53cfb0c546fff65684410708e94d1ae5a8a395f456daba77b80a1da15d9b8fb
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085180&y=1996	exam-1996-085180.html	669092	543ff52389df836ed6eb3c0788bd6c75aa38beb2706c89d0ce9c0c1386bade07
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085190&y=1996	exam-1996-085190.html	225869	1888ffc2c2930560561c384d11bc8c54b08b58272e42451fa502e0052426b6f9
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085200&y=1996	exam-1996-085200.html	1291583	2076040e7fe0b836eb7fb208234e23736e2df6972cd073cba349739bb2a64f97
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085210&y=1996	exam-1996-085210.html	211884	3cdefe716c2994a2f1d8160c53b1b07d267a6b82564c0f09d652de74431f4a0c
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085220&y=1996	exam-1996-085220.html	44961	882c666b11f9303b11fb22a39966a8d6f53b12808d44a6f806f17e67cac728cd
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085230&y=1996	exam-1996-085230.html	77348	7ad44840d8ef2a590483326fca464f1ad262db0a4b1a9df75cf0b51cf1e06078
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085240&y=1996	exam-1996-085240.html	105272	eac18201ecdaf1738a4a59beaa2063bfd9b7c5b7eeac65d3ac5c36603f84fd34
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085250&y=1996	exam-1996-085250.html	197326	3cf697b84a01e50043b639961b796fad254b2bca5b02581023e8ce4223cfa9d5
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085260&y=1996	exam-1996-085260.html	327880	3a53134b4844594a7be0dba69bdac812f8bd24541475edd74d683e92f7d55c4b
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085270&y=1996	exam-1996-085270.html	57849	f397d00276ce8dcbf842bbbe79cf53aecd652dd9e6789b944c848d74c4f868ae
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085280&y=1996	exam-1996-085280.html	541433	e3600a40be5c291f1de6360b35dc42e0558ca862fe6d9293519d65b3a98e9f3c
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085290&y=1996	exam-1996-085290.html	233626	8f827b605fb415fd075aa426bb042f5dc5bf4705a6ddf074a719caf167e6519a
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085300&y=1996	exam-1996-085300.html	53814	ad4bdfec683a856b8202e440a8a4d6ed04614a71a79f3adf15dd1b1e8bb82d44
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085310&y=1996	exam-1996-085310.html	141267	e18f0d1cadc78a9f0ebf31729a04276358465ce66cbfe20bb677bc7b0855a5e2
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085320&y=1996	exam-1996-085320.html	290413	d7c3b4debb93e9b60cdb43b522861a0ff1eb9c960dd34959ccd253eb2059bef4
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085330&y=1996	exam-1996-085330.html	93698	14a39236a0a9a809a83c3ce1bd2dbca48bb6f7a3e695b48c5d67766d8dab8929
+85	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=085340&y=1996	exam-1996-085340.html	627348	e28a67fe960e043d4d5d82b31dd3687587161c7b5a1b899c0df0b5ebc8ca65c7
+86	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1997.html	31617	6dbc0ca091b488301a6a8cf9ce139203255e5b12391291e449a48f99a598f540
+86	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-1997.html	7571754	632fdfe6cc72658defde91e8ce33c50ba01995c08d1484642634fe44a211e44c
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086010&y=1997	exam-1997-086010.html	183420	ab1f61d9cb2606162eca9c0c72b2e2230c399cb2c4d42c5326fe7baeb2ec1cce
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086020&y=1997	exam-1997-086020.html	202704	933161f17a13427ec3df47fc53231acc2dbf2fa38705bcb53a6e546645921422
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086030&y=1997	exam-1997-086030.html	243548	035baae05e5b2761c48ee6e2db6af7153d4f993d9daa56aa3d5df4b8b5d79484
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086040&y=1997	exam-1997-086040.html	203236	9c43e8e7580c7fcbd96c223dd41a5cebd36af280c81717d27e059ae988fff9fd
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086050&y=1997	exam-1997-086050.html	239783	6dd64fb8c6de8374ab72c018367730e2b9d82572ab147e93a61db35d8aa2dd21
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086060&y=1997	exam-1997-086060.html	187954	8c3a6eeff57a977964a848ce2f807771c66a0920da7a0869bac2ff4d509fe3c3
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086070&y=1997	exam-1997-086070.html	1961270	e66f55a45617221c2f06fcbcc203a4cb1c59f9987ec24facfdc662b78149da87
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086080&y=1997	exam-1997-086080.html	50301	5738bfcbc127fe4512433e00157994b017a94208f887088377c9237e4553ea67
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086090&y=1997	exam-1997-086090.html	398501	d7cece204b34ac60e30da75fb1f85b655978220c64a4571c0e0d7d3fedd9e685
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086100&y=1997	exam-1997-086100.html	110397	b9f934db91dcd7a43f01e463d085e2a1728d3b40d157275abfef02d7166c3e0b
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086110&y=1997	exam-1997-086110.html	201143	c90a9e6daca1eee2a899ba452e93f30d70066ac38f050116da45f9204cdce100
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086120&y=1997	exam-1997-086120.html	260675	bf09eea2cd14dc763186fa9bf11eda154993f31faa8c11b4284856e62ac80677
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086130&y=1997	exam-1997-086130.html	236327	8ef99d4f0c0c27ef0ef425b8fff56e30231198b09a83ad71bf1532ebfdb5b8b2
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086140&y=1997	exam-1997-086140.html	1432948	1872044af61a616604d7a6fdbf32864511d467914395c4653073eecd55069f17
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086150&y=1997	exam-1997-086150.html	174320	bbed830e84c0f5bfa88e79ba8c85fec835bc2f01f6ded602d314d152b52ed943
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086160&y=1997	exam-1997-086160.html	137409	45b8aa5bdefa68e90d719a0457fda284a9e88c40a98d0dc3d753de7bd790e767
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086170&y=1997	exam-1997-086170.html	75967	82934dac3a11db139e9d533459926dff232171504b09f1a92a420f240a229afa
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086180&y=1997	exam-1997-086180.html	162964	94676e272f4432cf2cbe81569a5fd75eca3e8dae42e19a1ca3d79f7ed8aaefba
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086190&y=1997	exam-1997-086190.html	66018	0fe838d4e428bd0261c6c0db42a02daa53c68fd60bcd77a8b0d10bdba87a45fc
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086200&y=1997	exam-1997-086200.html	158209	354b5d7e76845df55a98298519a649ef280ac547f485be9abe01591ec7e61124
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086210&y=1997	exam-1997-086210.html	56369	b36bbb037dd85185aaa3915a612ebf5dcb38f88f25cf4116ad6aa44b006cd124
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086220&y=1997	exam-1997-086220.html	479285	bf52d89ca6f3d6583209a30e76f948759176d0635069c5f01943141b9e14bbb5
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086230&y=1997	exam-1997-086230.html	167727	7692ecbd05a61562a609ca47a8160490888a6058e30ff874eec0bc74819b69bc
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086240&y=1997	exam-1997-086240.html	305075	0afcf79540ad4308578523ed6768bdb0809192599ef975c433de7d0ef443d638
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086250&y=1997	exam-1997-086250.html	39319	ddbf22df699bf2b92bddb09f007f3905eb9300819f4cea78a894700a633d68cd
+86	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=086260&y=1997	exam-1997-086260.html	660272	08d073871b50ced9eaee7e81194163ba1ff4cdf3e1432aafe2397e19e540ca98
+87	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1998.html	32486	66ab9b02b97b56fa02f575cb4efcc4a20bddd3d92323122aa9e91d982c011e97
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087010&y=1998	exam-1998-087010.html	197186	abaa6860d7c827c87664fc340a89b65ff33f9e25a75d428a90a2533d3adbe25b
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087020&y=1998	exam-1998-087020.html	200193	062c986ee80d81947f8e60d168555210c2f1f649478a204e8057a251a9daae4b
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087030&y=1998	exam-1998-087030.html	341423	8aab0495e1fd4b32ad56a4c4aa688f48d9ecb72fbee5e2197d61cb1e1b5bf2ba
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087040&y=1998	exam-1998-087040.html	278797	9a9804ac5e819b30de30edc090b3318aa9769f5e70d2854a8c857c66718dac3b
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087050&y=1998	exam-1998-087050.html	187618	da45b2c14e59e7f47f4434442cb065d46de964a6283f5843da5f2dd4b49efbaf
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087060&y=1998	exam-1998-087060.html	628947	e5142d52da9a859ee93aa603ad5e5baef9f6054187052e588bcaeebcfa701673
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087070&y=1998	exam-1998-087070.html	162004	3513221555b3c4a1b9fea1fbc941bb9925e96e750c32ab25a9fb17746c33f0b2
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087080&y=1998	exam-1998-087080.html	437575	6e1011b45499e1fd3f65c1f40fa37937c23c19ca64407342b04232dd3db64b7d
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087090&y=1998	exam-1998-087090.html	45069	86feb4349acf4a649c077138142411fc7242d973be69821f244491a864656e5e
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087100&y=1998	exam-1998-087100.html	133684	f740ee1a8f761ae261daab6f4e35f6e46a6f5e220e4a91263e5e1d6b251de5f6
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087110&y=1998	exam-1998-087110.html	49693	ca8ed7e2ccc9838abe4d4960b03c817f7252ed3366ea51917e3ab1b041202aa0
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087120&y=1998	exam-1998-087120.html	111422	cb96b82321a1d366e9d794707f7794921d48157baf82b83e7ba236d474fdd1d7
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087130&y=1998	exam-1998-087130.html	709258	ab68abf98e4224d3825bdedb567b7ea3d33303cd3fd45b2b2ffcb51152610685
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087140&y=1998	exam-1998-087140.html	209377	8640d58a419036b3d1d198857aece36871ca0df54fcb877c4e1113ca5c809be0
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087150&y=1998	exam-1998-087150.html	53962	b1b9b13d1bb6dd4eb80ba41614196f73f4ec0b85bbdf11223561264aa7d592b7
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087160&y=1998	exam-1998-087160.html	265449	83f405ee608b2c388afe75585715c85a3b363b66b5a0ac489f7c6dc6c9ef3e67
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087170&y=1998	exam-1998-087170.html	168460	926dbe1afd8b0ace2bf54afb9cfc715339fcd2ddec4cc55367761b6baec7fdee
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087180&y=1998	exam-1998-087180.html	224323	1e126382cbd5bf877ca96c9b3370724762d32326a8acbfc71624b3b5d829f608
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087190&y=1998	exam-1998-087190.html	228493	138d3e8c1b4349a7be3a1785299f4a6fd5b2ae5207dafcb7c063f42a98db3cfd
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087200&y=1998	exam-1998-087200.html	1212699	ebd933748abb60b9eee5b8d9c47e93f0c4853480b889688950f619b1beac8687
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087210&y=1998	exam-1998-087210.html	73097	d2d34a5bbc3646b86289834385d48f25421452cf8066c799bc831800547afae6
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087220&y=1998	exam-1998-087220.html	171389	3fc12bbbd4dd96c985987dafc7c1ac42313cdaff2e2621a80927d5d2b6ac3cee
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087230&y=1998	exam-1998-087230.html	57239	ee5153f6f274649cbc9cdb8825be3133c54128b9a1b8acd1313c8653a7c357e5
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087240&y=1998	exam-1998-087240.html	166473	c2ff8ccc44a8cd75dac71da70853c7f1f81bf26d4fff69b754bf786f2dad0125
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087250&y=1998	exam-1998-087250.html	186475	02d3c4231b9c7ac7e6ea8bd9d4b7a7b4906abe7bad8deed9a510290a43d1ad44
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087260&y=1998	exam-1998-087260.html	360601	85aeaefd50e1d3e7d79a2657be0f8ebbb54041409172c5defb1d4a0cfed2c4f3
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087270&y=1998	exam-1998-087270.html	438702	4ceb48c8581ef00a6d6326bbb6d73cdd31b31bfee47b403a9c5f56854cef3696
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087280&y=1998	exam-1998-087280.html	125917	c43b997e8d48ccecd644eabcccc3052e2dda27cc9f64dac345b78af2f5f0ccca
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087290&y=1998	exam-1998-087290.html	293634	c87a0e4ef3b2d4e642802bfd16a3ea0fa01f773487b1ed821acb77ea78e2738c
+87	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=087300&y=1998	exam-1998-087300.html	660652	5cf233cec750974b2df97615abf402e97ce773e798543c602e275fa07d0707ab
+88	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-1999.html	32496	51258f0fa53e31b02276cd7e34ca20b4fdd00199d3ab088e3504781e13d9440f
+88	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-1999.html	33159	9913321e466cd958728b775c8b9c88cc54a2a22968d8c8969599ab1c923d117a
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088010&y=1999	exam-1999-088010.html	46051	4084e776a6baabc8aead065bd32f57514d68393fba0b7f26489a5c5f19290fe9
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088020&y=1999	exam-1999-088020.html	217686	bd40fc4c0aae2312412c676da97d6eccbc7c7be78dd3c4578c4e4bc9bb2ff0cb
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088030&y=1999	exam-1999-088030.html	248961	73618d76d66e80afb3333312a1288c5c334d05be6f8762ee54c7a2b2e7640d02
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088040&y=1999	exam-1999-088040.html	58497	6989ff830268be94440d8f1db1124684d74dbf3ce62b968cf1d71e69386efd7a
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088050&y=1999	exam-1999-088050.html	161717	ee0e4abe761427674551dbdc4d79ea5d49cadac1cea13bfb668453c9441d7e7a
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088060&y=1999	exam-1999-088060.html	184950	c7585729af7b3fa67da4a115004b8c0a958788163ddda5b1aa0389e5a3dc3e8b
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088070&y=1999	exam-1999-088070.html	192983	8a3d83eba4edebd407c3950509e8c61cd7c03e5d7ea8443ab9a9fc7f3e7a3175
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088080&y=1999	exam-1999-088080.html	383451	e09da9ea964493caf64d8e8752f650ef562964c69147063b6701500dcb6ce225
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088090&y=1999	exam-1999-088090.html	45075	03ee3d385ebdd5b4ee8a79584405604ab2fae65270b4141e1be314c7e4015e5a
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088100&y=1999	exam-1999-088100.html	142372	eec42dc4b3307d97febaf5bb86804a301a8e53bd35327bc0eb7074afd3dfcbfd
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088110&y=1999	exam-1999-088110.html	111452	165b04129c7a999fedb3f6e86a28a79141b2e5f7e5040430b19fc5dc5a012fc9
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088120&y=1999	exam-1999-088120.html	303358	74e51f389d3191699990bd3bd50a117a5940ae477407fc2357a09b7fb6416510
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088130&y=1999	exam-1999-088130.html	878176	427a0db0ec0bfc06c7ecab13ba1b4fedf561db393a3cde4a887532d204d45278
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088140&y=1999	exam-1999-088140.html	55108	3de8bb78f3b6e5312ce945fa99e2fb5ba47d8ec971bae5e664f3af72a53b3560
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088150&y=1999	exam-1999-088150.html	214244	a7ea37dec14d7f7bbd6b90ce91fead0ef8575dabe411f55a0a19723c9eaacba2
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088160&y=1999	exam-1999-088160.html	281863	17faccacada900cd1850676af86d2bc75cf7b18a016370718d469a1cbf01fa22
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088170&y=1999	exam-1999-088170.html	516292	e976f030f1ef2720e0d02d2cdc0ffc703e19fb7aad82fac561f181bbc537d34b
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088180&y=1999	exam-1999-088180.html	236958	3d6101a3d573cb8e0da7bbccd1f3309d825d38c4dc67c8b40a19e6b517f2a16b
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088190&y=1999	exam-1999-088190.html	1355140	12b3f23bc89393d3d68becf968982e166ed69a958c31c498432f7be1f1cd4c5f
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088200&y=1999	exam-1999-088200.html	165139	9338a897cd9510d2bd04fbab7aed1d866d901714eb096b3847389587f75fe3f5
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088210&y=1999	exam-1999-088210.html	98448	3724f7dda30fc45e5d573fa4a65c63a2db8e24a897713620d306c8937dd6e361
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088220&y=1999	exam-1999-088220.html	129216	c8650aa5867fb6997a98d8b47800082237449444c583364caf11d3ffab5edb79
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088230&y=1999	exam-1999-088230.html	164291	b11bca92f6f3f59742bcf4a5ed66e91aa86001b0cdcf7c5dd0905bd2258f7601
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088240&y=1999	exam-1999-088240.html	175958	69b493ce3fc02ba5ff9c2277bdb199efae5e695e12fc0d4c4d9d5ca5e8190ed2
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088250&y=1999	exam-1999-088250.html	45420	3cb899c51d7ec50c909eb8ab404eeba4c0941ded4be05b78ae630fc71f2474f6
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088260&y=1999	exam-1999-088260.html	2126733	c1e0b435fad7893b67d4e4a5a59b805452a43f14cf89d01f63d271f8214a644c
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088270&y=1999	exam-1999-088270.html	338436	3bfdcbe996f3887449e091bd4d021348a2f78a4b854db56fd633bfabfa9b8725
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088280&y=1999	exam-1999-088280.html	60064	29ddf6452359e179b55200f5ee51dfe35d4e7e08c68e225a72885a3a485abc52
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088290&y=1999	exam-1999-088290.html	39883	61ae7bfd4cb3fb13b54583534a91f1303639378f86856541640cff3eed6e9fa2
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088300&y=1999	exam-1999-088300.html	135121	df74ef05eca1679d4cb1cb1ca3c6ed9339aad106cf4150e1b2b4122806a2d65c
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088310&y=1999	exam-1999-088310.html	681700	fd211761524293dd0bc3d6e068ab88e30135b8a518a6535c5631a7e1da4fb3d5
+88	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=088320&y=1999	exam-1999-088320.html	1082824	132ac0952fb42c94615578289fc1e3a2d289a8c8084925c9878afb2df1123292
+89	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2000.html	31874	af60933848cabbe1809fe6e7fb9e318779b5a9f28d390d45b8404519bd51577e
+89	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2000.html	7267000	a6830d476ad68ae78ce18b43dd6258d43e51dbc41e9553a0a940e044f11ec5f2
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089010&y=2000	exam-2000-089010.html	478669	eed5a0bd7a1df02498712dca88e708269df35c796de6a02ee330c519186fe863
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089020&y=2000	exam-2000-089020.html	50194	cbec223e4be795e8131b16b0b211da56053e67b6a539f32cd2a0ec0ec36e2085
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089030&y=2000	exam-2000-089030.html	213881	b48cbe55dbc7ae655aede0b4895fbcdfec8eecd729c0533824146edb233127be
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089040&y=2000	exam-2000-089040.html	44746	4e7824b0c4a44325623d94747ea36dc85cbf8a4a4a05626eea52c99a35dffc85
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089050&y=2000	exam-2000-089050.html	128511	c6fa7309875f92c805101331112d712a1d2774bc3e9fd1dd338a490691ed8166
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089060&y=2000	exam-2000-089060.html	383572	e6b511b04f61413bd7a925d8c5ada46423514b7c1d031679b1e8b104a6d1f068
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089070&y=2000	exam-2000-089070.html	317113	927bd85d91bf8d3a8794b00d685f760ded8ce6883748eab6d56b2b6a6de5565c
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089080&y=2000	exam-2000-089080.html	71462	0b46cb3ff405889cd9cb67eebd02a31bc3ad398689189d4869401010c9c6f882
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089090&y=2000	exam-2000-089090.html	146280	3b21a934ae09f1df8fb06747330425355eb3b8946c26244dcca288c2699ce656
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089100&y=2000	exam-2000-089100.html	172414	946aecba9b183167b6cc8ae7fde0d5008f9ee85287d6a0dd5a63ebc8990ba954
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089110&y=2000	exam-2000-089110.html	285639	567e550651b5b0d693c2c008a283f2a412732562f32b3eccc0901aedb4fda0f7
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089120&y=2000	exam-2000-089120.html	44798	73232f29cc4d04c24b0e1a267c31e8c6bdee329daddcee552906fc3f0a409a95
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089140&y=2000	exam-2000-089140.html	113197	2ca3d8c1f50025f57b1f05073be0a0ed33fe8a5906c87daf51de34cf21784d82
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089150&y=2000	exam-2000-089150.html	906519	dfbcc6c4198bf4642ab6a68ebfcf079fa9d18d8adcdc9feeb39617fef699f69b
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089160&y=2000	exam-2000-089160.html	212491	45016152cb1234646e33eb45a631c16b4bc2279257b5c5bc7a41a58a82163eaf
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089170&y=2000	exam-2000-089170.html	126023	cb3ea22cd4d196291a2e8ed6bca679b6e8444a80497fd260861a04160bf81c01
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089180&y=2000	exam-2000-089180.html	1307984	b4e9eb80171bf7b01ba81dea7c193a654600d48c3ea442d43e9fe7bba2ceba48
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089190&y=2000	exam-2000-089190.html	53036	e37cf85d4aa2e758047ce4d37de1b4050faa9c8d7f612ce74ac75ba41a976e18
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089200&y=2000	exam-2000-089200.html	168531	3fbb593eaeeebb87c37f2255ae2bf04ca88ccee77466d151656c1a433a67269a
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089210&y=2000	exam-2000-089210.html	188239	502078e802ed0ca1b23ef292f5fee20db3a6267b7da704f63ba6c9d6c7f4f72f
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089220&y=2000	exam-2000-089220.html	315713	a6cde16fcf32f67acc14a181855d3c1a6b2eeaecef621ce5fd82d7dcf845d201
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089230&y=2000	exam-2000-089230.html	440015	bfe2fe94494d72dbd45785cddaffc501f3f9602a3134edac980aad879bcccdae
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089240&y=2000	exam-2000-089240.html	104948	ac6f1c1d92df3b8798a0dcfe6206ccdfbfdf6d40dc2746c671ee8bc95994c898
+89	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=089250&y=2000	exam-2000-089250.html	181247	811426c6091180ce951db53e88032c64c738f6649ed52903829f1d6af3f28c63
+90	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2001.html	33046	b01c755d3fb28bb46d04c1854b150518229db1dade02ba489680d0f5bdbc0b97
+90	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2001.html	9058757	6ef662baadf41428a40c437b71dddb86f4cba64eb9f324f55bce0aeb19eaf303
+91	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2002.html	32735	a3a40fba85b18834dcd5b8cd870762c27e9d5e1b255b8b564ea60c307cfd1aaa
+91	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2002.html	5372337	376c42273fcb2b3cceb2fd6954ce49b52f34f4c2c8e6b76f6d5b89ca1d30c433
+92	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2003.html	32918	93377d6b30db468d303aad951977a27d825f382b8850ee3d1e7f759282f6cdd6
+92	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2003.html	8894723	36114053142fa29617d5acbb246fe5020abb8108c523b4bdefd703df54febe8d
+93	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2004.html	33418	6825ab8ed070140a0b80f759ae9cf0c11d87e5e42dbc4ec90b75980ced6a1b0c
+93	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2004.html	6749474	88a269af33cb95c1064236064558562ac3f64bcc60027c1f5bae53a300115c79
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093010&y=2004	exam-2004-093010.html	120616	bdf0c3f33f01ac656aad8a49a2ae30b1c53a7056bdb4502684c7e134a7e4fd31
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093015&y=2004	exam-2004-093015.html	265764	155866390012f18cda3b64dced21a32736b6226d98073afbb79d996cdfaddb55
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093020&y=2004	exam-2004-093020.html	274628	024516c17dbed4b332b0dc5fdb5cd5c13a592c934fb367104cc01436a798a33e
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093030&y=2004	exam-2004-093030.html	226742	d44b2a8cb91abf11b09afd6c10625b416ff764f14c8ea0db8026373c754f77d4
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093040&y=2004	exam-2004-093040.html	33641	ed139b7f729fb1b18010d6ca95a505c5d918185c8eaec1bf5a8ef1a3cb02b360
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093050&y=2004	exam-2004-093050.html	984700	d4d210c93da55882a3b2db5520baf1ea440503aa98b91fc4b859b8f8c083921c
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093060&y=2004	exam-2004-093060.html	694247	02bcd13608c78eec76cf60ee08c23db8698dd40e8075aeda99ad208ce23e4dff
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093070&y=2004	exam-2004-093070.html	336488	00731bb5822beb81f59668d0616b4d43edf99b35ec6941195b22e022c5b04ccc
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093080&y=2004	exam-2004-093080.html	173507	46ffadffb350b543afa8f998602f7488439b07ee8f3efa9b78ca81c287e13bf8
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093090&y=2004	exam-2004-093090.html	33641	62779e148ea7ed82b26832e8a5c18f855cf455ddcb13aaf6e97994319e60c640
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093100&y=2004	exam-2004-093100.html	355961	b54d293c92570ae505a5cabc51a8214e48c68970fcb4929e92355254da05d25d
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093110&y=2004	exam-2004-093110.html	1028059	600700b93be9fb5c02b61b802177efa4ff2010e3940a2b033f0e328257159481
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093120&y=2004	exam-2004-093120.html	274742	a90d5a4459db509a1d5cd40559bfea4562b7ed1f0b6c57303cc2b61e97631163
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093130&y=2004	exam-2004-093130.html	210082	80dcb897aafbeba354353deba31b0c3c989dcd256fc2593002bc84d855f75cca
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093141&y=2004	exam-2004-093141.html	378243	fdd366a3172e0ed17f121b898239a3758db5e93c9592fb9a60c6a2bf656a713d
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093145&y=2004	exam-2004-093145.html	37027	15ae2bd655827d0e45454423efbdcd58bf4479299646f5bf00a27d2a7bf20313
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093150&y=2004	exam-2004-093150.html	107184	b2b36b7215c6c71a9e00f9f069185a7a32341f0a529d1e09e18b3b8d52561542
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093160&y=2004	exam-2004-093160.html	85327	d4fd15762a451e73c1e02f01e4e38ee4e0013c5fb48f9d4d240000b2c1a4ed6c
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093170&y=2004	exam-2004-093170.html	195954	defba6c8751dc00fac479e95240873ddea51176e5c5936fd534428e835460e5f
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093180&y=2004	exam-2004-093180.html	33641	d72b60c608ea9b02e42abedf1179d0c402c3dae9338a9bed4f679da9bec3b223
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093190&y=2004	exam-2004-093190.html	133738	1216e3209d98b48ad5b27b92e658fb12eb391099eb609078516464495774a014
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093200&y=2004	exam-2004-093200.html	98508	40aaf271b1a369ec2ade4689b0f191c92054649a470accf4a2902de3ec38012a
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093210&y=2004	exam-2004-093210.html	156617	ffd50354c30887f578bc7686ca0a211a68de19f189ca846320d2ae5d5b1de3d4
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093220&y=2004	exam-2004-093220.html	68313	3cd801e02e55193b7282634ac34a403ce546eef6e7ab40e656ac16028f6eff7b
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093230&y=2004	exam-2004-093230.html	147226	e4166a05845bc3e8368e8e5015cb18e5d5b2dcd7a835a237da477f7b7bcac161
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093240&y=2004	exam-2004-093240.html	33641	8ad4a6b497e18d127fb4185cd78a90ab36bae86c7d5b160735d5e6c631bc15dc
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093250&y=2004	exam-2004-093250.html	360766	45f2a25e28c13d2828d112974e7c138a2a2bc542cc24d7aa3ab3869ea9d8be88
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093260&y=2004	exam-2004-093260.html	46951	845ae67e7743ecc557dc88aa5e8236b66f6cbb7eb3b46444b2e786c98a11d204
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093270&y=2004	exam-2004-093270.html	84895	de14e59d5f69627942c92ef0f61ba98f0bb02cdb1465220a4e6a14393566b05f
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093280&y=2004	exam-2004-093280.html	434080	5a05e0fd95f2054551d83d0243a312a4e0d130a1f4a3fd83d63a6670b3d8e546
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093290&y=2004	exam-2004-093290.html	49819	ce40eb5d30ef83e35457e37ed8d547d010e04777942c00ee744ab4966f7608b3
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093310&y=2004	exam-2004-093310.html	335232	46bb0049b716ee24f53e9423ceb90e45101233eb1dca304ff179849439b8e075
+93	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=093320&y=2004	exam-2004-093320.html	56857	074ac6bde8f9dee8d39b52a37c640366cfa8e292dbfba0cb419f449dbc0cb3a1
+94	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2005.html	33693	493701422ad250289c6e884de5cb6296e8dde36d63be771f4c0699c9ce837d23
+94	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2005.html	13549220	5023314aab714760755c0c683723a09c5a8a5fd8bb80bc7d2188487593e580ac
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094010&y=2005	exam-2005-094010.html	105323	5a0ab6c6693ab15bceb3f5a25522bc1722c97f7502aee6e2c6b5c23b1b72eea4
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094020&y=2005	exam-2005-094020.html	275153	4ecb56506af1972d38333d94dc86eb3580857bcc01dcf015ea1db23220ef59cd
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094030&y=2005	exam-2005-094030.html	33936	6cb8c2e3b22fb9ea66631cd589091c91eca0682c4527362e80316106e06860ee
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094042&y=2005	exam-2005-094042.html	361454	cf1a204ca5acd225b7c499f80dbacd099ea4dfebc742d7088f156bf4296b90a6
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094050&y=2005	exam-2005-094050.html	946294	6477df9aab1ef18e618ccef9ae6add0fbc94ff7fed3bd17cab4d592a1184bb59
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094060&y=2005	exam-2005-094060.html	800299	bd5e9fb81cdefa2be25ff532108aa4ba6f7571c305c1ec4c5becb44e85aa184b
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094070&y=2005	exam-2005-094070.html	152945	fda48914abf2580cf1bb9fec9171250876e0919e014ab4bcf1b7890e1b60c033
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094080&y=2005	exam-2005-094080.html	179142	00ea982f2fce76654c24e2742c1b31c68fbda8ad8cb4ec2d116b4e2dfdd29c54
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094090&y=2005	exam-2005-094090.html	218649	098f977c07a10ca72fb72283a329b087ea42d29dda4f67f148ff04d3e4c5d695
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094100&y=2005	exam-2005-094100.html	33936	adc0250758885f6b77faa866299a53342547e9ec050556a42e8683cd65fb14a1
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094110&y=2005	exam-2005-094110.html	1259464	4da01d610a9c4741c4dd3fb744e2a8b0d78290ccf1dc2ffc91bce35ddc4fe8ce
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094120&y=2005	exam-2005-094120.html	253961	74eb4611dd38275ec3d57954e4161f1c7b757929e1fa736763adc238baf5d7f1
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094130&y=2005	exam-2005-094130.html	262979	ee15f5374ab837d9cd0a2dd0681be24e14c6d6cc824a5c910969a706a9912aee
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094140&y=2005	exam-2005-094140.html	81815	d2a3e0203231ad019104e34b890bf15c1cbdf968127165d62923fa5ad514c67b
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094150&y=2005	exam-2005-094150.html	683063	9a28cf4242f0ec099672409ca056892138096e73737572901044a70e2cde195c
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094160&y=2005	exam-2005-094160.html	41233	189ce79d4adcf77ae4fd3ad8392098803e07c83a05d143f6749642a7a05b14ca
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094161&y=2005	exam-2005-094161.html	371356	73825763e59e3bf4c38013e5b263084a452ada5427ced25251e09a80f86208df
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094170&y=2005	exam-2005-094170.html	97010	1d1de26d03a93acb644d9eb4536bf08998f998a1405d921e357ad058c9b9472d
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094180&y=2005	exam-2005-094180.html	128818	bcc431db7e289cdac24b4c1c01a7fd4c52e6dc8b02bb0fa1c74c589d84d843fc
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094190&y=2005	exam-2005-094190.html	205021	8c90644321a9df187fb19c21780d91636573bbf39d1edab9754a50e68ec07ebc
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094200&y=2005	exam-2005-094200.html	33936	838e3d49908a1effe7e31b348e9c1d8f536552baf9865ab06621ddbb401b4674
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094210&y=2005	exam-2005-094210.html	91137	c2f98742f0f973c0434813e1f1cf7aba403c5947dbbb97aa4f9c15df3f800753
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094231&y=2005	exam-2005-094231.html	2036489	3f396349c276ce7f35562e581568cf3e5054a741dfab6c29076bc2eadbb2af81
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094240&y=2005	exam-2005-094240.html	222065	665c5ec0f5929096ea1cc466efa8daabf6c88a66ea9938b6ef17052a26382701
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094250&y=2005	exam-2005-094250.html	33936	f981d75118b8afaa89a2e80364f613dc5bade601721b1674411c507ae110c79c
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094260&y=2005	exam-2005-094260.html	359886	6759ad04df065047ac111ad459ae44e9440b1141c39bb93e749800af5c4f58bc
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094270&y=2005	exam-2005-094270.html	46107	6d9f97c90f98de07bceeb7cd7f3a33c3dfc9b4c7632533b6225f4bac904d43d4
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094280&y=2005	exam-2005-094280.html	276436	1f640fa11309c96b1417b574e42580dd5efb89bde843747eae6311ac50d24e86
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094290&y=2005	exam-2005-094290.html	881254	3d6881316c0ec652a4a16995e06379105b99bc1a3b68fa7d3b733a271c1b008c
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094291&y=2005	exam-2005-094291.html	39261	a0fd8b636644e5463e1f8781c1c3895135881cc49849d9053932792b0250dd17
+94	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=094292&y=2005	exam-2005-094292.html	48464	33d7fed313cbdbd83de53db11114d57a8947aab6dc66a4061191196913b3ca54
+95	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2006.html	31709	7315a2dd60bfd47697d2bbea6010b8e3890e231d3f0a8416205bd326d5c69146
+95	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2006.html	6015570	b18d7e0eb561dee29bf1012f60795fa6156bccd45e96f39bc5bf30180d49b71b
+96	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2007.html	32303	d65c85af89fb59e28a5bef08bd7ebee4067ed2fe1332dede220e2b9bb3e21489
+96	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2007.html	8093461	71405fdce42bc0bed6a31f4823934c920f355e2a9a90c6e3308663f83f1c7c88
+97	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2008.html	32463	1fd7024fbc95a836caa5999c8b0abe5109c6d6496697c9ccfc540d0232e9cec7
+97	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2008.html	6779664	9b042d464d3f9e3d42042e4fd25712d3e6b3f91e98f405a3efe5c1bc254d6a0b
+98	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2009.html	32127	cc454cf12d671aa7f7d521645e8f3d723d6d47d21123f53760947806513f2c96
+98	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2009.html	8094489	8fa8de1d2364ad3667baaeb75e7ef85ba78b90a2f8dea76005d8eacf71810ba9
+99	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2010.html	32215	645d68359e40ffd921712183845e5ec4796fbc315084f19faa185ee4e81a4b78
+99	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2010.html	7062540	9bbd21d004bd16ce829981fbdac4e361d2ee5059ed1d4f8617075c483e17e0d7
+100	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2011.html	32722	41dc17fa503eb7ded2c2f1688f2be384ebd30d749b5c29e63f419caad2a6ed32
+100	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2011.html	9687378	27cfca5eb862b6316ea468cf4ba83e739cc8f363157d859477e4c7f633378401
+101	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2012.html	31543	c7c15452f221e9d61325ed83296f457555921d764d3c2d504fd0e678751a9903
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101010&y=2012	exam-2012-101010.html	124904	f693edb2776a54291dd05a1f772ecd61c3c474094a0d28db617a0e79eb8afe74
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101011&y=2012	exam-2012-101011.html	80147	b2f3f01f3cc1a0c190d9017af48cba550817dda0873942ec942788f191c3c70f
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101020&y=2012	exam-2012-101020.html	153566	a0e5be558e71dda62f7abf327fe256e27428fb9a9ef0590d3054d77f49242818
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101030&y=2012	exam-2012-101030.html	167699	57eef6da373094ee7bff1e01061ea9812e2914d414ce09006f78bde612dd4236
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101040&y=2012	exam-2012-101040.html	470916	76461eb503874400eb899f642b4f49a5e5b4ad4b1e6319e8d39af39acff978e5
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101050&y=2012	exam-2012-101050.html	188235	a95a09198a157b112357b3757b077f7b5a00be40b514617a3b931f9e81c380f0
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101060&y=2012	exam-2012-101060.html	466530	1cb7b32cfad0a1b6000551305fe81c07a036d243e204b5e2846e36fe8fe2cc68
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101070&y=2012	exam-2012-101070.html	173934	89ce7d3e539d0a3133189602153d3e3067b1f68a280bd2d77000e64c426a92a0
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101080&y=2012	exam-2012-101080.html	819409	98267e69a7f8dd822dd3453a8fb89ef4aef97a9992c057544049d801401b1be5
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101090&y=2012	exam-2012-101090.html	1843966	c66e0873a653a07c633a1f0a8f6a174c5d105b7228e88c43c993b403208630ec
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101100&y=2012	exam-2012-101100.html	140150	86d35aaac3a3aee27b4c7b329308f5c4943800ef55bee38c5c87b505afa178bc
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101101&y=2012	exam-2012-101101.html	76062	c122cdfb46a1c58a1011944931f66637fa6da1591fc3b50a494156a26c4679ed
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101110&y=2012	exam-2012-101110.html	202500	d49d065dafa2e2f669b9299ac3c19eacc21291460e37fb9f575dbf2cd1f87785
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101120&y=2012	exam-2012-101120.html	284880	beb78ad000ab84cbab1276ab28e1d401fc871074e86cce4ae041da538e5eddef
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101122&y=2012	exam-2012-101122.html	41587	04bbf6b5ec4506d520380ca0390a152c612410217296f9a45c99e7332339a1e9
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101130&y=2012	exam-2012-101130.html	206403	58275b3b7ba0cc24699b53f31559aba49022c3cfd7760383c53a2d781a9d7aa4
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101132&y=2012	exam-2012-101132.html	41563	c5f4804266c9c12889b60378cdff02dc2e00c60ff3d7dc1fc4477b1c99a19d0d
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101140&y=2012	exam-2012-101140.html	528764	9e73fbfa03a69d74f812e1060f05233321546ee6f4c23588a5f1ee82b7cfdb81
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101150&y=2012	exam-2012-101150.html	381130	22ff75b5890f63d23fa1e7b67756612cdb8c6761f3d761c663afe404a51662e0
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101160&y=2012	exam-2012-101160.html	485072	7f68dec08ad7508314d7b847257cff74fc931e34b72467aa9c0550002cc96de1
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101170&y=2012	exam-2012-101170.html	67556	62f0da6741df2aaf1e16577fb75d2adfdfdce5709ebf33d19a6a52db12ea0980
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101180&y=2012	exam-2012-101180.html	352694	9033347d3e3d5839bd9e833f57bbcbb3d56aaca98949d63caffb45334f37c93d
+101	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=101190&y=2012	exam-2012-101190.html	1372026	c56fade63cbdfe6c02a7024cbb6ce85dd3eefec9572e45e22c4eed1c3615a6f4
+102	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2013.html	32531	6ed2181fe50c6bea5d3ff6a277e19470edfae10d8507b1cd048faf2834eacc18
+102	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2013.html	9543656	86e984639ffd4df1d52e0db0257f30cd4410cdd9126270b8c067f6d8f778c08b
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102010&y=2013	exam-2013-102010.html	154394	fab98692a06a5f120cee38d6555400f9285b31c454d4607231816357e34d3192
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102020&y=2013	exam-2013-102020.html	139979	b0a21ff5d78141406eb73b8b5b2d00c24e71a0374f520459be405ae67b799379
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102021&y=2013	exam-2013-102021.html	73001	f3470a92ff6f607b4719cf1de2e75073d5b3c66a7679dbdf3722869c6dbf7978
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102030&y=2013	exam-2013-102030.html	207931	e853c17dba991665adb179cb4a608808327805c0fbaff594ba298b672e0625b1
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102040&y=2013	exam-2013-102040.html	247428	a1c4f1029fdd583dd166bede9abc0f7091fa291e41320fa1a7ca95b3a8b87a6f
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102050&y=2013	exam-2013-102050.html	640495	ecdc15fe2454855a8a32ff7d5b5029630402fad8e0a9535126a205d045f90580
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102060&y=2013	exam-2013-102060.html	405897	996d6b2df41afe965d6752a5e7c42879a5bb929669df3c4f4cef40bde0ecb6a7
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102070&y=2013	exam-2013-102070.html	156326	48af6d181f5edeafa71d6ee359f182211447eb39eff4dd590661a50017b0ec29
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102080&y=2013	exam-2013-102080.html	676733	25a6bbfce94b4a59c8a3a3bf4fb726eb1dbe567840a592347660924f415d3bd5
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102090&y=2013	exam-2013-102090.html	1743063	48f4b2511b13472ee54294829e44651e46b96d9f54c566480f824fb0e9fe7d20
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102100&y=2013	exam-2013-102100.html	154605	624ecd214101c0ad1ac326f24fc4a46aadc02e7810a6c0c2f9b570111fc2c94d
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102101&y=2013	exam-2013-102101.html	73001	75f2d4685bf3d0a6d40f56ea54b016b914c0376fc221b4125e3011d4e922f171
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102110&y=2013	exam-2013-102110.html	232519	866fbb2965fb763638df2c0ce6ec59341b1103cfb282e2fac42b38f382242c98
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102120&y=2013	exam-2013-102120.html	274484	ecc4f367ac1d62ab0d43bce0d2bb160060ec18e29c26c5a47d2c87a4dcbfb9ca
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102121&y=2013	exam-2013-102121.html	45174	ba657eb2c26db5d073d90622eb76dc755d9d6fbcf7eda5ddde5f30a58983da96
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102122&y=2013	exam-2013-102122.html	42581	12923e73952b1b5d49fcb6adf425336d27a791afae7cd1789d083763fa582460
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102130&y=2013	exam-2013-102130.html	207191	047c4ed6cfc4888563e76cdc8e3a2f44f2087717f70802d0f17bf00df8f6d8d8
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102131&y=2013	exam-2013-102131.html	44650	a79a9c2481fe4448e3de3a7b6edcde89523874d5e57903eff2a446f1f84c3e7f
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102132&y=2013	exam-2013-102132.html	42563	388b9c6bb6ac5f8168831574cad5cf7259d18f3899793b67c8eb70927546bd95
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102140&y=2013	exam-2013-102140.html	430390	aec3d2afecc3ff46f473588df883fd4636e955453590f0843c35005f9e42d57d
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102150&y=2013	exam-2013-102150.html	393483	703f32a5513f3e3356a3c7b2cc33803f4baa48cfc2b827a2b559fbb291c59f56
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102160&y=2013	exam-2013-102160.html	447556	33b96c18fa3eda9c72e7f4c3ff1268c26d971003747bbb21ac62420a64a666f6
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102170&y=2013	exam-2013-102170.html	1791026	5b07e5f3bb882d5c4ff17897a35e0e50f04fd897e598f9ccebfb33e66fb01944
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102180&y=2013	exam-2013-102180.html	290396	98f62536f07957bb4fcdd7f24978382d6360ff5ff0d24a06568e58f59afcd970
+102	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=102190&y=2013	exam-2013-102190.html	1441215	be2d130ce655d2abdb5c2e51e4702aafd6a736d410ed4a2e7fcddcaadb385286
+103	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2014.html	32279	9f9dbdf9cdf64dcb6529a5c00d3f3a0744b30ce8e96ccefe09d9ec5131581f61
+103	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2014.html	8185301	077fed8cb8b2d07d598f4bebb4543edb9133adc69eb1a10c4299ac8598368a27
+104	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2015.html	31822	9dae3e1aa754f83644790ab505d3edfe32930ea0860ee50f5f32aff5e768d1ca
+104	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2015.html	9811743	4034f0cbc93c392402b7b9c4f88a88c22a25a440bed67e882e4de45449637eeb
+105	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2016.html	30983	615874a2641a8bba7e326f8460d7bfb58bc25792236ff5af0c790f5982933780
+105	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2016.html	7903861	3b985e5beba4491eb4ec804d80f75e506ad8212fda248cd65fd2fdd8f91e2671
+106	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2017.html	33950	ceb007662a3027a06f78dd8bf3314f78ea077996a11606841496ec9879e86016
+106	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2017.html	9616792	bd8771ed4df353d19e7892cd54f1283f88d57e90f8d2f480e2632bea804d1409
+107	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2018.html	33173	918f10efab36f68a7a8a712bf90835eb6c334fbb3aa969f969b26407bf1e1ba6
+107	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2018.html	7660022	d3320ca3b5a5519c00d3d4d5e33f24270805b2db09dac75b3e42c4a4af11c02d
+108	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2019.html	33475	8a0e383512434825ec80df321f1b9966d385ba329fe35d137b238ab594683bf4
+108	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2019.html	9674220	1eb243e1f577f370298bb30c6f8a5938a4f5156d0b8b13d45e1c244540446e2e
+109	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2020.html	33468	1edeb71fc3f7fd6d3cac34fa5740e8c79ad882a9a305054ac9463b57c22c0d14
+109	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2020.html	7294586	b11c43b0c533149a1de005bf8a56172dc4b3decef3c0dd9be89482536ec77869
+110	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2021.html	34096	9558452ac70783fb70014f67f2ebebafe0b5256e38929839e950a640e1052f7b
+110	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2021.html	8348942	338ffc6265eee60e0f35a44e479a8d5bc720676e116e16b33cbc69fa6172f90a
+111	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2022.html	33398	cb85fe3d479a3990b61b0dbc87c30b656b4254f5744a194102485d7a80f4f9a0
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111010&y=2022	exam-2022-111010.html	144241	a016d05d6eaa5b91e87956a42cd544af27297f9a1b9bcff254ef672ef49e4766
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111020&y=2022	exam-2022-111020.html	120799	e027bc82fba8d3a859275c5d2b182facd5d5e6cbdc334ff412176001074addd6
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111030&y=2022	exam-2022-111030.html	86727	857a3f725d23f9da0bfc6106bafdfd4f366ee9b0e4bc7315543cc315bdc475f6
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111040&y=2022	exam-2022-111040.html	231279	6d20933eae2c005f03a5806a258bb966a4ef3dac29f0a730eaa1800d67af9dd5
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111050&y=2022	exam-2022-111050.html	524332	305aef6e4a4925166edb0c967154c1cf13d26089081fca334d89ee0ca2d30a1e
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111060&y=2022	exam-2022-111060.html	143580	e6ed45bfb3246db02e4f0e5d2acb7193fd9cf20e2e1d3604c428b6a61084c404
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111070&y=2022	exam-2022-111070.html	679477	b4916da8e73a647d21d32b0f982fd3accc5761fcefaa88858401c76ba24a1bc5
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111080&y=2022	exam-2022-111080.html	47179	18e0df866379e1b05326bda3bb9dee86a863f3f8a6e7b7e7b1982ff18f9505b9
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111090&y=2022	exam-2022-111090.html	1703578	5786831283688708872740b74a7291b3cac0f484ce13a75819ae7e36b26c9e50
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111100&y=2022	exam-2022-111100.html	190078	060b0d283533c598ceb0971d048cfddf83daf5fd621074e2fd78bdfe12b36467
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111110&y=2022	exam-2022-111110.html	167044	9fb103eab014a0687f1b10fda0ed79ad10fd02957d2675095a2a595ccf12604d
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111120&y=2022	exam-2022-111120.html	62937	11353a2ebd98b8c0419b63ca7243d0b86ae62f800c07dbe6efd5e2780dde1102
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111121&y=2022	exam-2022-111121.html	126821	8e486abd976cbb18dc5638902bb1589cccf7a3389205104e65c1e7ae98006f88
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111130&y=2022	exam-2022-111130.html	647472	b4bcbe96b805b2c064b29f8060330e4d365ac9ae94e9e4e82ebb3033250fa474
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111140&y=2022	exam-2022-111140.html	221627	fd01c001baa56bd1275cdb8a65e549f9347cb6379735d0b65b73e9464031006c
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111150&y=2022	exam-2022-111150.html	608561	02e151ddc8198cf0830c9e583b8aab7133b6bb3190c39763ee9be42314d19309
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111160&y=2022	exam-2022-111160.html	284177	80fa5f73724abb0dc71e3d4772695d7d795ccd1c85130721b6c03d17e5ac78da
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111170&y=2022	exam-2022-111170.html	296050	14b4bafa8a3abeb859ea8dfff5ea26d6356d87da6873c085012946fc90e5e62d
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111180&y=2022	exam-2022-111180.html	341258	f2162990f399f1984341c2a5c449e3419137daaed4fe8a0c6e8979eaa89016e4
+111	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=111190&y=2022	exam-2022-111190.html	1360276	12bf27d4a2f963fae0aaf2878d7eae6085fbe67ab01cdc237ca38ffa1f1c3a98
+112	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2023.html	33959	4ca63d1f7dd75bf7ab14d4d5133e0ed92498d2caed97371089f250cf5de82ef9
+112	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2023.html	8382359	3a5d5109ce04e00540a42ad5ed9b4da2f073b6c9b7b5b0c31548675699b672ec
+113	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2024.html	33167	4585a8d8d077fbc6331b34cc7730c238ecab304f2b150b9b3e3c8e6e347002f3
+113	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2024.html	6442266	ab296b037715b39caa6747f57ef53a4c061321b49f8563913a2b63b1f33be8cf
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113010&y=2024	exam-2024-113010.html	143697	5cc31238ef8b564c768b67f6d2f2a3404762a8e7a0d58656d8e241f16257e9c7
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113020&y=2024	exam-2024-113020.html	133705	a4dc89f3baa3eb85d556e2ff34be4a414dd5478b5b448a61132eb72f45324d6b
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113030&y=2024	exam-2024-113030.html	71294	5c6e44ce4dc8b13919dbe6efaa36ea978362f027db4271c336d9676b3a766ea8
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113040&y=2024	exam-2024-113040.html	586312	3111f7fbec5b597ae885e63b72a6426bdf6469df733c97eb64c7ab8c6542ae30
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113050&y=2024	exam-2024-113050.html	146045	6bc47e6095b66ee1e9519a6ce36724702f4775fbbe73a1990f2725e189c09b50
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113060&y=2024	exam-2024-113060.html	599040	c5ca669214ca77def69658fb40a4646a3ddfc599eec2f4d62bf116599bfa2f53
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113070&y=2024	exam-2024-113070.html	56495	16f207437513f74b6d8034b669295078c788d7f8b4d5c27a83879a40354495b6
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113080&y=2024	exam-2024-113080.html	1618365	72911528138e3d169f36b7b06f4fd74f498b25c5936b6046f90e524f23fd81c3
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113090&y=2024	exam-2024-113090.html	166667	08244fd147723e022ccf5bd606e4b6860f0f17200e9aac6fb14c6cb5a9c83396
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113100&y=2024	exam-2024-113100.html	179987	e8f6d57a4804137cb9b57cf4dc9bb41a162b531cd120559e06a45ee9fb0676d5
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113110&y=2024	exam-2024-113110.html	61169	9ff14e289987ad4c89012a85acd4a252da4878218861d06ad1bf0c9fe023d1de
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113111&y=2024	exam-2024-113111.html	126586	d0c50679a7dc4840b7eb1bff2d24073fe21dd81b1b26664896059fd27fdcc488
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113120&y=2024	exam-2024-113120.html	521646	6cdab867eb0f08c8a0cbc97c1309917fba871cce33f4a132c155ab30833449f9
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113130&y=2024	exam-2024-113130.html	222163	ed838006defe59112c6b368f646f227119712c320e409992c98b7b357d569b30
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113140&y=2024	exam-2024-113140.html	554196	50aca96d3ea7c8a575e0f03fa6e0cd80f641a57f9f9d716e1dffec71dfb1b3a5
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113150&y=2024	exam-2024-113150.html	276267	d05aa45b4e7ff111ab0290c176f0c02907bb6bc02b8fe07a69a31e590218cb30
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113160&y=2024	exam-2024-113160.html	44435	ac7025005163c1c25380cadadbd68a63dfc65b2e2af90d5f5593eaffcb2338c1
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113170&y=2024	exam-2024-113170.html	70291	17456ee82514083d6181657e204a1bd9eafc70cc04e0031d3a43aa31f8f87f64
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113180&y=2024	exam-2024-113180.html	46077	9c229c1f3020b258174a0ce95753adaf39851bde1e882c0c6dc4dc6db8fcd89b
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113190&y=2024	exam-2024-113190.html	332671	b286f52bf48cedbd4b93e8ca319a97a786956ce4edd61fcf62daf37796db12a0
+113	GET	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=113200&y=2024	exam-2024-113200.html	1174531	0c9c959fe04f6a8819c21c216e3fd468f0496a3ad1d32b9c7457d2f498073d7c
+114	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2025.html	33621	6be41d38bcc2577fbb8a501dd8802d5b1761f160b7fbafee9c45a264cae1c4f8
+114	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2025.html	7513061	a280a61c11341faef90390bce98939344efab1743e50373706505c3a3f5688bb
+115	POST btnYear	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	year-2026.html	32867	c4f71fd6dc3786ad89f5e9ec312434f1c8d8233438c9856de0836ad469bb2fae
+115	POST btnSearch	https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx	subjects-2026.html	5336318	16ac19b53d9797a3fc934d5c4fe267f7f7e3290b18af63deb70f1ba277c2a026
