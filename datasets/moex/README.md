@@ -46,6 +46,7 @@
 | 考選部開放資料 170565 | 自民國 101 年起提供全國考試逐科 CSV，含類科、節次、題型、試題及答案網址 | 適合逐卷核對。例：101010 場牙醫師（一）牙醫學（一）在 CSV 連更正卷，考畢試題平台同時列出原答案及更正卷。[官方資料集](https://data.gov.tw/dataset/170565) |
 | EMPEC | 2011–2024 年、20 個醫事職類、124 科，共 157,803 題，另有英文測試集 | 適合比對已轉成文字的選擇題，研究建集時排除須讀圖表的題目及部分在地考科。資料卡列 CC BY-NC-ND 4.0。[ACL 論文](https://aclanthology.org/2025.findings-acl.518/) · [作者資料集](https://huggingface.co/datasets/KenLuo/EMPEC) |
 | medical-bench-tw v3.1.2 | 資料卡載明 2009–2026 年、187,910 個不同題目 ID，涵蓋國考與其他醫療考試，公開主測試集有 1,738 題 | 該版聚焦無圖單一答案題。資料檔須接受存取條款，作者註明尚待系統性醫師複核。跨集比較須記錄定版和相同來源題的重疊。[作者資料卡](https://huggingface.co/datasets/Erichuang777777/medical-bench-tw) |
+| medical-bench-tw v3.1.3 | 2026-11-26 讀取 Hugging Face 公開目錄時，作者的版本說明提到其中 5 題使用作者修訂的答案 | 目前已核對版本說明。題檔須取得個人帳號存取權；5 題的識別碼與考選部給分規則仍待比對。後續比對會分別記錄作者判定、原始官方答案與官方更正。[作者資料集](https://huggingface.co/datasets/Erichuang777777/medical-bench-tw) · [官方存取說明](https://huggingface.co/docs/hub/datasets-gated) |
 | MedQA-TWMLE | 醫師考試的繁體中文子集，本專案已接入 1,413 題測試題 | 可重現既有論文的醫師評測；多職類比較須另列各職類分母。[作者儲存庫](https://github.com/jind11/MedQA) · [本專案目錄](../catalog.md) |
 | exams_tw | 社群整理的考選部網址表、試卷下載程式及 PDF 轉 JSON 範例 | 維護者記錄曾下載 89,484 個各類國考 PDF，此數以檔案為單位，涵蓋各行業。[作者專案](https://github.com/pofeng/exams_tw) |
 

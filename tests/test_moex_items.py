@@ -14,6 +14,7 @@ from medbench.twmed import Row
     ("A", "#", "一律給分。", "single", {"kind": "all_credit"}),
     ("A", "#", "答Ｂ者給分。", "single", {"kind": "replacement", "choices": ["B"]}),
     ("A", "#", "答Ｂ或Ｃ者均給分。", "single", {"kind": "any_of", "choices": ["B", "C"], "unlisted_combinations": "requires_review"}),
+    ("B", "#", "答A或答B者均給分，", "single", {"kind": "any_of", "choices": ["A", "B"], "unlisted_combinations": "requires_review"}),
     # 115020/301/0101 Q66 awards A alone, D alone, and the two together.
     (None, "＃", "答Ａ或Ｄ或AD者均給分，", "single", {"kind": "any_of", "choices": ["A", "D", "AD"], "unlisted_combinations": "requires_review"}),
     ("AB", None, "", "multiple", {"kind": "all_of", "choices": ["A", "B"], "partial_credit": "requires_review"}),
@@ -104,7 +105,24 @@ def test_pending_corrected_key_blocks_use_of_original(monkeypatch):
     assert set(corrected_only["items"][0]["key_evidence"]) == {"M"}
 
 
-def test_key_cell_geometry_and_note(tmp_path):
+def test_historical_number_column_can_have_space_before_tab(monkeypatch):
+    rows = [Row(0, 20, 20, "本試題為單一選擇題"), Row(0, 40, 20, "1 \t題幹一？"),
+            Row(0, 50, 30, "A. 甲 B. 乙 C. 丙 D. 丁"), Row(0, 60, 20, "2　\t題幹二？"),
+            Row(0, 70, 30, "A. 戊 B. 己 C. 庚 D. 辛")]
+    key = {"counts": {"unspecified": 2}, "entries": {1: {"token": "B", "page": 1}, 2: {"token": "#", "page": 1}},
+           "notes": {2: {"page": 1, "text": "第2題答C或D者均給分", "rule": "答C或D者均給分"}},
+           "raw_notes": [], "issues": [], "page_text": {1: "題數：2題"}}
+    monkeypatch.setattr(ledger, "pdf_rows", lambda path: (rows, [], []))
+    monkeypatch.setattr(ledger, "read_key", lambda path: key)
+    paper = ledger.extract_paper("099130-101-200", {"Q": "q", "M": "m"}, {"Q", "M"})
+    assert paper["issues"] == [] and paper["question_instruction_mode"] == "single"
+    first, second = paper["items"]
+    assert (first["question"], second["question"], second["options"]["D"]) == ("題幹一？", "題幹二？", "辛")
+    assert second["rule"] == {"kind": "any_of", "choices": ["C", "D"], "unlisted_combinations": "requires_review"}
+
+
+@pytest.mark.parametrize(("prefix", "assigned"), [("", True), ("更正紀錄：", True), ("另有條件：", False)])
+def test_key_cell_geometry_and_note(tmp_path, prefix, assigned):
     mupdf = pytest.importorskip("pymupdf")
     doc = mupdf.open()
     page = doc.new_page()
@@ -116,15 +134,19 @@ def test_key_cell_geometry_and_note(tmp_path):
     word(10, 65, "答案")
     word(110, 65, "Ａ")
     word(270, 65, "＃")
-    word(10, 100, "備註：第3題一律給分。")
+    word(10, 100, "備註：" + prefix + "第3題一律給分。")
     path = tmp_path / "key.pdf"
     doc.save(path)
     doc.close()
     key = ledger.read_key(path)
     assert set(key["entries"]) == {1, 3}
     assert ledger.compact(key["entries"][3]["token"]) == "#"
-    assert key["issues"] == ["incomplete_number_grid"]
-    assert ledger.compact(key["notes"][3]["rule"]) == "一律給分。"
+    if assigned:
+        assert key["issues"] == ["incomplete_number_grid"]
+        assert ledger.compact(key["notes"][3]["rule"]) == "一律給分。"
+    else:
+        assert key["issues"] == ["incomplete_number_grid", "unassigned_correction_note"]
+        assert not key["notes"]
 
 
 def test_resume_and_ambiguous_attachments(tmp_path, monkeypatch):

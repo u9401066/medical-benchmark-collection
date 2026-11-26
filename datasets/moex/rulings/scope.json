@@ -13,8 +13,8 @@
   "default_item_notice_status": "not_reviewed_against_independent_notices",
   "grid_comparison": {
     "agrees": 2,
-    "agrees_on_listed_responses": 2,
-    "ledger_rule_unresolved": 3,
+    "agrees_on_listed_responses": 3,
+    "ledger_rule_unresolved": 2,
     "unmapped": 1,
     "upheld_on_sheet_with_other_corrections": 1
   },

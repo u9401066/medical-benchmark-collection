@@ -22,7 +22,7 @@ from statistics import median
 from .twmed import DEPENDS, FIGURE, HEADER_ROW, parse_questions, pdf_rows, sha256_file
 
 
-VERSION = 10
+VERSION = 11
 MC_HEADING = re.compile(r"^[甲乙丙丁一二三四壹貳參肆][、.．]\s*測驗(?:式)?題")
 ESSAY_HEADING = re.compile(r"^[甲乙丙丁一二三四壹貳參肆][、.．]\s*(?:申論|問答)(?:式)?題(?:部分)?")
 ESSAY_NUMBER = re.compile(r"^([一二三四五六七八九十]+)[、．.]\s*(.*)")
@@ -57,10 +57,10 @@ def scoring_rule(original, corrected, note, mode):
             if mode == "multiple":
                 result["other_responses"] = "requires_review"
             return result
-        either = re.fullmatch(r"(?:答|選)([A-E]+(?:或[A-E]+)+)(?:者)?(?:均|皆)?(?:給分|予以給分)", note)
+        either = re.fullmatch(r"(?:答|選)([A-E]+(?:或(?:答)?[A-E]+)+)(?:者)?(?:均|皆)?(?:給分|予以給分)", note)
         if either and key in {"", "#"}:
             # e.g. 答Ａ或Ｄ或AD者均給分 accepts three distinct response combinations.
-            return {"kind": "any_of", "choices": either.group(1).split("或"), "unlisted_combinations": "requires_review"}
+            return {"kind": "any_of", "choices": re.split(r"或答?", either.group(1)), "unlisted_combinations": "requires_review"}
         required = re.fullmatch(r"(?:須|必須|應)?(?:同時|全部)(?:選擇|選|答)([A-E](?:(?:及|和|與|、)?[A-E])+)(?:者)?(?:才|始|方)?給分", note)
         if required and key in {"", "#"}:
             return {"kind": "all_of", "choices": list(dict.fromkeys(re.findall(r"[A-E]", required.group(1)))),
@@ -142,7 +142,8 @@ def read_key(path):
             continue
         raw_notes.append({"page": page, "text": body})
         matches = list(re.finditer(r"第\s*([0-9０-９]+)\s*題", body))
-        if not matches or compact(body[:matches[0].start()]).strip("。.;；") or re.search(r"第[\d\s]+[、及與至~～-]", body):
+        prefix = compact(body[:matches[0].start()]).strip("。.;；") if matches else ""
+        if not matches or prefix not in {"", "更正紀錄:"} or re.search(r"第[\d\s]+[、及與至~～-]", body):
             issues.append("unassigned_correction_note")
             continue
         for j, match in enumerate(matches):

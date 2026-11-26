@@ -270,7 +270,7 @@ class Question:
 
 
 QSTART_DOT = re.compile(r"^\s*(\d{1,3})\s*[.．](?!\d)\s*(.*)$", re.S)
-QSTART_TAB = re.compile(r"^\s*(\d{1,3})\t(.*)$", re.S)
+QSTART_TAB = re.compile(r"^\s*(\d{1,3})[ \u3000]*\t(.*)$", re.S)
 QSTART_ANY = re.compile(r"^\s*(\d{1,3})\s*[.．]\s*(.*)$", re.S)
 
 
