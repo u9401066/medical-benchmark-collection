@@ -48,6 +48,9 @@ def clinical_item(tmp_path):
     draft = {
         "concept_id": "case", "family_id": "case", "revision": 2, "kind": "mcq", "split": "train",
         "permitted_uses": ["train"], "variants": [variant],
+        "source_rights": {"origin": "project_original", "status": "cleared", "attribution": "Fixture authors",
+                          "scope": "Original test items for these test exports.", "checked_on": "2026-01-01",
+                          "allowed_uses": ["train", "development", "evaluation"]},
         "evidence": [{"url": "https://example.org/2018", "locator": "Table 1"},
                      {"id": "current", "url": "https://example.org/2026", "locator": "Table 3",
                       "version": "v2", "published_on": "2026-01-01"}],

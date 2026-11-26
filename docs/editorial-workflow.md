@@ -53,7 +53,7 @@
 
 執行 `python -m medbench.curation queue` 可以看到待審版本與內容 SHA-256。決議欄位包含 `variant_id`、`revision`、`content_sha256`、`reviewer`、`date`、`decision`（`approve`／`revise`／`withdraw`）、`reason`、`evidence_locator`、`checked` 與 `approved_uses`。同一語言版本以最新決議為準。核准時要能指出已檢視的臨床內容與語言（`clinical`、`language`）。修改題幹、答案、依據、評分條件或資料用途後，舊核准會顯示 `stale_review`。
 
-用 `python -m medbench.curation train --out data/curated/train.jsonl` 匯出已核准用於監督式微調的對話樣本；`development` 與 `evaluation` 分別產生公開開發案例與保留評估案例。匯出須同時符合素材允許用途、病例分組和該語言版本的醫師決議。輸出含提示、參考回答、評分準則、文獻與修訂識別碼。現有兩份雙語草稿均為公開開發案例，尚待醫師審查。
+現行微調資料用 `clinical-train` 匯出，公開開發案例與保留評估案例分別用 `clinical-development` 和 `clinical-evaluation`。匯出須符合資料權利、病例分組和該語言版本的醫師決議。較早期的 `train`、`development`、`evaluation` 模式供舊版重現，資料再利用仍依原授權。輸出含提示、參考回答、評分準則、文獻與修訂識別碼。審查進度以 `python -m medbench.curation queue` 為準。
 
 新加入的非考題案例請 agent 在讀書會檢查一項對 SPRINT 的說法。繁中與美式英文各有自由作答與三項評分準則，原始依據可定位至 PMID 26551272 的摘要 Methods 第一句。後續可分別評閱來源查找、對收案條件的判讀、對外推適用性的說明。[雙語草稿](../drafts/mbc-evidence-sprint-0001.json) · [SPRINT 原始報告](https://pubmed.ncbi.nlm.nih.gov/26551272/)
 
@@ -70,6 +70,10 @@
 3. **醫師裁決與發布。** 在既有逐版本決議中記錄審查者、日期、核准用途、理由與定位，`checked` 同時包含 `clinical`、`language`、`temporal`。題文、答案或依據改動後要更新題目修訂號並重新核准。已到複審日、先前核准內容雜湊失效、撤回或被監測來源有異動時，嚴格匯出會攔下該筆。維護者檢查新舊證據、記錄決議，再發布新快照。已發行的快照另留修訂紀錄，供使用者重編下游訓練集。
 
 多個選項成立時，醫師須指定 `selection_rule`。任選一項皆給分用 `any_one`，記全可接受選項，並指定訓練樣本採用的代表答案。必須全選用 `all_required`，訓練答案須列全，選項順序可以不同。
+
+同一次政策更新可以同時產生改答題及答案穩定的對照。醫師可先從一頁審題單核對差異，再開啟各語言的原題、選項、詳解與逐項證據。在本次篩檢案例，問法雖有三個，所有版本必須留在同一個資料分割。[臺灣公費篩檢雙語審題單](review/tw-fit-controls.md)
+
+**用途與權利需各自有依據。** 在題本的 `source_rights` 填寫材料來源（專案原創或第三方）、授權狀態、署名、適用範圍、查核日及允許用途。第三方材料另記來源版本、原件網址、授權名稱及條款或許可網址。已向作者申請時可先登錄 `pending`。現行資料匯出同時檢查來源允許用途、病例分組及醫師對該用途的核准，並隨資料列保留權利依據。已有臨床核准但權利尚待確認者，仍能在審查佇列查看 `rights_status`。[實例及完整欄位](../drafts/mbc-tw-fit-0002.json)
 
 公費糞便潛血檢查的雙語草稿中，相同四個選項在 2024 年可以選 50 歲。2025 年 1 月 1 日起，一般公費篩檢起始年齡降至 45 歲，40–44 歲另有一等親大腸癌家族史條件。本題限定沒有這項家族史，原選項缺 45 歲。題幹問的是臺灣公費方案的資格，兩個語言版本都待醫師評閱。`clinical_update.claims` 分別將年齡、頻率與家族史例外連到能支持它們的原文。[雙語草稿](../drafts/mbc-tw-fit-0001.json) · [舊版國健署問答](https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=17770) · [變更公告](https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4878&pid=18761) · [現行服務表](https://www.hpa.gov.tw/Pages/List.aspx?nodeid=190)
 

@@ -1,6 +1,6 @@
 {
   "concept_id": "mbc-tw-fit-0001",
-  "revision": 1,
+  "revision": 2,
   "origin": "original_policy_comparison_case",
   "kind": "mcq",
   "assessed_skill": "Separate historical screening eligibility from the rules in effect on the date asked, and identify a missing valid option.",
@@ -12,6 +12,16 @@
   "permitted_uses": [
     "development"
   ],
+  "source_rights": {
+    "origin": "project_original",
+    "status": "cleared",
+    "allowed_uses": ["development"],
+    "attribution": "題目與詳解由 Medical Benchmark Collection 自編。政策資料出自衛生福利部國民健康署癌症防治組與企劃組，各來源列於 evidence。",
+    "license": "國健署政策資料採政府資料開放授權條款－第1版。",
+    "terms_url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=92&pid=5141&sid=5140",
+    "scope": "專案提供這組原創雙語題作公開開發之用。政策事實、數值與日期依國健署署名來源整理，保留出處。涉及該署特別聲明的著作時，須依個別授權再核。",
+    "checked_on": "2026-11-26"
+  },
   "review": {
     "status": "pending_clinician_review",
     "reviewer": null,

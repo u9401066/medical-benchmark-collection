@@ -10,11 +10,16 @@
 
 ```bash
 python -m medbench.benchmark_discovery --start 2026-11-13 --end 2026-11-26 --out data/discovery/pubmed-20261126.json
+python -m medbench.discovery_queue --latest data/discovery/pubmed-20261126.json --out data/discovery/pubmed-screening-queue.json
 ```
+
+第二條指令合併 `pubmed/` 中已存的搜尋快照和本次結果，依 PMID 去重，再扣除已登錄初篩的文獻。佇列保留最初發現的順序，從首筆即可續作。部分取得或搜尋失敗時，仍輸出已知候選及各批缺口。每週工作同時保存搜尋報告與待查佇列。要讓後續佇列持續涵蓋曾出現的候選，需將應保存的每批搜尋報告歸入版本庫。[初篩登錄表](pubmed/triage.tsv)
 
 首批檢索涵蓋 2026-11-13 至 2026-11-26，命中 206 篇，已取得全部 206 筆 PMID 與標題。這是供編者篩選的文獻數，一份資料集可能對應多篇論文，有些論文只使用既有題庫。每週的 Actions 執行保留當批搜尋檔；正式登錄來源時，把版次、可取得的材料與權利一起存回此目錄。[首批 PubMed 候選與可重跑查詢](pubmed/2026-11-26.json)
 
-本批已有兩筆完成資料釋出狀態核對。中醫辨證論治評測 TCM-BEST4SDT 可定位至 Figshare 第 8 版，資料採 CC BY 4.0。風濕科 RheumBench 的論文提供醫師評分方法，取得原始資料需要向作者申請。其餘 204 篇尚待登錄逐筆判定。另完成 MedChangeQA 固定版本的 512 筆標籤稽核，可供抽樣設計使用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability) · [MedChangeQA 標籤交叉表](../../docs/review/medchange-audit.md)
+**文獻初篩進度為 12／206，尚有 194 篇。** 首輪核對 TCM-BEST4SDT 與 RheumBench，前者可取得採 CC BY 4.0 的 Figshare 第 8 版，後者須向作者申請。第二輪按快照原順序查核第 1 至 10 篇，與首輪兩篇均無重複。四篇公開研究附件，兩篇的研究資料須申請，兩篇是可供追查上游文獻的綜述，一篇整合既有資源，一篇公開固定版本的評分重現套件。這些是按研究材料判定的筆數；同一篇也可能公開評分程式、限制病人資料取用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability)
+
+抗生素管理研究的 Zenodo v1.2 可用來查提示、評分規則及聚合結果，病人層級的輸入與作答受限。動脈瘤性蜘蛛膜下腔出血研究的公開附件含土耳其文原題及英文翻譯，逐筆模型答案與醫師分數須另行申請。下一批從快照第 11 筆 PMID `43089420` 接續，遇已在表中的 PMID 即跳過。核對表的 `dataset` 欄填作者名稱或材料描述，綜述沒有具名材料時留空。另已實算 MedChangeQA 的 512 筆新舊配對，可用於時效問題的分層抽樣。[抗生素管理重現套件](https://doi.org/10.5281/zenodo.24194665) · [蜘蛛膜下腔出血問答附表](https://www.mdpi.com/article/10.3390/jcm15228896/s1) · [MedChangeQA 標籤交叉表](../../docs/review/medchange-audit.md)
 
 收錄單位可以是一份資料集、評測平台或作者分享的文件。同一作品在 Google、Hugging Face 或 GitHub 建立的不同入口共用一個來源身分。來源目錄、可下載樣本、作者釋出的正式 benchmark 與本專案醫師審定的案例各有不同用途。首批查核日期為 2026-11-26。
 

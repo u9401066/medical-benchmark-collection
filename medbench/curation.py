@@ -57,6 +57,38 @@ def distinct_references(values, allowed):
             and len(set(values)) == len(values))
 
 
+def rights_status(record, use, as_of):
+    """Check the documented permission for this use independently of clinical review."""
+    if record is None:
+        return "not_documented"
+    if not isinstance(record, dict):
+        return "incomplete"
+    status = record.get("status")
+    if status in ("pending", "denied"):
+        return status
+    origin = record.get("origin")
+    if (status != "cleared" or origin not in ("project_original", "third_party")
+            or not all(has_text(record.get(k)) for k in ("attribution", "scope"))):
+        return "incomplete"
+    try:
+        checked = date.fromisoformat(record["checked_on"])
+        if origin == "third_party":
+            if not all(has_text(record.get(k)) for k in ("version", "license", "source_url", "terms_url")):
+                return "incomplete"
+            for key in ("source_url", "terms_url"):
+                url = urlsplit(record[key])
+                if url.scheme not in ("http", "https") or not url.hostname:
+                    return "incomplete"
+    except (KeyError, TypeError, ValueError):
+        return "incomplete"
+    if checked > as_of:
+        return "future_check"
+    uses = record.get("allowed_uses")
+    if not uses or not distinct_references(uses, SPLITS):
+        return "incomplete"
+    return "cleared" if use in uses else "use_not_cleared"
+
+
 def clinical_sources(draft, variant):
     """Validate the proposed judgment independently of whether anyone has approved it."""
     update = variant["clinical_update"]
@@ -198,6 +230,9 @@ def records(folder, events, mode, as_of=None, watch_report=None):
         signature = digest(draft)
         family = draft.get("family_id", draft["concept_id"])
         split = draft["split"]
+        use = mode.removeprefix("clinical-") if mode != "queue" else next(
+            (kind for kind, expected in SPLITS.items() if expected == split), None)
+        rights = rights_status(draft.get("source_rights"), use, as_of)
         if family in families and families[family] != split:
             raise ValueError("The same case family appears in multiple splits: " + family)
         families[family] = split
@@ -217,7 +252,7 @@ def records(folder, events, mode, as_of=None, watch_report=None):
                           and event["revision"] == draft["revision"]) else "stale_review"
             row = {"id": vid, "family_id": family, "revision": draft["revision"], "content_sha256": signature,
                    "lang": variant["lang"], "source": path.name, "split": split, "kind": draft["kind"],
-                   "decision": status}
+                   "decision": status, "rights_status": rights}
             update = variant.get("clinical_update")
             sources = clinical_sources(draft, variant) if "clinical_update" in variant else []
             row["clinical_status"] = clinical_status(update, status, event, as_of)
@@ -232,14 +267,13 @@ def records(folder, events, mode, as_of=None, watch_report=None):
             if mode == "queue":
                 result.append(row)
                 continue
-            use = mode.removeprefix("clinical-")
             if status != "approve" or split != SPLITS[use] or not draft.get("evidence"):
                 continue
             permissions = (event.get("approved_uses"), draft.get("permitted_uses"))
             if not all(isinstance(uses, list) and use in uses for uses in permissions):
                 continue
             current_target = mode.startswith("clinical-") or (use == "train" and update is not None)
-            if current_target and row["clinical_status"] != "current":
+            if current_target and (row["clinical_status"] != "current" or rights != "cleared"):
                 continue
             target = update if current_target else variant
             prompt = target["question"]
@@ -252,7 +286,9 @@ def records(folder, events, mode, as_of=None, watch_report=None):
                        evidence=sources if current_target else draft["evidence"], rubric=target.get("rubric", []),
                        messages=[{"role": "user", "content": prompt}, {"role": "assistant", "content": answer}])
             if current_target:
-                row.update(valid_options=update["valid_options"], export_as_of=as_of.isoformat())
+                row["source_rights"] = draft["source_rights"]
+                row.update(valid_options=update["valid_options"], offered_option_labels=list(variant.get("options") or {}),
+                           export_as_of=as_of.isoformat())
                 if "claims" in update:
                     row["claims"] = update["claims"]
             elif update is not None:
