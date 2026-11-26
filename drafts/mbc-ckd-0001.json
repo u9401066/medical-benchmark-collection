@@ -10,6 +10,7 @@
     "applies_to": ["zh-TW", "en-US"]
   },
   "split": "public_development",
+  "permitted_uses": ["development"],
   "review": {
     "status": "pending_clinician_review",
     "reviewer": null,

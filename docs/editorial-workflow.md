@@ -47,6 +47,16 @@
 
 ## 分批發布
 
+### 審查紀錄與資料匯出
+
+醫師可直接在討論中用「案例與語言／原句／核准、修訂或撤回／理由／證據定位」回覆。編者保存原始版本，將經確認的判定記入 `docs/review/decisions.jsonl`，每行為一個決議。Git 保留修前／修後差異。同一病例的翻譯或重寫沿用 `family_id`，資料用途由整個病例家族共同決定。
+
+執行 `python -m medbench.curation queue` 可以看到待審版本與內容 SHA-256。決議欄位包含 `variant_id`、`revision`、`content_sha256`、`reviewer`、`date`、`decision`（`approve`／`revise`／`withdraw`）、`reason`、`evidence_locator`、`checked` 與 `approved_uses`。同一語言版本以最新決議為準。核准時要能指出已檢視的臨床內容與語言（`clinical`、`language`）。修改題幹、答案、依據、評分條件或資料用途後，舊核准會顯示 `stale_review`。
+
+用 `python -m medbench.curation train --out data/curated/train.jsonl` 匯出已核准用於監督式微調的對話樣本；`development` 與 `evaluation` 分別產生公開開發案例與保留評估案例。匯出須同時符合素材允許用途、病例分組和該語言版本的醫師決議。輸出含提示、參考回答、評分準則、文獻與修訂識別碼。現有兩份雙語草稿均為公開開發案例，尚待醫師審查。
+
+新加入的非考題案例請 agent 在讀書會檢查一項對 SPRINT 的說法。繁中與美式英文各有自由作答與三項評分準則，原始依據可定位至 PMID 26551272 的摘要 Methods 第一句。後續可分別評閱來源查找、對收案條件的判讀、對外推適用性的說明。[雙語草稿](../drafts/mbc-evidence-sprint-0001.json) · [SPRINT 原始報告](https://pubmed.ncbi.nlm.nih.gov/26551272/)
+
 每批以 Git commit 或 tag 固定題目與來源清單，記錄新增、修訂、撤題及待審的 ID。只有通過該項臨床與語言審查的自編題才加入指定評測組。執行時保存題庫雜湊、模型與提示版本、工具與檢索範圍、評分規則、樣本數及失敗數。工具呼叫成功、證據支持答案，以及臨床判斷正確，是三個分別報告的結果。
 
 下一批優先處理複審清單中的 4 道醫師題。逐題記錄需要的前文與圖表、原答案是否仍成立，以及醫師建議採取的處置，再決定哪些題目適合改寫或納入獨立評測。

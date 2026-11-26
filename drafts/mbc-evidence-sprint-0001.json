@@ -1,0 +1,28 @@
+{
+  "concept_id": "mbc-evidence-sprint-0001",
+  "family_id": "sprint-2015-population",
+  "revision": 1,
+  "origin": "original_evidence_task",
+  "kind": "literature_retrieval_and_appraisal",
+  "assessed_skill": "Retrieve the primary trial report, identify its study population and assess direct applicability.",
+  "split": "public_development",
+  "permitted_uses": ["development"],
+  "clinical_scope": {"setting": "文獻查核", "target_population": "原始研究的收案對象", "jurisdiction": "study-specific"},
+  "review": {"status": "pending_clinician_review", "reviewer": null, "reviewed_on": null,
+    "question_for_reviewer": "兩版能否區分原始報告的收案事實與對其他族群的推論？"},
+  "variants": [
+    {"id": "mbc-evidence-sprint-0001-zh-TW", "lang": "zh-TW",
+     "question": "同事在讀書會說，2015 年 SPRINT 主要報告直接研究了有第二型糖尿病的成人。請查原始報告，用兩句話回覆這個說法，附上 PMID 和能核對收案條件的段落。",
+     "answer": "SPRINT 主要報告的收案對象為心血管風險較高且沒有糖尿病的成人。這份試驗對第二型糖尿病成人的效果無法提供直接估計（PMID 26551272，摘要 Methods 第一句）。",
+     "rubric": ["正確辨識糖尿病列入排除條件", "說明對該族群的直接證據範圍", "定位至 2015 年原始報告的收案敘述"]},
+    {"id": "mbc-evidence-sprint-0001-en-US", "lang": "en-US",
+     "question": "At journal club, a colleague says the primary 2015 SPRINT report directly studied adults with type 2 diabetes. Look up the primary report and respond in two sentences. Include the PMID and the passage that establishes who was enrolled.",
+     "answer": "SPRINT enrolled adults at increased cardiovascular risk who did not have diabetes. The trial therefore provides no direct estimate of the treatment effect in adults with type 2 diabetes (PMID 26551272, Abstract, Methods, first sentence).",
+     "rubric": ["Identifies the diabetes exclusion", "Distinguishes the study population from the proposed population", "Locates the eligibility statement in the primary 2015 report"]}
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [{"role": "primary_trial_report", "title": "A Randomized Trial of Intensive versus Standard Blood-Pressure Control",
+    "pmid": "26551272", "doi": "10.1056/NEJMoa1511939", "url": "https://pubmed.ncbi.nlm.nih.gov/26551272/",
+    "locator": "Abstract, Methods, first sentence, which reports randomization of 9,361 participants and their diabetes status.",
+    "anchor": "but without diabetes", "search": "26551272[pmid]"}]
+}

@@ -1,0 +1,156 @@
+{
+  "comparison_snapshot_date": "2026-11-26",
+  "author": "Zheheng Luo",
+  "upstream_github": "https://github.com/zhehengluoK/Examinations-for-Medical-PErsonnel-in-Chinese",
+  "upstream_github_readme_revision": "eed024cc566186dd24dce4b497b98faf742971ba",
+  "author_zip": {
+    "url": "https://drive.google.com/file/d/1PgXcl-7l2PWAevJeXkWpTN_WqBs-ea9W/view",
+    "bytes": 21709080,
+    "sha256": "b6c06bd27c62d101c42bb637cfa61e7aa8182cbebc4df477a5954d4840b1042b",
+    "member": "EMPC_traditional/EMPC_traditional.json",
+    "member_sha256": "95120fc35bcff94f2c8afc535bb6c058945889def63cea87352b27826080e74d",
+    "readme_reported_single_choice_questions": 81761,
+    "observed_traditional_rows": 81694,
+    "rows_by_original_year_label": {
+      "102-1": 3463,
+      "102-2": 4028,
+      "103-1": 4004,
+      "103-2": 3514,
+      "104-1": 3980,
+      "104-2": 4148,
+      "105-1": 4483,
+      "105-2": 4474,
+      "106-1": 4185,
+      "106-2": 4171,
+      "107-1": 4192,
+      "107-2": 4196,
+      "108-1": 4215,
+      "108-2": 4219,
+      "109-1": 4194,
+      "109-2": 3728,
+      "110-1": 2792,
+      "110-2": 4176,
+      "111-1": 2768,
+      "111-2": 3974,
+      "112": 2790
+    },
+    "complete_matches_by_original_answer_outcome": {
+      "accepted": 220,
+      "unconditional_credit": 3
+    },
+    "by_official_paper": {
+      "112020-301-22": {
+        "unique_full_match": 93,
+        "stem_only_candidate": 5
+      },
+      "112020-302-11": {
+        "unique_full_match": 60,
+        "stem_only_candidate": 9
+      },
+      "112020-306-55": {
+        "unique_full_match": 70,
+        "stem_only_candidate": 4
+      }
+    }
+  },
+  "huggingface": {
+    "repo": "KenLuo/EMPEC",
+    "revision": "5aeabb033531936168ad84a0d5ff761911d97294",
+    "card_license": "CC-BY-NC-ND-4.0",
+    "config": "default",
+    "card_split_rows": {
+      "train": 149603,
+      "validation": 200,
+      "test": 8000
+    },
+    "inspected_split": "train",
+    "first_row_index": 0,
+    "last_row_index": 99,
+    "viewer_url": "https://huggingface.co/datasets/KenLuo/EMPEC/viewer",
+    "observed_preview_rows_by_gregorian_year": {
+      "2011": 8,
+      "2012": 9,
+      "2013": 8,
+      "2014": 9,
+      "2015": 5,
+      "2016": 11,
+      "2017": 10,
+      "2018": 4,
+      "2019": 6,
+      "2020": 11,
+      "2021": 3,
+      "2022": 6,
+      "2023": 8,
+      "2024": 2
+    }
+  },
+  "official_samples": {
+    "2023": {
+      "papers_searched": 3,
+      "eligible_four_option_items": 260,
+      "exam_codes": [
+        "112020"
+      ],
+      "paper_ids": [
+        "112020-301-22",
+        "112020-302-11",
+        "112020-306-55"
+      ]
+    },
+    "2024": {
+      "papers_searched": 158,
+      "eligible_four_option_items": 7952,
+      "exam_codes": [
+        "113020",
+        "113030",
+        "113040",
+        "113070",
+        "113080",
+        "113090",
+        "113180"
+      ],
+      "ledger_exam_sha256": {
+        "113020.jsonl.gz": "aae26b16dd666ab7b72bb992be29c586b111b858ad039a4243cd96a2506f061d",
+        "113030.jsonl.gz": "37103f156611463c83d0988bfa195b13223a7ac6528e0ff07f965f0d2781febf",
+        "113040.jsonl.gz": "61109215d1bc4c5cb5932d086f1f1ddbc446219c1ef26c9aac6a149b49e4b120",
+        "113070.jsonl.gz": "70e8078d553ec7acb02aa5164ed484d88e9c6a4d5592405159b5df6471677e4c",
+        "113080.jsonl.gz": "19610ad0e899a01ba8d1dbdbec415cce68ce064192cd63bf4be404a3cd43cc99",
+        "113090.jsonl.gz": "c9e6618c4fbee5ca692ed727f9fa1af3963d667403fb2e515c0ce1338e00a5c4",
+        "113180.jsonl.gz": "373f0dd1f4e024ba531535edceca78e3b813992827bf1edffa217ae5249cc683"
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "release": "author_zip",
+      "source_year": "112",
+      "official_year": 2023,
+      "rows_examined": 2790,
+      "no_exact_stem_in_official_sample": 2538,
+      "unique_full_match": 223,
+      "stem_only_candidate": 18,
+      "option_labels_unparsed": 11
+    },
+    {
+      "release": "hf_preview",
+      "source_year": "2023",
+      "official_year": 2023,
+      "rows_examined": 8,
+      "unique_full_match": 3,
+      "no_exact_stem_in_official_sample": 5
+    },
+    {
+      "release": "hf_preview",
+      "source_year": "2024",
+      "official_year": 2024,
+      "rows_examined": 2,
+      "unique_full_match": 1,
+      "stem_only_candidate": 1
+    }
+  ],
+  "crosswalk": {
+    "rows": 246,
+    "distinct_official_items_unique_full_match": 225,
+    "distinct_official_items_with_any_candidate_or_full_match": 244
+  }
+}

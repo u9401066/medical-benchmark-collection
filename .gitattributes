@@ -3,3 +3,4 @@ datasets/moex/**/*.tsv -text -whitespace
 datasets/moex/**/*.json text eol=lf
 datasets/moex/**/*.jsonl text eol=lf
 datasets/moex/**/*.jsonl.gz binary
+datasets/discovery/**/*.tsv -text -whitespace

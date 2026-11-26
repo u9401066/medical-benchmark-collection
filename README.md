@@ -4,6 +4,8 @@
 
 ## 現有評測工具
 
+本庫也收錄文獻查核、臨床對話、報告判讀與醫療代理任務。來源先登錄作者、任務與可用範圍；可改編的材料再整理為可追溯的草稿。醫師逐一審查答案、用語與證據，定版後可按用途匯出訓練案例、開發案例及獨立評測。[多來源目錄](datasets/discovery/README.md) · [複審與資料匯出](docs/editorial-workflow.md#審查紀錄與資料匯出)
+
 臺灣考選部歷年試卷的 [年度覆蓋、官方原檔與更正答案](datasets/moex/README.md) 已開始分批建檔，可按場次、類科與科目找出缺件，並追溯逐題給分依據。
 
 `medbench` 提供可重現的醫學問答評測流程，適用於任何 OpenAI 相容（`/v1/chat/completions` 串流）的本地 LLM 伺服器（llama.cpp、Strata、vLLM…）。安裝後可用 `medbench datasets` 列出目前能執行的題庫。

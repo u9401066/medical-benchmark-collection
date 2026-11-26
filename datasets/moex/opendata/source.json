@@ -1,0 +1,22 @@
+{
+  "catalog": "https://data.gov.tw/dataset/170565",
+  "resource": "https://wwwc.moex.gov.tw/main/Exam/wHandExamQandA_CSV.ashx",
+  "delivery": "government_csv_export",
+  "download_url": "https://quality.data.gov.tw/dq_download_csv.php?nid=170565&md5_url=f0d4bb47aa99f42907d8ffddf68af69c",
+  "bytes": 25099131,
+  "sha256": "40399c10f2a9b5ae7e4cf460415fa89d7a971948c7d64291d74d4e935d014be5",
+  "http_date": "Thu, 26 Nov 2026 09:37:30 GMT",
+  "http_content_length": null,
+  "retrieved_at": "2026-11-26T09:39:34+00:00",
+  "csv_rows": 64815,
+  "catalog_api": "https://data.gov.tw/api/v2/rest/dataset/170565",
+  "csv_exam_count": 308,
+  "keyed_csv_rows": 64815,
+  "unique_subject_keys": 64815,
+  "repeat_key_rows": 0,
+  "portal_index_sha256": {
+    "subjects.tsv": "c01432d2b64f9a96fd6f4f2852db16dbe243b9985efe054cccfec1cabbbbcabc",
+    "assets.tsv": "46f62469af2a9e82b363667a191bedce98b1c9d9367df6ef1d3c9c34e37ee01e",
+    "coverage.tsv": "54a25ecfebb424f2356c1f1f76d829f33b1f711ec9ce5b456218d41e58658cd3"
+  }
+}
