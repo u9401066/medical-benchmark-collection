@@ -18,8 +18,8 @@ from .moex_archive import atomic
 
 OPTION_OUTCOMES = {"single_valid_option", "multiple_valid_options"}
 ABSTENTIONS = {"no_valid_option", "insufficient_information", "abstain"}
-FAILURES = {"missing", "timeout", "parse_error"}
-RESPONSES = ABSTENTIONS | {"select", "free_text", "timeout", "parse_error"}
+FAILURES = {"missing", "timeout", "parse_error", "request_error"}
+RESPONSES = ABSTENTIONS | {"select", "free_text", "timeout", "parse_error", "request_error"}
 VERDICTS = {"pass", "fail", "undetermined"}
 
 
@@ -218,7 +218,7 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None, evidence_revi
         if prediction is not None:
             validate_prediction(prediction, item)
             kind, digest = prediction["response_type"], prediction_digest(prediction)
-        if prediction is not None and kind != "timeout" and has_text(prediction.get("text")):
+        if evidence_audit.has_answer_text(prediction):
             readable += 1
         audit = None
         if key in evidence_reviews:
@@ -345,7 +345,7 @@ def main(argv=None):
             sheets = []
             for item, scored in zip(gold, report["items"], strict=True):
                 answer = answers.get(item["id"])
-                if answer and answer["response_type"] != "timeout" and has_text(answer.get("text")):
+                if evidence_audit.has_answer_text(answer):
                     sheets.append(evidence_audit.worksheet(item, answer, scored["prediction_sha256"]))
             payload = "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in sheets)
         else:

@@ -1,0 +1,56 @@
+{
+  "source_sha256": {
+    "question_bank": "6d089bcdca11a22649d3499d74085ce88abe3c6bc0711ca6a3cad30166f9e801",
+    "response_grid": "b14aa9093710fdf7f7e3d72c74329bc3cb11e4ff8113d36fbeffdc455f2465d2"
+  },
+  "questions": 50,
+  "question_formats": {
+    "MCQ": 20,
+    "Yes/No": 30
+  },
+  "reported_correct_counts_matched": 50,
+  "correct": 3370,
+  "responses": 3600,
+  "by_model": {
+    "CHATGPT 4O": 408,
+    "CHATGPT 5": 429,
+    "CLAUDE HAIKU 4.5": 390,
+    "CLAUDE SONNET 4.5": 436,
+    "COPILOT": 414,
+    "DEEPSEEK V3.2": 420,
+    "GEMINI 2.5 PRO": 435,
+    "GROK": 438
+  },
+  "same_account_day_change": {
+    "day_1_to_7": {
+      "paired": 1200,
+      "both_correct": 1118,
+      "correct_to_incorrect": 0,
+      "incorrect_to_correct": 0,
+      "both_incorrect": 82
+    },
+    "day_1_to_30": {
+      "paired": 1200,
+      "both_correct": 1116,
+      "correct_to_incorrect": 2,
+      "incorrect_to_correct": 18,
+      "both_incorrect": 64
+    }
+  },
+  "same_day_account_change": {
+    "account_1_to_2": {
+      "paired": 1200,
+      "both_correct": 1096,
+      "correct_to_incorrect": 32,
+      "incorrect_to_correct": 28,
+      "both_incorrect": 44
+    },
+    "account_1_to_3": {
+      "paired": 1200,
+      "both_correct": 1105,
+      "correct_to_incorrect": 23,
+      "incorrect_to_correct": 13,
+      "both_incorrect": 59
+    }
+  }
+}

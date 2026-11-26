@@ -11,6 +11,14 @@ CLAIM_STATUSES = {"supported", "contradicted", "unverified"}
 CITATION_STATUSES = {"verified", "misattributed", "unresolved", "confirmed_fabricated"}
 
 
+def has_answer_text(prediction):
+    return bool(
+        prediction
+        and prediction["response_type"] not in {"timeout", "request_error"}
+        and has_text(prediction.get("text"))
+    )
+
+
 def worksheet(item, prediction, prediction_sha256):
     question = next(
         (m["content"] for m in item.get("messages", []) if m.get("role") == "user"),
@@ -83,11 +91,7 @@ def validate(review, item, prediction, prediction_sha256, as_of):
         raise ValueError(
             f"{key}: a practice worksheet cannot enter a scored assignment"
         )
-    if (
-        not prediction
-        or not has_text(prediction.get("text"))
-        or prediction["response_type"] == "timeout"
-    ):
+    if not has_answer_text(prediction):
         raise ValueError(f"{key}: no recorded answer text for an evidence audit")
     if (
         review.get("content_sha256") != item["content_sha256"]

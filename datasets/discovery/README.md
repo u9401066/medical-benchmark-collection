@@ -17,7 +17,7 @@ python -m medbench.discovery_queue --latest data/discovery/pubmed-20261126.json 
 
 首批檢索涵蓋 2026-11-13 至 2026-11-26，命中 206 篇，已取得全部 206 筆 PMID 與標題。這是供編者篩選的文獻數，一份資料集可能對應多篇論文，有些論文只使用既有題庫。每週的 Actions 執行保留當批搜尋檔；正式登錄來源時，把版次、可取得的材料與權利一起存回此目錄。[首批 PubMed 候選與可重跑查詢](pubmed/2026-11-26.json)
 
-**文獻初篩進度為 62／206，尚有 144 篇。** 首輪核對 TCM-BEST4SDT 與 RheumBench，前者可取得採 CC BY 4.0 的 Figshare 第 8 版，後者須向作者申請。第二輪按快照原順序查核第 1 至 10 篇，與首輪兩篇均無重複。四篇公開研究附件，兩篇的研究資料須申請，兩篇是可供追查上游文獻的綜述，一篇整合既有資源，一篇公開固定版本的評分重現套件。這些是按研究材料判定的筆數；同一篇也可能公開評分程式、限制病人資料取用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability)
+**文獻初篩進度為 72／206，尚有 134 篇。** 首輪核對 TCM-BEST4SDT 與 RheumBench，前者可取得採 CC BY 4.0 的 Figshare 第 8 版，後者須向作者申請。第二輪按快照原順序查核第 1 至 10 篇，與首輪兩篇均無重複。四篇公開研究附件，兩篇的研究資料須申請，兩篇是可供追查上游文獻的綜述，一篇整合既有資源，一篇公開固定版本的評分重現套件。這些是按研究材料判定的筆數；同一篇也可能公開評分程式、限制病人資料取用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability)
 
 抗生素管理研究的 Zenodo v1.2 可用來查提示、評分規則及聚合結果，病人層級的輸入與作答受限。動脈瘤性蜘蛛膜下腔出血研究的公開附件含土耳其文原題及英文翻譯，逐筆模型答案與醫師分數須另行申請。核對表的 `dataset` 欄填作者名稱或材料描述，綜述沒有具名材料時留空。另已實算 MedChangeQA 的 512 筆新舊配對，可用於時效問題的分層抽樣。[抗生素管理重現套件](https://doi.org/10.5281/zenodo.24194665) · [蜘蛛膜下腔出血問答附表](https://www.mdpi.com/article/10.3390/jcm15228896/s1) · [MedChangeQA 標籤交叉表](../../docs/review/medchange-audit.md)
 
@@ -36,6 +36,10 @@ python -m medbench.discovery_queue --latest data/discovery/pubmed-20261126.json 
 第七輪核對快照第 52–61 筆，下一筆為第 62 筆 PMID `43073205`。FOX 公開 3 個生殖醫學病例及 Q1–Q32 的三模型評分，32 個題號的完整題文仍待取得。腦炎衛教正文表 1 可重算 50 個候選搜尋詞，排除 18 個後留 32 個，研究另報 128 份回答的雙評閱者一致性。[FOX 病例附件](https://static-content.springer.com/esm/art%3A10.1007%2Fs43032-026-02268-4/MediaObjects/43032_2026_2268_MOESM2_ESM.docx) · [腦炎衛教研究的搜尋詞與評讀](https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1986483/full)
 
 神經外科影像極短答有四份方法及評分附件。附三 S2 可重算 36 個題號、360 份作答，模型與專家共識完全一致 324／360。論文另報兩位專家討論前一致 347／360。真實病例、MRI 及逐份住院醫師原答須另行申請。CLAD 的出版附件可重算 268 個案件及 3,072 次模型模擬。作者 v1.0.0 的醫師複核檔有 130 列，121 列有醫師評分，涵蓋 118 個相異 run ID。三等級完全一致 89／121，排除任何一側為中間分數後是 89／106。兩種分母對應不同判定。作者發布檔與論文資料聲明列 CC BY-NC 4.0，Zenodo 目錄標 CC BY 4.0，已在初篩表記錄重用前須確認。[神經外科評分附件](https://static-content.springer.com/esm/art%3A10.1186%2Fs12909-026-10295-7/MediaObjects/12909_2026_10295_MOESM3_ESM.docx) · [CLAD v1.0.0 資料與程式](https://github.com/dviraran/CLAD/tree/5ced25faf92e7505d78b9c1588afa5ca6e426661) · [CLAD 作者論文及附表](https://pmc.ncbi.nlm.nih.gov/articles/PMC13793154/) · [Zenodo 目錄](https://zenodo.org/api/records/21097485)
+
+第八輪核對快照第 62–71 筆，下一筆為第 72 筆 PMID `43069249`。牙髓病學 S3 指引附件可按題號重算 50 題、3,600 筆正誤。第 1 與第 7 天同題、模型、帳號的 1,200 個配對正誤碼皆相同，第 1 與第 30 天有 20 次翻轉。工作簿無模型的答案文字，同分下的改答或理由變化須取得原文才能量測。[牙髓病學附表與重算](ese-s3/README.md)
+
+急診綜述的第 3 附件有 31 個研究列，16 篇的輸入符合或接近任務的臨床決策時點，10 篇使用較晚取得的資訊或較完整的病歷。ACCEL 作者固定提交的工作簿實有 5,452 個納入報告列，可用來追查數位健康試驗標註，報告與試驗登錄仍須歸戶。PMID `43073205` 的胃癌篩檢題名與近跌倒摘要不符，PubMed 原始記錄與 Crossref 都可見這項落差，留待上游釐清。[急診綜述與時點分類](https://www.jmir.org/2026/1/e95400/) · [ACCEL 固定工作簿](https://github.com/OHNLP/ACCEL/blob/70ffbb24899983f37cedd509de505f54ca767c9f/Dataset/DHTRCT_dataset.xlsx) · [PubMed 記錄](https://pubmed.ncbi.nlm.nih.gov/43073205/) · [Crossref 原始記錄](https://api.crossref.org/works/10.1111/jgh.70892)
 
 收錄單位可以是一份資料集、評測平台或作者分享的文件。同一作品在 Google、Hugging Face 或 GitHub 建立的不同入口共用一個來源身分。來源目錄、可下載樣本、作者釋出的正式 benchmark 與本專案醫師審定的案例各有不同用途。首批查核日期為 2026-11-26。
 

@@ -9,7 +9,6 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
-import os
 import signal
 import subprocess
 import time
@@ -42,6 +41,10 @@ async def ask(client: httpx.AsyncClient, cfg: Dict[str, Any], item: Dict[str, An
     body: Dict[str, Any] = {"model": cfg.get("model", "model"), "messages": [{"role": "user", "content": build_prompt(item)}],
                             "stream": True, "stream_options": {"include_usage": True}, "seed": item_seed(item["id"])}
     body.update(cfg.get("request") or {})
+    return await stream_completion(client, body)
+
+
+async def stream_completion(client: httpx.AsyncClient, body: Dict[str, Any]) -> Dict[str, Any]:
     t0 = time.time()
     first: Optional[float] = None
     content, reasoning = [], []

@@ -15,7 +15,7 @@ MedChangeQA 實檔提供三種可分開抽核的轉變。512 列中有 115 列�
 | 題幹資訊不足 | 指出影響作答的具體缺項，例如必要的圖表或病例條件。 |
 | 證據互相矛盾或編者尚未裁決 | 保留待審並揭露數量，裁決前暫停臨床計分。經審查、刻意測量「應揭露爭議」的題目可另訂評分準則。 |
 
-每種題面都提供相同的回覆選擇。解析失敗、逾時、漏答及單純表示「不知道」各自記錄。已核准且分派給模型的題目均進入主要分母，技術失敗計為未完成、未得分。現有執行器產生單一選項預測。下列臨床判分器可處理另行收集的結構化回覆。[現有執行器](../medbench/runner.py) · [編題與核准流程](editorial-workflow.md)
+每種題面都提供相同的回覆選擇。解析失敗、逾時、漏答及單純表示「不知道」各自記錄。已核准且分派給模型的題目均進入主要分母，技術失敗計為未完成、未得分。臨床執行器逐題收集結構化回覆，分派、原始作答及醫師裁決均可回溯。[臨床執行器](../medbench/clinical_run.py) · [編題與核准流程](editorial-workflow.md)
 
 ## 核心指標
 
@@ -33,9 +33,9 @@ MedChangeQA 實檔提供三種可分開抽核的轉變。512 列中有 115 列�
 
 ## 對一份已分派題本計分
 
-在推論前以 `clinical-development` 或 `clinical-evaluation` 固定實際要分派的完整 JSONL 清單，保存 Git 版本及匯出日期。每次計分使用同一個 split 和匯出日。只把題目的 user 訊息送給模型。參考答案、主張與證據留給評分者。歷史重現使用當時凍結的題本；新評測應先依現行證據重新匯出。[時效與用途的匯出條件](editorial-workflow.md#臨床時效維護)
+在推論前以 `clinical-development` 或 `clinical-evaluation` 固定實際要分派的完整 JSONL 清單，保存 Git 版本及匯出日期。每次計分使用同一個 split 和匯出日。每次請求送出一題，包含題文、證據截止日、適用地區與作答規則。題本的參考答案、主張與引用定位由評分端讀取。歷史重現使用當時凍結的題本；新評測應先依現行證據重新匯出。[時效與用途的匯出條件](editorial-workflow.md#臨床時效維護)
 
-每份模型回覆在 `predictions.jsonl` 占一列。評測端填入題本的 `id`、`content_sha256`，保存原始回答 `text` 及可核對原文的 `response_type`。選擇選項使用 `select` 加上 `selected_options` 字串陣列，例如 `["A","C"]`。其他回應類型有 `no_valid_option`（沒有適當選項）、`insufficient_information`（缺少必要資料）、`abstain`（泛稱不知道）及 `free_text`（實質開放回答）。作答逾時與解析失敗分別記 `timeout`、`parse_error`。題本中有分派、結果檔卻沒有對應列時，工具記為 `missing`。轉錄需保留原回答，遇到無法無歧義解析的文字就記解析失敗。
+每份模型回覆在 `predictions.jsonl` 占一列。評測端填入題本的 `id`、`content_sha256`，保存原始回答 `text` 及可核對原文的 `response_type`。選擇選項使用 `select` 加上 `selected_options` 字串陣列，例如 `["A","C"]`。其他回應類型有 `no_valid_option`（沒有適當選項）、`insufficient_information`（缺少必要資料）、`abstain`（泛稱不知道）及 `free_text`（實質開放回答）。總作答逾時、請求失敗與解析失敗分別記 `timeout`、`request_error`、`parse_error`。題本中有分派、結果檔卻沒有對應列時，工具記為 `missing`。轉錄需保留原回答，遇到無法無歧義解析的文字就記解析失敗。
 
 在分派當下保存整份題本的 SHA-256，作答後以已保存的值核對。題本即使少一題或只有換行改動，比對都會中止；報告的 `gold_sha256` 保存實際讀到的檔案指紋。以下為 PowerShell 範例。
 
@@ -44,10 +44,18 @@ New-Item -ItemType Directory -Force data/run | Out-Null
 (Get-FileHash data/curated/clinical-dev.jsonl).Hash | Set-Content -Encoding ascii data/run/assignment.sha256
 ```
 
+先以題本指紋啟動獨立請求，再匯出評分用結果。此範例使用正在本機提供服務的相容模型。請將 `pinned-model` 及 `--model-revision` 的值換成此次使用的模型名稱和檔案指紋。託管後端可用 `--api-key-env` 指定存放憑證的環境變數名稱。
+
 ```powershell
 $assignmentSha = (Get-Content data/run/assignment.sha256 -Raw).Trim()
-python -m medbench.clinical_score --gold data/curated/clinical-dev.jsonl --expected-gold-sha256 $assignmentSha --predictions data/run/predictions.jsonl --out data/run/clinical-score.json
+python -m medbench.clinical_run run --gold data/curated/clinical-dev.jsonl --expected-gold-sha256 $assignmentSha --run-dir data/run/first --url http://127.0.0.1:8080 --model pinned-model --model-revision sha256:model-file-fingerprint --concurrency 2
+python -m medbench.clinical_run predictions --gold data/curated/clinical-dev.jsonl --expected-gold-sha256 $assignmentSha --run-dir data/run/first --out data/run/first/predictions.jsonl
+python -m medbench.clinical_score --gold data/curated/clinical-dev.jsonl --expected-gold-sha256 $assignmentSha --predictions data/run/first/predictions.jsonl --out data/run/first/clinical-score.json
 ```
+
+每題有固定種子，溫度為 0，單題總等待時間預設 120 秒。`--url` 填服務的基底網址。預設 `--format schema`，也可測試相容後端的 `json` 模式或 `prompt` 純提示。達長度上限或輸出不符格式時，保留串流完成後可取得的原文並記解析失敗。不存在的選項代號由判分器記為無效選擇。`--model-revision` 由操作人員填寫，模型別名與實際權重的對應需由後端部署紀錄或模型檔指紋核對。
+
+`manifest.json` 固定題本指紋、推論設定與逐題請求指紋。`attempts/` 保存每次嘗試的輸出、回應完成狀態與可取得的用量。請求失敗時保留技術類別或 HTTP 狀態。相同設定續跑會補尚無紀錄的題。加上 `--retry-failed` 才會重試技術失敗，舊嘗試保留，評分匯出取各題最後一次紀錄。重新匯出請另取檔名。調整模型、題本、格式、併發或逾時時使用新的執行目錄。
 
 報告列出每題的結構判定、臨床結果及待審 ID。醫師可依 ID 對照匿名回答與題本的詳解、主張、來源定位和評分準則。每份複核在 `reviews.jsonl` 記下 `id`、報告提供的 `prediction_sha256`、`reviewer`、ISO 日期 `date`、`verdict` 與 `reason`。裁決使用 `pass`、`fail` 或 `undetermined`。加上 `--reviews data/run/reviews.jsonl` 重跑同一指令。若回答、題本內容指紋或轉錄欄位更動，舊裁決的指紋不符，工具會要求重新核對。[臨床判分器](../medbench/clinical_score.py)
 
