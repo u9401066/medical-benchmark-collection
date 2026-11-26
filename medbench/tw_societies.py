@@ -254,6 +254,8 @@ def organization_type(name):
         return "學會"
     if "大學" in name and name.endswith("系"):
         return "大學學系"
+    if "醫院" in name and name.endswith(("部", "科")):
+        return "醫院科部"
     return "協會／其他專業組織"
 
 

@@ -1,0 +1,149 @@
+{
+  "concept_id": "mbc-us-mammo-0003",
+  "family_id": "mbc-us-mammo-0001",
+  "revision": 1,
+  "origin": "original_synthetic_case",
+  "kind": "mcq",
+  "assessed_skill": "Give one permitted routine screening schedule under the specified guideline.",
+  "clinical_scope": {
+    "jurisdiction": "US",
+    "population": "A 58-year-old asymptomatic US woman at average risk who has undergone annual mammography, is in good health, has a life expectancy of at least 10 more years, and wishes to continue screening."
+  },
+  "split": "public_development",
+  "permitted_uses": [
+    "development"
+  ],
+  "source_rights": {
+    "origin": "project_original",
+    "status": "cleared",
+    "allowed_uses": [
+      "development"
+    ],
+    "attribution": "病例、雙語題文、選項、詳解與評分準則由 Medical Benchmark Collection 自編。篩檢間隔與適用條件依據美國癌症協會公開指引。",
+    "scope": "本批僅將專案原創題文用於公開開發。ACS 著作另依原站內容使用政策處理，證據保留書目、定位與指紋。",
+    "terms_urls": [
+      "https://www.cancer.org/about-us/policies/content-usage.html"
+    ],
+    "checked_on": "2026-11-26"
+  },
+  "review": {
+    "status": "pending_clinician_review",
+    "reviewer": null,
+    "reviewed_on": null,
+    "question_for_reviewer": "請核對僅答每年或僅答每兩年一次是否均可接受，兩種語言是否同樣要求只舉一項。"
+  },
+  "variants": [
+    {
+      "id": "mbc-us-mammo-0003-zh-TW",
+      "lang": "zh-TW",
+      "question": "美國一家診所依美國癌症協會（ACS）的指引，檢視例行乳房攝影篩檢的提醒設定（查核日為 2026 年 11 月 26 日）。病例是一名 58 歲女性，沒有乳房症狀，乳癌風險一般。她從 45 歲起每年接受篩檢，這次結果正常。她健康狀況良好，預期餘命至少還有 10 年，並希望繼續接受例行篩檢。請從選項中舉出一個符合 ACS 建議、診所可以設定的篩檢間隔，只選一項，並說明依據。",
+      "options": {
+        "A": "每 2 年一次",
+        "B": "每 3 年一次",
+        "C": "每 6 個月一次",
+        "D": "每年一次"
+      },
+      "answer": "A",
+      "rationale": "她年滿 55 歲，健康狀況良好，預期餘命至少還有 10 年。依 ACS 指引，她可以把原本的年度例行篩檢改為每兩年一次，因此 A 是一個可採用的設定。",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "US",
+        "question": "美國一家診所依美國癌症協會（ACS）的指引，檢視例行乳房攝影篩檢的提醒設定（查核日為 2026 年 11 月 26 日）。病例是一名 58 歲女性，沒有乳房症狀，乳癌風險一般。她從 45 歲起每年接受篩檢，這次結果正常。她健康狀況良好，預期餘命至少還有 10 年，並希望繼續接受例行篩檢。請從選項中舉出一個符合 ACS 建議、診所可以設定的篩檢間隔，只選一項，並說明依據。",
+        "outcome": "multiple_valid_options",
+        "selection_rule": "any_one",
+        "valid_options": [
+          "A",
+          "D"
+        ],
+        "answer": "A",
+        "rationale": "她年滿 55 歲，健康狀況良好，預期餘命至少還有 10 年。依 ACS 指引，她可以把原本的年度例行篩檢改為每兩年一次，因此 A 是一個可採用的設定。",
+        "rubric": [
+          "僅選 A 或僅選 D，兩者都符合本題要求。",
+          "說明選定的週期如何適用於這名已接受年度篩檢且希望繼續篩檢的 58 歲一般風險女性。"
+        ],
+        "claims": [
+          {
+            "text": "這名 58 歲女性屬一般風險且健康狀況良好，預期餘命至少 10 年，符合 ACS 所列繼續例行篩檢的條件。",
+            "evidence_ids": [
+              "acs-average-risk"
+            ]
+          },
+          {
+            "text": "年滿 55 歲且原本每年篩檢者可改採每兩年一次，也可繼續每年一次；本題的兩個相符選項為 A 與 D。",
+            "evidence_ids": [
+              "acs-average-risk"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "acs-average-risk"
+        ]
+      }
+    },
+    {
+      "id": "mbc-us-mammo-0003-en-US",
+      "lang": "en-US",
+      "question": "A US clinic is reviewing its routine screening mammography reminder policy using American Cancer Society (ACS) guidance current on November 26, 2026. The example is an asymptomatic 58-year-old woman at average risk of breast cancer. She has had yearly mammograms since age 45, and her latest screen was normal. She is in good health, has a life expectancy of at least 10 more years, and wishes to continue routine screening. Choose one listed interval that the clinic could use under ACS guidance. Give one option and explain your reasoning.",
+      "options": {
+        "A": "Every 2 years",
+        "B": "Every 3 years",
+        "C": "Every 6 months",
+        "D": "Every year"
+      },
+      "answer": "A",
+      "rationale": "At 58, she is eligible under ACS guidance to switch from annual screening to a two-year interval. Her good health and expected longevity support continued screening, so A is one acceptable reminder setting.",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "US",
+        "question": "A US clinic is reviewing its routine screening mammography reminder policy using American Cancer Society (ACS) guidance current on November 26, 2026. The example is an asymptomatic 58-year-old woman at average risk of breast cancer. She has had yearly mammograms since age 45, and her latest screen was normal. She is in good health, has a life expectancy of at least 10 more years, and wishes to continue routine screening. Choose one listed interval that the clinic could use under ACS guidance. Give one option and explain your reasoning.",
+        "outcome": "multiple_valid_options",
+        "selection_rule": "any_one",
+        "valid_options": [
+          "A",
+          "D"
+        ],
+        "answer": "A",
+        "rationale": "At 58, she is eligible under ACS guidance to switch from annual screening to a two-year interval. Her good health and expected longevity support continued screening, so A is one acceptable reminder setting.",
+        "rubric": [
+          "Give exactly one of A or D. Either fulfills the requested selection.",
+          "Explain why the selected schedule applies to this average-risk 58-year-old who has been screened annually and wishes to continue."
+        ],
+        "claims": [
+          {
+            "text": "This average-risk woman is 58, in good health, and expected to live at least another 10 years, meeting the ACS conditions for ongoing routine screening.",
+            "evidence_ids": [
+              "acs-average-risk"
+            ]
+          },
+          {
+            "text": "For this woman already on an annual schedule, ACS permits a switch to screening every other year or continuation of yearly screening. Those intervals correspond to A and D.",
+            "evidence_ids": [
+              "acs-average-risk"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "acs-average-risk"
+        ]
+      }
+    }
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [
+    {
+      "id": "acs-average-risk",
+      "role": "issuer_guideline",
+      "title": "American Cancer Society Recommendations for the Early Detection of Breast Cancer",
+      "version": "ACS public guidance revised 2026-07-23 and checked 2026-11-26. See also its guideline panel’s 2015 recommendation 1b, DOI 10.1001/jama.2015.12783.",
+      "url": "https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-recommendations-for-the-early-detection-of-breast-cancer.html",
+      "locator": "American Cancer Society screening recommendations → Guidelines for women at average breast cancer risk. The first list defines average risk. In the second list, bullet 3 covers both screening intervals for ages 55 and older and the health and life-expectancy conditions for continuing screening.",
+      "retrieved_on": "2026-11-26",
+      "page_revised_on": "2026-07-23",
+      "source_sha256": "7d97456ee6bc9c96fcb56052ad29af4c866f3e9f45300078398ab3afe442afaa",
+      "watch_xpath": "//p[contains(.,'average risk if')]/parent::div",
+      "passage_sha256": "98e7bd19c9304dbb90cc97274461da5430a4f413a0de8d262ea1be4aed1eab8c"
+    }
+  ]
+}

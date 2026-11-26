@@ -1,0 +1,399 @@
+{
+  "started_utc": "2026-11-26T13:48:09.150549+00:00",
+  "parameters": {
+    "temperature": 0,
+    "seed": 20261126,
+    "max_tokens": 256,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "fit_date_response",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "choice": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "no_valid_option",
+                "insufficient_information",
+                "abstain"
+              ]
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "choice",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "stream": false,
+    "model": "qwen2.5-1.5b-local"
+  },
+  "runtime": {
+    "server_build": "b12776",
+    "server_sha256": "57fc2f753ed915737508300de332ef6b038337fb828af8054d8f43c30f1580d1",
+    "model_sha256": "183715c435899236895da3869489cc30ac241476b4971a20285b1a462818a5b4",
+    "quantization": "Q4_K_M",
+    "ctx_size": 4096,
+    "slots": 1,
+    "threads": 4,
+    "threads_batch": 4,
+    "gpu_layers": 0
+  },
+  "source": {
+    "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=190",
+    "watch_xpath": "//div[@class='htmlBlock']//tr[td[contains(.,'大腸癌篩檢')]]",
+    "source_sha256": "3d7b4bb2bf0b5babddd52aeccdfafb95dab2cb9dc732ce0dc64d37cb7a687900",
+    "passage_sha256": "56927a8f408be0f136590074de682b03a47f35cfc9b4c14c50ccd491ba7e7585",
+    "retrieved_on": "2026-11-26",
+    "text": "大腸癌篩檢 (由菸品健康福利捐支應) 45-74歲及40-44歲具家族史之民眾 每2年1次 檢查費:400元/案 定量免疫法糞便潛血檢查"
+  },
+  "responses": [
+    {
+      "id": "mbc-tw-fit-0001-zh-TW",
+      "period": "current",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "9e385b42fa639b9c21b27e1a3f05e01083a18ff6660f906b4de547034512747d",
+      "arm": "closed",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"根據臺灣國民健康署的公費大腸癌篩檢方案，無症狀成人若沒有大腸癌一等親家族史，建議的開始篩檢年齡為50歲。\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "5222be21f469d2789509e15402539d32afb04b7bfb98c8e1324db4cd8135bc53",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 65,
+        "prompt_tokens": 197,
+        "total_tokens": 262,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0001-zh-TW",
+      "period": "current",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "e289dde2be36bf5d8cdbc87644d0766f9ae100e3b5ef0780bc6f338cdd080de9",
+      "arm": "supplied",
+      "raw": "{\n  \"choice\": \"D\",\n  \"reason\": \"根據公費大腸癌篩檢方案，40-44歲具家族史之民眾應每兩年1次檢查，因此最早可接受定量免疫法糞便潛血檢查的年齡是40歲。\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "513263021e9712b952aee1f84e9b90c370e41302a9c1679ff6fe25193e5dc618",
+      "choice": "D",
+      "usage": {
+        "completion_tokens": 71,
+        "prompt_tokens": 297,
+        "total_tokens": 368,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-en-US",
+      "period": "current",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "b51217d07c5b34512ca43e8b97df919a0f9e546cddbaaf51ea622d6e31c14dd2",
+      "arm": "supplied",
+      "raw": "{\n  \"choice\": \"D\",\n  \"reason\": \"According to the information provided, the interval between routine FITs in Taiwan's publicly funded colorectal cancer screening program is every two years.\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "b2553ab6f21159ff519cf71e7559aef28438d4a9dfaa724729e33f52fb60f331",
+      "choice": "D",
+      "usage": {
+        "completion_tokens": 46,
+        "prompt_tokens": 284,
+        "total_tokens": 330,
+        "prompt_tokens_details": {
+          "cached_tokens": 124
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-en-US",
+      "period": "current",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "11da8a7c2335181a25b171b6ff086a951da48a6f967a0299af6ae34ad5b58f9a",
+      "arm": "closed",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"Under Taiwan's publicly funded colorectal cancer screening program as of November 26, 2026, the interval between routine FITs is every three years.\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "37b8533288cf8607f69a34e6f411f0699c0580b4c3a2ed0fc003deb05f8ffc93",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 184,
+        "total_tokens": 237,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-en-US",
+      "period": "current",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "6787ca0e2a4168ae94d91834db2cfe4b73a4e924306dab0806e6c2d3ee98acc0",
+      "arm": "closed",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"According to the publicly funded colorectal cancer screening program as of November 26, 2026, an asymptomatic adult without a first-degree family history of colorectal cancer qualifies for biennial fecal immunochemical testing (FIT) at the earliest age of 50 years.\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "814b11d26fd36d1c9b6e5b95d2fa5b9d1ae0325c3dfad37b2e06e9aaff2b6eda",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 79,
+        "prompt_tokens": 169,
+        "total_tokens": 248,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-en-US",
+      "period": "current",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "1b682e6054f05e3e1b42a42a940c2ecbc777efd6664e575b2b08ec07668b7df3",
+      "arm": "supplied",
+      "raw": "{\n  \"choice\": \"C\",\n  \"reason\": \"According to the information provided, the earliest age at which an asymptomatic adult without a first-degree family history of colorectal cancer qualifies for biennial fecal immunochemical testing (FIT) is 45 years.\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "fa41c496643c58c2b18ec494bfb48a13d27de2981e85f27bceca93408d155bd7",
+      "choice": "C",
+      "usage": {
+        "completion_tokens": 63,
+        "prompt_tokens": 269,
+        "total_tokens": 332,
+        "prompt_tokens_details": {
+          "cached_tokens": 124
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0001-en-US",
+      "period": "current",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "6c0c8a580b7049bf43c7835f0fbd1f6f2dfe2cc0ae309c2822385e2481c7f2f7",
+      "arm": "supplied",
+      "raw": "{\n  \"choice\": \"A\",\n  \"reason\": \"According to the information provided, the screening program is available for adults aged 45-74 years old and 40-44 years old with a family history of colorectal cancer. Therefore, the earliest age at which an asymptomatic adult without a first-degree family history of colorectal cancer qualifies for biennial fecal immunochemical testing (FIT) is 40 years.\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "4be28ea3b3ac0317fc79ec6ab6a7d23954a9bf9a21f4947a761c781dcfb85517",
+      "choice": "A",
+      "usage": {
+        "completion_tokens": 99,
+        "prompt_tokens": 269,
+        "total_tokens": 368,
+        "prompt_tokens_details": {
+          "cached_tokens": 208
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0001-en-US",
+      "period": "current",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "d038e49cba45ebcafe16fdf80611fe62c8face4ffde5f17ddebbc5ba6e012052",
+      "arm": "closed",
+      "raw": "{\n  \"choice\": \"C\",\n  \"reason\": \"According to the publicly funded colorectal cancer screening program as of November 26, 2026, the earliest age at which an asymptomatic adult without a first-degree family history of colorectal cancer qualifies for biennial fecal immunochemical testing (FIT) is 55 years.\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "1799302191fc8b436cff6836b66dd7f4a96aadd9bfb65348af4eb70604670cbb",
+      "choice": "C",
+      "usage": {
+        "completion_tokens": 80,
+        "prompt_tokens": 169,
+        "total_tokens": 249,
+        "prompt_tokens_details": {
+          "cached_tokens": 108
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-zh-TW",
+      "period": "current",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "4d8459c792dd44e2eeaf3c69b42dc8cc0c6a779f88d4a18fefb17ed504565a41",
+      "arm": "supplied",
+      "raw": "{\n  \"choice\": \"D\",\n  \"reason\": \"根據2026年11月26日當時適用的臺灣國民健康署公費大腸癌篩檢方案，例行定量免疫法糞便潛血檢查的間隔是每兩年一次。\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "acee25cabd0fc4652e39b405e77566907641cacfc43984741987b26675b7e989",
+      "choice": "D",
+      "usage": {
+        "completion_tokens": 69,
+        "prompt_tokens": 325,
+        "total_tokens": 394,
+        "prompt_tokens_details": {
+          "cached_tokens": 124
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-zh-TW",
+      "period": "current",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "55c467e8a909f9cec0e6f9f597f44332dbd93c1aec59be46ada63d7e976ced78",
+      "arm": "closed",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"根據2026年11月26日當時適用的臺灣國民健康署公費大腸癌篩檢方案，例行定量免疫法糞便潛血檢查的間隔是每三年一次。\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "5fcde89fcd93f1c8bd7558ab3ffaf0202a7cc0019bde90bb895b2a384add91b8",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 68,
+        "prompt_tokens": 225,
+        "total_tokens": 293,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-zh-TW",
+      "period": "current",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "0bb334bdc2f063ee6f7e37ed42987fc78ed707a13ec0c3820d3fee9cdfc8cca0",
+      "arm": "closed",
+      "raw": "{\n  \"choice\": \"A\",\n  \"reason\": \"依2026年11月26日臺灣國民健康署的公費大腸癌篩檢方案，沒有大腸癌一等親家族史的無症狀成人，最早40歲可接受每兩年一次的定量免疫法糞便潛血檢查。\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "d64a9d9b0327d23195e1124cec27d0f1edcf6f32aea1623091c3248ab098f7c0",
+      "choice": "A",
+      "usage": {
+        "completion_tokens": 84,
+        "prompt_tokens": 197,
+        "total_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 126
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-zh-TW",
+      "period": "current",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "282fa63a2a5d20f21a6d4d5b7317043d944430b43e782e3e9a7b79753a2ba804",
+      "arm": "supplied",
+      "raw": "{\n  \"choice\": \"C\",\n  \"reason\": \"根據公費大腸癌篩檢方案，40-44歲具家族史之民眾應每兩年1次檢查，因此45歲符合條件。\"\n}",
+      "finish_reason": "stop",
+      "response_sha256": "9964b52266c795869f921bf59f31ccb0b67393591d80d4a203c77878dbd8501e",
+      "choice": "C",
+      "usage": {
+        "completion_tokens": 57,
+        "prompt_tokens": 297,
+        "total_tokens": 354,
+        "prompt_tokens_details": {
+          "cached_tokens": 124
+        }
+      }
+    }
+  ],
+  "finished_utc": "2026-11-26T13:49:09.568012+00:00",
+  "summary": {
+    "case_families": 1,
+    "language_variants": 6,
+    "requests": 12,
+    "groups": {
+      "all": {
+        "closed": {
+          "parsed": {
+            "numerator": 6,
+            "denominator": 6
+          },
+          "draft_match": {
+            "numerator": 0,
+            "denominator": 6
+          }
+        },
+        "supplied": {
+          "parsed": {
+            "numerator": 6,
+            "denominator": 6
+          },
+          "draft_match": {
+            "numerator": 4,
+            "denominator": 6
+          }
+        }
+      },
+      "no_valid_option": {
+        "closed": {
+          "parsed": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "draft_match": {
+            "numerator": 0,
+            "denominator": 2
+          }
+        },
+        "supplied": {
+          "parsed": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "draft_match": {
+            "numerator": 0,
+            "denominator": 2
+          }
+        }
+      },
+      "revised_option": {
+        "closed": {
+          "parsed": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "draft_match": {
+            "numerator": 0,
+            "denominator": 2
+          }
+        },
+        "supplied": {
+          "parsed": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "draft_match": {
+            "numerator": 2,
+            "denominator": 2
+          }
+        }
+      },
+      "stable_interval": {
+        "closed": {
+          "parsed": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "draft_match": {
+            "numerator": 0,
+            "denominator": 2
+          }
+        },
+        "supplied": {
+          "parsed": {
+            "numerator": 2,
+            "denominator": 2
+          },
+          "draft_match": {
+            "numerator": 2,
+            "denominator": 2
+          }
+        }
+      }
+    },
+    "paired_draft_match": {
+      "both_match": 0,
+      "only_closed_matches": 0,
+      "only_supplied_matches": 4,
+      "neither_matches": 2,
+      "unparsed_pair": 0
+    },
+    "changed_choice_among_parsed_pairs": {
+      "numerator": 6,
+      "denominator": 6
+    }
+  }
+}

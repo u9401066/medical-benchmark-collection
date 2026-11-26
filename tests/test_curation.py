@@ -1,9 +1,66 @@
 import json
 from datetime import date
+from pathlib import Path
 
 import pytest
 
-from medbench.curation import decisions, digest, records
+from medbench.curation import decisions, digest, main, records
+
+
+def test_duplicate_decisions_do_not_grant_approval(tmp_path):
+    log = tmp_path / "decisions.jsonl"
+    log.write_text('\n{"decision":"withdraw","decision":"approve"}', encoding="utf-8")
+    with pytest.raises(ValueError, match=r"decisions\.jsonl:2: Duplicate JSON key: decision"):
+        decisions(log)
+
+
+@pytest.mark.parametrize("target", ["decisions", "default_decisions", "missing_default", "watch", "draft", "hardlink"])
+def test_cli_preserves_curation_inputs(tmp_path, monkeypatch, target):
+    monkeypatch.chdir(tmp_path)
+    folder = Path("drafts")
+    folder.mkdir()
+    draft = folder / "case.json"
+    case = {"concept_id": "fixture", "revision": 1, "split": "public_development", "kind": "open",
+            "variants": [{"id": "case", "lang": "en-US", "question": "Fixture?", "answer": "A"}]}
+    draft.write_text(json.dumps(case), encoding="utf-8")
+    default = Path("docs/review/decisions.jsonl")
+    default.parent.mkdir(parents=True)
+    explicit = Path("custom-decisions.jsonl")
+    watch = Path("monitor.json")
+    watch.write_bytes(b'{"checked_on":"2026-11-26","sources":[]}')
+    event = {"variant_id": "case", "revision": 1, "content_sha256": digest(case), "reviewer": "fixture",
+             "date": "2026-11-26", "decision": "revise", "reason": "fixture", "evidence_locator": "fixture"}
+    data = (json.dumps(event) + "\n").encode()
+    explicit.write_bytes(data)
+    if target != "missing_default":
+        default.write_bytes(data)
+    argv = ["queue", "--watch-report", str(watch)]
+    if target not in ("default_decisions", "missing_default"):
+        argv += ["--decisions", str(explicit)]
+    alias = Path("same-file.jsonl")
+    if target == "hardlink":
+        alias.hardlink_to(explicit)
+    output = {"decisions": explicit, "default_decisions": default, "missing_default": default,
+              "watch": watch, "draft": draft, "hardlink": alias}[target]
+    inputs = {p: p.read_bytes() for p in (draft, watch, explicit, default, alias) if p.exists()}
+    with pytest.raises(SystemExit) as failure:
+        main([*argv, "--out", str(output.resolve())])
+    assert failure.value.code != 0 and all(p.read_bytes() == content for p, content in inputs.items())
+    if target == "missing_default":
+        assert not default.exists()
+
+
+@pytest.mark.parametrize("mode", ["queue", "clinical-train"])
+def test_cli_updates_existing_distinct_output(tmp_path, clinical_item, mode):
+    _, _, event, save = clinical_item
+    events = save()
+    log = tmp_path / "decisions.jsonl"
+    log.write_text(json.dumps(events[event["variant_id"]]) + "\n", encoding="utf-8")
+    output = tmp_path / "out.jsonl"
+    output.write_bytes(b"previous test export\n")
+    main([mode, "--drafts", str(tmp_path), "--decisions", str(log), "--out", str(output),
+          "--as-of", "2026-03-01"])
+    assert json.loads(output.read_bytes())["id"] == event["variant_id"]
 
 
 def test_split_and_same_revision_content_must_match_review(tmp_path):

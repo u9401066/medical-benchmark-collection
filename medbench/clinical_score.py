@@ -8,8 +8,11 @@ import io
 import json
 from pathlib import Path
 import re
+from statistics import median
 
-from .curation import OUTCOMES, SPLITS, has_text, rights_status, validate_historical_option
+from . import evidence_audit
+from .curation import OUTCOMES, SPLITS, distinct_references, has_text, rights_status, validate_historical_option
+from .json_io import unique_keys, write_new
 from .moex_archive import atomic
 
 
@@ -52,10 +55,18 @@ def validate_gold(row, score_as_of):
             isinstance(s, dict) and all(has_text(s.get(k)) for k in ("id", "url", "version", "locator"))
             for s in sources):
         raise ValueError(f"{key}: missing approved sources with version and locator")
+    if "claims" in row:
+        claims, ids = row["claims"], {s["id"] for s in sources}
+        if (len(ids) != len(sources) or not isinstance(claims, list) or not claims
+                or not all(isinstance(c, dict) and has_text(c.get("text")) and c.get("evidence_ids")
+                           and distinct_references(c["evidence_ids"], ids) for c in claims)):
+            raise ValueError(f"{key}: reference claims need unambiguous frozen evidence IDs")
     expected_watch = "unchanged" if any("watch_xpath" in s for s in sources) else "not_configured"
     if row["source_watch_status"] != expected_watch:
         raise ValueError(f"{key}: source watch is inconsistent with the cited evidence")
     dates = [date.fromisoformat(row[k]) for k in ("clinical_as_of", "decision_date", "export_as_of", "review_due")]
+    if any("published_on" in s and date.fromisoformat(s["published_on"]) > dates[0] for s in sources):
+        raise ValueError(f"{key}: cited source published after clinical cutoff")
     if not dates[0] <= dates[1] <= dates[2] < dates[3]:
         raise ValueError(f"{key}: approval is outside the clinical validity window")
     if dates[2] > score_as_of:
@@ -149,7 +160,31 @@ def rate(count, total):
     return {"numerator": count, "denominator": total, "rate": count / total if total else None}
 
 
-def score(gold_rows, predictions, reviews=(), *, score_as_of=None):
+def evidence_summary(audits, readable):
+    required = Counter(row["status"] for a in audits for row in a["reference_claims"])
+    extra = Counter(row["status"] for a in audits for row in a["additional_claims"])
+    citations = Counter(row["status"] for a in audits for row in a["citations"])
+    fabricated = sum(any(c["status"] == "confirmed_fabricated" for c in a["citations"]) for a in audits)
+    unresolved_only = sum(
+        any(c["status"] == "unresolved" for c in a["citations"])
+        and not any(c["status"] == "confirmed_fabricated" for c in a["citations"]) for a in audits
+    )
+    minutes = [a["minutes"] for a in audits if a.get("minutes") is not None]
+    with_reference = sum(bool(a["reference_claims"]) for a in audits)
+    return {"readable_responses": readable, "complete_audits": len(audits),
+            "audits_with_reference_claims": with_reference, "audits_without_reference_claims": len(audits) - with_reference,
+            "coverage": rate(len(audits), readable),
+            "reference_claim_counts": dict(required), "additional_claim_counts": dict(extra),
+            "reference_claim_support": rate(required["supported"], sum(required.values())),
+            "citation_counts": dict(citations),
+            "confirmed_fabricated_response_share": rate(fabricated, len(audits)),
+            "fabricated_response_rate_among_audited": None if unresolved_only else rate(fabricated, len(audits)),
+            "responses_with_unresolved_citations_and_no_confirmed_fabrication": unresolved_only,
+            "timed_reviews": len(minutes), "median_review_minutes": median(minutes) if minutes else None,
+            "total_review_minutes": sum(minutes) if minutes else None}
+
+
+def score(gold_rows, predictions, reviews=(), *, score_as_of=None, evidence_reviews=()):
     today = date.today()
     score_as_of = score_as_of or today
     if score_as_of > today:
@@ -157,7 +192,8 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None):
     gold = indexed(gold_rows, "gold")
     answers = indexed(predictions, "predictions")
     judgments = indexed(reviews, "reviews")
-    unknown = (answers.keys() | judgments.keys()) - gold.keys()
+    evidence_reviews = indexed(evidence_reviews, "evidence reviews")
+    unknown = (answers.keys() | judgments.keys() | evidence_reviews.keys()) - gold.keys()
     if unknown:
         raise ValueError(f"IDs outside the assignment: {sorted(unknown)}")
     for item in gold.values():
@@ -166,13 +202,21 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None):
     if len(snapshots) > 1:
         raise ValueError("Keep one export date and one split per assignment")
 
-    rows, pending = [], []
+    rows, pending, audits = [], [], []
+    readable = 0
     for key, item in gold.items():
         prediction = answers.get(key)
         kind, digest = "missing", None
         if prediction is not None:
             validate_prediction(prediction, item)
             kind, digest = prediction["response_type"], prediction_digest(prediction)
+        if prediction is not None and kind != "timeout" and has_text(prediction.get("text")):
+            readable += 1
+        audit = None
+        if key in evidence_reviews:
+            audit = evidence_audit.validate(evidence_reviews[key], item, prediction, digest, score_as_of)
+            if audit is not None:
+                audits.append(audit)
         selection = selection_status(item, prediction["selected_options"]) if kind == "select" else None
         match = False if selection == "invalid" else matches(item, prediction)
         review = judgments.get(key)
@@ -202,6 +246,7 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None):
             "outcome": item["outcome"], "response_type": kind, "selection_status": selection, "target_match": match,
             "historical_relation": relation, "selected_obsolete_option": selected_old,
             "review_verdict": verdict, "clinical_result": clinical,
+            "evidence_audit_status": evidence_reviews[key]["state"] if key in evidence_reviews else "not_reviewed",
         })
 
     assigned = len(rows)
@@ -230,6 +275,7 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None):
             "case_families": len({r["family_id"] for r in rows}), "response_counts": dict(counts),
             "obsolete_case_families": len({r["family_id"] for r in obsolete}),
             "historical_relation_counts": dict(Counter(r["historical_relation"] for r in rows)),
+            "evidence_review": evidence_summary(audits, readable),
             "selection_counts": {key: selection_counts[key] for key in ("offered", "invalid", "unverified")},
             "reviewed": len(judgments), "pending_clinical_review": pending, "metrics": metrics, "items": rows}
 
@@ -239,9 +285,27 @@ def read_jsonl(path, raw=None):
         for number, line in enumerate(stream, 1):
             if line.strip():
                 try:
-                    yield json.loads(line)
+                    yield json.loads(line, object_pairs_hook=unique_keys)
                 except ValueError as exc:
                     raise ValueError(f"{path}:{number}: {exc}") from exc
+
+
+def write_report(path, data):
+    try:
+        write_new(path, data)
+        return
+    except FileExistsError:
+        pass
+    try:
+        previous = json.loads(path.read_bytes(), object_pairs_hook=unique_keys)
+    except ValueError:
+        previous = None
+    if not (isinstance(previous, dict)
+            and isinstance(previous.get("items"), list) and previous.get("assigned") == len(previous["items"])
+            and isinstance(previous.get("metrics"), dict) and "clinical_pass_rate" in previous["metrics"]
+            and isinstance(previous.get("gold_sha256"), str) and re.fullmatch(r"[0-9a-f]{64}", previous["gold_sha256"])):
+        raise ValueError("Existing output is not a clinical score report. Choose a new path.")
+    atomic(path, data)
 
 
 def main(argv=None):
@@ -249,6 +313,8 @@ def main(argv=None):
     parser.add_argument("--gold", type=Path, required=True)
     parser.add_argument("--predictions", type=Path, required=True)
     parser.add_argument("--reviews", type=Path)
+    parser.add_argument("--evidence-reviews", type=Path, help="Per-answer clinician evidence worksheets (JSONL)")
+    parser.add_argument("--worksheet", action="store_true", help="Emit blank evidence worksheets for recorded answer text")
     parser.add_argument("--score-as-of", type=date.fromisoformat, help="Include reviews through this date (default: today)")
     parser.add_argument("--expected-gold-sha256", help="Verify the exact assignment bytes frozen before inference")
     parser.add_argument("--out", type=Path)
@@ -258,14 +324,31 @@ def main(argv=None):
         assignment_digest = hashlib.sha256(raw).hexdigest()
         if args.expected_gold_sha256 is not None and args.expected_gold_sha256.lower() != assignment_digest:
             raise ValueError("Gold SHA-256 does not match the frozen assignment")
-        report = score(read_jsonl(args.gold, raw), read_jsonl(args.predictions),
-                       read_jsonl(args.reviews) if args.reviews else (), score_as_of=args.score_as_of)
-        report["gold_sha256"] = assignment_digest
-        payload = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
+        gold = list(read_jsonl(args.gold, raw))
+        predictions = list(read_jsonl(args.predictions))
+        if args.worksheet and (args.evidence_reviews or args.reviews):
+            raise ValueError("For a blank worksheet provide only the assignment and predictions")
+        report = score(gold, predictions, read_jsonl(args.reviews) if args.reviews else (),
+                       evidence_reviews=read_jsonl(args.evidence_reviews) if args.evidence_reviews else (),
+                       score_as_of=args.score_as_of)
+        if args.worksheet:
+            answers = {p["id"]: p for p in predictions}
+            sheets = []
+            for item, scored in zip(gold, report["items"], strict=True):
+                answer = answers.get(item["id"])
+                if answer and answer["response_type"] != "timeout" and has_text(answer.get("text")):
+                    sheets.append(evidence_audit.worksheet(item, answer, scored["prediction_sha256"]))
+            payload = "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in sheets)
+        else:
+            report["gold_sha256"] = assignment_digest
+            payload = json.dumps(report, indent=2, ensure_ascii=False) + "\n"
         if args.out:
-            if args.out.resolve() in {p.resolve() for p in (args.gold, args.predictions, args.reviews) if p}:
+            if args.out.resolve() in {p.resolve() for p in (args.gold, args.predictions, args.reviews, args.evidence_reviews) if p}:
                 raise ValueError("Choose an output path distinct from the input files")
-            atomic(args.out, payload.encode("utf-8"))
+            if args.worksheet:
+                write_new(args.out, payload.encode("utf-8"))
+            else:
+                write_report(args.out, payload.encode("utf-8"))
         else:
             print(payload, end="")
     except (OSError, KeyError, TypeError, ValueError) as exc:

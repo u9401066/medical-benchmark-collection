@@ -6,3 +6,9 @@ datasets/moex/**/*.jsonl.gz binary
 datasets/discovery/**/*.tsv -text -whitespace
 datasets/tw-societies/**/*.tsv -text -whitespace
 datasets/tw-societies/*.tsv -text -whitespace
+# The review key hashes both reports; the blank packet is reproduced byte-for-byte.
+reports/tw-fit-date-probe/responses.json text eol=lf
+reports/tw-fit-date-probe/responses-constrained.json text eol=lf
+reports/tw-fit-date-probe/review-key.jsonl text eol=lf
+reports/tw-fit-date-probe/review-worksheet.jsonl text eol=lf
+reports/tw-fit-date-probe/review-worksheet.md text eol=lf

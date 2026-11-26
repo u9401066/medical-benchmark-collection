@@ -12,6 +12,8 @@
 
 臺灣醫學會已按科別整理，附官網核對狀態、部定專科及次專科的來源，以及學會公開甄審試題、樣題與答案的入口。[依科別找學會](datasets/tw-societies/by-specialty.md) · [直接找考試資料](datasets/tw-societies/exam-sources.tsv)
 
+醫師可直接從 12 份臺灣公費篩檢作答開始試審，逐句核對模型是否把家族史或年齡條件用對。另一次配對實驗中，直接附國健署服務表後，6 個版本有 4 個選到編者擬答，缺少有效選項的兩個版本仍都選錯。若要擴大測量模型詳解與引文，可使用 MedAESQA 索引定位原研究的 5,162 句回答。[醫師試審入口](reports/tw-fit-date-probe/review-guide.md) · [附原文的逐題結果](reports/tw-fit-date-probe/grounding.md) · [MedAESQA 資料與計數方法](datasets/discovery/medaesqa/README.md)
+
 開放式材料已收錄麻醉專科口試病例與核醫臨床評量表的來源。原創雙語病例可檢查模型能否指出缺少哪項檢驗，並在檢驗值補齊後重新判讀。[學會附件與評量面向](datasets/tw-societies/sources/clinical-assessments.tsv) · [雙語開放題審題單](docs/review/tw-mets-missing-triglycerides.md)
 
 本庫也收錄文獻查核、臨床對話、報告判讀與醫療代理任務。來源先登錄作者、任務與可用範圍；可改編的材料再整理為可追溯的草稿。醫師逐一審查答案、用語與證據，定版後可按用途匯出訓練案例、開發案例及獨立評測。[多來源目錄](datasets/discovery/README.md) · [複審與資料匯出](docs/editorial-workflow.md#審查紀錄與資料匯出)

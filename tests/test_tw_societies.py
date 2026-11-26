@@ -91,6 +91,23 @@ def test_university_osce_keeps_notice_and_skill_denominators_distinct():
     } == {r["source_id"] for r in sources}
 
 
+def test_pharmacy_workshop_stations_remain_examples_from_a_hospital_department():
+    root = societies.ROOT
+    sources = societies.records(root / "sources" / "osce-pharmacy.tsv")
+    name = "高雄長庚紀念醫院藥劑部"
+    directory = {r["name"]: r for r in societies.records(root / "societies.tsv")}
+    assert directory[name]["org_type"] == "醫院科部"
+    assert directory[name]["group"] == "藥學與用藥"
+    exams = [
+        r for r in societies.records(root / "exam-sources.tsv") if r["name"] == name
+    ]
+    assert {r["exam_evidence"] for r in exams} == {"sample_questions"}
+    assert {r["evidence_sha256"] for r in exams} == {
+        r["evidence_sha256"] for r in sources
+    }
+    assert all(r["artifact_kind"] == "workshop_osce_station" for r in sources)
+
+
 def test_directory_preserves_identity_and_multiple_exam_sources(tmp_path):
     societies.write_table(
         tmp_path / "registry-screen.tsv",

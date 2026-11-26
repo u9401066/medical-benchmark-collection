@@ -9,6 +9,7 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from .json_io import unique_keys
 
 SPLITS = {"train": "train", "evaluation": "heldout_evaluation", "development": "public_development"}
 MODES = ("queue", *SPLITS, *("clinical-" + use for use in SPLITS))
@@ -27,10 +28,13 @@ def decisions(path, as_of=None):
         return {}
     latest = {}
     last_date = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
+    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip():
             continue
-        event = json.loads(line)
+        try:
+            event = json.loads(line, object_pairs_hook=unique_keys)
+        except ValueError as exc:
+            raise ValueError(f"{path}:{number}: {exc}") from exc
         reviewed = date.fromisoformat(event["date"])
         if event["decision"] not in {"approve", "revise", "withdraw"} or not all(
             str(event.get(k) or "").strip() for k in ("reviewer", "reason", "evidence_locator", "variant_id", "content_sha256")
@@ -243,7 +247,7 @@ def records(folder, events, mode, as_of=None, watch_report=None):
     seen, families, temporal_families = set(), {}, set()
     result = []
     for path in sorted(folder.glob("*.json")):
-        draft = json.loads(path.read_text(encoding="utf-8"))
+        draft = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_keys)
         signature = digest(draft)
         family = draft.get("family_id", draft["concept_id"])
         split = draft["split"]
@@ -325,7 +329,7 @@ def records(folder, events, mode, as_of=None, watch_report=None):
     return result
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=MODES)
     parser.add_argument("--drafts", type=Path, default=Path("drafts"))
@@ -334,11 +338,21 @@ def main():
     parser.add_argument("--as-of", type=date.fromisoformat, metavar="YYYY-MM-DD",
                         help="Evaluate clinical validity and use decisions recorded by this date (default: today).")
     parser.add_argument("--watch-report", type=Path, help="JSON report for evidence passages monitored on --as-of.")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if not args.drafts.is_dir():
         parser.error(f"Draft folder does not exist: {args.drafts}")
+    if args.out:
+        output = args.out.resolve()
+        inputs = [args.decisions, *args.drafts.glob("*.json")]
+        if args.watch_report:
+            inputs.append(args.watch_report)
+        if any(output == path.resolve() or (output.is_file() and path.is_file() and output.samefile(path))
+               for path in inputs):
+            parser.error("Choose an output path distinct from the decision log, watch report and input drafts")
     as_of = args.as_of or date.today()
-    report = json.loads(args.watch_report.read_text(encoding="utf-8")) if args.watch_report else None
+    report = None
+    if args.watch_report:
+        report = json.loads(args.watch_report.read_text(encoding="utf-8"), object_pairs_hook=unique_keys)
     rows = records(args.drafts, decisions(args.decisions, as_of), args.mode, as_of, report)
     text = "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows)
     if args.out:

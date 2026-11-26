@@ -1,4 +1,5 @@
 from datetime import date, timedelta
+from copy import deepcopy
 import hashlib
 import json
 
@@ -6,6 +7,7 @@ import pytest
 
 from medbench.clinical_score import main, score
 from medbench.curation import digest, records
+from medbench.evidence_audit import worksheet
 
 
 def gold(key, outcome="single_valid_option", valid=("A",), rule=None):
@@ -159,6 +161,163 @@ def test_reusing_a_sourced_obsolete_option_counts_the_full_assigned_subgroup():
     for patch in ({"label": "E"}, {"as_of": rows[0]["clinical_as_of"]}, {"url": "unverified"}, {"locator": ""}):
         with pytest.raises(ValueError, match="historical option"):
             score([{**rows[0], "historical_option": {**ref, **patch}}], [])
+
+
+def audit_fixture(kind="select"):
+    row = gold("item")
+    row["claims"] = [{"text": t, "evidence_ids": ["s"]} for t in ("First claim", "Second claim")]
+    pred = prediction(row, kind, *(["A"] if kind == "select" else []))
+    pred["text"] = "甲🙂 ab [X]"
+    pred_hash = score([row], [pred])["items"][0]["prediction_sha256"]
+    sheet = worksheet(row, pred, pred_hash)
+    sheet.update(state="complete", inventory_complete=True, reviewer="fixture clinician", date="2026-11-15", minutes=1.5)
+    sheet["reference_claims"] = [
+        {"index": 1, "status": "supported", "span": {"start": 0, "end": 2, "quote": "甲🙂"},
+         "evidence_ids": ["s"], "source_locators": {"s": "Table 1, first row"}, "note": "Matches the frozen table."},
+        {"index": 2, "status": "omitted", "span": None, "evidence_ids": [], "note": "Answer does not address claim two."}]
+    sheet["additional_claims"] = [{"status": "unverified", "span": {"start": 3, "end": 5, "quote": "ab"},
+                                  "evidence_ids": [], "note": "Cannot establish the extra assertion."}]
+    sheet["citations"] = [{"status": "unresolved", "span": {"start": 6, "end": 9, "quote": "[X]"},
+                           "check_url": "https://example.org/registry", "check_locator": "Exact title query",
+                           "note": "Lookup did not establish identity."}]
+    return row, pred, sheet
+
+
+def test_evidence_review_reports_observed_support_and_unresolved_citations_without_granting_clinical_approval():
+    row, pred, sheet = audit_fixture()
+    failed, bad_pred, unresolved = audit_fixture("parse_error")
+    failed["id"] = bad_pred["id"] = unresolved["id"] = "unparsed"
+    unresolved["prediction_sha256"] = score([failed], [bad_pred])["items"][0]["prediction_sha256"]
+    unresolved["minutes"] = None
+    sheet["citations"][0]["status"] = "confirmed_fabricated"
+    sheet["citations"][0].update(verification_basis="affirmative_primary_confirmation",
+                                 confirmation_excerpt="This citation was invented (synthetic fixture).")
+    sheet["citations"][0]["check_locator"] = "Publisher confirmation, reference 42"
+    sheet["citations"][0]["note"] = "Synthetic fixture representing an explicit confirmation."
+    missed = gold("missing")
+    result = score([row, failed, missed], [pred, bad_pred], evidence_reviews=[sheet, unresolved])
+    audit = result["evidence_review"]
+    assert result["assigned"] == 3 and audit["coverage"]["rate"] == 1
+    assert audit["complete_audits"] == audit["readable_responses"] == 2
+    assert audit["audits_with_reference_claims"] == 2 and audit["audits_without_reference_claims"] == 0
+    assert audit["reference_claim_support"] == {"numerator": 2, "denominator": 4, "rate": .5}
+    assert audit["additional_claim_counts"] == {"unverified": 2}
+    assert audit["confirmed_fabricated_response_share"]["rate"] == .5
+    assert audit["fabricated_response_rate_among_audited"] is None
+    assert audit["responses_with_unresolved_citations_and_no_confirmed_fabrication"] == 1
+    assert audit["timed_reviews"] == 1 and audit["median_review_minutes"] == audit["total_review_minutes"] == 1.5
+    assert [r["clinical_result"] for r in result["items"]] == ["pending", "fail", "fail"]
+    template = worksheet(row, pred, sheet["prediction_sha256"])
+    partial = score([row, missed], [pred], evidence_reviews=[template])
+    assert partial["evidence_review"]["complete_audits"] == 0
+    assert [r["evidence_audit_status"] for r in partial["items"]] == ["pending", "not_reviewed"]
+    assert [r["evidence_audit_status"] for r in result["items"]] == ["complete", "complete", "not_reviewed"]
+    with pytest.raises(ValueError, match="practice worksheet"):
+        score([row], [pred], evidence_reviews=[{**sheet, "use": "public_development_review_practice"}])
+    other = deepcopy(sheet)
+    other["citations"] = []
+    other["reference_claims"][0].update(status="contradicted", evidence_ids=["new"], source_locators={"new": "Table 3, row 1"})
+    other["additional_evidence"] = [{"id": "new", "url": "https://example.org/new", "version": "v1",
+                                    "locator": "Table 3", "available_on": row["clinical_as_of"]}]
+    audit = score([row], [pred], evidence_reviews=[other])["evidence_review"]
+    assert audit["fabricated_response_rate_among_audited"]["rate"] == 0 and audit["reference_claim_support"]["rate"] == 0
+    other["additional_evidence"][0]["available_on"] = "2026-10-02"
+    with pytest.raises(ValueError, match="supplemental"):
+        score([row], [pred], evidence_reviews=[other])
+
+
+def test_failed_lookup_is_not_affirmative_fabrication_and_sources_must_precede_cutoff():
+    row, pred, sheet = audit_fixture()
+    sheet["citations"][0]["status"] = "confirmed_fabricated"
+    with pytest.raises(ValueError, match="affirmative"):
+        score([row], [pred], evidence_reviews=[sheet])
+    sheet["citations"][0]["status"] = "unresolved"
+    sheet["reference_claims"][0].pop("source_locators")
+    with pytest.raises(ValueError, match="locate the passage"):
+        score([row], [pred], evidence_reviews=[sheet])
+    row["evidence"][0]["published_on"] = "2099-11-26"
+    with pytest.raises(ValueError, match="published after"):
+        score([row], [pred])
+
+
+@pytest.mark.parametrize("error", ["hash", "context", "reviewer", "date", "minutes", "incomplete", "extra_ref",
+                                    "duplicate", "unknown_id", "omission", "unicode_offset", "wrong_quote",
+                                    "no_evidence", "citation_check", "duplicate_citation", "duplicate_extra"])
+def test_evidence_review_rejects_stale_or_untraceable_findings(error):
+    row, pred, sheet = audit_fixture()
+    ref, omitted = sheet["reference_claims"]
+    if error == "hash":
+        pred["text"] += "!"
+    elif error == "context":
+        sheet["context"]["response"] = "different text"
+    elif error == "reviewer":
+        sheet["reviewer"] = " "
+    elif error == "date":
+        sheet["date"] = "2019-01-01"
+    elif error == "minutes":
+        sheet["minutes"] = float("nan")
+    elif error == "incomplete":
+        sheet["inventory_complete"] = False
+    elif error == "extra_ref":
+        sheet["reference_claims"].pop()
+    elif error == "duplicate":
+        omitted["index"] = 1
+    elif error == "unknown_id":
+        ref["evidence_ids"] = ["unknown"]
+    elif error == "omission":
+        omitted["span"] = ref["span"]
+    elif error == "unicode_offset":
+        ref["span"]["end"] = 3
+    elif error == "wrong_quote":
+        ref["span"]["quote"] = "another sentence"
+    elif error == "no_evidence":
+        ref["evidence_ids"] = []
+    elif error == "citation_check":
+        sheet["citations"][0]["check_url"] = ""
+    elif error == "duplicate_citation":
+        sheet["citations"] *= 2
+    else:
+        sheet["additional_claims"] *= 2
+    with pytest.raises(ValueError):
+        score([row], [pred], evidence_reviews=[sheet])
+
+
+def test_cli_can_round_trip_evidence_worksheet_and_preserves_clinician_edits(tmp_path):
+    row, pred, completed = audit_fixture("parse_error")
+    paths = [tmp_path / name for name in ("gold.jsonl", "pred.jsonl", "worksheet.jsonl", "score.json")]
+    gold_path, pred_path, output, scored = paths
+    gold_path.write_bytes(json.dumps(row).encode())
+    pred_path.write_bytes(json.dumps(pred).encode())
+    args = ["--gold", str(gold_path), "--predictions", str(pred_path)]
+    main([*args, "--worksheet", "--out", str(output)])
+    blank = json.loads(output.read_bytes())
+    assert blank["state"] == "pending" and blank["context"]["response"] == pred["text"]
+    completed_bytes = json.dumps(completed).encode()
+    output.write_bytes(completed_bytes)
+    with pytest.raises(SystemExit):
+        main([*args, "--worksheet", "--out", str(output)])
+    assert output.read_bytes() == completed_bytes
+    main([*args, "--evidence-reviews", str(output), "--out", str(scored)])
+    report = json.loads(scored.read_bytes())
+    assert report["evidence_review"]["complete_audits"] == 1 and report["items"][0]["clinical_result"] == "fail"
+    with pytest.raises(SystemExit):
+        main([*args, "--evidence-reviews", str(output), "--out", str(output)])
+    assert output.read_bytes() == completed_bytes
+    with pytest.raises(SystemExit):
+        main([*args, "--out", str(output)])
+    assert output.read_bytes() == completed_bytes
+    main([*args, "--out", str(scored)])
+    assert json.loads(scored.read_bytes())["evidence_review"]["complete_audits"] == 0
+
+
+@pytest.mark.parametrize("data", ['{"verdict":"fail","verdict":"pass"}', '{"claim":{"status":1,"status":2}}'])
+def test_review_reader_rejects_conflicting_keys_with_line_number(tmp_path, data):
+    from medbench.clinical_score import read_jsonl
+
+    source = tmp_path / "reviews.jsonl"
+    source.write_bytes(('{}\n' + data).encode())
+    with pytest.raises(ValueError, match=r"reviews\.jsonl:2: Duplicate JSON key"):
+        list(read_jsonl(source))
 
 
 def test_frozen_legacy_exports_do_not_guess_missing_options_from_text():

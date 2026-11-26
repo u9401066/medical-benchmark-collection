@@ -13,6 +13,7 @@ from pathlib import Path
 
 import httpx
 
+from .json_io import unique_keys
 from .moex_archive import atomic
 
 
@@ -55,15 +56,6 @@ def prompt(items):
         "Include each given ID exactly once.\n"
         + json.dumps(questions, ensure_ascii=False)
     )
-
-
-def unique_keys(pairs):
-    result = {}
-    for key, value in pairs:
-        if key in result:
-            raise ValueError("Duplicate JSON key")
-        result[key] = value
-    return result
 
 
 def parse_batch(content, items):
