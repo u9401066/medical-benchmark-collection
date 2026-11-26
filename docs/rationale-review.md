@@ -27,6 +27,37 @@ python -m medbench.clinical_score --gold data/clinical-dev.jsonl --predictions d
 
 書目身分查證分為可確認 `verified`、錯引或錯置 `misattributed`、尚無法核實 `unresolved` 及已證實虛構 `confirmed_fabricated`。若作者在更正公告中明確指出某引文出於捏造，可用最後一項，登錄 `verification_basis=affirmative_primary_confirmation`，並在 `confirmation_excerpt` 保存足以複查的短原句。查無 PMID、DOI 無法解析或網站無法開啟時，單憑這些觀察應選 `unresolved`。書目可在審查當日核實，臨床主張仍依題目指定日期判讀。
 
+## 同一題本的兩組回答如何盲審
+
+用同一份凍結題本跑出兩份 `predictions.jsonl`。準備盲審時，程式按題將兩份回答放在一起，並獨立調換每題的呈現順序。給醫師 `packet.json` 即可。題文、原始回答、參考答案、評分準則和來源定位都在表內。獨立的 `key.json` 用來對回兩份原始作答和選樣紀錄。管理者另外保存每份作答所用的模型版本。模型在原文中的自稱和文字風格仍可能暴露身分。若察覺，請在審查理由中記下線索，原文位置才可追溯。
+
+```powershell
+$assignmentSha = (Get-Content data/run/assignment.sha256 -Raw).Trim()
+python -m medbench.clinical_blind prepare --gold data/curated/clinical-dev.jsonl --expected-gold-sha256 $assignmentSha --left data/run/old/predictions.jsonl --right data/run/updated/predictions.jsonl --key data/paired-review/private/key.json --packet data/paired-review/for-review/packet.json
+```
+
+工時有限時，可事先依「答案時效、缺資料、科別」等研究設計定義病例家族層別，並保存計畫與抽樣種子。每個家族只分配到一層，全部層別須涵蓋整份凍結題本。每層不放回抽選 `n` 個家族，選中的同家族翻譯、同病例變體與兩組回覆一併分派。用 `--plan data/sampling-plan.json --sample-seed 34965` 傳入 JSON 陣列。下列欄位中的家族 ID 應取自題本。省略計畫時全批分派。
+
+```json
+[
+  {"name": "changed_rule", "family_ids": ["case-family-1", "case-family-2"], "n": 1},
+  {"name": "stable_control", "family_ids": ["case-family-3"], "n": 1}
+]
+```
+
+複製一份 JSON 作回填，或以 `R-` 開頭的匿名號碼逐筆提供決議，讓編者代為記錄。可獨立完成兩項判定。
+
+1. **臨床達標。** 填 `clinical_verdict` 為 `pass`、`fail` 或 `undetermined`，並在 `clinical_reason` 記理由、在 `reviewer` 和 `date` 留下具名審查者及日期。解析失敗但留有原文時，`clinical_reviewable` 為 `false`，這類可逐句審查。
+2. **詳解及引文。** 依上節完成主張及引用定位，填入 `reviewer`、`date`，記下實際使用的 `minutes`。逐句盤點完成後，設 `inventory_complete` 為 `true` 並將 `state` 改為 `complete`。未完成的列可保留 `pending`。
+
+送回時可以只附已處理的匿名列。保留每列 `context`、配對編號和位置，這些欄位會逐項核對。管理者使用原來兩份作答和同一份對照檔，將裁決對回原始回答指紋。
+
+```powershell
+python -m medbench.clinical_blind intake --gold data/curated/clinical-dev.jsonl --expected-gold-sha256 $assignmentSha --left data/run/old/predictions.jsonl --right data/run/updated/predictions.jsonl --key data/paired-review/private/key.json --reviews data/paired-review/returned.json --out data/paired-review/private/report.json
+```
+
+輸出含具名臨床審查、逐句判定、原始分派與回填檔的指紋、兩組全題本分母和配對差異。漏答、逾時及未抽中但仍待裁決的題留在各自分母。技術失敗已定為未達標，待裁決的臨床項目保留差異上下界。私有報告另記各層的抽選比例，供分析使用。依比例不同的層別抽審後，單純計算已審平均只能描述那批已審回答。推估母集的平均差異須按原抽樣設計加權並處理未完成的審查。[臨床與引用比較](temporal-evaluation.md#同一份題本如何比較兩個模型) · [盲審與回填程式](../medbench/clinical_blind.py)
+
 ## 報告怎麼讀
 
 報告的 `evidence_review` 列出有原文的回答數、完成審查數、多少份具有參考主張，以及參考與額外主張各狀態的計數。參考主張支持比例的分母包含已審回答中的遺漏和無法判定主張。未進入人工審查的回答須另報覆蓋率。工時報告列出實際有記錄的份數、總分鐘數和中位數。

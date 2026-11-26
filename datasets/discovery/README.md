@@ -17,7 +17,7 @@ python -m medbench.discovery_queue --latest data/discovery/pubmed-20261126.json 
 
 首批檢索涵蓋 2026-11-13 至 2026-11-26，命中 206 篇，已取得全部 206 筆 PMID 與標題。這是供編者篩選的文獻數，一份資料集可能對應多篇論文，有些論文只使用既有題庫。每週的 Actions 執行保留當批搜尋檔；正式登錄來源時，把版次、可取得的材料與權利一起存回此目錄。[首批 PubMed 候選與可重跑查詢](pubmed/2026-11-26.json)
 
-**文獻初篩進度為 72／206，尚有 134 篇。** 首輪核對 TCM-BEST4SDT 與 RheumBench，前者可取得採 CC BY 4.0 的 Figshare 第 8 版，後者須向作者申請。第二輪按快照原順序查核第 1 至 10 篇，與首輪兩篇均無重複。四篇公開研究附件，兩篇的研究資料須申請，兩篇是可供追查上游文獻的綜述，一篇整合既有資源，一篇公開固定版本的評分重現套件。這些是按研究材料判定的筆數；同一篇也可能公開評分程式、限制病人資料取用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability)
+**文獻初篩進度為 82／206，尚有 124 篇。** 首輪核對 TCM-BEST4SDT 與 RheumBench，前者可取得採 CC BY 4.0 的 Figshare 第 8 版，後者須向作者申請。第二輪按快照原順序查核第 1 至 10 篇，與首輪兩篇均無重複。四篇公開研究附件，兩篇的研究資料須申請，兩篇是可供追查上游文獻的綜述，一篇整合既有資源，一篇公開固定版本的評分重現套件。這些是按研究材料判定的筆數；同一篇也可能公開評分程式、限制病人資料取用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability)
 
 抗生素管理研究的 Zenodo v1.2 可用來查提示、評分規則及聚合結果，病人層級的輸入與作答受限。動脈瘤性蜘蛛膜下腔出血研究的公開附件含土耳其文原題及英文翻譯，逐筆模型答案與醫師分數須另行申請。核對表的 `dataset` 欄填作者名稱或材料描述，綜述沒有具名材料時留空。另已實算 MedChangeQA 的 512 筆新舊配對，可用於時效問題的分層抽樣。[抗生素管理重現套件](https://doi.org/10.5281/zenodo.24194665) · [蜘蛛膜下腔出血問答附表](https://www.mdpi.com/article/10.3390/jcm15228896/s1) · [MedChangeQA 標籤交叉表](../../docs/review/medchange-audit.md)
 
@@ -40,6 +40,10 @@ python -m medbench.discovery_queue --latest data/discovery/pubmed-20261126.json 
 第八輪核對快照第 62–71 筆，下一筆為第 72 筆 PMID `43069249`。牙髓病學 S3 指引附件可按題號重算 50 題、3,600 筆正誤。第 1 與第 7 天同題、模型、帳號的 1,200 個配對正誤碼皆相同，第 1 與第 30 天有 20 次翻轉。工作簿無模型的答案文字，同分下的改答或理由變化須取得原文才能量測。[牙髓病學附表與重算](ese-s3/README.md)
 
 急診綜述的第 3 附件有 31 個研究列，16 篇的輸入符合或接近任務的臨床決策時點，10 篇使用較晚取得的資訊或較完整的病歷。ACCEL 作者固定提交的工作簿實有 5,452 個納入報告列，可用來追查數位健康試驗標註，報告與試驗登錄仍須歸戶。PMID `43073205` 的胃癌篩檢題名與近跌倒摘要不符，PubMed 原始記錄與 Crossref 都可見這項落差，留待上游釐清。[急診綜述與時點分類](https://www.jmir.org/2026/1/e95400/) · [ACCEL 固定工作簿](https://github.com/OHNLP/ACCEL/blob/70ffbb24899983f37cedd509de505f54ca767c9f/Dataset/DHTRCT_dataset.xlsx) · [PubMed 記錄](https://pubmed.ncbi.nlm.nih.gov/43073205/) · [Crossref 原始記錄](https://api.crossref.org/works/10.1111/jgh.70892)
+
+第九輪核對快照第 72–81 筆，下一筆為 PMID `43067149`。安寧照護附件核對出 30 道題、150 份有內容的模型回答及 120 筆題目到參考依據的連結。作者另挑出 28 個風險例作質性分析。香港護理模擬病人的附二有 6 個評量面向和 8 種提問類型，並可按 25 個提示與 5 次獨立工作階段重算每設定 125 份回覆的分母。[安寧照護附表與重算](end-of-life/README.md) · [香港護理模擬的評量附表](https://pmc-oa-opendata.s3.amazonaws.com/PMC13784698.1/nursing-v9-e98543-s002.docx)
+
+文獻檢索研究的固定作者提交包含 20 個 Cochrane 綜述主題、60 道三角色的問法和 720 個作答檔。已核對作答檔命名所對應的模型、角色及重測序號。後續可按納入理由、檢索角色及重測分開評估，重用條件須依原件確認。INPERIA 的西文虛構訪談三個 CSV 可對回 550 個作答 ID，43 個訓練訪談與 12 個測試訪談的 ID 無交集，可供驗證按家族分割的做法。[檢索題目與模型作答的固定版本](https://github.com/QingfangLiu/llm-evidence-retrieval-bias/tree/ad3993e168fc8c956677535adab1774860c90d4c) · [INPERIA v1.0.3](https://zenodo.org/records/23259812)
 
 收錄單位可以是一份資料集、評測平台或作者分享的文件。同一作品在 Google、Hugging Face 或 GitHub 建立的不同入口共用一個來源身分。來源目錄、可下載樣本、作者釋出的正式 benchmark 與本專案醫師審定的案例各有不同用途。首批查核日期為 2026-11-26。
 

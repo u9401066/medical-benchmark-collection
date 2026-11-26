@@ -1,0 +1,27 @@
+{
+  "source_sha256": {
+    "questions": "0c192b41dd7e28d7b9dc09a158faddfa7aca5c4686639ced0a8a873b98a33e73",
+    "risks": "f242fa89fac57cc3083a5d68f7786b4a7b7dda114e3d1b5eb6a13f63ccf9f03c",
+    "responses": "86be772b572ab06e0fa83eccc9df02ed2cbd08e29e4a56dc0beb4d988ce1dd1e"
+  },
+  "questions": 30,
+  "reference_records": 28,
+  "question_reference_links": 120,
+  "referenced_ids": 27,
+  "response_records_with_text": 150,
+  "responses_by_model_label": {
+    "Deepseek-V3": 30,
+    "GPT-5.3 mini instant": 30,
+    "Gemini3.5-Flash": 30,
+    "Microsoft Copilot": 30,
+    "Perplexity-AI": 30
+  },
+  "qualitative_examples": 28,
+  "qualitative_examples_by_label": {
+    "Deepseek-V3": 6,
+    "GPT-5.3 mini instant": 4,
+    "Gemini3.5-Flash": 7,
+    "Microsoft Copilot": 6,
+    "Perplexity-AI": 5
+  }
+}

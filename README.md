@@ -4,7 +4,7 @@
 
 ## 現有評測工具
 
-醫師可以從雙語審查目錄選一題，核對歷史與現行答案、詳解或引文。完整題庫判分另有兩組配對比較，按病例家族估計差異，並保留尚待裁決的上下界。[雙語審查本](docs/review/queue-2026-11-26.md) · [版本審核與匯出](docs/editorial-workflow.md#審查紀錄與資料匯出) · [凍結題本、推論與判分](docs/temporal-evaluation.md#對一份已分派題本計分) · [配對比較](docs/temporal-evaluation.md#同一份題本如何比較兩個模型)
+醫師可以從雙語審查目錄選一題，核對歷史與現行答案、詳解或引文。兩組模型的回答可按病例家族分層抽選，並以匿名順序交醫師審查。配對比較保留尚待裁決的上下界。[雙語審查本](docs/review/queue-2026-11-26.md) · [版本審核與匯出](docs/editorial-workflow.md#審查紀錄與資料匯出) · [凍結題本、推論與判分](docs/temporal-evaluation.md#對一份已分派題本計分) · [模型回答盲審](docs/rationale-review.md#同一題本的兩組回答如何盲審)
 
 當期工作保留原考期答案，並由醫師依指定日期、地區及證據另審現行答案和詳解。臺灣公費大腸癌篩檢題測量模型是否沿用已失效的選項。美國乳房攝影題比較同一病例在兩個機構指引下的篩檢間隔。每週檢查來源段落，並依 PMID 整理待查的評測研究。[臺灣公費篩檢審題單](docs/review/tw-fit-controls.md) · [美國指引分歧審題單](docs/review/us-mammography-interval.md) · [目標與交接](docs/roadmap.md) · [臨床時效維護](docs/editorial-workflow.md#臨床時效維護) · [臨床判分與評估](docs/temporal-evaluation.md)
 
