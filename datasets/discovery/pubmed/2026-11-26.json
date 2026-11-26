@@ -1,0 +1,1468 @@
+{
+  "status": "complete",
+  "retrieved_at_utc": "2026-11-26T12:01:21.226076+00:00",
+  "query": "(\"large language model*\"[tiab] OR LLM[tiab] OR LLMs[tiab] OR ChatGPT[tiab]) AND (medical[tiab] OR medicine[tiab] OR clinical[tiab] OR healthcare[tiab] OR \"health care\"[tiab]) AND (benchmark*[tiab] OR dataset*[tiab] OR \"question answering\"[tiab] OR rubric*[tiab] OR ((evaluat*[tiab] OR validat*[tiab]) AND (temporal[tiab] OR outdated[tiab] OR guideline*[tiab] OR evidence[tiab] OR citation*[tiab] OR hallucinat*[tiab] OR unanswerable[tiab] OR abstain*[tiab] OR abstention[tiab])))",
+  "date_field": "EDAT",
+  "start": "2026-11-13",
+  "end": "2026-11-26",
+  "search_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&term=%28%22large+language+model%2A%22%5Btiab%5D+OR+LLM%5Btiab%5D+OR+LLMs%5Btiab%5D+OR+ChatGPT%5Btiab%5D%29+AND+%28medical%5Btiab%5D+OR+medicine%5Btiab%5D+OR+clinical%5Btiab%5D+OR+healthcare%5Btiab%5D+OR+%22health+care%22%5Btiab%5D%29+AND+%28benchmark%2A%5Btiab%5D+OR+dataset%2A%5Btiab%5D+OR+%22question+answering%22%5Btiab%5D+OR+rubric%2A%5Btiab%5D+OR+%28%28evaluat%2A%5Btiab%5D+OR+validat%2A%5Btiab%5D%29+AND+%28temporal%5Btiab%5D+OR+outdated%5Btiab%5D+OR+guideline%2A%5Btiab%5D+OR+evidence%5Btiab%5D+OR+citation%2A%5Btiab%5D+OR+hallucinat%2A%5Btiab%5D+OR+unanswerable%5Btiab%5D+OR+abstain%2A%5Btiab%5D+OR+abstention%5Btiab%5D%29%29%29&datetype=edat&mindate=2026%2F11%2F13&maxdate=2026%2F11%2F26&retmax=10000",
+  "total_matches": 206,
+  "unique_pmids_returned": 206,
+  "records_retrieved": 206,
+  "missing_count": 0,
+  "missing_summary_pmids": [],
+  "warnings": [
+    {
+      "phrasesignored": [],
+      "quotedphrasesnotfound": [],
+      "outputmessages": [
+        "Restrictions achieved. start and count adjusted to 0, 9999"
+      ]
+    }
+  ],
+  "errors": [],
+  "records": [
+    {
+      "pmid": "43094595",
+      "title": "Multidimensional evaluation of large language models for patient education on asthma during pregnancy: a cross-sectional comparative study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43094595/"
+    },
+    {
+      "pmid": "43094584",
+      "title": "Performance-efficiency trade-offs of large language models for structured extraction from Chinese clinical free text: a benchmark study of model scale, reasoning mode, and architecture.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43094584/"
+    },
+    {
+      "pmid": "43094353",
+      "title": "Evaluating Large Language Model-Generated Virtual Hypertension Patients as Proxies for Real Patient Perspectives: Comparative Study.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43094353/"
+    },
+    {
+      "pmid": "43094325",
+      "title": "Artificial intelligence for pharmacokinetic drug-drug interaction assessment: from promise to practice.",
+      "publication_date": "2026 Nov 26",
+      "electronic_publication_date": "2026 Nov 26",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43094325/"
+    },
+    {
+      "pmid": "43094157",
+      "title": "Large Language Models in Pain Medicine: Evidence Maturity and Implementation Challenges.",
+      "publication_date": "2026 Dec",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43094157/"
+    },
+    {
+      "pmid": "43093334",
+      "title": "RepurposeAD: Knowledge Graph-Guided LLM Reasoning for Alzheimer's Drug Repurposing.",
+      "publication_date": "2026 Nov 4",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43093334/"
+    },
+    {
+      "pmid": "43091155",
+      "title": "Comparative Accuracy of a Commercial Multimodal Large Language Model Versus Clinicians in Dental Age and Sex Estimation from Panoramic Radiographs: A Benchmark Study.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43091155/"
+    },
+    {
+      "pmid": "43091123",
+      "title": "Large Language Models Are Not Interchangeable for Empiric Antibiotic Recommendations Under a Stewardship Benchmark: A Paired Retrospective Multi-Model Study.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43091123/"
+    },
+    {
+      "pmid": "43090929",
+      "title": "Comparative Expert-Rated Response Quality of Large Language Models in Aneurysmal Subarachnoid Hemorrhage: A Multidimensional Evaluation.",
+      "publication_date": "2026 Nov 13",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43090929/"
+    },
+    {
+      "pmid": "43090803",
+      "title": "Evaluating Large Language Model Platforms for Medical Nutrition Therapy in Autism Spectrum Disorder: Quality, Guideline Concordance, Readability, and Hallucinations.",
+      "publication_date": "2026 Nov 10",
+      "electronic_publication_date": "2026 Nov 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43090803/"
+    },
+    {
+      "pmid": "43089420",
+      "title": "StrongGeneAgent: An Evidence-Grounded Conversational Agent for Gene-Centric Pan-Cancer Multi-Omics Analysis.",
+      "publication_date": "2026 Nov 12",
+      "electronic_publication_date": "2026 Nov 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43089420/"
+    },
+    {
+      "pmid": "43089280",
+      "title": "Virtual Reality for Patient Care: A State-of-the-Art Review of Clinical Applications Based on AI-Assisted Literature Retrieval.",
+      "publication_date": "2026 Nov 19",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43089280/"
+    },
+    {
+      "pmid": "43089174",
+      "title": "Consistency and WHO Guideline Alignment of ChatGPT-Generated Antenatal Care Information: A Repeated-Session Comparative Study.",
+      "publication_date": "2026 Nov 11",
+      "electronic_publication_date": "2026 Nov 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43089174/"
+    },
+    {
+      "pmid": "43088902",
+      "title": "More than a Second Pair of Eyes: Artificial Intelligence Across the Breast Imaging Pathway.",
+      "publication_date": "2026 Nov 17",
+      "electronic_publication_date": "2026 Nov 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43088902/"
+    },
+    {
+      "pmid": "43088108",
+      "title": "Applications and Gaps of Generative AI in the Medical Device Lifecycle: A Scoping Review.",
+      "publication_date": "2026 Nov 19",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43088108/"
+    },
+    {
+      "pmid": "43088050",
+      "title": "CoDE: A Patient Cohort-Based Study of Evidence Coverage and Support in Diagnostic Explanations Generated by Large Language Models.",
+      "publication_date": "2026 Nov 8",
+      "electronic_publication_date": "2026 Nov 8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43088050/"
+    },
+    {
+      "pmid": "43088020",
+      "title": "A Verifiable Agentic Framework for Sequential Multimodal Prediction of Mild Cognitive Impairment Progression.",
+      "publication_date": "2026 Nov 2",
+      "electronic_publication_date": "2026 Nov 2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43088020/"
+    },
+    {
+      "pmid": "43087976",
+      "title": "Evaluating Frontier Large Language Models for AI-Assisted Differential Diagnosis in Gastroenterology: A Comparative Study of Diagnostic Performance and Repeated-Run Consistency.",
+      "publication_date": "2026 Oct 23",
+      "electronic_publication_date": "2026 Oct 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43087976/"
+    },
+    {
+      "pmid": "43087698",
+      "title": "Large Language Models in Oncology: Current Applications, Evidence Gaps, and Implementation Requirements-A Narrative Review.",
+      "publication_date": "2026 Oct 24",
+      "electronic_publication_date": "2026 Oct 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43087698/"
+    },
+    {
+      "pmid": "43086823",
+      "title": "Performance of large language models and pediatricians in complex pediatric scenarios: a prospective, randomized comparative study of clinical task accuracy and decision support.",
+      "publication_date": "2026 Sep 4",
+      "electronic_publication_date": "2026 Sep 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086823/"
+    },
+    {
+      "pmid": "43086468",
+      "title": "Do generative AI chatbots align with high-level evidence in dentistry? A comparison with Cochrane systematic reviews.",
+      "publication_date": "2026 Nov 26",
+      "electronic_publication_date": "2026 Nov 26",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086468/"
+    },
+    {
+      "pmid": "43086406",
+      "title": "Natural language processing application in electronic health records studies for psychosis: a systematic review.",
+      "publication_date": "2026 Aug 12",
+      "electronic_publication_date": "2026 Aug 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086406/"
+    },
+    {
+      "pmid": "43086327",
+      "title": "Automated epilepsy and seizure type phenotyping with transformer-based language models.",
+      "publication_date": "2026 Aug 11",
+      "electronic_publication_date": "2026 Aug 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086327/"
+    },
+    {
+      "pmid": "43086290",
+      "title": "Diagnostic accuracy of large language models for rare diseases: a systematic review and meta-analysis.",
+      "publication_date": "2026 Aug 12",
+      "electronic_publication_date": "2026 Aug 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086290/"
+    },
+    {
+      "pmid": "43086280",
+      "title": "OpenEvidence clinical question-answering platform: systematic review of early evaluations.",
+      "publication_date": "2026 Aug 12",
+      "electronic_publication_date": "2026 Aug 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086280/"
+    },
+    {
+      "pmid": "43086262",
+      "title": "A Domain-Targeted Question-Answering Dataset for Food and Nutrition Applications.",
+      "publication_date": "2026 Aug 13",
+      "electronic_publication_date": "2026 Aug 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43086262/"
+    },
+    {
+      "pmid": "43084723",
+      "title": "Outcomes Reported in Randomised Controlled Trials of Pharmacological Treatments for Acute Viral Respiratory Infections in Hospitalised Adults: A Rapid Scoping Review.",
+      "publication_date": "2026 Nov",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43084723/"
+    },
+    {
+      "pmid": "43084238",
+      "title": "Large Language Model Performance in Structured Data Extraction From Neurosurgical Electronic Health Records: Comparative Benchmark Study.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43084238/"
+    },
+    {
+      "pmid": "43083916",
+      "title": "Evaluating Human and AI-Based Triage Performance in the Emergency Department: Real-World Cohort Study.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43083916/"
+    },
+    {
+      "pmid": "43083842",
+      "title": "Error Direction of Large Language Models on Medical Multiple-Response Questions: Opportunity-Standardized Benchmark Study.",
+      "publication_date": "2026 Nov 23",
+      "electronic_publication_date": "2026 Nov 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43083842/"
+    },
+    {
+      "pmid": "43083839",
+      "title": "Large Language Models for Structured Critical Appraisal of Randomized Controlled Trials in Otolaryngology: Randomized Crossover Study Comparing GPT-4o and Medical Students.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43083839/"
+    },
+    {
+      "pmid": "43082949",
+      "title": "Binding Text to Pixels: A Narrative Review of Supervision Granularity in Language-Guided Chest Radiograph Segmentation and Grounding.",
+      "publication_date": "2026 Nov 7",
+      "electronic_publication_date": "2026 Nov 7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43082949/"
+    },
+    {
+      "pmid": "43082831",
+      "title": "Artificial Intelligence and Large Language Models Across the Heart Failure Care Pathway: A Narrative Review.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43082831/"
+    },
+    {
+      "pmid": "43082484",
+      "title": "When the Judge Is an LLM: An Oncologist and a Language Model Evaluator Disagree on Responses to Inpatient Oncology Consultations-A Retrospective Blinded Study.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43082484/"
+    },
+    {
+      "pmid": "43082401",
+      "title": "Romanian Dental Students' Usage, Trust, and Attitudes Toward Generative AI: A Cross-Sectional Survey.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43082401/"
+    },
+    {
+      "pmid": "43082350",
+      "title": "Artificial Intelligence in Endodontics: A Narrative Review and Critical Synthesis of Diagnostic, Predictive, and Operational Applications.",
+      "publication_date": "2026 Oct 30",
+      "electronic_publication_date": "2026 Oct 30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43082350/"
+    },
+    {
+      "pmid": "43081902",
+      "title": "ChatGPT for Clinicians and HealthBench Professional: Promise, Limitations, and Possible Future Directions for Development.",
+      "publication_date": "2026 Nov 25",
+      "electronic_publication_date": "2026 Nov 25",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43081902/"
+    },
+    {
+      "pmid": "43081840",
+      "title": "Evidence-Grounded Artificial Intelligence for Implant Treatment Planning: Development and Preliminary Evaluation of RAISE.",
+      "publication_date": "2026 Nov 25",
+      "electronic_publication_date": "2026 Nov 25",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43081840/"
+    },
+    {
+      "pmid": "43081428",
+      "title": "Benchmarking Local Large Language Models for Predicting Vestibular Dysfunction Based on Caloric Testing: A Comparison with Conventional Machine Learning on Stabilometry Data.",
+      "publication_date": "2026 Oct 26",
+      "electronic_publication_date": "2026 Oct 26",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43081428/"
+    },
+    {
+      "pmid": "43080868",
+      "title": "Large language models and conversational AI in nursing practice: a narrative review of English- and Chinese-language evidence.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43080868/"
+    },
+    {
+      "pmid": "43080534",
+      "title": "Artificial intelligence in influenza prevention and control: translational pathways, supporting evidence, and system-level challenges.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43080534/"
+    },
+    {
+      "pmid": "43080462",
+      "title": "Retrieval-augmented Large Language Models for automated discharge summary generation in post-surgical ICU cancer patients.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43080462/"
+    },
+    {
+      "pmid": "43079887",
+      "title": "Reading Between the Lines: Artificial Intelligence as an Amplifier of Narrative Assessment in Psychological Research and Practice.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43079887/"
+    },
+    {
+      "pmid": "43079282",
+      "title": "Toward on-premises RAG pipelines for AI-assisted neuroradiology: practical considerations on privacy, accuracy, and timeliness.",
+      "publication_date": "2026 Jul 31",
+      "electronic_publication_date": "2026 Jul 31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43079282/"
+    },
+    {
+      "pmid": "43079091",
+      "title": "What predicts evidence-based reasoning and argumentation in higher education: study domain, study progress or individual learning prerequisites?",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43079091/"
+    },
+    {
+      "pmid": "43079047",
+      "title": "RheumBench: A Specialist-Validated Rubric-Based Benchmark for Evaluating Large Language Models in Rheumatology.",
+      "publication_date": "2026 Nov 25",
+      "electronic_publication_date": "2026 Nov 25",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43079047/"
+    },
+    {
+      "pmid": "43078963",
+      "title": "The EHRNavigator multi-agent system for patient-level clinical question answering over heterogeneous electronic health records.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43078963/"
+    },
+    {
+      "pmid": "43078886",
+      "title": "MedGuard: an LLM-based gatekeeper for detecting clinical risks in Chinese telemedicine consultations.",
+      "publication_date": "2026 Aug 10",
+      "electronic_publication_date": "2026 Aug 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43078886/"
+    },
+    {
+      "pmid": "43078240",
+      "title": "Artificial Intelligence Chatbot for Viscoelastic Testing Guidelines: A Randomized Blinded Evaluation of a Guideline-Anchored Large Language Model.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43078240/"
+    },
+    {
+      "pmid": "43077918",
+      "title": "Patient-centered AI chatbots for education, support, and symptom self-management in oncology: A systematic review.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43077918/"
+    },
+    {
+      "pmid": "43077864",
+      "title": "Can large language models (LLMs) be used to generate Fellowship of the Royal College of Radiologists (FRCR) Part 1 physics questions? A multimodel comparative reviewer-based study.",
+      "publication_date": "2026 Oct 23",
+      "electronic_publication_date": "2026 Oct 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43077864/"
+    },
+    {
+      "pmid": "43077174",
+      "title": "AI-Driven Clinical Decision Support in Reproductive Medicine: Fertility Oriented Expert (FOX) System.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43077174/"
+    },
+    {
+      "pmid": "43077064",
+      "title": "Evaluation of Large Language Model Chatbots as Patient Education Resources for Glioma: A Comparative Study.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43077064/"
+    },
+    {
+      "pmid": "43076855",
+      "title": "Beyond the Chatbot: Agentic Artificial Intelligence and the Future of Infectious Disease Practice.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43076855/"
+    },
+    {
+      "pmid": "43075724",
+      "title": "Beyond Human Helpers: Young People's Help-Seeking in the Era of Chatbots.",
+      "publication_date": "2026 Nov 24",
+      "electronic_publication_date": "2026 Nov 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43075724/"
+    },
+    {
+      "pmid": "43075531",
+      "title": "Implementing LLMs in clinical practice from unstructured and semistructured electronic record data to analysis ready data sets in central nervous system tumors.",
+      "publication_date": "2026 Dec",
+      "electronic_publication_date": "2026 Jul 31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43075531/"
+    },
+    {
+      "pmid": "43075324",
+      "title": "Artificial Intelligence for the Verification of Nasogastric Tube Position in Chest Radiographs: A Systematic Review.",
+      "publication_date": "2026 Oct",
+      "electronic_publication_date": "2026 Oct 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43075324/"
+    },
+    {
+      "pmid": "43074977",
+      "title": "Evaluating AI chatbots as sources of public-facing encephalitis health information: a cross-sectional comparative study of quality, transparency, and readability.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43074977/"
+    },
+    {
+      "pmid": "43073900",
+      "title": "Multimodal large language model-assisted workflow for image-dependent very short answer question generation and response grading in neurosurgical residency assessment: development and validation study.",
+      "publication_date": "2026 Aug 31",
+      "electronic_publication_date": "2026 Aug 31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43073900/"
+    },
+    {
+      "pmid": "43073507",
+      "title": "Predicting major adverse cardiovascular events from incomplete clinical data through interpretable multimodal AI system.",
+      "publication_date": "2026 Jul 24",
+      "electronic_publication_date": "2026 Jul 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43073507/"
+    },
+    {
+      "pmid": "43073475",
+      "title": "Clinical liability cases reveal a coupling between legal defensibility and medical procedure escalation in large language models.",
+      "publication_date": "2026 Aug 8",
+      "electronic_publication_date": "2026 Aug 8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43073475/"
+    },
+    {
+      "pmid": "43073205",
+      "title": "An Alert Is Not a Referral: Toward Evidence-Grounded Multimodal Reasoning in Gastric Cancer Screening.",
+      "publication_date": "2026 Nov 23",
+      "electronic_publication_date": "2026 Nov 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43073205/"
+    },
+    {
+      "pmid": "43072264",
+      "title": "Patient experiences and perceptions of pain during cesarean delivery on social media: a ChatGPT assisted thematic analysis.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43072264/"
+    },
+    {
+      "pmid": "43072204",
+      "title": "Deep learning for multimodal depression detection: A review.",
+      "publication_date": "2026 Nov 18",
+      "electronic_publication_date": "2026 Nov 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43072204/"
+    },
+    {
+      "pmid": "43071851",
+      "title": "From Hallucinations to Uncertainty: The Next Challenge for Clinical AI.",
+      "publication_date": "2026 Nov 23",
+      "electronic_publication_date": "2026 Nov 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43071851/"
+    },
+    {
+      "pmid": "43071442",
+      "title": "Large Language Models for Electronic Health Records in Emergency Department (ED) and ED-Adjacent Emergency Care-Technical Strategies, Clinical Tasks, and Workflow Integration: Systematic Review.",
+      "publication_date": "2026 Nov 23",
+      "electronic_publication_date": "2026 Nov 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43071442/"
+    },
+    {
+      "pmid": "43071441",
+      "title": "A Multiagent Large Language Model Framework for Longitudinal Multimodal Tracking of Wet Age-Related Macular Degeneration: Retrospective Feasibility Study.",
+      "publication_date": "2026 Nov 23",
+      "electronic_publication_date": "2026 Nov 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43071441/"
+    },
+    {
+      "pmid": "43070650",
+      "title": "Designing large language model tutors to promote deep learning and precision medical education.",
+      "publication_date": "2026 Nov 23",
+      "electronic_publication_date": "2026 Nov 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43070650/"
+    },
+    {
+      "pmid": "43070085",
+      "title": "Harnessing generative artificial intelligence for emergency and disaster medicine: A systematic review of applications, challenges, and future directions.",
+      "publication_date": "2026 Summer",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43070085/"
+    },
+    {
+      "pmid": "43069390",
+      "title": "Reproducibility and guideline concordance of next-generation large language models on ESE S3-based endodontic questions: a multi-account, multi-timepoint evaluation.",
+      "publication_date": "2026 Nov 22",
+      "electronic_publication_date": "2026 Nov 22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43069390/"
+    },
+    {
+      "pmid": "43069324",
+      "title": "A landscape analysis of access, equity, and reporting trends in digital health randomized controlled trials.",
+      "publication_date": "2026 Aug 6",
+      "electronic_publication_date": "2026 Aug 6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43069324/"
+    },
+    {
+      "pmid": "43069249",
+      "title": "An explainable generative AI system for video-to-report generation in capsule endoscopy.",
+      "publication_date": "2026 Aug 6",
+      "electronic_publication_date": "2026 Aug 6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43069249/"
+    },
+    {
+      "pmid": "43069224",
+      "title": "Large language model-assisted referral triage automation in a tertiary hospital.",
+      "publication_date": "2026 Aug 5",
+      "electronic_publication_date": "2026 Aug 5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43069224/"
+    },
+    {
+      "pmid": "43055493",
+      "title": "Large Language Models Predict Functional Outcomes After Acute Ischemic Stroke.",
+      "publication_date": "2026 Nov 19",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43055493/"
+    },
+    {
+      "pmid": "43068358",
+      "title": "Large Language Model-Powered AI-Assisted Simulated Patient for Nursing Education: Quasi-Experimental Study.",
+      "publication_date": "2026 Nov 19",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43068358/"
+    },
+    {
+      "pmid": "43068123",
+      "title": "INPERIA-Interview: a synthetic Spanish dataset of penitentiary pseudo-interviews for natural language processing and risk factor analysis.",
+      "publication_date": "2026 Aug",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43068123/"
+    },
+    {
+      "pmid": "43067886",
+      "title": "Disentangling Confounders from Pathology in Long-COVID Trajectory Prediction for Women: An Interpretable Large-Language-Model Approach.",
+      "publication_date": "2026 Jun 12",
+      "electronic_publication_date": "2026 Jun 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43067886/"
+    },
+    {
+      "pmid": "43067848",
+      "title": "LMOD+: A Comprehensive Multimodal Dataset and Benchmark for Developing and Evaluating Multimodal Large Language Models in Ophthalmology.",
+      "publication_date": "2026 Mar 18",
+      "electronic_publication_date": "2026 Mar 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43067848/"
+    },
+    {
+      "pmid": "43067820",
+      "title": "Do AI chatbots find what experts would? Effects of model, user role, and sample size on study retrieval for medical questions.",
+      "publication_date": "2026 Sep 29",
+      "electronic_publication_date": "2026 Sep 29",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43067820/"
+    },
+    {
+      "pmid": "43067661",
+      "title": "Quality, safety, and readability of consumer-facing generative AI responses to end-of-life questions relevant to surrogate decision-makers for older adults: a benchmark evaluation.",
+      "publication_date": "2026 Oct 5",
+      "electronic_publication_date": "2026 Oct 5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43067661/"
+    },
+    {
+      "pmid": "43067579",
+      "title": "Artificial intelligence in pediatrics.",
+      "publication_date": "2026 Nov 21",
+      "electronic_publication_date": "2026 Nov 21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43067579/"
+    },
+    {
+      "pmid": "43067149",
+      "title": "Randomized controlled trials evaluating generative artificial intelligence-enabled mental health interventions among samples with clinically significant baseline symptoms: a systematic review and narrative synthesis.",
+      "publication_date": "2026 Nov 5",
+      "electronic_publication_date": "2026 Nov 5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43067149/"
+    },
+    {
+      "pmid": "43066929",
+      "title": "Medical Reasoning in Large Language Models: Development and Evaluation of the MedEvalArena Benchmark.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43066929/"
+    },
+    {
+      "pmid": "43066843",
+      "title": "A Scoping Review on Large Language Model Clinical Decision Support in Acute and Critical Care.",
+      "publication_date": "2026 Nov 21",
+      "electronic_publication_date": "2026 Nov 21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43066843/"
+    },
+    {
+      "pmid": "43066323",
+      "title": "When conviction outpaces evidence: diagnostic boundary failures of large language models in adult ADHD self-assessment.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43066323/"
+    },
+    {
+      "pmid": "43066109",
+      "title": "Clinical research resources and researcher-facing query tools: a scoping review of maturity, usability, and implications for oral health.",
+      "publication_date": "2026 Dec",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43066109/"
+    },
+    {
+      "pmid": "43065586",
+      "title": "Chatbots and Social Media-Embedded AI Assistants Provide Inconsistent Information on the Use of Unregulated Peptides Marketed for Musculoskeletal Recovery.",
+      "publication_date": "2026 Nov 19",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43065586/"
+    },
+    {
+      "pmid": "43065401",
+      "title": "Generating occlusion clinical cases with large language models: a comparative evaluation of claude, gemini, and qwen in undergraduate dental education.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43065401/"
+    },
+    {
+      "pmid": "43064362",
+      "title": "Feasibility and Acceptability of a Large Language Model-Based Electronic Health Record Summarization Tool in Inpatient Care.",
+      "publication_date": "2026 Oct",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43064362/"
+    },
+    {
+      "pmid": "43063990",
+      "title": "Evaluating a Large Language Model Conversational Agent for Collecting Standardized Back Pain Data: A Cross-Over Study of Accuracy, Usability, and User Preference.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43063990/"
+    },
+    {
+      "pmid": "43062341",
+      "title": "When Artificial Intelligence Plays It Safe: Large Language Models Preserve Surgical Sensitivity at the Cost of Diagnostic Specificity in Acute Abdominal Pain.",
+      "publication_date": "2026 Nov 20",
+      "electronic_publication_date": "2026 Nov 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43062341/"
+    },
+    {
+      "pmid": "43061675",
+      "title": "RadOnc-GPT: An Exploratory Feasibility Study of a Prototype LLM Agent for Radiation Oncology Outcomes Labeling and Registry Auditing.",
+      "publication_date": "2026 Oct 15",
+      "electronic_publication_date": "2026 Oct 15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43061675/"
+    },
+    {
+      "pmid": "43061149",
+      "title": "Registry-based landscape analysis of pharmacist-delivered pharmaceutical care research on ClinicalTrials.gov, 2003-2026: study characteristics, pharmacist roles and service models.",
+      "publication_date": "2026 Dec",
+      "electronic_publication_date": "2026 Nov 9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43061149/"
+    },
+    {
+      "pmid": "43061080",
+      "title": "Counterfactual Modeling With Fine-Tuned LLMs for Health Intervention Design and Sensor Data Augmentation.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 May 28",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43061080/"
+    },
+    {
+      "pmid": "43060702",
+      "title": "Ophthalmic AI With Just Ten Examples: Comparing Multimodal Large Language Models, Vision Foundation Models, and Vision-Language Models.",
+      "publication_date": "2026 Nov 2",
+      "electronic_publication_date": "2026 Nov 2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43060702/"
+    },
+    {
+      "pmid": "43060693",
+      "title": "Identifying interstitial lung disease with large language models on clinical notes and claims.",
+      "publication_date": "2026 Nov 2",
+      "electronic_publication_date": "2026 Nov 2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43060693/"
+    },
+    {
+      "pmid": "43060237",
+      "title": "Detecting Contradictory Evidence on Drug-Disease Associations at Scale.",
+      "publication_date": "2026 Nov 12",
+      "electronic_publication_date": "2026 Nov 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43060237/"
+    },
+    {
+      "pmid": "43059954",
+      "title": "Large Language Models Across the Clinical Trial Lifecycle: A Scoping Review of Applications, Methodologies, and Validation Gaps.",
+      "publication_date": "2026 Nov 9",
+      "electronic_publication_date": "2026 Nov 9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43059954/"
+    },
+    {
+      "pmid": "43058755",
+      "title": "Automated extraction of key entities from non-english thorax CT reports using machine learning by large context, many-shot Generative AI.",
+      "publication_date": "2026 Aug 27",
+      "electronic_publication_date": "2026 Aug 27",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43058755/"
+    },
+    {
+      "pmid": "43058497",
+      "title": "Impact of prompt engineering and workflow modifications on the performance of a Delphi-based automated abstract screening system in a psychiatric systematic review.",
+      "publication_date": "2026 Aug 27",
+      "electronic_publication_date": "2026 Aug 27",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43058497/"
+    },
+    {
+      "pmid": "43058248",
+      "title": "MedKGent: a large language model agent framework for constructing temporally evolving medical knowledge graph.",
+      "publication_date": "2026 Aug 4",
+      "electronic_publication_date": "2026 Aug 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43058248/"
+    },
+    {
+      "pmid": "43058209",
+      "title": "Toward expert-level medical text validation with language models.",
+      "publication_date": "2026 Aug 4",
+      "electronic_publication_date": "2026 Aug 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43058209/"
+    },
+    {
+      "pmid": "43058165",
+      "title": "A benchmark dataset for evaluating Syndrome Differentiation and Treatment in large language models.",
+      "publication_date": "2026 Aug 3",
+      "electronic_publication_date": "2026 Aug 3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43058165/"
+    },
+    {
+      "pmid": "43057723",
+      "title": "FUNNEL: Architectural Citation Enforcement for AI-Assisted Clinical Chart Synthesis.",
+      "publication_date": "2026 Oct",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43057723/"
+    },
+    {
+      "pmid": "43057194",
+      "title": "Artificial intelligence tools for generating multimodal intensive care unit journey and discharge summaries: a scoping review.",
+      "publication_date": "2026 Nov 19",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43057194/"
+    },
+    {
+      "pmid": "43056939",
+      "title": "Evaluation of a Large Language Model for Clinical Decision Support: Agreement With Multidisciplinary Tumor Board Recommendations in Metastatic Hormone-Sensitive Prostate Cancer.",
+      "publication_date": "2026 Oct 28",
+      "electronic_publication_date": "2026 Oct 28",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43056939/"
+    },
+    {
+      "pmid": "43056665",
+      "title": "Large Language Models in Clinical Neurology: A Scoping Review.",
+      "publication_date": "2027 Feb",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43056665/"
+    },
+    {
+      "pmid": "43055740",
+      "title": "Mapping the evolution of ChatGPT research in medical education: a bibliometric analysis and conceptual framework.",
+      "publication_date": "2026 Dec 31",
+      "electronic_publication_date": "2026 Nov 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43055740/"
+    },
+    {
+      "pmid": "43054979",
+      "title": "Enabling Scalable Evaluation of Unfair Patterns in Medical LLMs.",
+      "publication_date": "2026 Nov 3",
+      "electronic_publication_date": "2026 Nov 3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43054979/"
+    },
+    {
+      "pmid": "43054589",
+      "title": "Can AI support clinical decision-making in gynecologic oncology? A NCCN-guideline-based evaluation of ChatGPT and Gemini responses.",
+      "publication_date": "2026 Oct",
+      "electronic_publication_date": "2026 Aug 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43054589/"
+    },
+    {
+      "pmid": "43054177",
+      "title": "Clinical accuracy, safety, triage, and test-retest consistency of general-purpose large language models for patient-centred respiratory questions: a blinded paired benchmarking study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43054177/"
+    },
+    {
+      "pmid": "43054155",
+      "title": "Quality, transparency, and readability of artificial intelligence chatbot responses to fibrous dysplasia-related searches: a cross-sectional comparative study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43054155/"
+    },
+    {
+      "pmid": "43054086",
+      "title": "Quality, readability, and information fidelity of large language model-generated versus physician-authored informed-consent content for targeted therapies: a blinded, paired comparative study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43054086/"
+    },
+    {
+      "pmid": "43054028",
+      "title": "Small aggregate accuracy changes conceal substantial item-level correctness turnover after fine-tuning in medical question-answering.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43054028/"
+    },
+    {
+      "pmid": "43053965",
+      "title": "Reliability and readability of five large language models in answering patient-oriented questions about irritable bowel syndrome: a comparative study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43053965/"
+    },
+    {
+      "pmid": "43053474",
+      "title": "Prediction Beyond Established Models in Steatotic Liver Disease: Which New Predictors Add Value?",
+      "publication_date": "2026 Dec",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43053474/"
+    },
+    {
+      "pmid": "43053238",
+      "title": "Diagnostic accuracy of ChatGPT o1 versus ChatGPT 4o and their mini versions on MedQA clinical vignettes: a comparative evaluation.",
+      "publication_date": "2026 Aug 24",
+      "electronic_publication_date": "2026 Aug 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43053238/"
+    },
+    {
+      "pmid": "43053088",
+      "title": "Benchmarking generative AI tools for literature retrieval and summarization in genomic variant interpretation.",
+      "publication_date": "2026 Aug 22",
+      "electronic_publication_date": "2026 Aug 22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43053088/"
+    },
+    {
+      "pmid": "43053015",
+      "title": "Cutting chart-review time and improving database accuracy in inflammatory bowel disease with human-in-the-loop large language models.",
+      "publication_date": "2026 Aug 22",
+      "electronic_publication_date": "2026 Aug 22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43053015/"
+    },
+    {
+      "pmid": "43053009",
+      "title": "From lectures to learning outcomes: meaningful integration of AI-generated content in pre-clerkship medical training.",
+      "publication_date": "2026 Aug 22",
+      "electronic_publication_date": "2026 Aug 22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43053009/"
+    },
+    {
+      "pmid": "43052967",
+      "title": "Clinical reliability and consistency of large language models in prosthodontics: an expert evaluation of ChatGPT and Gemini.",
+      "publication_date": "2026 Aug 25",
+      "electronic_publication_date": "2026 Aug 25",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43052967/"
+    },
+    {
+      "pmid": "43052933",
+      "title": "Comparative evaluation of ChatGPT-5 and DeepSeek-V3 for generating prosthodontic multiple-choice questions: a cross-sectional study based on blinded expert ratings.",
+      "publication_date": "2026 Aug 24",
+      "electronic_publication_date": "2026 Aug 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43052933/"
+    },
+    {
+      "pmid": "43052352",
+      "title": "Benchmarking and developing large language models using one million clinical trials.",
+      "publication_date": "2026 Jul 31",
+      "electronic_publication_date": "2026 Jul 31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43052352/"
+    },
+    {
+      "pmid": "43052320",
+      "title": "A multi-task benchmark dataset for assessing large language models in traditional Chinese medicine.",
+      "publication_date": "2026 Jul 31",
+      "electronic_publication_date": "2026 Jul 31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43052320/"
+    },
+    {
+      "pmid": "43051924",
+      "title": "Extracting patient-reported cannabis use and reasons for use from EHR in rheumatology: a benchmarking study of language models.",
+      "publication_date": "2026 Nov 18",
+      "electronic_publication_date": "2026 Nov 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43051924/"
+    },
+    {
+      "pmid": "43051588",
+      "title": "Artificial intelligence in precision nutrition: From multi-omics integration to personalized dietary interventions.",
+      "publication_date": "2026 Nov 18",
+      "electronic_publication_date": "2026 Nov 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43051588/"
+    },
+    {
+      "pmid": "43051543",
+      "title": "ChatGPT versus Google Search-linked responses to surgical and fertility-related endometriosis questions: a cross-sectional content analysis.",
+      "publication_date": "2026 Nov 18",
+      "electronic_publication_date": "2026 Nov 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43051543/"
+    },
+    {
+      "pmid": "43049862",
+      "title": "Use of artificial intelligence in evidence synthesis for EASD guidelines: an EASD Guidelines Oversight Committee statement.",
+      "publication_date": "2026 Nov 17",
+      "electronic_publication_date": "2026 Nov 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43049862/"
+    },
+    {
+      "pmid": "43049712",
+      "title": "Clinical Safety Evaluation of a Large Language Model for Heart Failure Treatment Recommendations.",
+      "publication_date": "2026 Nov 9",
+      "electronic_publication_date": "2026 Nov 9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43049712/"
+    },
+    {
+      "pmid": "43049197",
+      "title": "Evaluating a large language model for radiotherapy patient scheduling under realistic clinical and operational constraints: A feasibility study.",
+      "publication_date": "2026 Dec",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43049197/"
+    },
+    {
+      "pmid": "43048519",
+      "title": "ChatGPT health and AI for healthcare: From commercial personal assistant to public health infrastructure.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Oct 21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048519/"
+    },
+    {
+      "pmid": "43048518",
+      "title": "Structured reasoning frameworks in nephrology graphical abstracts and their interpretation by vision-capable large language models.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Oct 15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048518/"
+    },
+    {
+      "pmid": "43048495",
+      "title": "A retrieval-augmented AI agent for medulloblastoma risk stratification and guideline-concordant decision support.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Oct 14",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048495/"
+    },
+    {
+      "pmid": "43048289",
+      "title": "Personalized Gout Education Using Large Language Models: Patient Acceptability and Short-Term Medication Adherence Outcomes.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048289/"
+    },
+    {
+      "pmid": "43048243",
+      "title": "Agentic Reward Modeling for Medical Reasoning.",
+      "publication_date": "2026",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048243/"
+    },
+    {
+      "pmid": "43048116",
+      "title": "Comparison of responses from large language models using artificial intelligence for parent-focused inquiries on clubfoot treatment and Ponseti management.",
+      "publication_date": "2026 Oct",
+      "electronic_publication_date": "2026 Jul 22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048116/"
+    },
+    {
+      "pmid": "43048069",
+      "title": "OncoAgentic-RAG: An evidence-grounded multi-agent hybrid retrieval-augmented system for patient-centric clinical oncology question answering.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Oct 22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43048069/"
+    },
+    {
+      "pmid": "43047710",
+      "title": "Comparative evaluation of ChatGPT, DeepSeek, and Doubao responses to patient questions on pulmonary contusion: quality, reliability, readability, and content deficiencies.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43047710/"
+    },
+    {
+      "pmid": "43047709",
+      "title": "Comparative assessment of patient education content generated by five large language models on post-stroke complications: A cross-sectional study of safety, accuracy, reliability, readability, and empathy.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Oct 8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43047709/"
+    },
+    {
+      "pmid": "43047410",
+      "title": "Clinically grounded evaluation of large language models for traditional Chinese medicine.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43047410/"
+    },
+    {
+      "pmid": "43047404",
+      "title": "Assessing the Feasibility of a Multimodal Annotation and Segmentation System to Detect Carious Lesions From Intraoral Photographs.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Mar 25",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43047404/"
+    },
+    {
+      "pmid": "43047333",
+      "title": "Artificial intelligence chatbots provide inadequately transparent and readable patient information on triangular fibrocartilage complex injuries: a cross-sectional study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43047333/"
+    },
+    {
+      "pmid": "43047328",
+      "title": "Boundary-stratified safety evaluation of large language models for clinical decision support: a synthetic benchmark in chronic kidney disease renoprotective therapy.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43047328/"
+    },
+    {
+      "pmid": "43045752",
+      "title": "A Multi-Agent MLLM Framework for Imaging-Grounded Treatment Recommendation in Acute Ischemic Stroke.",
+      "publication_date": "2026 Jul 29",
+      "electronic_publication_date": "2026 Jul 29",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43045752/"
+    },
+    {
+      "pmid": "43045322",
+      "title": "Artificial Intelligence in Aesthetic Surgery.",
+      "publication_date": "2027 Jan",
+      "electronic_publication_date": "2026 Oct 21",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43045322/"
+    },
+    {
+      "pmid": "43044941",
+      "title": "Self-prompting small language models for privacy-sensitive clinical information extraction.",
+      "publication_date": "2026 Nov 17",
+      "electronic_publication_date": "2026 Nov 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43044941/"
+    },
+    {
+      "pmid": "43044766",
+      "title": "Generative artificial intelligence-based dietary advice: A scoping review of nutritional accuracy, safety, and eating-related risks.",
+      "publication_date": "2026 Nov 18",
+      "electronic_publication_date": "2026 Nov 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43044766/"
+    },
+    {
+      "pmid": "43044569",
+      "title": "Oncology LLM evaluation: From benchmark performance to clinical readiness.",
+      "publication_date": "2026 Nov 17",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43044569/"
+    },
+    {
+      "pmid": "43044104",
+      "title": "Use of Large Language Models for Structured Quantitative and Qualitative Analysis of Simulation Debriefings Using the DASH Framework (AIDE Study): Prospective Observational Study.",
+      "publication_date": "2026 Nov 17",
+      "electronic_publication_date": "2026 Nov 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43044104/"
+    },
+    {
+      "pmid": "43043751",
+      "title": "TransXplainRRG: A Radiologist-Evaluated LVLM for Chest Radiograph Report Generation.",
+      "publication_date": "2026 Nov 17",
+      "electronic_publication_date": "2026 Nov 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43043751/"
+    },
+    {
+      "pmid": "43043638",
+      "title": "Clinician Acceptance of Large Language Model-Generated Discharge Summaries.",
+      "publication_date": "2026 Nov 2",
+      "electronic_publication_date": "2026 Nov 2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43043638/"
+    },
+    {
+      "pmid": "43041771",
+      "title": "Beyond the Black Box: A 30-Minute Artificial Intelligence Critical Appraisal Workshop for Internal Medicine Residents.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43041771/"
+    },
+    {
+      "pmid": "43041346",
+      "title": "Automated assessment of healthcare de-escalation communication skills in a conversational AI virtual reality simulation.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43041346/"
+    },
+    {
+      "pmid": "43041233",
+      "title": "The Formal-Functional Gap: How Artificial Intelligence Reshapes Medical Professional Identity.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43041233/"
+    },
+    {
+      "pmid": "43041177",
+      "title": "Frontier Large Language Models as Adjunctive Perioperative Decision-Support Tools in Elective Gastrointestinal Surgery: A Prospective Longitudinal Comparison With Consultant-Led Multidisciplinary Care.",
+      "publication_date": "2026 Nov 17",
+      "electronic_publication_date": "2026 Nov 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43041177/"
+    },
+    {
+      "pmid": "43040539",
+      "title": "Comparative cross-sectional evaluation of large language model performance in answering common patient questions on chronic kidney disease-mineral and bone disorder: Grok-4, DeepSeek-V3.2, ChatGPT-5.4, and Gemini-3-Pro.",
+      "publication_date": "2026 Aug 19",
+      "electronic_publication_date": "2026 Aug 19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43040539/"
+    },
+    {
+      "pmid": "43040225",
+      "title": "Artificial intelligence support for the prediction and management of drug-drug interactions.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43040225/"
+    },
+    {
+      "pmid": "43039933",
+      "title": "Full (total) pulpotomy versus non-surgical root canal treatment for irreversible pulpitis: a human-led umbrella review with AI-assisted appraisal.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43039933/"
+    },
+    {
+      "pmid": "43038519",
+      "title": "Red Teaming a Patient-Facing Clinical AI Platform: 2-Phase Prospective Study.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43038519/"
+    },
+    {
+      "pmid": "43038486",
+      "title": "Identifying Distant Breast Cancer Recurrence: A Proof-of-Concept Comparison of Discrete-Field Algorithm and Large Language Model Performance and Cost.",
+      "publication_date": "2026 Oct-Dec",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43038486/"
+    },
+    {
+      "pmid": "43038079",
+      "title": "Major depressive disorder involves motivational conflicts in emotion regulation in daily life.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43038079/"
+    },
+    {
+      "pmid": "43037959",
+      "title": "Application of Large Language Models in Qualitative Data Analysis Within Health Research: A Scoping Review.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43037959/"
+    },
+    {
+      "pmid": "43037894",
+      "title": "Quality, safety, and readability of large language model responses to patient-derived questions on tooth whitening, resin infiltration, composite bonding, and porcelain veneers.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43037894/"
+    },
+    {
+      "pmid": "43037729",
+      "title": "ChatGPT concordance with guidelines and tumour board treatment recommendations in gastrointestinal cancer.",
+      "publication_date": "2026 Nov 16",
+      "electronic_publication_date": "2026 Nov 16",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43037729/"
+    },
+    {
+      "pmid": "43036762",
+      "title": "Artificial Intelligence Applications in Stroke Registry Research: Current Progress, Challenges, and Future Directions.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43036762/"
+    },
+    {
+      "pmid": "43036595",
+      "title": "AI Chatbot Responses to Trigeminal Neuralgia-Related Search Terms: A Single-Timepoint Evaluation of Presentation Quality, Source Transparency, and Readability.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43036595/"
+    },
+    {
+      "pmid": "43036447",
+      "title": "Symptom checkers: Gaps in their evidence base and suggestions for accuracy evaluation.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Sep 29",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43036447/"
+    },
+    {
+      "pmid": "43036392",
+      "title": "AI hallucinations in health professions education: A mixed-methods evaluation of citation, factual, and data accuracy.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Sep 30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43036392/"
+    },
+    {
+      "pmid": "43035669",
+      "title": "Performance of large language models in early orthodontic treatment: a comparative study of ChatGPT-5.4 and deepSeek-V3.2.",
+      "publication_date": "2026 Aug 20",
+      "electronic_publication_date": "2026 Aug 20",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43035669/"
+    },
+    {
+      "pmid": "43035140",
+      "title": "Cognitive Evaluation of Multimodal Large Language Models in Dental Radiography.",
+      "publication_date": "2026 Nov 15",
+      "electronic_publication_date": "2026 Nov 15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43035140/"
+    },
+    {
+      "pmid": "43035089",
+      "title": "Beyond scales: Artificial intelligence, language, and behavior in suicide risk modeling-a narrative review.",
+      "publication_date": "2026 Nov 15",
+      "electronic_publication_date": "2026 Nov 15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43035089/"
+    },
+    {
+      "pmid": "43034392",
+      "title": "Effectiveness of Health System Interventions to Improve Access to General Healthcare Services for People with Disabilities: A Global Evidence and Gap Map Protocol.",
+      "publication_date": "2026 Sep",
+      "electronic_publication_date": "2026 Sep 24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43034392/"
+    },
+    {
+      "pmid": "43034186",
+      "title": "Personas shift clinical action thresholds in large language models.",
+      "publication_date": "2026 Nov 14",
+      "electronic_publication_date": "2026 Nov 14",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43034186/"
+    },
+    {
+      "pmid": "43033879",
+      "title": "Overcoming high volume and complexity: Developing a large language model-assisted scoping review method for identifying long-term caesarean section outcomes.",
+      "publication_date": "2026 Nov 14",
+      "electronic_publication_date": "2026 Nov 14",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43033879/"
+    },
+    {
+      "pmid": "43033058",
+      "title": "The Utility of Artificial Intelligence for Conducting Systematic Reviews in Otolaryngology.",
+      "publication_date": "2026 Nov 14",
+      "electronic_publication_date": "2026 Nov 14",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43033058/"
+    },
+    {
+      "pmid": "43032430",
+      "title": "Artificial intelligence for precision nephrology: current evidence to clinical translation and future prospects.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Oct 30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43032430/"
+    },
+    {
+      "pmid": "43032285",
+      "title": "Benchmarking large language model performance in generating and assessing radiology objective structured clinical examination.",
+      "publication_date": "2026 Nov",
+      "electronic_publication_date": "2026 Sep 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43032285/"
+    },
+    {
+      "pmid": "43032213",
+      "title": "Assessing the accuracy of AI-generated responses to periodontal scaling and root planing patient FAQs.",
+      "publication_date": "2026 Jan-Dec",
+      "electronic_publication_date": "2026 Sep 23",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43032213/"
+    },
+    {
+      "pmid": "43031820",
+      "title": "Comparative performance of nine large language models on professional Parkinson's disease tasks: a multidimensional benchmark study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Oct 30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43031820/"
+    },
+    {
+      "pmid": "43031803",
+      "title": "Teaching Hallucination Literacy in Medical Education: A Claim-Level Verification Framework and Toolkit.",
+      "publication_date": "2026 Dec",
+      "electronic_publication_date": "2026 Sep 29",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43031803/"
+    },
+    {
+      "pmid": "43031580",
+      "title": "Safety, accuracy, empathy and information quality of six large language models answering patient-facing questions about diabetic kidney disease: a cross-sectional comparative study.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Oct 30",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43031580/"
+    },
+    {
+      "pmid": "43030841",
+      "title": "Exploratory Evaluation of the Statistical Fidelity of Large Language Model-Generated Synthetic Rehabilitation Data for Patients with Hip Fracture.",
+      "publication_date": "2026 Nov 7",
+      "electronic_publication_date": "2026 Nov 7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43030841/"
+    },
+    {
+      "pmid": "43030301",
+      "title": "Large Language Model Dietary Recommendations for Multimorbidity with Conflicting Guidelines in Turkish and English.",
+      "publication_date": "2026 Nov 5",
+      "electronic_publication_date": "2026 Nov 5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43030301/"
+    },
+    {
+      "pmid": "43028582",
+      "title": "Comparative Evaluation of Five Large Language Models for Orthodontic Patient Communication: A Blinded, Factorial Pilot Study.",
+      "publication_date": "2026 Oct 22",
+      "electronic_publication_date": "2026 Oct 22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43028582/"
+    },
+    {
+      "pmid": "43028382",
+      "title": "Evaluation of Large Language Models for Emergency Triage in Urology: A Multi-Model Study.",
+      "publication_date": "2026 Oct 27",
+      "electronic_publication_date": "2026 Oct 27",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43028382/"
+    },
+    {
+      "pmid": "43028375",
+      "title": "Benchmarking Open-Source Large Language Models for Breast Ultrasound Report Processing: A Multicenter Study.",
+      "publication_date": "2026 Oct 26",
+      "electronic_publication_date": "2026 Oct 26",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43028375/"
+    },
+    {
+      "pmid": "43026873",
+      "title": "Beyond White-Light Colonoscopy: Water Exchange, Image-Enhanced Endoscopy, and Artificial Intelligence for Colorectal Neoplasia Detection-From Single Tools to Combined Strategies: A Scoping Review.",
+      "publication_date": "2026 Nov 5",
+      "electronic_publication_date": "2026 Nov 5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43026873/"
+    },
+    {
+      "pmid": "43026589",
+      "title": "AI safety evaluation in an underrepresented population: real-world performance of clinical decision support and frontier language models on Medicaid patient messaging triage.",
+      "publication_date": "2026 Aug 18",
+      "electronic_publication_date": "2026 Aug 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43026589/"
+    },
+    {
+      "pmid": "43026039",
+      "title": "Large language models in radiology workflows: OpenEvidence dotflows as an accessible, evidence-centered resource.",
+      "publication_date": "2026 Oct 31",
+      "electronic_publication_date": "2026 Oct 31",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43026039/"
+    },
+    {
+      "pmid": "43025109",
+      "title": "A knowledge-guided and pattern-constrained framework for medical dialogue generation.",
+      "publication_date": "2026 Nov 5",
+      "electronic_publication_date": "2026 Nov 5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43025109/"
+    },
+    {
+      "pmid": "43024945",
+      "title": "Benchmarking Large Language Models for Sentiment Analysis in Pregnancy-Related Weight Discussions on Reddit: Human Performance-Aligned Comparative Evaluation Study.",
+      "publication_date": "2026 Nov 13",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024945/"
+    },
+    {
+      "pmid": "43024857",
+      "title": "Evaluating DeepSeek in Real-World Clinical Scenarios on Performance and Safeguards: Multicenter Comparative Study.",
+      "publication_date": "2026 Nov 13",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024857/"
+    },
+    {
+      "pmid": "43024856",
+      "title": "Challenges of Single-Reference Benchmarks for Clinical Reasoning in Large Language Model-Based Decision Support.",
+      "publication_date": "2026 Nov 13",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024856/"
+    },
+    {
+      "pmid": "43024798",
+      "title": "A Knowledge Graph-Enhanced Question-Answering System for Chinese Patent Medicines in Pediatric Influenza: Development and Evaluation Study.",
+      "publication_date": "2026 Nov 13",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024798/"
+    },
+    {
+      "pmid": "43024673",
+      "title": "OpenMedEval: Benchmarking 172 open-source LLMs on 326K medical questions across 93 datasets.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024673/"
+    },
+    {
+      "pmid": "43024310",
+      "title": "ChatGPT-related research in medical education: A dual-database bibliometric review and science-mapping analysis, 2023 to 2026.",
+      "publication_date": "2026 Nov 13",
+      "electronic_publication_date": "",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43024310/"
+    },
+    {
+      "pmid": "43023367",
+      "title": "Integrating ChatGPT into Pharmacology Simulation: A Structured Framework for Prescribing and Medication-Safety Education - A Narrative Review.",
+      "publication_date": "2026 Nov 12",
+      "electronic_publication_date": "2026 Nov 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43023367/"
+    },
+    {
+      "pmid": "43023049",
+      "title": "Benchmarking general and medical LLM performance in Parkinson's disease management.",
+      "publication_date": "2026",
+      "electronic_publication_date": "2026 Nov 2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43023049/"
+    },
+    {
+      "pmid": "43022851",
+      "title": "Comparative Analysis of Six Large Language Models' Generative Ability for Scientific Technical Writing in Ophthalmologic Subspecialties.",
+      "publication_date": "2026 Oct",
+      "electronic_publication_date": "2026 Oct 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43022851/"
+    },
+    {
+      "pmid": "43021690",
+      "title": "Evo2VED: a database of DNA large language model-derived scores for variant interpretation.",
+      "publication_date": "2026 Nov 13",
+      "electronic_publication_date": "2026 Nov 13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43021690/"
+    },
+    {
+      "pmid": "43021533",
+      "title": "Development of an institutional framework based on locally deployed large language models for clinical nutrition research: from fragmented documents to reusable knowledge.",
+      "publication_date": "2026 Oct",
+      "electronic_publication_date": "2026 Nov 4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43021533/"
+    },
+    {
+      "pmid": "43021354",
+      "title": "GraphRAG-ADR: a knowledge graph-enhanced approach for extracting Adverse Drug Reactions (ADRs) from patient narratives.",
+      "publication_date": "2026 Aug 17",
+      "electronic_publication_date": "2026 Aug 17",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43021354/"
+    },
+    {
+      "pmid": "43021254",
+      "title": "Performance of large language models in the management of all types of dental trauma: a comprehensive evaluation of IADT guideline adherence, communicative quality, and readability.",
+      "publication_date": "2026 Aug 18",
+      "electronic_publication_date": "2026 Aug 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43021254/"
+    },
+    {
+      "pmid": "43021234",
+      "title": "A 9 + 1 multi-agent collaborative teaching model for clinical reasoning: integrating large language models into medical education.",
+      "publication_date": "2026 Aug 18",
+      "electronic_publication_date": "2026 Aug 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43021234/"
+    },
+    {
+      "pmid": "43021090",
+      "title": "AI as gatekeeper: a cross-sectional study of AI-generated peer review of landmark oncological studies.",
+      "publication_date": "2026 Aug 18",
+      "electronic_publication_date": "2026 Aug 18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43021090/"
+    },
+    {
+      "pmid": "43020973",
+      "title": "Guardrail-Based Radiology Protocolling with Large Language Models: Balancing Automation and Oversight.",
+      "publication_date": "2026 Nov 12",
+      "electronic_publication_date": "2026 Nov 12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/43020973/"
+    }
+  ]
+}

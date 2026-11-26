@@ -1,0 +1,79 @@
+name: Clinical evidence and benchmark discovery
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 1 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  discover-benchmarks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover recently indexed medical benchmark publications
+        run: python -m medbench.benchmark_discovery --out data/benchmark-discovery.json
+      - name: Summarize PubMed coverage
+        if: ${{ !cancelled() && hashFiles('data/benchmark-discovery.json') != '' }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          report = json.loads(Path("data/benchmark-discovery.json").read_text())
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              print(f"PubMed EDAT {report['start']} to {report['end']} ({report['status']}).", file=summary)
+              total = report['total_matches'] if report['total_matches'] is not None else "unknown"
+              print(f"Retrieved {report['records_retrieved']} candidate publication records from {total} matches.", file=summary)
+          PY
+      - name: Preserve search and candidate publications
+        if: ${{ !cancelled() && hashFiles('data/benchmark-discovery.json') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-discovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: data/benchmark-discovery.json
+          if-no-files-found: error
+  check-passages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'lxml>=4.9'
+      - name: Check the watched source passages
+        run: python -m medbench.evidence_watch --out data/clinical-watch/report.json
+      - name: List variants affected and due for review
+        if: ${{ !cancelled() && hashFiles('data/clinical-watch/report.json') != '' }}
+        run: |
+          python -m medbench.curation queue --watch-report data/clinical-watch/report.json --out data/clinical-watch/queue.jsonl
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          root = Path("data/clinical-watch")
+          report = json.loads((root / "report.json").read_text())
+          queue = [json.loads(line) for line in (root / "queue.jsonl").read_text().splitlines()]
+          due = [r["id"] for r in queue if r["clinical_status"] == "review_due"]
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              print(f"Observed on {report['checked_on']}. Watched passages: {len(report['sources'])}.", file=summary)
+              for row in report["sources"]:
+                  print(f"- {row['status']} — case families: {', '.join(row['family_ids'])}", file=summary)
+              print(f"\nClinical reviews due: {len(due)}.", file=summary)
+              for variant in due:
+                  print(f"- {variant}", file=summary)
+          PY
+      - name: Preserve observation and review queue
+        if: ${{ !cancelled() && hashFiles('data/clinical-watch/report.json') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: clinical-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: data/clinical-watch/
+          if-no-files-found: error

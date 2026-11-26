@@ -11,6 +11,8 @@
 | 找醫事職類與跨科組織 | [護理、藥學、復健、公衛、醫教等專業來源](sources/networks.md)、[中醫藥司團體表](sources/chinese-medicine.tsv)、[生物醫學聯合學術年會成員](sources/biomedical.tsv)。另由兩個全聯會的會員名錄核實 [23 個地方護理公會與 18 個藥師公會網站](sources/guild-websites.tsv)。 |
 | 查地方登記團體 | [22 縣市主管機關入口](local-portals.tsv) 記錄可查的具名名冊、檔案格式與入口限制。[北中南三市](local-coverage.md)、[高雄等 11 縣市](regional-coverage.md)、[新北等 8 縣市與缺口](municipal-coverage.md) 分列名冊版本、實取筆數及範圍。 |
 
+台灣家庭醫學醫學會另按期發布繼續教育測驗。《家庭醫學與基層醫療》第 41 卷第 8、9 期各核實 16 道可公開讀取的選擇題，頁面共 32 個正解標記。原始 HTML 指紋、學會測驗編號、出版日與權利查核狀態均附於來源表。[學會期刊索引](https://www.tafm.org.tw/ehc-tafm/s/w/ebook/index_other/otherlist/2) · [已核對兩期的資料](sources/journal-quizzes.tsv)
+
 ## 全國名冊與查核界限
 
 內政部「人民團體數位櫃檯」以社會團體名稱查詢「學會」，2026-11-26 官網列出 4,064 筆，已逐列保存全選匯出的名稱、立案證號與狀態。分母包含各學術領域，其中 3,604 筆已立案、369 筆解散、91 筆已准籌或仍在審查。另查「醫師協會」，以補充使用其他名稱的專業組織。歷史拼寫或官網沿用舊名時，保留原稱與明示更名的依據。[內政部現行查詢](https://grouptw.moi.gov.tw/searchGroup) · [即時快照與 391 筆「醫學會」交叉查詢](live-registry.md) · [全選匯出紀錄](live-registry.tsv) · [醫師協會查詢](live-physician-associations.tsv) · [異名對照](aliases.tsv)

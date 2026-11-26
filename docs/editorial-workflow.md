@@ -59,4 +59,28 @@
 
 每批以 Git commit 或 tag 固定題目與來源清單，記錄新增、修訂、撤題及待審的 ID。只有通過該項臨床與語言審查的自編題才加入指定評測組。執行時保存題庫雜湊、模型與提示版本、工具與檢索範圍、評分規則、樣本數及失敗數。工具呼叫成功、證據支持答案，以及臨床判斷正確，是三個分別報告的結果。
 
-下一批優先處理複審清單中的 4 道醫師題。逐題記錄需要的前文與圖表、原答案是否仍成立，以及醫師建議採取的處置，再決定哪些題目適合改寫或納入獨立評測。
+考選部複審清單中的 4 道醫師題保留在[暫停交接](../datasets/moex/RESUME.md)。當期的來源蒐集、時效複審與評估進度列在 [roadmap](roadmap.md)。
+
+## 臨床時效維護
+
+題目要保留兩個能獨立還原的判斷。原考題保存出題日、原題、原答案或給分公告及其出處。自編的歷史情境要明示是依當年資料重建。現行問法則寫出判斷日期、醫療管轄區、適用人群及版本。翻譯美式英文時仍可考臺灣制度。原題限定「依 2024 年規則」時，原答案繼續按 2024 年判分。
+
+1. **收到變更線索。** 主動追蹤發布者目前維護的規則、現行指引索引及勘誤或撤回公告。指定網頁可用 `watch_xpath` 和 `passage_sha256` 監測單一表列或段落，SHA-256 取自 UTF-8 正文，連續空白收成一個半形空格。報告記錄查核日期、段落相符、內容改變或無法核對，並列出受影響的病例家族。另一網址新發布的指引，要從新文獻、正式公告或人工通報連回題目。資料尚待釐清時，登錄 `revise` 或 `withdraw` 決議即可暫停該版匯出。
+2. **逐題重審。** 在語言版本的 `clinical_update` 填寫當期問法、`as_of`、`jurisdiction`、`review_due`、`outcome`、`valid_options`、條件成立的答案、詳解及 `evidence_ids`。每個證據 ID 都有 URL、版本和段落或表格定位。詳解逐項核對「哪裡改了」、「哪些人適用」、「各選項為何成立或失效」。無有效選項可明確作答；題幹缺資料要指明缺項；證據衝突送醫師裁決並暫停現行資料匯出。
+3. **醫師裁決與發布。** 在既有逐版本決議中記錄審查者、日期、核准用途、理由與定位，`checked` 同時包含 `clinical`、`language`、`temporal`。題文、答案或依據改動後要更新題目修訂號並重新核准。已到複審日、先前核准內容雜湊失效、撤回或被監測來源有異動時，嚴格匯出會攔下該筆。維護者檢查新舊證據、記錄決議，再發布新快照。已發行的快照另留修訂紀錄，供使用者重編下游訓練集。
+
+多個選項成立時，醫師須指定 `selection_rule`。任選一項皆給分用 `any_one`，記全可接受選項，並指定訓練樣本採用的代表答案。必須全選用 `all_required`，訓練答案須列全，選項順序可以不同。
+
+公費糞便潛血檢查的雙語草稿中，相同四個選項在 2024 年可以選 50 歲。2025 年 1 月 1 日起，一般公費篩檢起始年齡降至 45 歲，40–44 歲另有一等親大腸癌家族史條件。本題限定沒有這項家族史，原選項缺 45 歲。題幹問的是臺灣公費方案的資格，兩個語言版本都待醫師評閱。`clinical_update.claims` 分別將年齡、頻率與家族史例外連到能支持它們的原文。[雙語草稿](../drafts/mbc-tw-fit-0001.json) · [舊版國健署問答](https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=17770) · [變更公告](https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4878&pid=18761) · [現行服務表](https://www.hpa.gov.tw/Pages/List.aspx?nodeid=190)
+
+在 repo 根目錄安裝 `.[build]` 後，可按本日證據重建佇列與匯出檔。
+
+```bash
+python -m medbench.evidence_watch --out data/clinical-watch/report.json
+python -m medbench.curation queue --watch-report data/clinical-watch/report.json
+python -m medbench.curation clinical-train --watch-report data/clinical-watch/report.json --out data/curated/clinical-train.jsonl
+```
+
+現行開發集與保留評估集分別使用 `clinical-development`、`clinical-evaluation`，同樣檢查指定用途、審核決議與證據時效。公開的示範病例只准用於開發。首批留存了以當日取得的官方 HTML 重驗的段落紀錄，並在草稿內記錄三份原始回應的 SHA-256。2027-02-26 是本例預定人工複審日。[2026-11-26 來源核對紀錄](review/tw-fit-watch-2026-11-26.json)
+
+已指定監測段落的題目需要同一查核日的報告。未啟用段落監測的證據依人工版本與複審日控管。歷史重現須選定題本 Git 版本、當日監測報告及當時已登錄的決議，並給予 `--as-of YYYY-MM-DD`。公開開發題、保留評估題和訓練題依既有病例家族分組。要建現行微調集請用 `clinical-train`。相容模式 `train` 仍可匯出整個病例家族都採舊格式、未作時效核對的樣本，這些列以 `answer_basis=source_version_unassessed` 標記。

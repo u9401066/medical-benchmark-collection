@@ -558,7 +558,7 @@
 |---|---|---|---|
 | 中華民國高齡暨長期照護服務學會 | 學會 | [已核對主體](https://www.agedcare.org.tw/index.html) | 待查 |
 | 台灣家庭醫學教育研究學會 | 學會 | [已核對主體](https://tcfp.org.tw/node/17) | 待查 |
-| 台灣家庭醫學醫學會 | 學會 | [已核對主體](https://www.tafm.org.tw/) | [甄審或考試公告](https://www.tafm.org.tw/ehc-tafm/s/w/news_news/article/8ccbab7130eb4a15b97f76883a15dfe1) |
+| 台灣家庭醫學醫學會 | 學會 | [已核對主體](https://www.tafm.org.tw/) | [公開試題與答案](https://www.tafm.org.tw/ehc-tafm/s/w/edu/edutestAnswer/edutest/86c1ec4dcfa34041a4f8dbcff28d5079) |
 | 台灣老年學暨老年醫學會 | 學會 | [已核對主體](https://www.tagg.org.tw/) | 待查 |
 | 台灣醫護長照VR模擬教育學會 | 學會 | [已核對主體](https://www.v-medtw.com/) | 待查 |
 | 台灣長期照護專業學會 | 學會 | [已核對主體](https://www.tpsltc2016.com/) | 待查 |

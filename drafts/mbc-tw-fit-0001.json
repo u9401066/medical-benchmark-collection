@@ -1,0 +1,134 @@
+{
+  "concept_id": "mbc-tw-fit-0001",
+  "revision": 1,
+  "origin": "original_policy_comparison_case",
+  "kind": "mcq",
+  "assessed_skill": "Separate historical screening eligibility from the rules in effect on the date asked, and identify a missing valid option.",
+  "clinical_scope": {
+    "jurisdiction": "TW",
+    "population": "Asymptomatic adults without a first-degree family history of colorectal cancer; Taiwan national publicly funded FIT program."
+  },
+  "split": "public_development",
+  "permitted_uses": [
+    "development"
+  ],
+  "review": {
+    "status": "pending_clinician_review",
+    "reviewer": null,
+    "reviewed_on": null,
+    "question_for_reviewer": "請核對兩版是否都限定臺灣公費篩檢資格、是否已排除 40–44 歲的家族史條件，以及選項皆不適用時的詳解是否足夠。"
+  },
+  "variants": [
+    {
+      "id": "mbc-tw-fit-0001-zh-TW",
+      "lang": "zh-TW",
+      "question": "依 2024 年底臺灣國民健康署的公費大腸癌篩檢方案，沒有大腸癌一等親家族史的無症狀成人，最早幾歲可接受每兩年一次的定量免疫法糞便潛血檢查？請選一項。若選項均不適用，請說明。",
+      "options": {
+        "A": "40 歲",
+        "B": "50 歲",
+        "C": "55 歲",
+        "D": "60 歲"
+      },
+      "answer": "B",
+      "rationale": "2024 年底適用的公費篩檢年齡是滿 50 歲至未滿 75 歲，因此最低年齡為 50 歲。",
+      "historical_basis": {
+        "as_of": "2024-12-31",
+        "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=17770",
+        "locator": "國民健康署癌症防治組，2024-11-18 更新，內文第一段。"
+      },
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "TW",
+        "question": "依 2026 年 11 月 26 日臺灣國民健康署的公費大腸癌篩檢方案，沒有大腸癌一等親家族史的無症狀成人，最早幾歲可接受每兩年一次的定量免疫法糞便潛血檢查？請選一項。若選項均不適用，請說明。",
+        "outcome": "no_valid_option",
+        "valid_options": [],
+        "answer": "所列選項都不符合。現行最低年齡為 45 歲。",
+        "rationale": "2025 年 1 月 1 日起，一般公費篩檢年齡從 50–74 歲擴大為 45–74 歲，40–44 歲另適用於父母、手足或子女曾罹患大腸癌者。本題排除了該家族史條件，因此 40 歲不適用。50、55 與 60 歲都已超過最低年齡。",
+        "claims": [
+          {"text": "一般公費篩檢最低年齡為 45 歲，頻率為每兩年一次。", "evidence_ids": ["hpa-tw-fit-current"]},
+          {"text": "2025 年 1 月 1 日起一般年齡由 50–74 歲改為 45–74 歲。40–44 歲須符合一等親大腸癌家族史條件。", "evidence_ids": ["hpa-tw-fit-change"]}
+        ],
+        "evidence_ids": [
+          "hpa-tw-fit-current",
+          "hpa-tw-fit-change"
+        ]
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0001-en-US",
+      "lang": "en-US",
+      "question": "Under Taiwan's publicly funded colorectal cancer screening program as of December 31, 2024, what was the earliest age at which an asymptomatic adult without a first-degree family history of colorectal cancer qualified for biennial fecal immunochemical testing (FIT)? Select one answer, or explain if none applies.",
+      "options": {
+        "A": "40 years",
+        "B": "50 years",
+        "C": "55 years",
+        "D": "60 years"
+      },
+      "answer": "B",
+      "rationale": "The program covered adults aged 50 through 74 at the end of 2024, so eligibility began at age 50.",
+      "historical_basis": {
+        "as_of": "2024-12-31",
+        "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=17770",
+        "locator": "Health Promotion Administration, FAQ updated November 18, 2024, first body paragraph."
+      },
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "TW",
+        "question": "Under Taiwan's publicly funded colorectal cancer screening program as of November 26, 2026, what is the earliest age at which an asymptomatic adult without a first-degree family history of colorectal cancer qualifies for biennial fecal immunochemical testing (FIT)? Select one answer, or explain if none applies.",
+        "outcome": "no_valid_option",
+        "valid_options": [],
+        "answer": "None of the listed options applies. Eligibility begins at age 45.",
+        "rationale": "Taiwan expanded general eligibility from ages 50–74 to ages 45–74 on January 1, 2025. Eligibility at ages 40–44 requires a parent, sibling, or child with colorectal cancer. This person has no such family history. Ages 50, 55, and 60 are all above the starting age.",
+        "claims": [
+          {"text": "General eligibility begins at age 45, with testing every two years.", "evidence_ids": ["hpa-tw-fit-current"]},
+          {"text": "On January 1, 2025, the general age range changed from 50–74 to 45–74. At ages 40–44, eligibility requires a first-degree family history of colorectal cancer.", "evidence_ids": ["hpa-tw-fit-change"]}
+        ],
+        "evidence_ids": [
+          "hpa-tw-fit-current",
+          "hpa-tw-fit-change"
+        ]
+      }
+    }
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [
+    {
+      "id": "hpa-tw-fit-2024",
+      "role": "historical_policy",
+      "title": "大腸癌篩檢有篩過就好，沒有定期篩沒關係?",
+      "version": "FAQ updated 2024-11-18",
+      "published_on": "2024-05-28",
+      "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=17770",
+      "locator": "癌症防治組，內文第一段描述補助年齡與頻率。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "d3c5d722bc14d8feba87cdfb02668dd19d795e1104d11ccb6fc63b545f03d6fb",
+      "passage_sha256": "b761205803f83994720bfb9761744c1720a719af6cd781484f37382e7973b2d2"
+    },
+    {
+      "id": "hpa-tw-fit-change",
+      "role": "policy_transition",
+      "title": "健康台灣–擴展腸癌防護網 「腸」常篩檢護健康",
+      "version": "2025-01-16 release; policy effective 2025-01-01",
+      "published_on": "2025-01-16",
+      "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=4878&pid=18761",
+      "locator": "內文含「114年1月1日」的段落，同句載明舊年齡、新年齡及家族史例外。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "d5023dcbfbf8188887969f1c5dcd651797e7cf65a9cb7c3bc75f4ae1ed00af33",
+      "passage_sha256": "393a9e368431b74fca5df51f99856b2faf570e0159143ddcd9b16535f1ceda67"
+    },
+    {
+      "id": "hpa-tw-fit-current",
+      "role": "current_program",
+      "title": "大腸癌篩檢(定量免疫)",
+      "version": "Program table observed 2026-11-26",
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=190",
+      "locator": "公費健檢服務表，大腸癌篩檢這一列的服務對象、頻率及服務項目。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "3d7b4bb2bf0b5babddd52aeccdfafb95dab2cb9dc732ce0dc64d37cb7a687900",
+      "watch_xpath": "//div[@class='htmlBlock']//tr[td[contains(.,'大腸癌篩檢')]]",
+      "passage_sha256": "56927a8f408be0f136590074de682b03a47f35cfc9b4c14c50ccd491ba7e7585"
+    }
+  ]
+}

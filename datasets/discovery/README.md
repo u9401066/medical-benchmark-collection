@@ -2,6 +2,20 @@
 
 臺灣專科與次專科學會、醫事專業學會及地方組織另有分科名錄，可以直接查看已核實的網站與公開考題。[臺灣學會來源與覆蓋範圍](../tw-societies/README.md) · [學會試題與甄審公告](../tw-societies/exam-sources.tsv)
 
+### 哪些既有資料能用來核實答案是否過時
+
+本批新增五個來源，每筆保留原發布者、固定版本、資料權利及可判定的範圍。MedChangeQA 有 512 組同題新舊標註，CSV 缺逐題日期與原文定位。TempoMed-Bench 提供指引版本配對。MedQAbstain 可測模型是否會在正解被移除後硬選，需另加入仍有正解的題，才能量到過度棄答。MedAESQA 可檢查開放式回答的特定句子是否得到所引證據的支持。HealthFC 則有證據不足、支持與反對的醫療主張。這五項是來源登錄，授權與可用範圍在表中逐筆列出。[來源表與原始文獻](temporal-review-sources.tsv)
+
+每週以 PubMed 的「進入索引日」找近期候選，與作者釋出的 GitHub、Hugging Face、研究附件及臺灣學會更新互補。新文獻先核對原作者的資料頁、是否只是既有資料的衍生集，以及能否對回正式發布版本。下列指令可以重跑一個明確期間，保存分母、實取的 PMID 與標題。跨週交疊需依 PMID 去重，同資料集的多篇論文仍要人工歸戶。
+
+```bash
+python -m medbench.benchmark_discovery --start 2026-11-13 --end 2026-11-26 --out data/discovery/pubmed-20261126.json
+```
+
+首批檢索涵蓋 2026-11-13 至 2026-11-26，命中 206 篇，已取得全部 206 筆 PMID 與標題。這是供編者篩選的文獻數，一份資料集可能對應多篇論文，有些論文只使用既有題庫。每週的 Actions 執行保留當批搜尋檔；正式登錄來源時，把版次、可取得的材料與權利一起存回此目錄。[首批 PubMed 候選與可重跑查詢](pubmed/2026-11-26.json)
+
+本批已有兩筆完成資料釋出狀態核對。中醫辨證論治評測 TCM-BEST4SDT 可定位至 Figshare 第 8 版，資料採 CC BY 4.0。風濕科 RheumBench 的論文提供醫師評分方法，取得原始資料需要向作者申請。其餘 204 篇尚待登錄逐筆判定。另完成 MedChangeQA 固定版本的 512 筆標籤稽核，可供抽樣設計使用。[PubMed 候選核對表](pubmed/triage.tsv) · [TCM-BEST4SDT 版本與檔案](https://api.figshare.com/v2/articles/30615956/versions/8) · [RheumBench 資料聲明](https://link.springer.com/article/10.1007/s10916-026-02493-z#data-availability) · [MedChangeQA 標籤交叉表](../../docs/review/medchange-audit.md)
+
 收錄單位可以是一份資料集、評測平台或作者分享的文件。同一作品在 Google、Hugging Face 或 GitHub 建立的不同入口共用一個來源身分。來源目錄、可下載樣本、作者釋出的正式 benchmark 與本專案醫師審定的案例各有不同用途。首批查核日期為 2026-11-26。
 
 已查驗的 13 項來源涵蓋 Google Sheets、Docs、Drive、作者網站及固定發行版。清單記錄每項資源提供題本、排行榜、研究附件或教學材料，並保留原連結失效時的機構入口。臺灣部分新增長庚大學醫學系公布的 115 年第一次 OSCE 標準化病人劇情摘要 63 例與 20 種操作技能題型。該批僅登錄後設資料，校方要求轉載須經允許。[公開分享清單](public-shares.tsv) · [長庚大學 OSCE 專區](https://www.cgu.edu.tw/med/Subject/Detail/76921?nodeId=15049)
