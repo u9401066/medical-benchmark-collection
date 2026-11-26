@@ -1,0 +1,144 @@
+{
+  "concept_id": "mbc-us-mammo-0002",
+  "family_id": "mbc-us-mammo-0001",
+  "revision": 1,
+  "origin": "original_synthetic_case",
+  "kind": "open",
+  "assessed_skill": "Apply the interval once the implementing clinic specifies its guideline.",
+  "clinical_scope": {
+    "jurisdiction": "US",
+    "population": "Hypothetical US reminder policy for an asymptomatic woman at average risk after a normal screening mammogram."
+  },
+  "split": "public_development",
+  "permitted_uses": [
+    "development"
+  ],
+  "source_rights": {
+    "origin": "project_original",
+    "status": "cleared",
+    "allowed_uses": [
+      "development"
+    ],
+    "attribution": "病例、題幹、答案與評分準則由 Medical Benchmark Collection 自編。依據 USPSTF 公開發布的篩檢間隔與適用條件撰寫。",
+    "scope": "僅將本專案原創題文用於公開開發。來源以書目、定位與指紋追溯，原始網頁文案和圖表的使用依各發布者條款辦理。",
+    "terms_urls": [
+      "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
+    ],
+    "checked_on": "2026-11-26"
+  },
+  "review": {
+    "status": "pending_clinician_review",
+    "reviewer": null,
+    "reviewed_on": null,
+    "question_for_reviewer": "請核對同一病例指定 USPSTF 後是否可有單一答案，以及距下次提醒的計算。"
+  },
+  "variants": [
+    {
+      "id": "mbc-us-mammo-0002-zh-TW",
+      "lang": "zh-TW",
+      "question": "美國某診所正在編寫乳房攝影篩檢提醒規則，查核日為 2026 年 11 月 26 日。假設一名 46 歲女性沒有乳房症狀，12 個月前例行篩檢的乳房攝影結果正常。她屬一般風險，無乳癌或高風險乳房病灶病史、無乳癌家族史、無已知致病性遺傳變異，過去也未接受胸部放射治療。診所明定按美國預防服務工作小組（USPSTF）的例行篩檢建議設定提醒。這套規則採用什麼間隔，現在是否已到下一次提醒的時間？請說明判斷依據。",
+      "answer": "USPSTF 建議每兩年一次。距離上次正常篩檢只有 12 個月，依這套規則，約再過 12 個月才提醒。",
+      "rationale": "這名一般風險、沒有症狀的 46 歲女性屬於 USPSTF 建議例行乳房攝影的 40 至 74 歲族群。將兩年週期從前次例行篩檢起算即可確定提醒時間。",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "US",
+        "question": "美國某診所正在編寫乳房攝影篩檢提醒規則，查核日為 2026 年 11 月 26 日。假設一名 46 歲女性沒有乳房症狀，12 個月前例行篩檢的乳房攝影結果正常。她屬一般風險，無乳癌或高風險乳房病灶病史、無乳癌家族史、無已知致病性遺傳變異，過去也未接受胸部放射治療。診所明定按美國預防服務工作小組（USPSTF）的例行篩檢建議設定提醒。這套規則採用什麼間隔，現在是否已到下一次提醒的時間？請說明判斷依據。",
+        "outcome": "free_text",
+        "valid_options": [],
+        "answer": "USPSTF 建議每兩年一次。距離上次正常篩檢只有 12 個月，依這套規則，約再過 12 個月才提醒。",
+        "rationale": "這名一般風險、沒有症狀的 46 歲女性屬於 USPSTF 建議例行乳房攝影的 40 至 74 歲族群。將兩年週期從前次例行篩檢起算即可確定提醒時間。",
+        "rubric": [
+          "依題意採用 USPSTF，指出 46 歲一般風險女性適用每兩年一次的建議。",
+          "從前次正常篩檢起算，正確指出現在尚未到期，約再過 12 個月提醒。"
+        ],
+        "claims": [
+          {
+            "text": "病例符合 USPSTF 所述例行篩檢對象，且未列出該建議排除的高風險情況。",
+            "evidence_ids": [
+              "uspstf-eligible-population"
+            ]
+          },
+          {
+            "text": "USPSTF 對 40 至 74 歲採兩年週期。因此上次篩檢後第 12 個月距提醒約還有 12 個月。",
+            "evidence_ids": [
+              "uspstf-screening-interval"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "uspstf-screening-interval",
+          "uspstf-eligible-population"
+        ]
+      }
+    },
+    {
+      "id": "mbc-us-mammo-0002-en-US",
+      "lang": "en-US",
+      "question": "A US clinic is writing a reminder rule for screening mammography using guidance current on November 26, 2026. In its example, an asymptomatic 46-year-old woman had a normal routine screening mammogram 12 months ago. She is at average risk. She has no personal or family history of breast cancer, no prior high-risk breast lesion, no known inherited variant that raises breast cancer risk, and no history of chest radiation. The clinic has chosen to base its reminders on the US Preventive Services Task Force (USPSTF) routine screening recommendation. What interval should the rule use, and is a reminder due now? Explain your reasoning.",
+      "answer": "Use a two-year interval. The last normal screen was 12 months ago, so the next reminder is due in about 12 more months.",
+      "rationale": "This asymptomatic 46-year-old at average risk is in the 40–74 age group covered by the USPSTF mammography recommendation. Counting two years from the previous routine screen gives the reminder date.",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "US",
+        "question": "A US clinic is writing a reminder rule for screening mammography using guidance current on November 26, 2026. In its example, an asymptomatic 46-year-old woman had a normal routine screening mammogram 12 months ago. She is at average risk. She has no personal or family history of breast cancer, no prior high-risk breast lesion, no known inherited variant that raises breast cancer risk, and no history of chest radiation. The clinic has chosen to base its reminders on the US Preventive Services Task Force (USPSTF) routine screening recommendation. What interval should the rule use, and is a reminder due now? Explain your reasoning.",
+        "outcome": "free_text",
+        "valid_options": [],
+        "answer": "Use a two-year interval. The last normal screen was 12 months ago, so the next reminder is due in about 12 more months.",
+        "rationale": "This asymptomatic 46-year-old at average risk is in the 40–74 age group covered by the USPSTF mammography recommendation. Counting two years from the previous routine screen gives the reminder date.",
+        "rubric": [
+          "Use the specified USPSTF recommendation and identify the two-year interval for an average-risk 46-year-old.",
+          "Anchor the interval to the previous normal screen and state that the reminder is due in about 12 more months."
+        ],
+        "claims": [
+          {
+            "text": "Her risk profile is within the USPSTF screening population and the vignette describes none of its high-risk exclusions.",
+            "evidence_ids": [
+              "uspstf-eligible-population"
+            ]
+          },
+          {
+            "text": "The USPSTF sets a two-year interval for ages 40–74. At month 12 of that interval, about 12 months remain.",
+            "evidence_ids": [
+              "uspstf-screening-interval"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "uspstf-screening-interval",
+          "uspstf-eligible-population"
+        ]
+      }
+    }
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [
+    {
+      "id": "uspstf-screening-interval",
+      "role": "issuer_recommendation",
+      "title": "Breast Cancer: Screening",
+      "version": "USPSTF final recommendation posted 2024-04-30, checked 2026-11-26. DOI 10.1001/jama.2024.5534.",
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening",
+      "published_on": "2024-04-30",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "493bfcc815c3c3b8048ae19bf4f34a313c3404a4fe99aaf690630811804b8373",
+      "locator": "Recommendation Summary table, row for women aged 40–74, including grade and screening frequency.",
+      "watch_xpath": "//tr[td[1][normalize-space(.)='Women aged 40 to 74 years']]",
+      "passage_sha256": "586402d76c4bf15ae7946a22e63bdaf186d1b8d274fd9b739862836d2031694e"
+    },
+    {
+      "id": "uspstf-eligible-population",
+      "role": "issuer_recommendation",
+      "title": "Breast Cancer: Screening",
+      "version": "USPSTF final recommendation posted 2024-04-30, checked 2026-11-26. DOI 10.1001/jama.2024.5534.",
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening",
+      "published_on": "2024-04-30",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "493bfcc815c3c3b8048ae19bf4f34a313c3404a4fe99aaf690630811804b8373",
+      "locator": "Clinician Summary table, applicability row. Population and excluded high-risk groups.",
+      "watch_xpath": "//tr[td[1][normalize-space(.)='To whom does this recommendation apply?']]",
+      "passage_sha256": "8b3a93517fe94d91061a716afa5cf54658c1d8edba8ae2183060404fa7fd0139"
+    }
+  ]
+}

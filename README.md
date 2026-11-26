@@ -4,9 +4,11 @@
 
 ## 現有評測工具
 
-當期工作保留原考期答案，並由醫師依指定日期、地區及證據另審現行答案和詳解。臺灣公費大腸癌篩檢的雙語題組比較原選項已無正解、已改為另一選項、原答案仍然成立。每週檢查來源段落，並依 PMID 整理待查的評測研究。[雙語審題單](docs/review/tw-fit-controls.md) · [目標與交接](docs/roadmap.md) · [臨床時效維護](docs/editorial-workflow.md#臨床時效維護) · [臨床判分與評估](docs/temporal-evaluation.md)
+當期工作保留原考期答案，並由醫師依指定日期、地區及證據另審現行答案和詳解。臺灣公費大腸癌篩檢題測量模型是否沿用已失效的選項。美國乳房攝影題比較同一病例在兩個機構指引下的篩檢間隔。每週檢查來源段落，並依 PMID 整理待查的評測研究。[臺灣公費篩檢審題單](docs/review/tw-fit-controls.md) · [美國指引分歧審題單](docs/review/us-mammography-interval.md) · [目標與交接](docs/roadmap.md) · [臨床時效維護](docs/editorial-workflow.md#臨床時效維護) · [臨床判分與評估](docs/temporal-evaluation.md)
 
 首輪批次實驗以 Qwen2.5 1.5B 在 CPU 上回答兩組各 12 題的英文解剖學題。兩組都以獨立併發 2 最快。Test 組單題與雙題共用提示的總分均為 9/12，逐題比較卻有一題由對改錯、另一題由錯改對。[實測數字與逐題回覆](reports/anatomy-batch-pilot/README.md) · [後續實驗](docs/roadmap.md#批次作答的速度與題間干擾)
+
+同一模型回答臺灣公費篩檢的歷史與現行問法時，限定 JSON Schema 後，美式英文可解析回覆從 0/6 增為 6/6。兩種設定下，各 12 份作答都沒有可解析且符合該日期編者擬答的選項。24 份原始作答均保留，供醫師核對回答理由與雙語用詞。[日期與輸出格式實測](reports/tw-fit-date-probe/README.md)
 
 臺灣醫學會已按科別整理，附官網核對狀態、部定專科及次專科的來源，以及學會公開甄審試題、樣題與答案的入口。[依科別找學會](datasets/tw-societies/by-specialty.md) · [直接找考試資料](datasets/tw-societies/exam-sources.tsv)
 

@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 import re
 
-from .curation import OUTCOMES, SPLITS, has_text, rights_status
+from .curation import OUTCOMES, SPLITS, has_text, rights_status, validate_historical_option
 from .moex_archive import atomic
 
 
@@ -80,6 +80,23 @@ def validate_gold(row, score_as_of):
         if (not is_label_list(offered) or not set(labels).issubset(offered)
                 or (outcome == "free_text" and offered) or (outcome == "no_valid_option" and not offered)):
             raise ValueError(f"{key}: offered_option_labels contradict the clinical target")
+    if "historical_option" in row:
+        validate_historical_option(row["historical_option"], row.get("offered_option_labels", []), dates[0])
+
+
+def historical_relation(item):
+    reference = item.get("historical_option")
+    if reference is None:
+        return "undocumented"
+    if item["outcome"] == "no_valid_option":
+        return "obsolete"
+    if item["outcome"] not in OPTION_OUTCOMES:
+        return "not_comparable"
+    if reference["label"] not in item["valid_options"]:
+        return "obsolete"
+    if item.get("selection_rule") == "all_required":
+        return "part_of_required_set"
+    return "still_accepted"
 
 
 def prediction_digest(row):
@@ -174,11 +191,16 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None):
         else:
             clinical = "pending"
             pending.append(key)
+        relation = historical_relation(item)
+        selected_old = None
+        if relation == "obsolete":
+            selected_old = kind == "select" and prediction["selected_options"] == [item["historical_option"]["label"]]
         rows.append({
             "id": key, "family_id": item["family_id"], "lang": item["lang"],
             "rights_status": item.get("rights_status", "legacy_undocumented"),
             "content_sha256": item["content_sha256"], "prediction_sha256": digest,
             "outcome": item["outcome"], "response_type": kind, "selection_status": selection, "target_match": match,
+            "historical_relation": relation, "selected_obsolete_option": selected_old,
             "review_verdict": verdict, "clinical_result": clinical,
         })
 
@@ -201,9 +223,13 @@ def score(gold_rows, predictions, reviews=(), *, score_as_of=None):
     for outcome in ("no_valid_option", "insufficient_information"):
         eligible = [r for r in rows if r["outcome"] == outcome]
         metrics[outcome + "_recognition"] = rate(sum(r["target_match"] for r in eligible), len(eligible))
+    obsolete = [r for r in rows if r["historical_relation"] == "obsolete"]
+    metrics["obsolete_option_reuse"] = rate(sum(r["selected_obsolete_option"] for r in obsolete), len(obsolete))
     snapshot = next(iter(snapshots), (None, None))
     return {"assigned": assigned, "split": snapshot[1], "export_as_of": snapshot[0], "score_as_of": score_as_of.isoformat(),
             "case_families": len({r["family_id"] for r in rows}), "response_counts": dict(counts),
+            "obsolete_case_families": len({r["family_id"] for r in obsolete}),
+            "historical_relation_counts": dict(Counter(r["historical_relation"] for r in rows)),
             "selection_counts": {key: selection_counts[key] for key in ("offered", "invalid", "unverified")},
             "reviewed": len(judgments), "pending_clinical_review": pending, "metrics": metrics, "items": rows}
 

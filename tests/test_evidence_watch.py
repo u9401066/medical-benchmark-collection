@@ -1,3 +1,4 @@
+import gzip
 import hashlib
 import json
 from email.message import Message
@@ -12,6 +13,36 @@ from medbench.evidence_watch import check
 
 URL = "https://agency.example/guidance"
 XPATH = "//p[@id='eligibility']"
+
+
+def test_gzipped_html_passage_matches_uncompressed_source(monkeypatch, tmp_path):
+    body = "<html><p id='eligibility'>資格 45</p></html>".encode()
+    expected = hashlib.sha256("資格 45".encode()).hexdigest()
+    (tmp_path / "draft.json").write_text(json.dumps({
+        "concept_id": "case", "evidence": [{"url": URL, "watch_xpath": XPATH, "passage_sha256": expected}]
+    }))
+    response = BytesIO(gzip.compress(body))
+    response.geturl = lambda: URL
+    response.headers = Message()
+    response.headers["Content-Encoding"] = "GZip"
+    response.headers["Content-Type"] = "text/html; charset=utf-8"
+    monkeypatch.setattr(evidence_watch, "urlopen", lambda *a, **kw: response)
+    row, = check(tmp_path)["sources"]
+    assert row["status"] == "unchanged" and row["observed_sha256"] == expected
+
+
+@pytest.mark.parametrize(("content", "encoding", "message"), [
+    (b"x" * 65, "identity", "response exceeds"),
+    (gzip.compress(b"x" * 65), "gzip", "Decoded source exceeds"),
+    (gzip.compress(b"short")[:-4], "gzip", "Invalid gzip"),
+    (b"other", "br", "Unsupported"),
+])
+def test_encoding_and_size_failures_never_reach_html_parser(monkeypatch, content, encoding, message):
+    monkeypatch.setattr(evidence_watch, "MAX_HTML_BYTES", 64)
+    response = BytesIO(content)
+    response.headers = {"Content-Encoding": encoding}
+    with pytest.raises(ValueError, match=message):
+        evidence_watch.read_html_body(response)
 
 
 def test_fetch_retries_timeouts_and_passes_through_definitive_failures(monkeypatch):

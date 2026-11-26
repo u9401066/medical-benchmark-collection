@@ -1,7 +1,7 @@
 {
   "concept_id": "mbc-tw-fit-0003",
   "family_id": "mbc-tw-fit-0001",
-  "revision": 1,
+  "revision": 2,
   "origin": "original_policy_comparison_case",
   "kind": "mcq",
   "assessed_skill": "Identify the routine screening interval for an eligible adult under each dated version of the same program.",
@@ -43,6 +43,7 @@
       "answer": "D",
       "rationale": "2024 年底，50–74 歲成人可每兩年接受一次公費檢查。60 歲在當時的服務年齡範圍內。",
       "historical_basis": {
+        "comparison": "same_decision_single_option",
         "as_of": "2024-12-31",
         "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=17770",
         "locator": "國民健康署癌症防治組，2024-11-18 更新，內文第一段。"
@@ -98,6 +99,7 @@
       "answer": "D",
       "rationale": "At the end of 2024, the program covered screening every two years for adults aged 50 through 74. A 60-year-old qualified under that policy.",
       "historical_basis": {
+        "comparison": "same_decision_single_option",
         "as_of": "2024-12-31",
         "url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=127&pid=17770",
         "locator": "Health Promotion Administration, FAQ updated November 18, 2024, first body paragraph."

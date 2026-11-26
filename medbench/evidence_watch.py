@@ -1,10 +1,13 @@
 """Check the exact public HTML passages used by date-sensitive draft answers."""
 
 import argparse
+import gzip
 import hashlib
+import io
 import json
 import re
 import time
+import zlib
 from datetime import date
 from http.client import HTTPException
 from pathlib import Path
@@ -17,13 +20,36 @@ from lxml import etree, html
 from .moex_archive import atomic
 
 
+MAX_HTML_BYTES = 8_000_000
+
+
+def read_html_body(response):
+    content = response.read(MAX_HTML_BYTES + 1)
+    if len(content) > MAX_HTML_BYTES:
+        raise ValueError("Source response exceeds the HTML fetch limit")
+    encoding = response.headers.get("Content-Encoding", "identity").strip().lower()
+    if encoding in ("", "identity"):
+        return content
+    if encoding not in ("gzip", "x-gzip"):
+        raise ValueError(f"Unsupported source Content-Encoding: {encoding}")
+    try:
+        with gzip.GzipFile(fileobj=io.BytesIO(content)) as stream:
+            decoded = stream.read(MAX_HTML_BYTES + 1)
+    except (EOFError, OSError, zlib.error) as exc:
+        raise ValueError("Invalid gzip source response") from exc
+    if len(decoded) > MAX_HTML_BYTES:
+        raise ValueError("Decoded source exceeds the HTML fetch limit")
+    return decoded
+
+
 def fetch(url):
     if urlsplit(url).scheme != "https":
         raise ValueError("Watched sources require an HTTPS URL")
     request = Request(
         url,
         headers={
-            "User-Agent": "Mozilla/5.0 (compatible; MedicalBenchmarkCollection/1.0)"
+            "User-Agent": "Mozilla/5.0 (compatible; MedicalBenchmarkCollection/1.0)",
+            "Accept-Encoding": "gzip, identity",
         },
     )
     for attempt in range(2):
@@ -31,10 +57,7 @@ def fetch(url):
             with urlopen(request, timeout=30) as response:
                 if urlsplit(response.geturl()).scheme != "https":
                     raise ValueError("Source redirected away from HTTPS")
-                content = response.read(8_000_001)
-                if len(content) > 8_000_000:
-                    raise ValueError("Source HTML exceeds the 8 MB fetch limit")
-                return content, response.headers.get_content_charset()
+                return read_html_body(response), response.headers.get_content_charset()
         except (OSError, HTTPException) as error:
             if (
                 attempt

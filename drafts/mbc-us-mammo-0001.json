@@ -1,0 +1,180 @@
+{
+  "concept_id": "mbc-us-mammo-0001",
+  "family_id": "mbc-us-mammo-0001",
+  "revision": 1,
+  "origin": "original_synthetic_case",
+  "kind": "open",
+  "assessed_skill": "Recognize conflicting organization-specific intervals for the same routine screening decision.",
+  "clinical_scope": {
+    "jurisdiction": "US",
+    "population": "Hypothetical US reminder policy for an asymptomatic woman at average risk after a normal screening mammogram."
+  },
+  "split": "public_development",
+  "permitted_uses": [
+    "development"
+  ],
+  "source_rights": {
+    "origin": "project_original",
+    "status": "cleared",
+    "allowed_uses": [
+      "development"
+    ],
+    "attribution": "病例、題幹、答案與評分準則由 Medical Benchmark Collection 自編。依據 ACS 及 USPSTF 公開發布的篩檢間隔與適用條件撰寫。",
+    "scope": "僅將本專案原創題文用於公開開發。來源以書目、定位與指紋追溯，原始網頁文案和圖表的使用依各發布者條款辦理。",
+    "terms_urls": [
+      "https://www.cancer.org/about-us/policies/content-usage.html",
+      "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening"
+    ],
+    "checked_on": "2026-11-26"
+  },
+  "review": {
+    "status": "pending_clinician_review",
+    "reviewer": null,
+    "reviewed_on": null,
+    "question_for_reviewer": "請核對兩機構對同一病例所建議的例行間隔確實不同，以及中英文是否都清楚問到兩套規則。"
+  },
+  "variants": [
+    {
+      "id": "mbc-us-mammo-0001-zh-TW",
+      "lang": "zh-TW",
+      "question": "美國某診所正在編寫乳房攝影篩檢提醒規則，查核日為 2026 年 11 月 26 日。假設一名 46 歲女性沒有乳房症狀，12 個月前例行篩檢的乳房攝影結果正常。她屬一般風險，無乳癌或高風險乳房病灶病史、無乳癌家族史、無已知致病性遺傳變異，過去也未接受胸部放射治療。診所希望同一個提醒間隔符合美國癌症協會（ACS）與美國預防服務工作小組（USPSTF）各自對這名女性的例行篩檢建議。兩者是否有共同的建議間隔？請分別說明依各機構的建議，現在是否已到下一次提醒的時間。",
+      "answer": "兩者沒有共同建議的固定間隔。依 ACS，每年一次，距前次已滿 12 個月，現在應發出提醒。依 USPSTF，每兩年一次，目前距下次提醒約還有 12 個月。",
+      "rationale": "46 歲同時落在 ACS 的 45 至 54 歲年齡層，以及 USPSTF 的 40 至 74 歲範圍。兩者都建議例行乳房攝影，但對本例指定不同的週期。診所若要寫出單一提醒日期，需要先決定採用哪套建議。",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "US",
+        "question": "美國某診所正在編寫乳房攝影篩檢提醒規則，查核日為 2026 年 11 月 26 日。假設一名 46 歲女性沒有乳房症狀，12 個月前例行篩檢的乳房攝影結果正常。她屬一般風險，無乳癌或高風險乳房病灶病史、無乳癌家族史、無已知致病性遺傳變異，過去也未接受胸部放射治療。診所希望同一個提醒間隔符合美國癌症協會（ACS）與美國預防服務工作小組（USPSTF）各自對這名女性的例行篩檢建議。兩者是否有共同的建議間隔？請分別說明依各機構的建議，現在是否已到下一次提醒的時間。",
+        "outcome": "conflicting_evidence",
+        "valid_options": [],
+        "answer": "兩者沒有共同建議的固定間隔。依 ACS，每年一次，距前次已滿 12 個月，現在應發出提醒。依 USPSTF，每兩年一次，目前距下次提醒約還有 12 個月。",
+        "rationale": "46 歲同時落在 ACS 的 45 至 54 歲年齡層，以及 USPSTF 的 40 至 74 歲範圍。兩者都建議例行乳房攝影，但對本例指定不同的週期。診所若要寫出單一提醒日期，需要先決定採用哪套建議。",
+        "rubric": [
+          "正確將每年一次歸於 ACS、每兩年一次歸於 USPSTF。",
+          "以 12 個月前的正常例行檢查推算，ACS 規則現在提醒，USPSTF 規則約再過 12 個月提醒。",
+          "明示兩機構對本例的例行間隔有分歧，無法給出兩者共同建議的單一提醒日期。"
+        ],
+        "claims": [
+          {
+            "text": "依 ACS 的一般風險建議，46 歲屬每年接受乳房攝影的年齡層。",
+            "evidence_ids": [
+              "acs-average-risk"
+            ]
+          },
+          {
+            "text": "本例符合 USPSTF 的一般風險適用條件，46 歲適用每兩年一次的例行篩檢建議。",
+            "evidence_ids": [
+              "uspstf-screening-interval",
+              "uspstf-eligible-population"
+            ]
+          },
+          {
+            "text": "在上次正常篩檢後已過 12 個月的情境，兩機構的週期會導出不同的提醒時間。",
+            "evidence_ids": [
+              "acs-average-risk",
+              "uspstf-screening-interval"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "acs-average-risk",
+          "uspstf-screening-interval",
+          "uspstf-eligible-population"
+        ]
+      }
+    },
+    {
+      "id": "mbc-us-mammo-0001-en-US",
+      "lang": "en-US",
+      "question": "A US clinic is writing a reminder rule for screening mammography using guidance current on November 26, 2026. In its example, an asymptomatic 46-year-old woman had a normal routine screening mammogram 12 months ago. She is at average risk. She has no personal or family history of breast cancer, no prior high-risk breast lesion, no known inherited variant that raises breast cancer risk, and no history of chest radiation. The clinic wants one interval that matches the routine schedule recommended by both the American Cancer Society (ACS) and the US Preventive Services Task Force (USPSTF) for this woman. Do the organizations recommend a common interval? For each organization, say whether a reminder would be due now.",
+      "answer": "There is no shared recommended interval for this case. On the ACS annual schedule, the reminder is due now. On the USPSTF two-year schedule, the next reminder is about 12 months away.",
+      "rationale": "At 46, she falls in the ACS 45–54 age group and the USPSTF 40–74 age group. Both recommend screening mammography for her risk profile. Their intervals differ, so the clinic would have to specify which guideline it follows to assign one reminder date.",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "US",
+        "question": "A US clinic is writing a reminder rule for screening mammography using guidance current on November 26, 2026. In its example, an asymptomatic 46-year-old woman had a normal routine screening mammogram 12 months ago. She is at average risk. She has no personal or family history of breast cancer, no prior high-risk breast lesion, no known inherited variant that raises breast cancer risk, and no history of chest radiation. The clinic wants one interval that matches the routine schedule recommended by both the American Cancer Society (ACS) and the US Preventive Services Task Force (USPSTF) for this woman. Do the organizations recommend a common interval? For each organization, say whether a reminder would be due now.",
+        "outcome": "conflicting_evidence",
+        "valid_options": [],
+        "answer": "There is no shared recommended interval for this case. On the ACS annual schedule, the reminder is due now. On the USPSTF two-year schedule, the next reminder is about 12 months away.",
+        "rationale": "At 46, she falls in the ACS 45–54 age group and the USPSTF 40–74 age group. Both recommend screening mammography for her risk profile. Their intervals differ, so the clinic would have to specify which guideline it follows to assign one reminder date.",
+        "rubric": [
+          "Attribute annual screening to ACS and screening every two years to USPSTF.",
+          "Apply both intervals to the normal screen 12 months ago: due now under ACS and in about 12 more months under USPSTF.",
+          "State that the two schedules give different reminder dates for this same case."
+        ],
+        "claims": [
+          {
+            "text": "The ACS assigns a 46-year-old at average risk to its annual mammography schedule.",
+            "evidence_ids": [
+              "acs-average-risk"
+            ]
+          },
+          {
+            "text": "The example fits the population covered by the USPSTF recommendation, which sets a two-year interval at age 46.",
+            "evidence_ids": [
+              "uspstf-screening-interval",
+              "uspstf-eligible-population"
+            ]
+          },
+          {
+            "text": "Given the 12 months since the last normal screen, these two schedules imply different reminder dates.",
+            "evidence_ids": [
+              "acs-average-risk",
+              "uspstf-screening-interval"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "acs-average-risk",
+          "uspstf-screening-interval",
+          "uspstf-eligible-population"
+        ]
+      }
+    }
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [
+    {
+      "id": "acs-average-risk",
+      "role": "issuer_guideline",
+      "title": "American Cancer Society Recommendations for the Early Detection of Breast Cancer",
+      "version": "ACS patient-facing guidance revised 2026-07-23, checked 2026-11-26. The original society guideline is DOI 10.1001/jama.2015.12783.",
+      "url": "https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-recommendations-for-the-early-detection-of-breast-cancer.html",
+      "locator": "American Cancer Society screening recommendations → Guidelines for women at average breast cancer risk. Risk exclusions in the first list and interval for ages 45–54 in the second list, bullet 2.",
+      "retrieved_on": "2026-11-26",
+      "page_revised_on": "2026-07-23",
+      "source_sha256": "7d97456ee6bc9c96fcb56052ad29af4c866f3e9f45300078398ab3afe442afaa",
+      "transport_encoding": "gzip",
+      "wire_sha256": "2e68147c45483b3dd511aa7abbd750f3ef0a399f9088cbb33dec2313ea9df17e",
+      "watch_xpath": "//p[contains(.,'average risk if')]/parent::div",
+      "passage_sha256": "98e7bd19c9304dbb90cc97274461da5430a4f413a0de8d262ea1be4aed1eab8c"
+    },
+    {
+      "id": "uspstf-screening-interval",
+      "role": "issuer_recommendation",
+      "title": "Breast Cancer: Screening",
+      "version": "USPSTF final recommendation posted 2024-04-30, checked 2026-11-26. DOI 10.1001/jama.2024.5534.",
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening",
+      "published_on": "2024-04-30",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "493bfcc815c3c3b8048ae19bf4f34a313c3404a4fe99aaf690630811804b8373",
+      "locator": "Recommendation Summary table, row for women aged 40–74, including grade and screening frequency.",
+      "watch_xpath": "//tr[td[1][normalize-space(.)='Women aged 40 to 74 years']]",
+      "passage_sha256": "586402d76c4bf15ae7946a22e63bdaf186d1b8d274fd9b739862836d2031694e"
+    },
+    {
+      "id": "uspstf-eligible-population",
+      "role": "issuer_recommendation",
+      "title": "Breast Cancer: Screening",
+      "version": "USPSTF final recommendation posted 2024-04-30, checked 2026-11-26. DOI 10.1001/jama.2024.5534.",
+      "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening",
+      "published_on": "2024-04-30",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "493bfcc815c3c3b8048ae19bf4f34a313c3404a4fe99aaf690630811804b8373",
+      "locator": "Clinician Summary table, applicability row. Population and excluded high-risk groups.",
+      "watch_xpath": "//tr[td[1][normalize-space(.)='To whom does this recommendation apply?']]",
+      "passage_sha256": "8b3a93517fe94d91061a716afa5cf54658c1d8edba8ae2183060404fa7fd0139"
+    }
+  ]
+}

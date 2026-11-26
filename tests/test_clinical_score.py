@@ -138,6 +138,29 @@ def test_unoffered_invalid_and_open_question_selections_stay_in_the_assignment()
     assert all(r["clinical_result"] == "fail" for r in result["items"] if r["selection_status"] == "invalid")
 
 
+def test_reusing_a_sourced_obsolete_option_counts_the_full_assigned_subgroup():
+    rows = [gold("changed"), gold("none", "no_valid_option", ()), gold("missing"), gold("several"),
+            gold("stable", valid=["B"]), gold("any", "multiple_valid_options", ["A", "B"], "any_one"),
+            gold("part", "multiple_valid_options", ["A", "B"], "all_required"),
+            gold("insufficient", "insufficient_information", ()), gold("legacy")]
+    ref = {"label": "B", "as_of": "2020-01-01", "url": "https://example.org/2020", "locator": "row 2"}
+    rows[1]["family_id"] = rows[0]["family_id"]
+    for row in rows[:-1]:
+        row["historical_option"] = ref
+    pred = [prediction(rows[0], "select", "B"), prediction(rows[1], "select", "C"),
+            prediction(rows[3], "select", "A", "B"), prediction(rows[4], "select", "B")]
+    result = score(rows, pred)
+    assert result["metrics"]["obsolete_option_reuse"] == {"numerator": 1, "denominator": 4, "rate": .25}
+    assert result["obsolete_case_families"] == 3
+    assert result["historical_relation_counts"] == {
+        "obsolete": 4, "still_accepted": 2, "part_of_required_set": 1, "not_comparable": 1, "undocumented": 1}
+    assert [r["selected_obsolete_option"] for r in result["items"]] == [True, False, False, False] + [None] * 5
+    assert score(rows[-1:], [])["metrics"]["obsolete_option_reuse"]["rate"] is None
+    for patch in ({"label": "E"}, {"as_of": rows[0]["clinical_as_of"]}, {"url": "unverified"}, {"locator": ""}):
+        with pytest.raises(ValueError, match="historical option"):
+            score([{**rows[0], "historical_option": {**ref, **patch}}], [])
+
+
 def test_frozen_legacy_exports_do_not_guess_missing_options_from_text():
     rows = [gold("legacy-correct"), gold("legacy-other")]
     for row in rows:

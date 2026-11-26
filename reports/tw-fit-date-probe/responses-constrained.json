@@ -1,0 +1,261 @@
+{
+  "started_utc": "2026-11-26T13:34:23.465498+00:00",
+  "parameters": {
+    "temperature": 0,
+    "seed": 20261126,
+    "max_tokens": 256,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "fit_date_response",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "choice": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "no_valid_option",
+                "insufficient_information",
+                "abstain"
+              ]
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "choice",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "stream": false,
+    "model": "qwen2.5-1.5b-local"
+  },
+  "responses": [
+    {
+      "id": "mbc-tw-fit-0001-en-US",
+      "period": "current",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "d038e49cba45ebcafe16fdf80611fe62c8face4ffde5f17ddebbc5ba6e012052",
+      "raw": "{\n  \"choice\": \"C\",\n  \"reason\": \"According to the publicly funded colorectal cancer screening program as of November 26, 2026, the earliest age at which an asymptomatic adult without a first-degree family history of colorectal cancer qualifies for biennial fecal immunochemical testing (FIT) is 55 years.\"\n}",
+      "response_sha256": "1799302191fc8b436cff6836b66dd7f4a96aadd9bfb65348af4eb70604670cbb",
+      "finish_reason": "stop",
+      "choice": "C",
+      "usage": {
+        "completion_tokens": 80,
+        "prompt_tokens": 169,
+        "total_tokens": 249,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-en-US",
+      "period": "historical",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "107c34d7ff6d5b5ad5ab9b3618044d0803a184276838eab6ba121e8c188d96a1",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"Under Taiwan's publicly funded colorectal cancer screening program as of December 31, 2024, the interval between routine FITs is every three years.\"\n}",
+      "response_sha256": "df1c10302c4c2cc5ba222f86b2185177ca8e2834ce1d04ee6f3277094af3575b",
+      "finish_reason": "stop",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 184,
+        "total_tokens": 237,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-zh-TW",
+      "period": "current",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "55c467e8a909f9cec0e6f9f597f44332dbd93c1aec59be46ada63d7e976ced78",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"根據2026年11月26日當時適用的臺灣國民健康署公費大腸癌篩檢方案，例行定量免疫法糞便潛血檢查的間隔是每三年一次。\"\n}",
+      "response_sha256": "5fcde89fcd93f1c8bd7558ab3ffaf0202a7cc0019bde90bb895b2a384add91b8",
+      "finish_reason": "stop",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 68,
+        "prompt_tokens": 225,
+        "total_tokens": 293,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-en-US",
+      "period": "historical",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "f76c0a3cd3f9999f7ed5502afeebd0b2ef406e3ae8cad506b6e2e5ea3cc7b836",
+      "raw": "{\n  \"choice\": \"C\",\n  \"reason\": \"The earliest age for biennial FIT in Taiwan's publicly funded colorectal cancer screening program as of December 31, 2024, is 45 years. This is based on the information provided in the question.\"\n}",
+      "response_sha256": "a41b7524a6254d092bef3587edc62be90377305de50b5cc59d6be3e5dfdebac9",
+      "finish_reason": "stop",
+      "choice": "C",
+      "usage": {
+        "completion_tokens": 66,
+        "prompt_tokens": 169,
+        "total_tokens": 235,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-zh-TW",
+      "period": "historical",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "af8ed24cb72245a2f5fc2f7ff49739f5caeb07d5aab5cc3f3e43321b298b417c",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"根據2024年12月31日當時適用的臺灣國民健康署公費大腸癌篩檢方案，例行定量免疫法糞便潛血檢查的間隔是每三年一次。\"\n}",
+      "response_sha256": "4d19868cae239191b2c15b1f7292cf9c6546ea12663257da521e54a148ba6fff",
+      "finish_reason": "stop",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 68,
+        "prompt_tokens": 225,
+        "total_tokens": 293,
+        "prompt_tokens_details": {
+          "cached_tokens": 73
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-zh-TW",
+      "period": "current",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "0bb334bdc2f063ee6f7e37ed42987fc78ed707a13ec0c3820d3fee9cdfc8cca0",
+      "raw": "{\n  \"choice\": \"A\",\n  \"reason\": \"依2026年11月26日臺灣國民健康署的公費大腸癌篩檢方案，無症狀成人，若沒有大腸癌一等親家族史，建議的開始篩檢年齡為40歲。因此，最早40歲可接受每兩年一次的定量免疫法糞便潛血檢查。\"\n}",
+      "response_sha256": "3b812f296145b4a820d9ae87e7f01fefa01dc92c39e56f20db9f33752a44e5e5",
+      "finish_reason": "stop",
+      "choice": "A",
+      "usage": {
+        "completion_tokens": 100,
+        "prompt_tokens": 197,
+        "total_tokens": 297,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0001-en-US",
+      "period": "historical",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "9a3fd3bda17c28b9fa508f2918a92bf9c7d2c6ef3e85cd06e4e6629f206af29d",
+      "raw": "{\n  \"choice\": \"C\",\n  \"reason\": \"The earliest age for biennial FIT in Taiwan's publicly funded colorectal cancer screening program as of December 31, 2024, is 55 years. This is based on the information provided in the question and the typical guidelines for colorectal cancer screening in many countries, including Taiwan.\"\n}",
+      "response_sha256": "1295208eaced7487266c5eab7cf42eba5ac05ff413f6320de4421331f26629f0",
+      "finish_reason": "stop",
+      "choice": "C",
+      "usage": {
+        "completion_tokens": 81,
+        "prompt_tokens": 169,
+        "total_tokens": 250,
+        "prompt_tokens_details": {
+          "cached_tokens": 108
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-zh-TW",
+      "period": "historical",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "89b27714454bcc646f80616087ddaadd112e98b15196e56ed99b258d99f434ad",
+      "raw": "{\n  \"choice\": \"A\",\n  \"reason\": \"依2024年台湾国健署的公费大肠癌筛检方案，无症状成人，若无大肠癌一等亲家族史，最早40岁可接受每两年一次的定量免疫法粪便潜血检查。\"\n}",
+      "response_sha256": "e08f43a86bea67604cda535dfdaeae1de35ab7f7476fe8dba9d41f9ae6e379ea",
+      "finish_reason": "stop",
+      "choice": "A",
+      "usage": {
+        "completion_tokens": 74,
+        "prompt_tokens": 189,
+        "total_tokens": 263,
+        "prompt_tokens_details": {
+          "cached_tokens": 24
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0001-zh-TW",
+      "period": "current",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "9e385b42fa639b9c21b27e1a3f05e01083a18ff6660f906b4de547034512747d",
+      "raw": "{\n  \"choice\": \"A\",\n  \"reason\": \"依2026年11月26日臺灣國民健康署的公費大腸癌篩檢方案，沒有大腸癌一等親家族史的無症狀成人，最早40歲可接受每兩年一次的定量免疫法糞便潛血檢查。\"\n}",
+      "response_sha256": "d64a9d9b0327d23195e1124cec27d0f1edcf6f32aea1623091c3248ab098f7c0",
+      "finish_reason": "stop",
+      "choice": "A",
+      "usage": {
+        "completion_tokens": 84,
+        "prompt_tokens": 197,
+        "total_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 126
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0001-zh-TW",
+      "period": "historical",
+      "draft_sha256": "f999ba7f6e56e68de6e9e4f3659db7fb6449f146055b72dfc5dc4dda5a0f4a64",
+      "prompt_sha256": "5af33efe94ed3283818424ca482ba4eac5e910711ad912f743f7676c94573862",
+      "raw": "{\n  \"choice\": \"A\",\n  \"reason\": \"依2024年台湾国健署的公费大肠癌筛检方案，无症状成人，若无大肠癌一等亲家族史，最早40岁可接受每两年一次的定量免疫法粪便潜血检查。\"\n}",
+      "response_sha256": "e08f43a86bea67604cda535dfdaeae1de35ab7f7476fe8dba9d41f9ae6e379ea",
+      "finish_reason": "stop",
+      "choice": "A",
+      "usage": {
+        "completion_tokens": 74,
+        "prompt_tokens": 189,
+        "total_tokens": 263,
+        "prompt_tokens_details": {
+          "cached_tokens": 118
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0003-en-US",
+      "period": "current",
+      "draft_sha256": "b256774d7543a79b2fe1c5229e05348c8ae5dc4bad8b536a8a68bf6dfd500fb7",
+      "prompt_sha256": "11da8a7c2335181a25b171b6ff086a951da48a6f967a0299af6ae34ad5b58f9a",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"Under Taiwan's publicly funded colorectal cancer screening program as of November 26, 2026, the interval between routine FITs is every three years.\"\n}",
+      "response_sha256": "37b8533288cf8607f69a34e6f411f0699c0580b4c3a2ed0fc003deb05f8ffc93",
+      "finish_reason": "stop",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 184,
+        "total_tokens": 237,
+        "prompt_tokens_details": {
+          "cached_tokens": 81
+        }
+      }
+    },
+    {
+      "id": "mbc-tw-fit-0002-en-US",
+      "period": "current",
+      "draft_sha256": "d775dc12d81a389a848c79c114a8a8c066822f6a8049a92089e9d47947bb9b15",
+      "prompt_sha256": "6787ca0e2a4168ae94d91834db2cfe4b73a4e924306dab0806e6c2d3ee98acc0",
+      "raw": "{\n  \"choice\": \"B\",\n  \"reason\": \"The earliest age for an asymptomatic adult without a first-degree family history of colorectal cancer to qualify for biennial fecal immunochemical testing (FIT) under Taiwan's publicly funded colorectal cancer screening program as of November 26, 2026, is 50 years.\"\n}",
+      "response_sha256": "334d27a0a7673a988f62f1e27cdc8ab17d7f395c21d835e1ac32fc1a732d0f14",
+      "finish_reason": "stop",
+      "choice": "B",
+      "usage": {
+        "completion_tokens": 80,
+        "prompt_tokens": 169,
+        "total_tokens": 249,
+        "prompt_tokens_details": {
+          "cached_tokens": 108
+        }
+      }
+    }
+  ]
+}

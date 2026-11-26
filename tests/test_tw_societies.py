@@ -72,6 +72,25 @@ def test_exam_and_directory_share_an_identifier_for_documented_aliases():
     )
 
 
+def test_university_osce_keeps_notice_and_skill_denominators_distinct():
+    root = societies.ROOT
+    sources = societies.records(root / "sources" / "osce-nursing.tsv")
+    assert societies.organization_type("中臺科技大學護理系") == "大學學系"
+    assert len({r["skill_id"] for r in sources}) == 4
+    assert len({r["evidence_sha256"] for r in sources}) == 6
+    for notice_id in {r["notice_id"] for r in sources}:
+        forms = [r for r in sources if r["notice_id"] == notice_id]
+        assert {int(r["notice_assessment_form_count"]) for r in forms} == {len(forms)}
+        assert all(len(forms) < int(r["notice_attachment_count"]) for r in forms)
+    for row in sources:
+        if row["skill_id"] == "suction":
+            assert (row["printed_item_count"], row["scored_dimensions"]) == ("12", "15")
+    actual = societies.records(root / "exam-sources.tsv")
+    assert {
+        r["source_id"] for r in actual if r["source_file"] == "osce-nursing.tsv"
+    } == {r["source_id"] for r in sources}
+
+
 def test_directory_preserves_identity_and_multiple_exam_sources(tmp_path):
     societies.write_table(
         tmp_path / "registry-screen.tsv",

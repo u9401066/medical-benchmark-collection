@@ -159,6 +159,30 @@ def test_temporal_references_and_answer_labels_must_validate(tmp_path, clinical_
         records(tmp_path, save(), "queue")
 
 
+def test_comparable_historical_option_is_only_in_approved_scoring_export(tmp_path, clinical_item):
+    draft, variant, event, save = clinical_item
+    historical = variant["historical_basis"]
+    historical["comparison"] = "same_decision_single_option"
+    as_of = date(2026, 3, 1)
+    assert "historical_option" not in records(tmp_path, save(), "clinical-train", as_of)[0]
+    draft.update(split="public_development", permitted_uses=["development"])
+    event["approved_uses"] = ["development"]
+    assert not records(tmp_path, {}, "clinical-development", as_of)
+    row, = records(tmp_path, save(), "clinical-development", as_of)
+    expected = {k: historical[k] for k in ("as_of", "url", "locator")}
+    assert row["historical_option"] == {**expected, "label": "A"}
+    assert "historical_option" not in records(tmp_path, save(), "development", as_of)[0]
+    del historical["comparison"]
+    assert "historical_option" not in records(tmp_path, save(), "clinical-development", as_of)[0]
+    historical["comparison"] = "administrative_full_credit"
+    with pytest.raises(ValueError, match="unknown historical comparison"):
+        records(tmp_path, save(), "queue", as_of)
+    historical["comparison"] = "same_decision_single_option"
+    historical["as_of"] = variant["clinical_update"]["as_of"]
+    with pytest.raises(ValueError, match="strictly earlier"):
+        records(tmp_path, save(), "queue", as_of)
+
+
 @pytest.mark.parametrize(("mode", "split"), [("development", "public_development"), ("evaluation", "heldout_evaluation")])
 def test_clinical_evaluation_uses_current_prompt_and_matching_use(tmp_path, clinical_item, mode, split):
     draft, variant, event, save = clinical_item

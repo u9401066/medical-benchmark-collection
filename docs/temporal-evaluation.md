@@ -49,7 +49,9 @@ python -m medbench.clinical_score --gold data/curated/clinical-dev.jsonl --expec
 
 報告列出每題的結構判定、臨床結果及待審 ID。醫師可依 ID 對照匿名回答與題本的詳解、主張、來源定位和評分準則。每份複核在 `reviews.jsonl` 記下 `id`、報告提供的 `prediction_sha256`、`reviewer`、ISO 日期 `date`、`verdict` 與 `reason`。裁決使用 `pass`、`fail` 或 `undetermined`。加上 `--reviews data/run/reviews.jsonl` 重跑同一指令。若回答、題本內容指紋或轉錄欄位更動，舊裁決的指紋不符，工具會要求重新核對。[臨床判分器](../medbench/clinical_score.py)
 
-機器只核對選項或回覆類型。無有效選項、資料不足的辨識比例分列；在可選題中明確棄答的比例另列，技術失敗保留在分母。開放作答的內容交由醫師裁決。符合結構的答案要再經醫師認定達到臨床答案及詳解要求，才計為 `pass`。若尚有待審項目，`confirmed_clinical_pass_share` 僅顯示全體已確認達標的占比，`clinical_pass_rate` 留空。每題可按家族及語言回溯。沿用舊答案、逐主張證據支持、虛構引用及新舊微調的配對比較仍依下述實驗設計另審。
+機器核對選項或回覆類型。無有效選項、資料不足的辨識比例分列，在可選題中明確棄答的比例另列，技術失敗保留在分母。開放作答的內容交由醫師裁決。符合結構的答案要再經醫師認定達到臨床答案及詳解要求，才計為 `pass`。若尚有待審項目，`confirmed_clinical_pass_share` 僅顯示全體已確認達標的占比，`clinical_pass_rate` 留空。每題可按家族及語言回溯。逐主張證據支持、虛構引用及新舊微調的配對比較仍依下述實驗設計另審。
+
+`obsolete_option_reuse` 只計可定義的歷史單選比較。編者先在 `historical_basis.comparison` 標示 `same_decision_single_option`，確認前後問的是同一族群與決策、選項意義相同，且舊正解有日期、出處和定位。醫師審定後，開發或保留評估題本會附上舊選項。分母為舊選項已完全失效的所有已分派版本，分子為作答時只選該舊選項的版本。另以 `obsolete_case_families` 記錄這些版本來自幾個病例家族。例行篩檢間隔仍然有效的控制題、缺乏歷史紀錄的題，以及舊選項仍是新多選答案一部分的題，均另列。漏答、格式失敗與選了其他錯誤選項仍進入適用分母，因此要併讀技術失敗與臨床達標指標。舊凍結題本缺少可比性標記時依 `undocumented` 列出。給分或撤題等行政決議無法作為此指標的歷史正解。[已標記的公費篩檢對照題](review/tw-fit-controls.md)
 
 `selection_coverage` 的分母是全體指派，含開放題及技術失敗。分子只計 `select` 且所有不同標籤都確實出現在題面的作答。題面沒有選項卻輸出代號、輸出不存在的代號、重複標籤或空集合都計入 `selection_counts.invalid`，該題仍留在主要分母。實際選到題面選項但答案或組合錯誤，計入 `selected_answer_error`。舊題本缺 `offered_option_labels` 時，可核實的標籤僅限原已記錄的有效選項；其餘無法確認的選擇標為 `unverified`，該批的選項覆蓋率與已選答案錯誤率留空。
 

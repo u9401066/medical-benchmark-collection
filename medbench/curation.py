@@ -57,6 +57,18 @@ def distinct_references(values, allowed):
             and len(set(values)) == len(values))
 
 
+def validate_historical_option(reference, offered, assessed):
+    """Validate an explicitly comparable, earlier single answer on the same option set."""
+    if not isinstance(reference, dict) or not all(
+        has_text(reference.get(k)) for k in ("label", "as_of", "url", "locator")
+    ):
+        raise ValueError("A historical option requires a label, date, source URL and locator")
+    url = urlsplit(reference["url"])
+    if (reference["label"] not in offered or date.fromisoformat(reference["as_of"]) >= assessed
+            or url.scheme not in {"http", "https"} or not url.hostname):
+        raise ValueError("The historical option must be sourced, offered and strictly earlier")
+
+
 def rights_status(record, use, as_of):
     """Check the documented permission for this use independently of clinical review."""
     if record is None:
@@ -108,6 +120,11 @@ def clinical_sources(draft, variant):
         if (date.fromisoformat(historical["as_of"]) > assessed
                 or source_url.scheme not in {"http", "https"} or not source_url.hostname):
             raise ValueError(f"{vid}: invalid historical source date or URL")
+        if "comparison" in historical:
+            if historical["comparison"] != "same_decision_single_option":
+                raise ValueError(f"{vid}: unknown historical comparison")
+            validate_historical_option({**historical, "label": variant.get("answer")},
+                                       variant.get("options") or {}, assessed)
     outcome = update.get("outcome")
     labels = update.get("valid_options")
     options = variant.get("options", {})
@@ -289,6 +306,10 @@ def records(folder, events, mode, as_of=None, watch_report=None):
                 row["source_rights"] = draft["source_rights"]
                 row.update(valid_options=update["valid_options"], offered_option_labels=list(variant.get("options") or {}),
                            export_as_of=as_of.isoformat())
+                historical = variant.get("historical_basis") or {}
+                if historical.get("comparison") == "same_decision_single_option" and use in ("development", "evaluation"):
+                    row["historical_option"] = {k: historical[k] for k in ("as_of", "url", "locator")}
+                    row["historical_option"]["label"] = variant["answer"]
                 if "claims" in update:
                     row["claims"] = update["claims"]
             elif update is not None:
