@@ -5,7 +5,7 @@
 #   3. two slots with their own 131k each (--no-kv-unified, -c 262144): one agent, two at once
 #   4. keeping Clef-Flash (and so Sentinel) on the GPU: UD-Q3_K_XL all on the GPU next to it (-ub 64, 128), and its selection latency
 #
-#   cd ~/medqa-bench && env PAUSE_CLEF=1 "TEST_PATTERN=--port 809[14]" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-agent-speed2.sh
+#   cd ~/medical-benchmark-collection && env PAUSE_CLEF=1 "TEST_PATTERN=--port 809[14]" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-agent-speed2.sh
 set -u -o pipefail
 HERE="$(cd "$(dirname "$0")/../.." && pwd)"
 PROD_REPO="${PROD_REPO:-$HOME/llmapi_server}"

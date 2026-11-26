@@ -7,7 +7,7 @@
 #   B. -b 256
 # each: one agent (requests 1-8) and two agents at once (--parallel 2); B also the 2 x 95%-of-a-slot stress test.
 #
-#   cd ~/medqa-bench && env "TEST_PATTERN=--port 8091" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-batch.sh
+#   cd ~/medical-benchmark-collection && env "TEST_PATTERN=--port 8091" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-batch.sh
 set -u -o pipefail
 HERE="$(cd "$(dirname "$0")/../.." && pwd)"
 PROD_REPO="${PROD_REPO:-$HOME/llmapi_server}"

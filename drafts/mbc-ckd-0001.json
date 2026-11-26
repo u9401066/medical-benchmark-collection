@@ -1,0 +1,73 @@
+{
+  "concept_id": "mbc-ckd-0001",
+  "revision": 1,
+  "origin": "original_synthetic_case",
+  "kind": "mcq",
+  "assessed_skill": "Classify chronic kidney disease by GFR and albuminuria category from serial laboratory measurements.",
+  "clinical_scope": {
+    "population": "Clinically stable adult outpatient",
+    "guideline": "International KDIGO 2024 CKD guideline",
+    "applies_to": ["zh-TW", "en-US"]
+  },
+  "split": "public_development",
+  "review": {
+    "status": "pending_clinician_review",
+    "reviewer": null,
+    "reviewed_on": null,
+    "question_for_reviewer": "兩版題目是否都足以判定 G、A 分級？台灣版的「尿白蛋白與肌酸酐比值」是否符合你在病歷或檢驗單上慣用的名稱？"
+  },
+  "variants": [
+    {
+      "id": "mbc-ckd-0001-zh-TW",
+      "lang": "zh-TW",
+      "question": "一位成人在門診追蹤，近四個月病況穩定。四個月前的估算腎絲球過濾率（eGFR）為 54 mL/min/1.73 m²，這次為 52 mL/min/1.73 m²。兩次都採晨起第一次尿液檢驗，尿白蛋白與肌酸酐比值（UACR）分別為 78 與 84 mg/g。依 KDIGO 2024 年慢性腎臟病指引，病歷上應記錄哪一組 G、A 分級？",
+      "options": {
+        "A": "G3a、A1",
+        "B": "G3a、A2",
+        "C": "G3b、A1",
+        "D": "G3b、A2"
+      },
+      "answer": "B",
+      "rationale": "兩次檢查相隔四個月，eGFR 都落在 G3a 的 45–59 mL/min/1.73 m² 範圍。兩次 UACR 都屬中度增加（A2），因此記錄為 G3a、A2。"
+    },
+    {
+      "id": "mbc-ckd-0001-en-US",
+      "lang": "en-US",
+      "question": "An adult seen in clinic has been clinically stable for four months. The estimated glomerular filtration rate (eGFR) was 54 mL/min/1.73 m² four months ago and is 52 mL/min/1.73 m² today. The urine albumin-to-creatinine ratios (UACRs) on first-morning samples at those visits were 78 and 84 mg/g, respectively. Which GFR and albuminuria categories should be documented under the 2024 KDIGO guideline for chronic kidney disease?",
+      "options": {
+        "A": "G3a, A1",
+        "B": "G3a, A2",
+        "C": "G3b, A1",
+        "D": "G3b, A2"
+      },
+      "answer": "B",
+      "rationale": "At visits four months apart, both eGFR values fall in the G3a range of 45–59 mL/min/1.73 m². Both UACRs fall in the moderately increased range (A2), giving a classification of G3a, A2."
+    }
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [
+    {
+      "role": "answer_key",
+      "title": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease",
+      "pmid": "38490803",
+      "doi": "10.1016/j.kint.2023.10.018",
+      "url": "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf",
+      "locator": "Printed page S137. Table 1, minimum duration for CKD. Table 2, G3a row and GFR column (mL/min per 1.73 m²). Table 3, A2 row and ACR column in mg/g.",
+      "anchor_format": "Category and value from each identified row, joined by a vertical bar. Rows are separated by LF. SHA-256 covers the UTF-8 anchor.",
+      "anchor": "G3a|45–59\nA2|30–300",
+      "anchor_sha256": "1900775be670f657b1b3bf21763d6daca5f6b1750018f5a91d5403fcf9d4cffa"
+    },
+    {
+      "role": "clinical_context",
+      "title": "Combining GFR and Albuminuria to Classify CKD Improves Prediction of ESRD",
+      "pmid": "19357254",
+      "doi": "10.1681/ASN.2008070730",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19357254/",
+      "locator": "Abstract, HUNT 2 cohort, sentence reporting the multivariable survival analysis.",
+      "scope": "這項挪威成人世代研究說明，同時記錄 eGFR 與白蛋白尿有助於評估腎衰竭風險。本題的分級界值取自上列 KDIGO 指引。",
+      "anchor_format": "Verbatim substring of abstract. SHA-256 covers the UTF-8 anchor.",
+      "anchor": "estimated GFR (eGFR) and albuminuria were independently and strongly associated with progression to ESRD",
+      "anchor_sha256": "c7f5c4f3ba7c12d9daeb319f0bc02366560ef516c39d67abab196aee73ad5922"
+    }
+  ]
+}

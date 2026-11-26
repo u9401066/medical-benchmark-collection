@@ -1,6 +1,10 @@
-# medqa-bench
+# Medical Benchmark Collection
 
-可重現的醫學問答評測流程，適用於任何 OpenAI 相容（`/v1/chat/completions` 串流）的本地 LLM 伺服器（llama.cpp、Strata、vLLM…）。
+本專案蒐集醫學 AI 評測，記錄每個資料集的來源、版本與可評估的任務。除了既有題庫，也將與臨床醫師共同編寫新題，製作符合臺灣臨床用語的繁體中文版及美式英文版。改編題保留原題對照，並記錄支持答案的證據、適用地區及審查狀態。[評測目錄](datasets/catalog.md) · [編題與臨床審查流程](docs/editorial-workflow.md)
+
+## 現有評測工具
+
+`medbench` 提供可重現的醫學問答評測流程，適用於任何 OpenAI 相容（`/v1/chat/completions` 串流）的本地 LLM 伺服器（llama.cpp、Strata、vLLM…）。安裝後可用 `medbench datasets` 列出目前能執行的題庫。
 
 - **固定資料**：14 個題庫。8 個公開學術題庫（英文、繁體／簡體中文）從 Hugging Face 固定 revision 下載並比對 SHA-256；另有自建的台灣醫事人員國考繁體中文題庫 **twmed**（2024–2026，32,528 題，依職類分 6 組，見 [datasets/twmed](datasets/twmed/README.md)）。題庫組：`@core`（原本 3 個，3,686 題）、`@academic`、`@zh-tw`、`@all`。
 - **同一協定**：零樣本、單一 user 訊息、思考開啟、逐題固定 seed、只評分最終回答（提示詞 v1.1；原 3 個題庫的提示詞與 v1 逐字相同）。
@@ -67,14 +71,14 @@
 | 名稱 | 內容 | 題數 | 來源（固定 revision） | 授權 |
 |---|---|---:|---|---|
 | **@core** | | **3,686** | | |
-| `medqa_usmle` | MedQA 美國醫師執照考試，英文，4 選 1（Step 1：679；Step 2&3：594） | 1,273 | `bigbio/med_qa@484a6c0` `med_qa_en_4options_source/test` | MIT |
-| `medqa_twmle` | MedQA 台灣醫師國考，繁體中文，4 選 1（24 題為「承上題」） | 1,413 | `bigbio/med_qa@484a6c0` `med_qa_tw_source/test` | MIT |
+| `medqa_usmle` | MedQA 美國醫師執照考試，英文，4 選 1（Step 1：679；Step 2&3：594） | 1,273 | `bigbio/med_qa@484a6c0` `med_qa_en_4options_source/test` | MedQA repo 標示 MIT，BigBio 資料卡標示 unknown |
+| `medqa_twmle` | MedQA 台灣醫師國考，繁體中文，4 選 1（24 題為「承上題」） | 1,413 | `bigbio/med_qa@484a6c0` `med_qa_tw_source/test` | MedQA repo 標示 MIT，BigBio 資料卡標示 unknown |
 | `pubmedqa` | PubMedQA-L 專家標註，英文摘要閱讀，yes/no/maybe（552/338/110） | 1,000 | `qiaojin/PubMedQA@9001f28` `pqa_labeled` | MIT |
 | **@academic**（= @core 加上下列） | | **14,834** | | |
 | `medmcqa` | MedMCQA validation，印度 AIIMS／NEET-PG 入學考，英文，4 選 1（另報 single／multi 子集） | 4,183 | `openlifescienceai/medmcqa@91c6572` | Apache-2.0 |
 | `mmlu_med` | MMLU 醫學 6 科 test：解剖、臨床知識、大學生物、大學醫學、醫學遺傳、專業醫學（各科子集） | 1,089 | `cais/mmlu@c30699e`（6 檔） | MIT |
 | `medxpertqa` | MedXpertQA Text test，專家級醫學推理，英文，**10 選 1**（Reasoning／Understanding、診斷／治療／基礎科學子集） | 2,450 | `TsinghuaC3I/MedXpertQA@7e7c465` `Text/test.jsonl` | MIT |
-| `medqa_mcmle` | MedQA 中國大陸醫師資格考，**簡體中文**，4 選 1 | 3,426 | `bigbio/med_qa@484a6c0` `med_qa_zh_4options_source/test` | MIT |
+| `medqa_mcmle` | MedQA 中國大陸醫師資格考，**簡體中文**，4 選 1 | 3,426 | `bigbio/med_qa@484a6c0` `med_qa_zh_4options_source/test` | MedQA repo 標示 MIT，BigBio 資料卡標示 unknown |
 | **@zh-tw**（繁體中文） | | **38,092** | | |
 | `medqa_twmle` | 同上 | 1,413 | | |
 | `tmmlu_med` | TMMLU+ 醫學 8 科 test：基礎醫學、藥理、藥學、臨床心理、牙醫、中醫臨床、驗光、職能治療（各科子集） | 4,151 | `ikala/tmmluplus@639a64d`（8 檔） | MIT |
@@ -85,9 +89,10 @@
 | `twmed_rn` | 自建：護理師、助產師 | 3,072 | 同上 | 同上 |
 | `twmed_allied` | 自建：醫檢、放射、物理／職能／呼吸／語言治療、營養、心理、聽力、驗光、牙體技術、公衛、法醫 | 18,600 | 同上 | 同上 |
 
+- 三個 MedQA 子集下載自同一個 BigBio 版本。題目再散布與翻譯的授權範圍仍待確認。[MedQA 原始儲存庫](https://github.com/jind11/MedQA) · [BigBio 資料卡（固定版本）](https://huggingface.co/datasets/bigbio/med_qa/blob/484a6c066fe8e75c83edea0c88b5169316714fcd/README.md)
 - `@all` 是全部 14 個題庫（51,513 題，`medqa_twmle` 只算一次）。twmed 各組都另報年份與職類子集。
   2026 年的題目在多數模型的訓練截止日之後，可以和 2024 年的題目比較，作為資料汙染的參考。
-- 不收：HEAD-QA（只有自動轉換分支，且含圖片題）、MMLU-Pro health（改編自 MMLU 醫學題，和 `mmlu_med` 重複）。
+- 現行文字評測流程排除了 HEAD-QA（當時僅找到自動轉換分支，且含圖片題）及 MMLU-Pro health（改編自 MMLU 醫學題，和 `mmlu_med` 重複）。
 - twmed 的建置：`medbench twmed-build`（需要 `[build]` extra 的 PyMuPDF，會連考選部，每秒最多 1 個請求）。
   篩選規則、排除統計、法律依據與引用方式見 [datasets/twmed/README.md](datasets/twmed/README.md)。
   題庫檔在 repo 內，所以 `twmed_*` 要在 repo checkout（或 editable 安裝）中使用。
@@ -117,9 +122,12 @@
 ## 安裝與使用
 
 ```bash
-git clone https://github.com/u9401066/medqa-bench && cd medqa-bench
-uv venv && uv pip install -e '.[test,report]'   # 或 python -m venv .venv && pip install -e '.[test,report]'（report = Word 報告用的 python-docx、matplotlib）
-.venv/bin/pytest -q                         # 42 個測試（解析器、題庫正規化、考題解析、統計、假伺服器端到端、中斷續跑、Word 報告）
+git clone https://github.com/u9401066/medical-benchmark-collection
+cd medical-benchmark-collection
+uv venv
+source .venv/bin/activate   # Windows PowerShell 請用 .\.venv\Scripts\Activate.ps1
+uv pip install -e '.[test,report]'   # report 包含產生 Word 報告需要的 python-docx、matplotlib
+pytest -q
 
 medbench datasets                                                   # 列出題庫與題庫組
 medbench prepare                                                    # 下載、驗證、正規化到 data/（預設 @core；--datasets @all 全部）

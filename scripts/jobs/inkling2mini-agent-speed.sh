@@ -2,7 +2,7 @@
 # Inkling 2 Mini UD-IQ4_XS on the recorded xhigh agent run (results/speed/agent/trace-xhigh.jsonl, scripts/agent_replay.py):
 # which engine settings make agent turns faster. Run inside scripts/gpu_window.sh with the decision model paused too:
 #
-#   cd ~/medqa-bench && env PAUSE_CLEF=1 "TEST_PATTERN=--port 809[14]" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-agent-speed.sh
+#   cd ~/medical-benchmark-collection && env PAUSE_CLEF=1 "TEST_PATTERN=--port 809[14]" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-agent-speed.sh
 #
 # Production (b12631, experts of layers 21/20/22 in RAM next to Clef-Flash, -ub 64) is the recorded trace itself.
 #   1. screening, replay of requests 1-8 (17k-53k-token prompts, two full re-processings) at reasoning effort max:

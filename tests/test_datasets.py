@@ -14,6 +14,15 @@ def test_suites_expand_and_multi_file_sources_hash_all_files():
     assert len(mmlu.files) == 6 and mmlu.sha256 not in {h for _, h in mmlu.files}
 
 
+def test_twmed_browse_url_points_to_collection():
+    assert SOURCES["twmed_md"].browse_url == "https://github.com/u9401066/medical-benchmark-collection/tree/main/datasets/twmed"
+
+
+def test_medqa_license_reports_both_sources():
+    for name in ("medqa_usmle", "medqa_twmle", "medqa_mcmle"):
+        assert SOURCES[name].license == "MedQA repository: MIT. BigBio dataset card: unknown."
+
+
 def test_new_normalisers():
     src = SOURCES["medxpertqa"]
     it = _medxpertqa([{"id": "Text-0", "question": "Which?\nAnswer Choices: (A) x (B) y", "options": {"A": "x", "B": "y"},

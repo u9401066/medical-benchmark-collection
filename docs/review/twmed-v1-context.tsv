@@ -1,0 +1,39 @@
+current_id	previous_id	group	previous_exclusion_reasons	source_url
+113020-302-11-003	113020-302-11-002	twmed_md	table or formula	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113020&c=302&s=11&q=1
+113020-304-44-073	113020-304-44-072	twmed_dent	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113020&c=304&s=44&q=1
+113020-304-44-075	113020-304-44-074	twmed_dent	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113020&c=304&s=44&q=1
+113020-305-33-064	113020-305-33-063	twmed_rx	image	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113020&c=305&s=33&q=1
+113020-308-33-061	113020-308-33-060	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113020&c=308&s=33&q=1
+113020-311-11-048	113020-311-11-047	twmed_allied	image	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113020&c=311&s=11&q=1
+113020-311-55-066	113020-311-55-065	twmed_allied	image	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113020&c=311&s=55&q=1
+113070-302-22-040	113070-302-22-039	twmed_md	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113070&c=302&s=22&q=1
+113070-302-33-049	113070-302-33-048	twmed_md	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113070&c=302&s=33&q=1
+113090-308-33-039	113090-308-33-038	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113090&c=308&s=33&q=1
+113090-313-44-052	113090-313-44-051	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113090&c=313&s=44&q=1
+113090-313-66-024	113090-313-66-023	twmed_allied	table or formula	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113090&c=313&s=66&q=1
+113100-104-0401-045	113100-104-0401-044	twmed_allied	table or formula	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113100&c=104&s=0401&q=1
+113100-106-0602-050	113100-106-0602-049	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113100&c=106&s=0602&q=1
+113100-106-0604-016	113100-106-0604-015	twmed_allied	table or formula	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113100&c=106&s=0604&q=1
+113100-109-0904-036	113100-109-0904-035	twmed_allied	table or formula	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=113100&c=109&s=0904&q=1
+114020-302-0105-045	114020-302-0105-044	twmed_md	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114020&c=302&s=0105&q=1
+114020-311-0701-034	114020-311-0701-033	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114020&c=311&s=0701&q=1
+114020-311-0704-059	114020-311-0704-058	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114020&c=311&s=0704&q=1
+114090-304-0304-074	114090-304-0304-073	twmed_dent	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114090&c=304&s=0304&q=1
+114090-305-0403-049	114090-305-0403-048	twmed_rx	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114090&c=305&s=0403&q=1
+114090-305-0403-066	114090-305-0403-065	twmed_rx	image	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114090&c=305&s=0403&q=1
+114090-308-0502-011	114090-308-0502-010	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114090&c=308&s=0502&q=1
+114090-309-0602-077	114090-309-0602-076	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114090&c=309&s=0602&q=1
+114090-313-0904-051	114090-313-0904-050	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114090&c=313&s=0904&q=1
+114090-313-0904-059	114090-313-0904-058	twmed_allied	image	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114090&c=313&s=0904&q=1
+114100-106-0602-050	114100-106-0602-049	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114100&c=106&s=0602&q=1
+114100-107-0702-002	114100-107-0702-001	twmed_allied	empty option | image	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114100&c=107&s=0702&q=1
+114170-101-0202-012	114170-101-0202-011	twmed_rn	table or formula	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=114170&c=101&s=0202&q=1
+115020-309-0603-046	115020-309-0603-045	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115020&c=309&s=0603&q=1
+115020-311-0704-075	115020-311-0704-074	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115020&c=311&s=0704&q=1
+115090-304-0305-075	115090-304-0305-074	twmed_dent	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115090&c=304&s=0305&q=1
+115090-305-0403-050	115090-305-0403-049	twmed_rx	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115090&c=305&s=0403&q=1
+115090-309-0603-026	115090-309-0603-025	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115090&c=309&s=0603&q=1
+115090-311-0701-047	115090-311-0701-046	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115090&c=311&s=0701&q=1
+115090-313-0904-066	115090-313-0904-065	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115090&c=313&s=0904&q=1
+115100-105-0502-032	115100-105-0502-031	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115100&c=105&s=0502&q=1
+115100-106-0602-045	115100-106-0602-044	twmed_allied	image | refers to a figure	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=115100&c=106&s=0602&q=1

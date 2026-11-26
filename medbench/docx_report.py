@@ -10,7 +10,7 @@ import subprocess
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from . import __version__
+from . import REPO_URL, __version__
 from . import docx_figures as figs
 from .datasets import SOURCES, TWMED_TITLES, load
 from .docx_base import DocBuilder
@@ -18,7 +18,6 @@ from .prompts import PROMPT_VERSION, TEMPLATES
 from .report import _ci, _f, _p, _pv, _same_setup, option_keys, run_commands, run_versions
 from .score import common_items, compare, load_predictions, score_run
 
-REPO_URL = "https://github.com/u9401066/medqa-bench"
 ROOT = Path(__file__).resolve().parents[1]
 
 REFS = {
@@ -138,7 +137,7 @@ def write_docx(runs: List[Path], data_dir: Path, out: Path, title: str, notes: O
     _reproduce(b, ctx)
     _appendices(b, ctx)
     props = b.d.core_properties
-    props.title, props.subject, props.author = title, " vs ".join(ctx["labels"]), "medqa-bench"
+    props.title, props.subject, props.author = title, " vs ".join(ctx["labels"]), "Medical Benchmark Collection"
     props.keywords = "MedQA, PubMedQA, LLM benchmark, llama.cpp, Strata"
     props.comments = repo_url
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -254,7 +253,7 @@ def _methods(b: DocBuilder, c: Dict[str, Any]) -> None:
     rows = []
     for n in names:
         src = SOURCES[n]
-        where = "medqa-bench repo" if src.repo == "local" else "%s@%s" % (src.repo, src.revision[:10])
+        where = "Medical Benchmark Collection" if src.repo == "local" else "%s@%s" % (src.repo, src.revision[:10])
         rows.append([DS_INFO.get(n, (n,))[0], "[%s](%s)\n`%s`" % (where, src.browse_url, src.path), "`%s`" % src.sha256])
     b.table(["題庫", "來源（repo@revision、檔案）", "原始檔的 SHA-256（多檔為各檔雜湊串接後的 SHA-256）"], rows, align="lll",
             widths=[2.6, 7.4, 7.0], size=7.5, caption="資料來源與雜湊（下載時驗證）")
@@ -490,7 +489,7 @@ def _reproduce(b: DocBuilder, c: Dict[str, Any]) -> None:
     b.para("全部程式、設定、逐題結果與資源紀錄都在 [%s](%s)（公開）。需要 Python ≥ 3.10、能連 Hugging Face，以及一個 OpenAI 相容的"
            "串流 API 伺服器（llama.cpp、Strata、vLLM 等）；要重跑本報告的系統，需要 24 GB VRAM 的 NVIDIA GPU%s。"
            % (repo, repo, "，Strata 另需約 55 GB RAM" if any("Strata" in lab for lab in c["labels"]) else ""))
-    cmds = ["git clone %s && cd medqa-bench" % repo,
+    cmds = ["git clone %s medical-benchmark-collection && cd medical-benchmark-collection" % repo,
             "uv venv && uv pip install -e '.[test,report]'   # 或 python -m venv .venv && pip install -e '.[test,report]'",
             "medbench prepare            # 下載、驗證 SHA-256、正規化成 data/*.jsonl"]
     cmds += run_commands(S)

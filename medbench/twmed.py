@@ -33,10 +33,12 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
+from . import REPO_URL
+
 MOEX = "https://wwwq.moex.gov.tw/exam/"
 SEARCH = MOEX + "wFrmExamQandASearch.aspx"
 FILE = MOEX + "wHandExamQandA_File.ashx?t={t}&code={code}&c={c}&s={s}&q=1"
-UA = "Mozilla/5.0 (medqa-bench twmed builder; +https://github.com/u9401066/medqa-bench)"
+UA = "Mozilla/5.0 (medqa-bench twmed builder; +%s)" % REPO_URL
 MEDICAL_EXAM = re.compile(r"醫師|藥師|護理師|醫事|營養師|心理師|治療師|助產|驗光|聽力師|牙|公共衛生師")
 EXCLUDED_CATEGORY = re.compile(r"社會工作師|獸醫師")
 # dataset name -> profession prefixes (the category name without its exam-level prefix, e.g. 高等考試_醫師(一) -> 醫師(一))

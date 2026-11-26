@@ -22,6 +22,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Tuple
 
+from . import REPO_URL
+
 ROOT = Path(__file__).resolve().parents[1]
 HF = "https://huggingface.co/datasets"
 
@@ -62,7 +64,7 @@ class Source:
     @property
     def browse_url(self) -> str:
         if self.repo == "local":
-            return "https://github.com/u9401066/medqa-bench/tree/main/%s" % self.files[0][0].rsplit("/", 1)[0]
+            return "%s/tree/main/%s" % (REPO_URL, self.files[0][0].rsplit("/", 1)[0])
         return "https://huggingface.co/datasets/%s/tree/%s" % (self.repo, self.revision)
 
 
@@ -161,14 +163,15 @@ TWMED_CITATION = "考選部 考畢試題查詢平臺 https://wwwq.moex.gov.tw/ex
 
 _BIGBIO = "484a6c066fe8e75c83edea0c88b5169316714fcd"
 _MEDQA_CITE = "Jin et al., What Disease does this Patient Have? (MedQA), Applied Sciences 2021"
+_MEDQA_LICENSE = "MedQA repository: MIT. BigBio dataset card: unknown."
 
 SOURCES: Dict[str, Source] = {s.name: s for s in [
     Source("medqa_usmle", "MedQA-USMLE (4 options), test", "bigbio/med_qa", _BIGBIO,
            (("med_qa_en_4options_source/test-00000-of-00001.parquet", "b50b49fad2642c10ed343c6174d5ab0cb8efad434e7b66465ac471094eb57deb"),),
-           1273, "en", "mcq", "MIT (MedQA)", _MEDQA_CITE, _mcq),
+           1273, "en", "mcq", _MEDQA_LICENSE, _MEDQA_CITE, _mcq),
     Source("medqa_twmle", "MedQA-TWMLE (Taiwan medical licensing exam, Traditional Chinese), test", "bigbio/med_qa", _BIGBIO,
            (("med_qa_tw_source/test-00000-of-00001.parquet", "9756921fcff39ee482d8e06488b4ff32c26c9b966ac4c67c07f854da583f34b0"),),
-           1413, "zh-TW", "mcq", "MIT (MedQA)", _MEDQA_CITE, _mcq),
+           1413, "zh-TW", "mcq", _MEDQA_LICENSE, _MEDQA_CITE, _mcq),
     Source("pubmedqa", "PubMedQA (expert-labeled, reasoning-required)", "qiaojin/PubMedQA", "9001f2853fb87cab8d220904e0de81ac6973b318",
            (("pqa_labeled/train-00000-of-00001.parquet", "3d56bd1abc11884579ecc3aab9dd3cdfce8b7cf54715daeca93b8022b7be231c"),),
            1000, "en", "yesno", "MIT", "Jin et al., PubMedQA: A Dataset for Biomedical Research Question Answering, EMNLP 2019", _pubmedqa),
@@ -186,7 +189,7 @@ SOURCES: Dict[str, Source] = {s.name: s for s in [
            2450, "en", "mcq", "MIT", "Zuo et al., MedXpertQA: Benchmarking Expert-Level Medical Reasoning, ICML 2025", _medxpertqa, "jsonl"),
     Source("medqa_mcmle", "MedQA-MCMLE (mainland China medical licensing exam, Simplified Chinese, 4 options), test", "bigbio/med_qa",
            _BIGBIO, (("med_qa_zh_4options_source/test-00000-of-00001.parquet", "ac9ddd6cf0e45f4ab224f4b1014c5945fbdb1ca67ad6a057ce5b0e4929c7a55c"),),
-           3426, "zh-CN", "mcq", "MIT (MedQA)", _MEDQA_CITE, _mcq),
+           3426, "zh-CN", "mcq", _MEDQA_LICENSE, _MEDQA_CITE, _mcq),
     # Traditional Chinese
     Source("tmmlu_med", "TMMLU+ medical subjects (Taiwan exams: basic medical science, pharmacology, pharmacy, clinical psychology, "
            "dentistry, TCM clinical medicine, optometry, occupational therapy), test", "ikala/tmmluplus",

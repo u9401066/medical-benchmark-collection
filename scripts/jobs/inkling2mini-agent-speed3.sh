@@ -6,7 +6,7 @@
 #   B. if it is at least 5% faster: the drafter on window 2's fastest setting, 2 slots with their own 131k (-ub 256)
 #   C. 3 slots with their own 131k (-ub 128): how many agents fit without slowing each other
 #
-#   cd ~/medqa-bench && env PAUSE_CLEF=1 "TEST_PATTERN=--port 809[14]" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-agent-speed3.sh
+#   cd ~/medical-benchmark-collection && env PAUSE_CLEF=1 "TEST_PATTERN=--port 809[14]" bash scripts/gpu_window.sh scripts/jobs/inkling2mini-agent-speed3.sh
 set -u -o pipefail
 HERE="$(cd "$(dirname "$0")/../.." && pwd)"
 PROD_REPO="${PROD_REPO:-$HOME/llmapi_server}"

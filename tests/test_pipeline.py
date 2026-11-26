@@ -129,6 +129,7 @@ def test_end_to_end_run_score_report(tmp_path, fake_server):
     assert main(["--data", str(data), "report", str(runs[0]), str(runs[1]), "--out", str(rep), "--notes", str(notes)]) == 0
     text = rep.read_text()
     assert "## 2. 正確率" in text and "M1" in text and "## 6. 討論" in text and "McNemar" in text
+    assert "git clone https://github.com/u9401066/medical-benchmark-collection && cd medical-benchmark-collection" in text
     assert (tmp_path / "reports" / "REPORT.json").exists()
 
 
@@ -240,6 +241,6 @@ def test_docx_report(tmp_path, fake_server):
         assert h in heads, h
     assert len(d.tables) >= 15 and len(d.inline_shapes) == 3
     links = [r.target_ref for r in d.part.rels.values() if r.reltype.endswith("/hyperlink")]
-    assert "https://github.com/u9401066/medqa-bench" in links and any("arxiv.org" in u for u in links)
+    assert "https://github.com/u9401066/medical-benchmark-collection" in links and any("arxiv.org" in u for u in links)
     toc = [p.text for p in d.paragraphs if p.text in ("2. 正確率", "6.4 結論")]
     assert toc.count("2. 正確率") == 2  # once in the table of contents, once as the heading

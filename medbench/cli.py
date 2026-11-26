@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from typing import List, Optional
 
+from . import REPO_URL
 from .datasets import DEFAULT_SUITE, SOURCES, SUITES, expand, prepare
 
 
@@ -42,7 +43,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--title", default="醫學問答評測報告")
     p.add_argument("--notes", help="Markdown file with the discussion/limitations sections")
     p.add_argument("--env", default="reports/environment.json", help="test environment record (medbench env)")
-    p.add_argument("--repo-url", default="https://github.com/u9401066/medqa-bench")
+    p.add_argument("--repo-url", default=REPO_URL)
 
     p = sub.add_parser("datasets", help="list the datasets and suites")
 

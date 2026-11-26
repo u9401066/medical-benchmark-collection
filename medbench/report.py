@@ -7,7 +7,7 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from . import __version__
+from . import REPO_URL, __version__
 from .datasets import SOURCES, TWMED_TITLES, load
 from .prompts import PROMPT_VERSION, TEMPLATES
 from .score import common_items, compare, score_run
@@ -337,7 +337,7 @@ def write_report(runs: List[Path], data_dir: Path, out: Path, title: str, notes:
     w("## 重現步驟")
     w("")
     w("```bash")
-    w("git clone https://github.com/u9401066/medqa-bench && cd medqa-bench")
+    w("git clone %s && cd medical-benchmark-collection" % REPO_URL)
     w("uv venv && uv pip install -e '.[test]'")
     w("medbench prepare                       # 下載、驗證 SHA-256、正規化成 data/*.jsonl")
     for cmd in run_commands(S):
