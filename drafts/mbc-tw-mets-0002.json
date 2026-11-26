@@ -1,0 +1,141 @@
+{
+  "concept_id": "mbc-tw-mets-0002",
+  "family_id": "mbc-tw-mets-0001",
+  "revision": 1,
+  "origin": "original_synthetic_case",
+  "kind": "open",
+  "assessed_skill": "Count the qualifying published indicators when the previously missing laboratory result is provided at the inclusive cutoff.",
+  "clinical_scope": {
+    "jurisdiction": "TW",
+    "population": "Synthetic adult health-check record. Count the five published HPA indicators using the supplied measurements."
+  },
+  "split": "public_development",
+  "permitted_uses": [
+    "development"
+  ],
+  "source_rights": {
+    "origin": "project_original",
+    "status": "cleared",
+    "allowed_uses": [
+      "development"
+    ],
+    "attribution": "病例、題目與詳解由 Medical Benchmark Collection 自編。判定標準出自衛生福利部國民健康署慢性疾病防治組。",
+    "license": "國健署公開衛教網頁資料採政府資料開放授權條款－第1版。",
+    "terms_url": "https://www.hpa.gov.tw/Pages/Detail.aspx?nodeid=92&pid=5141&sid=5140",
+    "scope": "兩個語言版本的原創病例用於公開開發。依具名網頁整理數值與判定規則，全案數值為虛構。",
+    "checked_on": "2026-11-26"
+  },
+  "review": {
+    "status": "pending_clinician_review",
+    "reviewer": null,
+    "reviewed_on": null,
+    "question_for_reviewer": "請核對三項的計數、150 mg/dL 界值的等號，以及雙語題幹是否清楚限定在本份健檢紀錄。"
+  },
+  "variants": [
+    {
+      "id": "mbc-tw-mets-0002-zh-TW",
+      "lang": "zh-TW",
+      "question": "一名 48 歲女性來做健康檢查，目前未使用任何藥物。腰圍 84 公分，血壓 134/80 mmHg，空腹血糖 94 mg/dL，高密度脂蛋白膽固醇（HDL-C）55 mg/dL。空腹三酸甘油脂為 150 mg/dL。請依臺灣衛生福利部國民健康署的代謝症候群五項判定標準（查核日為 2026 年 11 月 26 日），判斷這份紀錄是否達到門檻。請列出符合的項目並說明判斷依據。如果資料不足，請指出缺少哪一項，以及該結果如何影響判定。",
+      "answer": "達到門檻。腰圍、血壓及空腹三酸甘油脂三項符合。",
+      "rationale": "女性腰圍 84 公分超過 80 公分，收縮壓 134 mmHg 已達 130 mmHg。空腹三酸甘油脂 150 mg/dL 恰為包含等號的界值，計入第三項。空腹血糖 94 mg/dL 和 HDL-C 55 mg/dL 都未達各自的異常標準。",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "TW",
+        "question": "一名 48 歲女性來做健康檢查，目前未使用任何藥物。腰圍 84 公分，血壓 134/80 mmHg，空腹血糖 94 mg/dL，高密度脂蛋白膽固醇（HDL-C）55 mg/dL。空腹三酸甘油脂為 150 mg/dL。請依臺灣衛生福利部國民健康署的代謝症候群五項判定標準（查核日為 2026 年 11 月 26 日），判斷這份紀錄是否達到門檻。請列出符合的項目並說明判斷依據。如果資料不足，請指出缺少哪一項，以及該結果如何影響判定。",
+        "outcome": "free_text",
+        "valid_options": [],
+        "answer": "達到門檻。腰圍、血壓及空腹三酸甘油脂三項符合。",
+        "rationale": "女性腰圍 84 公分超過 80 公分，收縮壓 134 mmHg 已達 130 mmHg。空腹三酸甘油脂 150 mg/dL 恰為包含等號的界值，計入第三項。空腹血糖 94 mg/dL 和 HDL-C 55 mg/dL 都未達各自的異常標準。",
+        "rubric": [
+          "列出腰圍、血壓、空腹三酸甘油脂三項。",
+          "指出 150 mg/dL 已符合空腹三酸甘油脂界值。",
+          "結論為符合三項，且正確排除血糖及 HDL-C。"
+        ],
+        "claims": [
+          {
+            "text": "腰圍 84 公分達到女性 80 公分的門檻。收縮壓 134 mmHg 達到 130 mmHg，足以符合血壓這一項。",
+            "evidence_ids": [
+              "hpa-tw-metabolic-criteria"
+            ]
+          },
+          {
+            "text": "空腹血糖 94 mg/dL 低於 100 mg/dL。HDL-C 55 mg/dL 高於女性低 HDL-C 的界值（<50 mg/dL）。這兩項均未符合異常標準。",
+            "evidence_ids": [
+              "hpa-tw-metabolic-criteria"
+            ]
+          },
+          {
+            "text": "空腹三酸甘油脂 ≥150 mg/dL 符合該項。五項中至少三項符合才達判定門檻。",
+            "evidence_ids": [
+              "hpa-tw-metabolic-criteria"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "hpa-tw-metabolic-criteria"
+        ]
+      }
+    },
+    {
+      "id": "mbc-tw-mets-0002-en-US",
+      "lang": "en-US",
+      "question": "A 48-year-old woman taking no medications has a waist circumference of 84 cm, blood pressure of 134/80 mm Hg, fasting glucose of 94 mg/dL, and HDL cholesterol of 55 mg/dL at a health checkup. Her fasting triglyceride level is 150 mg/dL. Using the five metabolic syndrome criteria published by Taiwan’s Health Promotion Administration as of November 26, 2026, does this record meet the threshold? Identify the criteria met and explain your reasoning. If you need more information, specify what is missing and how it would affect the result.",
+      "answer": "Yes. Waist circumference, blood pressure, and fasting triglycerides meet three of the five criteria.",
+      "rationale": "Her waist circumference exceeds the 80 cm cutoff for women and her systolic pressure reaches the 130 mm Hg cutoff. The triglyceride criterion includes 150 mg/dL, so her result counts as the third criterion. Her fasting glucose and HDL cholesterol do not meet their respective abnormal thresholds.",
+      "clinical_update": {
+        "as_of": "2026-11-26",
+        "review_due": "2027-02-26",
+        "jurisdiction": "TW",
+        "question": "A 48-year-old woman taking no medications has a waist circumference of 84 cm, blood pressure of 134/80 mm Hg, fasting glucose of 94 mg/dL, and HDL cholesterol of 55 mg/dL at a health checkup. Her fasting triglyceride level is 150 mg/dL. Using the five metabolic syndrome criteria published by Taiwan’s Health Promotion Administration as of November 26, 2026, does this record meet the threshold? Identify the criteria met and explain your reasoning. If you need more information, specify what is missing and how it would affect the result.",
+        "outcome": "free_text",
+        "valid_options": [],
+        "answer": "Yes. Waist circumference, blood pressure, and fasting triglycerides meet three of the five criteria.",
+        "rationale": "Her waist circumference exceeds the 80 cm cutoff for women and her systolic pressure reaches the 130 mm Hg cutoff. The triglyceride criterion includes 150 mg/dL, so her result counts as the third criterion. Her fasting glucose and HDL cholesterol do not meet their respective abnormal thresholds.",
+        "rubric": [
+          "Identify waist circumference, blood pressure, and fasting triglycerides.",
+          "Include an exact triglyceride result of 150 mg/dL at the cutoff.",
+          "Conclude that three criteria are present and correctly exclude glucose and HDL cholesterol."
+        ],
+        "claims": [
+          {
+            "text": "At 84 cm, waist circumference meets the 80 cm cutoff for women. Systolic blood pressure of 134 mm Hg meets the 130 mm Hg cutoff and counts as one blood pressure criterion.",
+            "evidence_ids": [
+              "hpa-tw-metabolic-criteria"
+            ]
+          },
+          {
+            "text": "Fasting glucose of 94 mg/dL is below 100 mg/dL, and HDL cholesterol of 55 mg/dL is above the low-HDL cutoff for women (<50 mg/dL). Neither counts toward the total.",
+            "evidence_ids": [
+              "hpa-tw-metabolic-criteria"
+            ]
+          },
+          {
+            "text": "Fasting triglycerides of 150 mg/dL or higher meet that criterion. At least three of the five criteria must be present.",
+            "evidence_ids": [
+              "hpa-tw-metabolic-criteria"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "hpa-tw-metabolic-criteria"
+        ]
+      }
+    }
+  ],
+  "evidence_checked_on": "2026-11-26",
+  "evidence": [
+    {
+      "id": "hpa-tw-metabolic-criteria",
+      "role": "public_health_criteria",
+      "title": "代謝症候群",
+      "version": "國民健康署慢性疾病防治組網頁，2026-11-26 查核。正文註記依據《代謝症候群學習手冊》105 年版。",
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=221",
+      "locator": "「一、誰是代謝症候群病人」標題下第一段。依序列出女性腰圍、收縮壓或舒張壓、空腹血糖、空腹三酸甘油酯、女性 HDL-C 的界值，段末說明五項中需符合三項以上。",
+      "retrieved_on": "2026-11-26",
+      "source_sha256": "3d6a68654f69182a3e3f3e8168ad5d2085033934ba054e221062e83bcabc6e85",
+      "watch_xpath": "//p[contains(.,'代謝症候群判定標準為')]",
+      "passage_sha256": "af8b6e35c7cd9b8637fa8f149dafb176b4e7569f7b26757b696e7eff1e9e0c63"
+    }
+  ]
+}

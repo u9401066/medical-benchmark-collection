@@ -1,0 +1,1074 @@
+{
+  "prompt_version": "batch-mcq-v1",
+  "started_utc": "2026-11-26T13:15:32.456088+00:00",
+  "model": "qwen2.5-1.5b-local",
+  "items_sha256": "32bc592e08dc3b6670ae6084eae4ccc8fab1fbc2dd830bd3af0c5d0700f4b817",
+  "eligible": 14,
+  "subject": "anatomy",
+  "seed": 20261126,
+  "temperature": 0,
+  "tokens_per_item": 64,
+  "response_format": "json_object",
+  "gold": {
+    "anatomy-val-008": "D",
+    "anatomy-val-014": "D",
+    "anatomy-val-001": "D",
+    "anatomy-val-010": "B",
+    "anatomy-val-002": "B",
+    "anatomy-val-005": "B",
+    "anatomy-val-006": "C",
+    "anatomy-val-013": "C",
+    "anatomy-val-011": "B",
+    "anatomy-val-003": "C",
+    "anatomy-val-012": "B",
+    "anatomy-val-007": "A"
+  },
+  "conditions": {
+    "shared": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 6,
+        "parsed": 10,
+        "correct_source_key": 6,
+        "wall_s": 28.486567499989178,
+        "parsed_per_hour": 1263.7535217261145,
+        "correct_per_hour": 758.2521130356687,
+        "p95_request_s": 5.003777600009926,
+        "protocol_events": {
+          "invalid_label": 2
+        },
+        "prompt_tokens": 1459,
+        "completion_tokens": 381
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-val-008",
+            "anatomy-val-014"
+          ],
+          "prompt_sha256": "bf9265f8737e4387caf83fdadc546eab1e8e8d3b2b0cb624036ba83b86809e94",
+          "max_tokens": 128,
+          "latency_s": 4.947073400020599,
+          "response_sha256": "a3e06719fc263234b7ad0155b936da27ae759d4fc294d09c4595d732024f282e",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-008": "D",
+            "anatomy-val-014": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 231,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-001",
+            "anatomy-val-010"
+          ],
+          "prompt_sha256": "136d3d5081eeea069c534826ade46b3b47844d5cce060c44188bcd8399a363df",
+          "max_tokens": 128,
+          "latency_s": 4.995692799973767,
+          "response_sha256": "89cb3640decaa5d72ae70fc2aef33ed8281a7338ce0814e3d1d5977941c1e14c",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-001": null,
+            "anatomy-val-010": null
+          },
+          "errors": [
+            "invalid_label",
+            "invalid_label"
+          ],
+          "usage": {
+            "prompt_tokens": 209,
+            "completion_tokens": 71
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-002",
+            "anatomy-val-005"
+          ],
+          "prompt_sha256": "3cdfb88f740f51e7e8b705afa12a7029587cbc7e165a4acc7a78a18c3bdc5416",
+          "max_tokens": 128,
+          "latency_s": 4.953873999998905,
+          "response_sha256": "44a7bf538ef9f0bd00a88741eced9bc617963330b2281e10dc908869680ce89f",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-002": "C",
+            "anatomy-val-005": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 252,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-006",
+            "anatomy-val-013"
+          ],
+          "prompt_sha256": "12a212f42ce7f6b07a15693e321e947b22eb67a8725aace6ae0ce028cc9bcf86",
+          "max_tokens": 128,
+          "latency_s": 5.003777600009926,
+          "response_sha256": "2c9e919e9f7af84e29fef4b61bcc17db600bdbc42325d1b70849b6f8c3d13fd3",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-006": "D",
+            "anatomy-val-013": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 254,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-011",
+            "anatomy-val-003"
+          ],
+          "prompt_sha256": "74bc6f45c40ce6b8d0563353806579abf3d00250b4b5519e5c9969bc3a210cab",
+          "max_tokens": 128,
+          "latency_s": 4.275131899979897,
+          "response_sha256": "9d8b295e41258f11e0b2ddc06cfa64b7a18651641e68baf93da72da72c0a2c0f",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-011": "B",
+            "anatomy-val-003": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 252,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-012",
+            "anatomy-val-007"
+          ],
+          "prompt_sha256": "54516db3ed4a3d7eb1aacc33692391a5ab134a6804cd890bfdb72f1eb411de10",
+          "max_tokens": 128,
+          "latency_s": 4.30995119997533,
+          "response_sha256": "f74dde2dd0571659ef7bb5eb42a54ca611512833f9439e90649b927309b7c56f",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-012": "C",
+            "anatomy-val-007": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 261,
+            "completion_tokens": 62
+          }
+        }
+      ]
+    },
+    "single": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 12,
+        "parsed": 12,
+        "correct_source_key": 8,
+        "wall_s": 25.584146999986842,
+        "parsed_per_hour": 1688.5456450833485,
+        "correct_per_hour": 1125.6970967222323,
+        "p95_request_s": 2.638843299995642,
+        "protocol_events": {},
+        "prompt_tokens": 1906,
+        "completion_tokens": 456
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-val-008"
+          ],
+          "prompt_sha256": "bdf3c1f4036c926062d3e8a69d215c6192b9cd9dd4d25fe91755aba59a8ae8d2",
+          "max_tokens": 64,
+          "latency_s": 1.6972520999843255,
+          "response_sha256": "fe3ad020e2108e402a36ecc6923639e9a00bd9fe70810137a25d334b1b5c1314",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-008": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 156,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-014"
+          ],
+          "prompt_sha256": "b04d0d63b9d05b5d25fceade47315cfdd034901cfcda4678b8b0fd564286ee2d",
+          "max_tokens": 64,
+          "latency_s": 2.4500512999948114,
+          "response_sha256": "aa68b58033b4d1ba3734c4f2e37beb14b23be52c5c6370d8b8ed6c6a3f493541",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-014": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 150,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-001"
+          ],
+          "prompt_sha256": "e7657cc152d321bc636309253fa7b859083159c2ca83f921332b579e73727ebb",
+          "max_tokens": 64,
+          "latency_s": 2.042030500015244,
+          "response_sha256": "8d67bf715830ff2da93afa6618e62a5767176472fb6a7c02f17e9b4ab1a978d7",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-001": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 142,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-010"
+          ],
+          "prompt_sha256": "2a8824fb2019e7544dd50bc7e4a8e2096ce8855ae23f6cd18498bf7f11d26dbb",
+          "max_tokens": 64,
+          "latency_s": 2.140476399974432,
+          "response_sha256": "8f0a17a00ae1f71423358f3fe2db226671f8a73c5699726ed74dcbc60aa681fc",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-010": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 141,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-002"
+          ],
+          "prompt_sha256": "f184f6fb465854eead06d385d2e1a4c17dd6b859af1c7b4686843e948835d3e1",
+          "max_tokens": 64,
+          "latency_s": 1.7907788999727927,
+          "response_sha256": "42a3bef31fe1753a6866339ec6e016850ed67f15c6bc8dd275f8e78eec1a77b6",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-002": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 184,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-005"
+          ],
+          "prompt_sha256": "6ad308033bd13b9f4822dfa2cf5050d2a1269124ee63eade7c39d2704fc02df3",
+          "max_tokens": 64,
+          "latency_s": 2.638843299995642,
+          "response_sha256": "8dbd0e45a885d489f6e1df42157877ea8375dabf06946645d431dad8471d51c2",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-005": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 142,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-006"
+          ],
+          "prompt_sha256": "df8dbb55d55f74c388c6c3b5c53354467097f9650e78b6bc9854b4106ba0d229",
+          "max_tokens": 64,
+          "latency_s": 1.7384081999771297,
+          "response_sha256": "57886c38be4f513ae20e0ccfc132317b6f5d1bcbcdeda9a771f33f59acd57a62",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-006": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 165,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-013"
+          ],
+          "prompt_sha256": "3102ac20ba348edd25d6b4c89cfdc4fe9ec92ae0034b6e51d5b5a8c012770f5e",
+          "max_tokens": 64,
+          "latency_s": 2.3203609999618493,
+          "response_sha256": "f4a7276167e2a6e104d045a945bcdacf49d640b70406fc72ff8487c12311007b",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-013": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 164,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-011"
+          ],
+          "prompt_sha256": "034bd4ccb0424f427526f3472f634b1fdc23f2cf4fc81988b03939d52c6bcc60",
+          "max_tokens": 64,
+          "latency_s": 1.938151000009384,
+          "response_sha256": "460ba2d8db27f109b718903fd3f28318d2c5d8fdc85b01c49746a5d9ff9ffc73",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-011": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 153,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-003"
+          ],
+          "prompt_sha256": "af918fea3131533d73957a1410044e77bcbffeb097caec5697eab5f0ed8b61e1",
+          "max_tokens": 64,
+          "latency_s": 2.5004378000157885,
+          "response_sha256": "5f24ddd168c37740d23077141f0884e25f8f9244ce95c8cce23ce8ac0fd1e3c8",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-003": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 173,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-012"
+          ],
+          "prompt_sha256": "a903f0a7c539f8e6e980620bd86ae6260db23ee2f6ee736d3af3c5f43ae7ec61",
+          "max_tokens": 64,
+          "latency_s": 1.7259862999781035,
+          "response_sha256": "7da118c9496aeaca3035d0ec8bc796c1a7a131333f224966493ef0b83a0e7f29",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-012": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 152,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-007"
+          ],
+          "prompt_sha256": "7024aa0f6a51df87a8d5b33efa11cb1e52d0e699a40ca05480793b5b4b2a2d8c",
+          "max_tokens": 64,
+          "latency_s": 2.599765299994033,
+          "response_sha256": "e20264af604d756757b73bdc72e432d4a4dd23100a9b87082b7bf79a3ecad7f1",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-007": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 184,
+            "completion_tokens": 38
+          }
+        }
+      ]
+    },
+    "shared_rotated": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 6,
+        "parsed": 12,
+        "correct_source_key": 8,
+        "wall_s": 22.55773890001001,
+        "parsed_per_hour": 1915.0855585078534,
+        "correct_per_hour": 1276.7237056719023,
+        "p95_request_s": 4.065068099997006,
+        "protocol_events": {},
+        "prompt_tokens": 1458,
+        "completion_tokens": 372
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-val-014",
+            "anatomy-val-001"
+          ],
+          "prompt_sha256": "726120a1eb62937051e452d66eb613516e5d63e2ff7e2bfe68d8a7497a9fb7a3",
+          "max_tokens": 128,
+          "latency_s": 4.065068099997006,
+          "response_sha256": "6a20d52184e06169574171e31cbf218bcddb9c097193bd4c7dd6475405ba9c5a",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-014": "D",
+            "anatomy-val-001": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 217,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-010",
+            "anatomy-val-002"
+          ],
+          "prompt_sha256": "6d9b8adf39db1056c3834cdf014728f65d02f278da00d2dd52be5c65831763dc",
+          "max_tokens": 128,
+          "latency_s": 4.042042599990964,
+          "response_sha256": "c9ce248be7286186374a1ba6350dcee12c9d342f6036d32db710528972b4e862",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-010": "B",
+            "anatomy-val-002": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 251,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-005",
+            "anatomy-val-006"
+          ],
+          "prompt_sha256": "057bb50a17502768ede4d5822e90c31600f57855a298c287c758a633bc2508ed",
+          "max_tokens": 128,
+          "latency_s": 3.8384965999866836,
+          "response_sha256": "b1a996f8a10587ac2947d18e5ff1cf966a0a725b697b2f21bf7a1b802d7ab28c",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-005": "B",
+            "anatomy-val-006": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 233,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-013",
+            "anatomy-val-011"
+          ],
+          "prompt_sha256": "93d925756d47979ab51289ca2fbc4f2ca18cbf585d32ca523846fd5c8ebd3ca9",
+          "max_tokens": 128,
+          "latency_s": 3.4706578999757767,
+          "response_sha256": "913d234ac4e44bf49ee293a8959606b5838ecea17d9f01f2f5d535633c6be4e6",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-013": "C",
+            "anatomy-val-011": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 242,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-003",
+            "anatomy-val-012"
+          ],
+          "prompt_sha256": "ec95067fe8c9b3067946e235ad97032aff1c2343c218aaab3d553f566f927c28",
+          "max_tokens": 128,
+          "latency_s": 3.642596199992113,
+          "response_sha256": "224c39f508b5047b30fcb3ed41f0f49325e3c9364735450dba41a27d905d0948",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-003": "B",
+            "anatomy-val-012": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 250,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-007",
+            "anatomy-val-008"
+          ],
+          "prompt_sha256": "4f6947a5d19e3339de0be3c258da61c5ba820a27e5d4027e6bff9092293b2f22",
+          "max_tokens": 128,
+          "latency_s": 3.4981191999977455,
+          "response_sha256": "9a7980accf0edb1cc59c963108ee81fb8796723cfa5fe3852b779e70f9a8fbe4",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-007": "A",
+            "anatomy-val-008": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 265,
+            "completion_tokens": 62
+          }
+        }
+      ]
+    },
+    "single_repeat": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 12,
+        "parsed": 11,
+        "correct_source_key": 7,
+        "wall_s": 29.41727279999759,
+        "parsed_per_hour": 1346.1478998829302,
+        "correct_per_hour": 856.6395726527737,
+        "p95_request_s": 3.258401099999901,
+        "protocol_events": {
+          "invalid_label": 1
+        },
+        "prompt_tokens": 1906,
+        "completion_tokens": 460
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-val-008"
+          ],
+          "prompt_sha256": "bdf3c1f4036c926062d3e8a69d215c6192b9cd9dd4d25fe91755aba59a8ae8d2",
+          "max_tokens": 64,
+          "latency_s": 2.534201300004497,
+          "response_sha256": "fe3ad020e2108e402a36ecc6923639e9a00bd9fe70810137a25d334b1b5c1314",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-008": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 156,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-014"
+          ],
+          "prompt_sha256": "b04d0d63b9d05b5d25fceade47315cfdd034901cfcda4678b8b0fd564286ee2d",
+          "max_tokens": 64,
+          "latency_s": 1.9786021999898367,
+          "response_sha256": "aa68b58033b4d1ba3734c4f2e37beb14b23be52c5c6370d8b8ed6c6a3f493541",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-014": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 150,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-001"
+          ],
+          "prompt_sha256": "e7657cc152d321bc636309253fa7b859083159c2ca83f921332b579e73727ebb",
+          "max_tokens": 64,
+          "latency_s": 2.3671061000204645,
+          "response_sha256": "594e53f2b47a809e575d2995c86b892ad15c091acf12cb2c02ccacd1655aea58",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-001": null
+          },
+          "errors": [
+            "invalid_label"
+          ],
+          "usage": {
+            "prompt_tokens": 142,
+            "completion_tokens": 42
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-010"
+          ],
+          "prompt_sha256": "2a8824fb2019e7544dd50bc7e4a8e2096ce8855ae23f6cd18498bf7f11d26dbb",
+          "max_tokens": 64,
+          "latency_s": 2.0451012999983504,
+          "response_sha256": "8f0a17a00ae1f71423358f3fe2db226671f8a73c5699726ed74dcbc60aa681fc",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-010": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 141,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-002"
+          ],
+          "prompt_sha256": "f184f6fb465854eead06d385d2e1a4c17dd6b859af1c7b4686843e948835d3e1",
+          "max_tokens": 64,
+          "latency_s": 2.034425599966198,
+          "response_sha256": "42a3bef31fe1753a6866339ec6e016850ed67f15c6bc8dd275f8e78eec1a77b6",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-002": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 184,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-005"
+          ],
+          "prompt_sha256": "6ad308033bd13b9f4822dfa2cf5050d2a1269124ee63eade7c39d2704fc02df3",
+          "max_tokens": 64,
+          "latency_s": 2.779750099987723,
+          "response_sha256": "8dbd0e45a885d489f6e1df42157877ea8375dabf06946645d431dad8471d51c2",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-005": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 142,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-006"
+          ],
+          "prompt_sha256": "df8dbb55d55f74c388c6c3b5c53354467097f9650e78b6bc9854b4106ba0d229",
+          "max_tokens": 64,
+          "latency_s": 2.407436100009363,
+          "response_sha256": "57886c38be4f513ae20e0ccfc132317b6f5d1bcbcdeda9a771f33f59acd57a62",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-006": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 165,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-013"
+          ],
+          "prompt_sha256": "3102ac20ba348edd25d6b4c89cfdc4fe9ec92ae0034b6e51d5b5a8c012770f5e",
+          "max_tokens": 64,
+          "latency_s": 2.7305286999908276,
+          "response_sha256": "f4a7276167e2a6e104d045a945bcdacf49d640b70406fc72ff8487c12311007b",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-013": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 164,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-011"
+          ],
+          "prompt_sha256": "034bd4ccb0424f427526f3472f634b1fdc23f2cf4fc81988b03939d52c6bcc60",
+          "max_tokens": 64,
+          "latency_s": 2.0879310000455007,
+          "response_sha256": "460ba2d8db27f109b718903fd3f28318d2c5d8fdc85b01c49746a5d9ff9ffc73",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-011": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 153,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-003"
+          ],
+          "prompt_sha256": "af918fea3131533d73957a1410044e77bcbffeb097caec5697eab5f0ed8b61e1",
+          "max_tokens": 64,
+          "latency_s": 2.510171000030823,
+          "response_sha256": "5f24ddd168c37740d23077141f0884e25f8f9244ce95c8cce23ce8ac0fd1e3c8",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-003": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 173,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-012"
+          ],
+          "prompt_sha256": "a903f0a7c539f8e6e980620bd86ae6260db23ee2f6ee736d3af3c5f43ae7ec61",
+          "max_tokens": 64,
+          "latency_s": 2.6811648000148125,
+          "response_sha256": "7da118c9496aeaca3035d0ec8bc796c1a7a131333f224966493ef0b83a0e7f29",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-012": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 152,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-007"
+          ],
+          "prompt_sha256": "7024aa0f6a51df87a8d5b33efa11cb1e52d0e699a40ca05480793b5b4b2a2d8c",
+          "max_tokens": 64,
+          "latency_s": 3.258401099999901,
+          "response_sha256": "e20264af604d756757b73bdc72e432d4a4dd23100a9b87082b7bf79a3ecad7f1",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-007": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 184,
+            "completion_tokens": 38
+          }
+        }
+      ]
+    },
+    "independent": {
+      "client_concurrency": 2,
+      "summary": {
+        "assigned": 12,
+        "requests": 12,
+        "parsed": 11,
+        "correct_source_key": 7,
+        "wall_s": 20.96348829998169,
+        "parsed_per_hour": 1888.9985976253097,
+        "correct_per_hour": 1202.0900166706515,
+        "p95_request_s": 3.8409174000262283,
+        "protocol_events": {
+          "invalid_label": 1
+        },
+        "prompt_tokens": 1906,
+        "completion_tokens": 460
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-val-008"
+          ],
+          "prompt_sha256": "bdf3c1f4036c926062d3e8a69d215c6192b9cd9dd4d25fe91755aba59a8ae8d2",
+          "max_tokens": 64,
+          "latency_s": 3.4392838000203483,
+          "response_sha256": "fe3ad020e2108e402a36ecc6923639e9a00bd9fe70810137a25d334b1b5c1314",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-008": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 156,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-014"
+          ],
+          "prompt_sha256": "b04d0d63b9d05b5d25fceade47315cfdd034901cfcda4678b8b0fd564286ee2d",
+          "max_tokens": 64,
+          "latency_s": 3.4399889000342228,
+          "response_sha256": "aa68b58033b4d1ba3734c4f2e37beb14b23be52c5c6370d8b8ed6c6a3f493541",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-014": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 150,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-001"
+          ],
+          "prompt_sha256": "e7657cc152d321bc636309253fa7b859083159c2ca83f921332b579e73727ebb",
+          "max_tokens": 64,
+          "latency_s": 3.8409174000262283,
+          "response_sha256": "594e53f2b47a809e575d2995c86b892ad15c091acf12cb2c02ccacd1655aea58",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-001": null
+          },
+          "errors": [
+            "invalid_label"
+          ],
+          "usage": {
+            "prompt_tokens": 142,
+            "completion_tokens": 42
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-010"
+          ],
+          "prompt_sha256": "2a8824fb2019e7544dd50bc7e4a8e2096ce8855ae23f6cd18498bf7f11d26dbb",
+          "max_tokens": 64,
+          "latency_s": 3.551013400021475,
+          "response_sha256": "8f0a17a00ae1f71423358f3fe2db226671f8a73c5699726ed74dcbc60aa681fc",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-010": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 141,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-002"
+          ],
+          "prompt_sha256": "f184f6fb465854eead06d385d2e1a4c17dd6b859af1c7b4686843e948835d3e1",
+          "max_tokens": 64,
+          "latency_s": 3.074467000027653,
+          "response_sha256": "42a3bef31fe1753a6866339ec6e016850ed67f15c6bc8dd275f8e78eec1a77b6",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-002": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 184,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-005"
+          ],
+          "prompt_sha256": "6ad308033bd13b9f4822dfa2cf5050d2a1269124ee63eade7c39d2704fc02df3",
+          "max_tokens": 64,
+          "latency_s": 3.1273924999986775,
+          "response_sha256": "8dbd0e45a885d489f6e1df42157877ea8375dabf06946645d431dad8471d51c2",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-005": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 142,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-006"
+          ],
+          "prompt_sha256": "df8dbb55d55f74c388c6c3b5c53354467097f9650e78b6bc9854b4106ba0d229",
+          "max_tokens": 64,
+          "latency_s": 3.279935200000182,
+          "response_sha256": "57886c38be4f513ae20e0ccfc132317b6f5d1bcbcdeda9a771f33f59acd57a62",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-006": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 165,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-013"
+          ],
+          "prompt_sha256": "3102ac20ba348edd25d6b4c89cfdc4fe9ec92ae0034b6e51d5b5a8c012770f5e",
+          "max_tokens": 64,
+          "latency_s": 3.2546396999969147,
+          "response_sha256": "f4a7276167e2a6e104d045a945bcdacf49d640b70406fc72ff8487c12311007b",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-013": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 164,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-011"
+          ],
+          "prompt_sha256": "034bd4ccb0424f427526f3472f634b1fdc23f2cf4fc81988b03939d52c6bcc60",
+          "max_tokens": 64,
+          "latency_s": 3.644159200019203,
+          "response_sha256": "460ba2d8db27f109b718903fd3f28318d2c5d8fdc85b01c49746a5d9ff9ffc73",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-011": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 153,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-003"
+          ],
+          "prompt_sha256": "af918fea3131533d73957a1410044e77bcbffeb097caec5697eab5f0ed8b61e1",
+          "max_tokens": 64,
+          "latency_s": 3.6590214000316337,
+          "response_sha256": "5f24ddd168c37740d23077141f0884e25f8f9244ce95c8cce23ce8ac0fd1e3c8",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-003": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 173,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-012"
+          ],
+          "prompt_sha256": "a903f0a7c539f8e6e980620bd86ae6260db23ee2f6ee736d3af3c5f43ae7ec61",
+          "max_tokens": 64,
+          "latency_s": 3.6903351999935694,
+          "response_sha256": "7da118c9496aeaca3035d0ec8bc796c1a7a131333f224966493ef0b83a0e7f29",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-012": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 152,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-val-007"
+          ],
+          "prompt_sha256": "7024aa0f6a51df87a8d5b33efa11cb1e52d0e699a40ca05480793b5b4b2a2d8c",
+          "max_tokens": 64,
+          "latency_s": 3.640600200043991,
+          "response_sha256": "e20264af604d756757b73bdc72e432d4a4dd23100a9b87082b7bf79a3ecad7f1",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-val-007": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 184,
+            "completion_tokens": 38
+          }
+        }
+      ]
+    }
+  },
+  "paired_vs_single": {
+    "shared": {
+      "assigned": 12,
+      "both_parsed": 10,
+      "flips": 0,
+      "flipped_ids": [],
+      "correct_to_wrong": 0,
+      "wrong_to_correct": 0
+    },
+    "shared_rotated": {
+      "assigned": 12,
+      "both_parsed": 12,
+      "flips": 2,
+      "flipped_ids": [
+        "anatomy-val-006",
+        "anatomy-val-003"
+      ],
+      "correct_to_wrong": 0,
+      "wrong_to_correct": 0
+    },
+    "single_repeat": {
+      "assigned": 12,
+      "both_parsed": 11,
+      "flips": 0,
+      "flipped_ids": [],
+      "correct_to_wrong": 0,
+      "wrong_to_correct": 0
+    },
+    "independent": {
+      "assigned": 12,
+      "both_parsed": 11,
+      "flips": 0,
+      "flipped_ids": [],
+      "correct_to_wrong": 0,
+      "wrong_to_correct": 0
+    }
+  },
+  "warmup_excluded": {
+    "ids": [
+      "warmup"
+    ],
+    "prompt_sha256": "7cd6ce29bec55756dd9decc0db63e1f83c1592569555bf8d3c0cb33659c3dc6d",
+    "max_tokens": 64,
+    "latency_s": 1.9586930999648757,
+    "response_sha256": "c05913f7a991e4ac58f911f7cac1158cd1103b15f83fb7534f50f41ccb764515",
+    "finish_reason": "stop",
+    "predictions": {
+      "warmup": "B"
+    },
+    "errors": [],
+    "usage": {
+      "prompt_tokens": 106,
+      "completion_tokens": 14
+    }
+  }
+}

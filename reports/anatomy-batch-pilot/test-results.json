@@ -1,0 +1,1068 @@
+{
+  "prompt_version": "batch-mcq-v1",
+  "started_utc": "2026-11-26T13:18:26.052189+00:00",
+  "model": "qwen2.5-1.5b-local",
+  "items_sha256": "208f9eb5252cceef95ab71e7ff17dd530ad9820167078b7483cb6447c6eb8ca8",
+  "eligible": 135,
+  "subject": "anatomy",
+  "seed": 20261126,
+  "temperature": 0,
+  "tokens_per_item": 64,
+  "response_format": "json_object",
+  "gold": {
+    "anatomy-test-122": "B",
+    "anatomy-test-114": "A",
+    "anatomy-test-009": "C",
+    "anatomy-test-021": "C",
+    "anatomy-test-075": "D",
+    "anatomy-test-084": "B",
+    "anatomy-test-058": "C",
+    "anatomy-test-076": "C",
+    "anatomy-test-027": "C",
+    "anatomy-test-105": "A",
+    "anatomy-test-089": "C",
+    "anatomy-test-064": "C"
+  },
+  "conditions": {
+    "single": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 12,
+        "parsed": 12,
+        "correct_source_key": 9,
+        "wall_s": 38.963539799966384,
+        "parsed_per_hour": 1108.7288326928979,
+        "correct_per_hour": 831.5466245196735,
+        "p95_request_s": 3.786076599964872,
+        "protocol_events": {},
+        "prompt_tokens": 1913,
+        "completion_tokens": 456
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-test-122"
+          ],
+          "prompt_sha256": "a501cfb66d1c53a0685165899e9a2a8e1ef39334940f0eed041d4d4746e15707",
+          "max_tokens": 64,
+          "latency_s": 3.5186764000100084,
+          "response_sha256": "a885eb57dd2986d25629bf54f3a31b5b7857feb2f9aec602d93875cddf45e0d9",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-122": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 162,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-114"
+          ],
+          "prompt_sha256": "d54be372b18312b9756fda519e5a8ef3b6a073ff5ed40b75255af7db9330a70c",
+          "max_tokens": 64,
+          "latency_s": 2.8907058000331745,
+          "response_sha256": "e8d14eb10f516ea3b7715df830f3a428c515b099d503e1cd8c64eaa2c455a37f",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-114": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 136,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-009"
+          ],
+          "prompt_sha256": "40d634d5fbc7174f4683751b474313e9ea65f42291d56366fb6c3d9c7b42673b",
+          "max_tokens": 64,
+          "latency_s": 3.012133600015659,
+          "response_sha256": "dad2d80f27bb891fca63d4ebb319526c7cd98f5cd24566bf70d0d9c14722b190",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-009": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 150,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-021"
+          ],
+          "prompt_sha256": "9e24fac4dc8eebd6fce477592f938c1a00c1827114e1541cd450f9bdc36b1035",
+          "max_tokens": 64,
+          "latency_s": 3.0730989999719895,
+          "response_sha256": "c2364775f5505a5d44afdcfe9353fdebe10d18d0ff2697d64c183d0a22f00244",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-021": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 164,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-075"
+          ],
+          "prompt_sha256": "51e27573dc4a87013e797c3ccbb5f8fa156b3326bee682fadeb05cd2781f4246",
+          "max_tokens": 64,
+          "latency_s": 3.3794978999649175,
+          "response_sha256": "23f8f5bcf014526027310ec57ef152c81f826c45c8c6dfe33c600416c3d76e11",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-075": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 165,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-084"
+          ],
+          "prompt_sha256": "4d0839b013309ddf89e083a97db9cb51d74dc1754467dfe8cd3f0817f6ba72af",
+          "max_tokens": 64,
+          "latency_s": 3.3472725999890827,
+          "response_sha256": "f47012508154d81aca22895ae30c0cd65cafc4da0149404a6f66c41b37a96361",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-084": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 143,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-058"
+          ],
+          "prompt_sha256": "55fcbe190c1b49716d5684a4e38ef29878cfcf3138caa175329df9ce4e4b678e",
+          "max_tokens": 64,
+          "latency_s": 3.142619799997192,
+          "response_sha256": "ebd3e544218b938b272e957485e7ac6151f1b1908397992171b489a50de8bd50",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-058": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 146,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-076"
+          ],
+          "prompt_sha256": "032f0c5c09eb6a31f35c9d81bec3a3a6ca238014325108799c487ead75065615",
+          "max_tokens": 64,
+          "latency_s": 3.786076599964872,
+          "response_sha256": "37b8b4776d9f672feac91d3356c197dc9f810870a13c172989957449b45c9266",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-076": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 174,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-027"
+          ],
+          "prompt_sha256": "35a8dfc92cd8e9aae737bd4b70841f47daba1731c988366e72740d3197f3f610",
+          "max_tokens": 64,
+          "latency_s": 2.7533094999962486,
+          "response_sha256": "82d9f8e6daf89ad4d97b998aed45535db2d00c596c4f2e094848829b148c3ec0",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-027": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 153,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-105"
+          ],
+          "prompt_sha256": "2b6a650c5a569fbcd32d00477a3ad79d043650bae76cd58ff1a418387dfd7e9d",
+          "max_tokens": 64,
+          "latency_s": 3.4524877999792807,
+          "response_sha256": "5102059ba69c33aa15096a9237cece1513b919d8b38f28d87c7638c18730204b",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-105": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 195,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-089"
+          ],
+          "prompt_sha256": "f9443fcbb4532dad6eb1d6f157e321ebbb4f84b2aec22df4e32da4d88de3c9c3",
+          "max_tokens": 64,
+          "latency_s": 3.282716799993068,
+          "response_sha256": "1014264585bd8a8118aac2646e09dd8886bf4e700f4d3136f7416e0e713091eb",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-089": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 174,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-064"
+          ],
+          "prompt_sha256": "42aa9b98bc3cce6f209537f6ad8845574d257dcc75176950b4ad45bb4d697a6b",
+          "max_tokens": 64,
+          "latency_s": 3.3226689999573864,
+          "response_sha256": "5fb8455210306733bad3833c0cdd74c61826e3b6e79223bfc06ad51748e9a823",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-064": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 151,
+            "completion_tokens": 38
+          }
+        }
+      ]
+    },
+    "shared": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 6,
+        "parsed": 12,
+        "correct_source_key": 9,
+        "wall_s": 30.20787639997434,
+        "parsed_per_hour": 1430.0905971674558,
+        "correct_per_hour": 1072.567947875592,
+        "p95_request_s": 5.5155465999851,
+        "protocol_events": {},
+        "prompt_tokens": 1466,
+        "completion_tokens": 372
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-test-122",
+            "anatomy-test-114"
+          ],
+          "prompt_sha256": "27f32a812a643e9d425b57757c1b58fd9bc79772580f31af572e9f19a56e9f18",
+          "max_tokens": 128,
+          "latency_s": 4.965726699971128,
+          "response_sha256": "140c0595c85ba39b14de45630f975ff60827f86a4498bf6be57e8e43696806ba",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-122": "A",
+            "anatomy-test-114": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 223,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-009",
+            "anatomy-test-021"
+          ],
+          "prompt_sha256": "7107fff141d061db5558cfc3d943d29774d18cefd8697f0da7268fc1bb71c04b",
+          "max_tokens": 128,
+          "latency_s": 4.603462900035083,
+          "response_sha256": "a29e86d2758b32e9daf88050871c8e9e2cf8db838bbf7ccdb51266d22b5b8f78",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-009": "B",
+            "anatomy-test-021": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 239,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-075",
+            "anatomy-test-084"
+          ],
+          "prompt_sha256": "e8578b5f448a9094ea4532611639c6e3e7a55e0dca3c3fa32116ad3558fad7ac",
+          "max_tokens": 128,
+          "latency_s": 4.908876000030432,
+          "response_sha256": "9cad57e932169d02d014a3881492077c29ae931f57ffd60fb7eaa035ed176921",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-075": "B",
+            "anatomy-test-084": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 233,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-058",
+            "anatomy-test-076"
+          ],
+          "prompt_sha256": "cbe49dc23f2a6661e1521cdfbc03aaae9d6e5acf45f5574cafa310cc3b5c803f",
+          "max_tokens": 128,
+          "latency_s": 4.913619400002062,
+          "response_sha256": "49c6eaa3df346e6ec534b14edd144d0274be419ab7b36cf258b8ae2733d11da4",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-058": "C",
+            "anatomy-test-076": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 246,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-027",
+            "anatomy-test-105"
+          ],
+          "prompt_sha256": "619c981dbdb0f0bfc840bc395d53a313f29e4539e81860607fed5c01f69d51d9",
+          "max_tokens": 128,
+          "latency_s": 5.5155465999851,
+          "response_sha256": "7c1c36dcb62fdd9f0de440f878b9dfbc5a1b080187e85a02139e8a6ac183e327",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-027": "C",
+            "anatomy-test-105": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 274,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-089",
+            "anatomy-test-064"
+          ],
+          "prompt_sha256": "9f6f9084ae0e26e3f64c1458c057f06ebe1964c83b7493d11e50bf490a38900a",
+          "max_tokens": 128,
+          "latency_s": 5.29930620000232,
+          "response_sha256": "3a2f05b6cabb43b1510d7d3e1af22d83e7fba5eafd63994a6a52033d95a0afa3",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-089": "C",
+            "anatomy-test-064": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 251,
+            "completion_tokens": 62
+          }
+        }
+      ]
+    },
+    "independent": {
+      "client_concurrency": 2,
+      "summary": {
+        "assigned": 12,
+        "requests": 12,
+        "parsed": 12,
+        "correct_source_key": 8,
+        "wall_s": 25.577301900018938,
+        "parsed_per_hour": 1688.9975404312686,
+        "correct_per_hour": 1125.9983602875125,
+        "p95_request_s": 5.514456000004429,
+        "protocol_events": {},
+        "prompt_tokens": 1913,
+        "completion_tokens": 456
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-test-122"
+          ],
+          "prompt_sha256": "a501cfb66d1c53a0685165899e9a2a8e1ef39334940f0eed041d4d4746e15707",
+          "max_tokens": 64,
+          "latency_s": 4.067726699984632,
+          "response_sha256": "ff4aaeba06327746d67f2b2d64e09c599530239143b2365905d2fd68fe525b0e",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-122": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 162,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-114"
+          ],
+          "prompt_sha256": "d54be372b18312b9756fda519e5a8ef3b6a073ff5ed40b75255af7db9330a70c",
+          "max_tokens": 64,
+          "latency_s": 4.068699800001923,
+          "response_sha256": "e8d14eb10f516ea3b7715df830f3a428c515b099d503e1cd8c64eaa2c455a37f",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-114": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 136,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-009"
+          ],
+          "prompt_sha256": "40d634d5fbc7174f4683751b474313e9ea65f42291d56366fb6c3d9c7b42673b",
+          "max_tokens": 64,
+          "latency_s": 4.197067999979481,
+          "response_sha256": "dad2d80f27bb891fca63d4ebb319526c7cd98f5cd24566bf70d0d9c14722b190",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-009": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 150,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-021"
+          ],
+          "prompt_sha256": "9e24fac4dc8eebd6fce477592f938c1a00c1827114e1541cd450f9bdc36b1035",
+          "max_tokens": 64,
+          "latency_s": 4.197035299963318,
+          "response_sha256": "c2364775f5505a5d44afdcfe9353fdebe10d18d0ff2697d64c183d0a22f00244",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-021": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 164,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-075"
+          ],
+          "prompt_sha256": "51e27573dc4a87013e797c3ccbb5f8fa156b3326bee682fadeb05cd2781f4246",
+          "max_tokens": 64,
+          "latency_s": 4.335507300042082,
+          "response_sha256": "23f8f5bcf014526027310ec57ef152c81f826c45c8c6dfe33c600416c3d76e11",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-075": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 165,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-084"
+          ],
+          "prompt_sha256": "4d0839b013309ddf89e083a97db9cb51d74dc1754467dfe8cd3f0817f6ba72af",
+          "max_tokens": 64,
+          "latency_s": 4.335156700049993,
+          "response_sha256": "f47012508154d81aca22895ae30c0cd65cafc4da0149404a6f66c41b37a96361",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-084": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 143,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-058"
+          ],
+          "prompt_sha256": "55fcbe190c1b49716d5684a4e38ef29878cfcf3138caa175329df9ce4e4b678e",
+          "max_tokens": 64,
+          "latency_s": 5.514456000004429,
+          "response_sha256": "ebd3e544218b938b272e957485e7ac6151f1b1908397992171b489a50de8bd50",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-058": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 146,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-076"
+          ],
+          "prompt_sha256": "032f0c5c09eb6a31f35c9d81bec3a3a6ca238014325108799c487ead75065615",
+          "max_tokens": 64,
+          "latency_s": 5.514201599988155,
+          "response_sha256": "37b8b4776d9f672feac91d3356c197dc9f810870a13c172989957449b45c9266",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-076": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 174,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-027"
+          ],
+          "prompt_sha256": "35a8dfc92cd8e9aae737bd4b70841f47daba1731c988366e72740d3197f3f610",
+          "max_tokens": 64,
+          "latency_s": 3.878914700006135,
+          "response_sha256": "82d9f8e6daf89ad4d97b998aed45535db2d00c596c4f2e094848829b148c3ec0",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-027": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 153,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-105"
+          ],
+          "prompt_sha256": "2b6a650c5a569fbcd32d00477a3ad79d043650bae76cd58ff1a418387dfd7e9d",
+          "max_tokens": 64,
+          "latency_s": 3.879772700020112,
+          "response_sha256": "5102059ba69c33aa15096a9237cece1513b919d8b38f28d87c7638c18730204b",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-105": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 195,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-089"
+          ],
+          "prompt_sha256": "f9443fcbb4532dad6eb1d6f157e321ebbb4f84b2aec22df4e32da4d88de3c9c3",
+          "max_tokens": 64,
+          "latency_s": 3.581135499989614,
+          "response_sha256": "1014264585bd8a8118aac2646e09dd8886bf4e700f4d3136f7416e0e713091eb",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-089": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 174,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-064"
+          ],
+          "prompt_sha256": "42aa9b98bc3cce6f209537f6ad8845574d257dcc75176950b4ad45bb4d697a6b",
+          "max_tokens": 64,
+          "latency_s": 3.580124899977818,
+          "response_sha256": "5fb8455210306733bad3833c0cdd74c61826e3b6e79223bfc06ad51748e9a823",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-064": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 151,
+            "completion_tokens": 38
+          }
+        }
+      ]
+    },
+    "single_repeat": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 12,
+        "parsed": 12,
+        "correct_source_key": 8,
+        "wall_s": 33.04840780002996,
+        "parsed_per_hour": 1307.173412449868,
+        "correct_per_hour": 871.4489416332453,
+        "p95_request_s": 3.8097424000152387,
+        "protocol_events": {},
+        "prompt_tokens": 1913,
+        "completion_tokens": 456
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-test-122"
+          ],
+          "prompt_sha256": "a501cfb66d1c53a0685165899e9a2a8e1ef39334940f0eed041d4d4746e15707",
+          "max_tokens": 64,
+          "latency_s": 2.5153589000110514,
+          "response_sha256": "ff4aaeba06327746d67f2b2d64e09c599530239143b2365905d2fd68fe525b0e",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-122": "D"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 162,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-114"
+          ],
+          "prompt_sha256": "d54be372b18312b9756fda519e5a8ef3b6a073ff5ed40b75255af7db9330a70c",
+          "max_tokens": 64,
+          "latency_s": 2.724269099999219,
+          "response_sha256": "e8d14eb10f516ea3b7715df830f3a428c515b099d503e1cd8c64eaa2c455a37f",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-114": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 136,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-009"
+          ],
+          "prompt_sha256": "40d634d5fbc7174f4683751b474313e9ea65f42291d56366fb6c3d9c7b42673b",
+          "max_tokens": 64,
+          "latency_s": 2.7000351000460796,
+          "response_sha256": "dad2d80f27bb891fca63d4ebb319526c7cd98f5cd24566bf70d0d9c14722b190",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-009": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 150,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-021"
+          ],
+          "prompt_sha256": "9e24fac4dc8eebd6fce477592f938c1a00c1827114e1541cd450f9bdc36b1035",
+          "max_tokens": 64,
+          "latency_s": 2.3787677999935113,
+          "response_sha256": "c2364775f5505a5d44afdcfe9353fdebe10d18d0ff2697d64c183d0a22f00244",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-021": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 164,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-075"
+          ],
+          "prompt_sha256": "51e27573dc4a87013e797c3ccbb5f8fa156b3326bee682fadeb05cd2781f4246",
+          "max_tokens": 64,
+          "latency_s": 2.327021099976264,
+          "response_sha256": "23f8f5bcf014526027310ec57ef152c81f826c45c8c6dfe33c600416c3d76e11",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-075": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 165,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-084"
+          ],
+          "prompt_sha256": "4d0839b013309ddf89e083a97db9cb51d74dc1754467dfe8cd3f0817f6ba72af",
+          "max_tokens": 64,
+          "latency_s": 2.3189656999893486,
+          "response_sha256": "f47012508154d81aca22895ae30c0cd65cafc4da0149404a6f66c41b37a96361",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-084": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 143,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-058"
+          ],
+          "prompt_sha256": "55fcbe190c1b49716d5684a4e38ef29878cfcf3138caa175329df9ce4e4b678e",
+          "max_tokens": 64,
+          "latency_s": 2.7901965000201017,
+          "response_sha256": "ebd3e544218b938b272e957485e7ac6151f1b1908397992171b489a50de8bd50",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-058": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 146,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-076"
+          ],
+          "prompt_sha256": "032f0c5c09eb6a31f35c9d81bec3a3a6ca238014325108799c487ead75065615",
+          "max_tokens": 64,
+          "latency_s": 3.8097424000152387,
+          "response_sha256": "37b8b4776d9f672feac91d3356c197dc9f810870a13c172989957449b45c9266",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-076": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 174,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-027"
+          ],
+          "prompt_sha256": "35a8dfc92cd8e9aae737bd4b70841f47daba1731c988366e72740d3197f3f610",
+          "max_tokens": 64,
+          "latency_s": 3.3114152000052854,
+          "response_sha256": "82d9f8e6daf89ad4d97b998aed45535db2d00c596c4f2e094848829b148c3ec0",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-027": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 153,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-105"
+          ],
+          "prompt_sha256": "2b6a650c5a569fbcd32d00477a3ad79d043650bae76cd58ff1a418387dfd7e9d",
+          "max_tokens": 64,
+          "latency_s": 3.2201236999826506,
+          "response_sha256": "5102059ba69c33aa15096a9237cece1513b919d8b38f28d87c7638c18730204b",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-105": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 195,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-089"
+          ],
+          "prompt_sha256": "f9443fcbb4532dad6eb1d6f157e321ebbb4f84b2aec22df4e32da4d88de3c9c3",
+          "max_tokens": 64,
+          "latency_s": 2.6575987999676727,
+          "response_sha256": "1014264585bd8a8118aac2646e09dd8886bf4e700f4d3136f7416e0e713091eb",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-089": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 174,
+            "completion_tokens": 38
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-064"
+          ],
+          "prompt_sha256": "42aa9b98bc3cce6f209537f6ad8845574d257dcc75176950b4ad45bb4d697a6b",
+          "max_tokens": 64,
+          "latency_s": 2.2920257999794558,
+          "response_sha256": "5fb8455210306733bad3833c0cdd74c61826e3b6e79223bfc06ad51748e9a823",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-064": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 151,
+            "completion_tokens": 38
+          }
+        }
+      ]
+    },
+    "shared_rotated": {
+      "client_concurrency": 1,
+      "summary": {
+        "assigned": 12,
+        "requests": 6,
+        "parsed": 12,
+        "correct_source_key": 8,
+        "wall_s": 30.500657900003716,
+        "parsed_per_hour": 1416.362890978648,
+        "correct_per_hour": 944.2419273190986,
+        "p95_request_s": 5.551285099994857,
+        "protocol_events": {},
+        "prompt_tokens": 1468,
+        "completion_tokens": 372
+      },
+      "calls": [
+        {
+          "ids": [
+            "anatomy-test-114",
+            "anatomy-test-009"
+          ],
+          "prompt_sha256": "36d7223e30aad724c876f91015269b5877e8ee14cf5a453604c529c47218323d",
+          "max_tokens": 128,
+          "latency_s": 4.588024299999233,
+          "response_sha256": "38c713d19b669a5c244f881cda93043d0466bb12b1880d39af445fc9265f63bf",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-114": "A",
+            "anatomy-test-009": "B"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 212,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-021",
+            "anatomy-test-075"
+          ],
+          "prompt_sha256": "786c821bff6013c6f18bdec0d44f11c9586c6a2436f2396d50a6994cb43ef9df",
+          "max_tokens": 128,
+          "latency_s": 5.241599200002383,
+          "response_sha256": "e173abf96c9b9cd9c00bd0fdf48f4db20f7c637752eaafcbe026acb1a31631ae",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-021": "C",
+            "anatomy-test-075": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 255,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-084",
+            "anatomy-test-058"
+          ],
+          "prompt_sha256": "ddaed6a113ac92b9bb1fe6be39264bdb007ca6d808c7493a24ae6f8c0064b01d",
+          "max_tokens": 128,
+          "latency_s": 4.651118099980522,
+          "response_sha256": "e71aeaa4cee0884061c1bc2f690ec60b17196cdd615726c21eebfbdd648f8887",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-084": "B",
+            "anatomy-test-058": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 215,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-076",
+            "anatomy-test-027"
+          ],
+          "prompt_sha256": "3ef0eab512eb2530daf3363e6c92f305290c4a044afc8c4a1dc458055b3f6e9a",
+          "max_tokens": 128,
+          "latency_s": 4.973166699986905,
+          "response_sha256": "6e7f0c3dc73232677bcb4d3180f323db01ab56a4621068959ca768d611e0947b",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-076": "C",
+            "anatomy-test-027": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 253,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-105",
+            "anatomy-test-089"
+          ],
+          "prompt_sha256": "04e26bd481a3aaa28a5abe4d334691f90b2c8fb1f543c4584e92f4e0e1707abf",
+          "max_tokens": 128,
+          "latency_s": 5.4939260999672115,
+          "response_sha256": "8b86463376355328dcb18c885f74ec28c31f6e670a899e0d3418f97681f9cee2",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-105": "B",
+            "anatomy-test-089": "C"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 294,
+            "completion_tokens": 62
+          }
+        },
+        {
+          "ids": [
+            "anatomy-test-064",
+            "anatomy-test-122"
+          ],
+          "prompt_sha256": "7671f932260e4e4369ebaf5f556adbd997a8b8652a257615827eb18edfaeee57",
+          "max_tokens": 128,
+          "latency_s": 5.551285099994857,
+          "response_sha256": "84aa1b06b99ab82d8b17f4df99908455ff6c24ed22f365d9e94a6597b949857f",
+          "finish_reason": "stop",
+          "predictions": {
+            "anatomy-test-064": "C",
+            "anatomy-test-122": "A"
+          },
+          "errors": [],
+          "usage": {
+            "prompt_tokens": 239,
+            "completion_tokens": 62
+          }
+        }
+      ]
+    }
+  },
+  "paired_vs_single": {
+    "shared": {
+      "assigned": 12,
+      "both_parsed": 12,
+      "flips": 2,
+      "flipped_ids": [
+        "anatomy-test-122",
+        "anatomy-test-105"
+      ],
+      "correct_to_wrong": 1,
+      "wrong_to_correct": 1
+    },
+    "independent": {
+      "assigned": 12,
+      "both_parsed": 12,
+      "flips": 1,
+      "flipped_ids": [
+        "anatomy-test-122"
+      ],
+      "correct_to_wrong": 1,
+      "wrong_to_correct": 0
+    },
+    "single_repeat": {
+      "assigned": 12,
+      "both_parsed": 12,
+      "flips": 1,
+      "flipped_ids": [
+        "anatomy-test-122"
+      ],
+      "correct_to_wrong": 1,
+      "wrong_to_correct": 0
+    },
+    "shared_rotated": {
+      "assigned": 12,
+      "both_parsed": 12,
+      "flips": 2,
+      "flipped_ids": [
+        "anatomy-test-122",
+        "anatomy-test-075"
+      ],
+      "correct_to_wrong": 1,
+      "wrong_to_correct": 0
+    }
+  },
+  "warmup_excluded": {
+    "ids": [
+      "warmup"
+    ],
+    "prompt_sha256": "7cd6ce29bec55756dd9decc0db63e1f83c1592569555bf8d3c0cb33659c3dc6d",
+    "max_tokens": 64,
+    "latency_s": 2.5327697000466287,
+    "response_sha256": "c05913f7a991e4ac58f911f7cac1158cd1103b15f83fb7534f50f41ccb764515",
+    "finish_reason": "stop",
+    "predictions": {
+      "warmup": "B"
+    },
+    "errors": [],
+    "usage": {
+      "prompt_tokens": 106,
+      "completion_tokens": 14
+    }
+  }
+}

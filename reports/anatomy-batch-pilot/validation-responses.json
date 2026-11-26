@@ -1,0 +1,60 @@
+{
+  "shared": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-008\",\n      \"answer\": \"D\"\n    },\n    {\n      \"id\": \"anatomy-val-014\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-001\",\n      \"answer\": \"D: Homeostasis\"\n    },\n    {\n      \"id\": \"anatomy-val-010\",\n      \"answer\": \"B: Hypothalamus\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-002\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-val-005\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-006\",\n      \"answer\": \"D\"\n    },\n    {\n      \"id\": \"anatomy-val-013\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-011\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-val-003\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-012\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-val-007\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+  ],
+  "single": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-008\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-014\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-001\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-010\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-002\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-005\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-006\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-013\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-011\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-003\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-012\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-007\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+  ],
+  "shared_rotated": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-014\",\n      \"answer\": \"D\"\n    },\n    {\n      \"id\": \"anatomy-val-001\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-010\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-val-002\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-005\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-val-006\",\n      \"answer\": \"A\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-013\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-val-011\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-003\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-val-012\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-007\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-val-008\",\n      \"answer\": \"D\"\n    }\n  ]\n}"
+  ],
+  "single_repeat": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-008\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-014\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-001\",\n      \"answer\": \"D: Homeostasis\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-010\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-002\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-005\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-006\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-013\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-011\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-003\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-012\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-007\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+  ],
+  "independent": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-008\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-014\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-001\",\n      \"answer\": \"D: Homeostasis\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-010\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-002\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-005\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-006\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-013\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-011\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-003\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-012\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-val-007\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+  ]
+}

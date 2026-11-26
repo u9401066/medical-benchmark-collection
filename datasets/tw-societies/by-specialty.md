@@ -620,7 +620,7 @@
 | 團體名稱 | 種類 | 官網 | 公開考試資料 |
 |---|---|---|---|
 | 中華民國放射線醫學會 | 學會 | [已核對主體](https://www.rsroc.org.tw/) | [甄審或考試公告](https://www.rsroc.org.tw/news/news_detail.asp?news_id=2541) |
-| 中華民國核醫學學會 | 學會 | [已核對主體](https://www.snm.org.tw/) | [甄審或考試公告](https://snm.org.tw/xmdoc/cont?sid=0Q188565116326473357&xsmsid=0O030544847299937817) |
+| 中華民國核醫學學會 | 學會 | [已核對主體](https://www.snm.org.tw/) | [公開臨床評量表](https://snm.org.tw/xcfile/cont?xsmsid=0O050602815341260326&sid=0O205552384441151287&psid=0O198666711473294194) |
 | 中華民國醫事放射學會 | 學會 | [已核對主體](https://www.twsrt.org.tw/) | 待查 |
 | 中華民國醫用超音波學會 | 學會 | [已核對主體](https://www.sumroc.org.tw/) | 待查 |
 | 台灣中子捕獲治療研究學會 | 學會 | [已核對主體](https://tsnct.org.tw/) | 待查 |

@@ -1,0 +1,35 @@
+{
+  "checked_on": "2026-11-26",
+  "sources": [
+    {
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=190",
+      "watch_xpath": "//div[@class='htmlBlock']//tr[td[contains(.,'大腸癌篩檢')]]",
+      "expected_sha256": "56927a8f408be0f136590074de682b03a47f35cfc9b4c14c50ccd491ba7e7585",
+      "concepts": [
+        "mbc-tw-fit-0001",
+        "mbc-tw-fit-0002",
+        "mbc-tw-fit-0003"
+      ],
+      "family_ids": [
+        "mbc-tw-fit-0001"
+      ],
+      "observed_sha256": "56927a8f408be0f136590074de682b03a47f35cfc9b4c14c50ccd491ba7e7585",
+      "status": "unchanged"
+    },
+    {
+      "url": "https://www.hpa.gov.tw/Pages/List.aspx?nodeid=221",
+      "watch_xpath": "//p[contains(.,'代謝症候群判定標準為')]",
+      "expected_sha256": "af8b6e35c7cd9b8637fa8f149dafb176b4e7569f7b26757b696e7eff1e9e0c63",
+      "concepts": [
+        "mbc-tw-mets-0001",
+        "mbc-tw-mets-0002"
+      ],
+      "family_ids": [
+        "mbc-tw-mets-0001"
+      ],
+      "observed_sha256": "af8b6e35c7cd9b8637fa8f149dafb176b4e7569f7b26757b696e7eff1e9e0c63",
+      "status": "unchanged"
+    }
+  ],
+  "method": "live publisher HTTPS responses"
+}

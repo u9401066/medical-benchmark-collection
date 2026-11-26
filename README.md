@@ -6,9 +6,11 @@
 
 當期工作保留原考期答案，並由醫師依指定日期、地區及證據另審現行答案和詳解。臺灣公費大腸癌篩檢的雙語題組比較原選項已無正解、已改為另一選項、原答案仍然成立。每週檢查來源段落，並依 PMID 整理待查的評測研究。[雙語審題單](docs/review/tw-fit-controls.md) · [目標與交接](docs/roadmap.md) · [臨床時效維護](docs/editorial-workflow.md#臨床時效維護) · [臨床判分與評估](docs/temporal-evaluation.md)
 
-批次作答已列入評測工具規劃，將用同一批醫學題比較獨立請求併發與多題共用提示詞的速度、正確率及答案翻轉率。[批次作答與題間干擾實驗](docs/roadmap.md#批次作答的速度與題間干擾)
+首輪批次實驗以 Qwen2.5 1.5B 在 CPU 上回答兩組各 12 題的英文解剖學題。兩組都以獨立併發 2 最快。Test 組單題與雙題共用提示的總分均為 9/12，逐題比較卻有一題由對改錯、另一題由錯改對。[實測數字與逐題回覆](reports/anatomy-batch-pilot/README.md) · [後續實驗](docs/roadmap.md#批次作答的速度與題間干擾)
 
 臺灣醫學會已按科別整理，附官網核對狀態、部定專科及次專科的來源，以及學會公開甄審試題、樣題與答案的入口。[依科別找學會](datasets/tw-societies/by-specialty.md) · [直接找考試資料](datasets/tw-societies/exam-sources.tsv)
+
+開放式材料已收錄麻醉專科口試病例與核醫臨床評量表的來源。原創雙語病例可檢查模型能否指出缺少哪項檢驗，並在檢驗值補齊後重新判讀。[學會附件與評量面向](datasets/tw-societies/sources/clinical-assessments.tsv) · [雙語開放題審題單](docs/review/tw-mets-missing-triglycerides.md)
 
 本庫也收錄文獻查核、臨床對話、報告判讀與醫療代理任務。來源先登錄作者、任務與可用範圍；可改編的材料再整理為可追溯的草稿。醫師逐一審查答案、用語與證據，定版後可按用途匯出訓練案例、開發案例及獨立評測。[多來源目錄](datasets/discovery/README.md) · [複審與資料匯出](docs/editorial-workflow.md#審查紀錄與資料匯出)
 

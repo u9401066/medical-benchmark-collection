@@ -13,6 +13,10 @@
 
 台灣家庭醫學醫學會另按期發布繼續教育測驗。《家庭醫學與基層醫療》第 41 卷第 8、9 期各核實 16 道可公開讀取的選擇題，頁面共 32 個正解標記。原始 HTML 指紋、學會測驗編號、出版日與權利查核狀態均附於來源表。[學會期刊索引](https://www.tafm.org.tw/ehc-tafm/s/w/ebook/index_other/otherlist/2) · [已核對兩期的資料](sources/journal-quizzes.tsv)
 
+台灣麻醉醫學會的 113、114 年專科甄審口試各有 2 個病例，分別含 8、9 個開放式提問。附件列出各小題配分，參考回答仍待補證。113 年公告另有筆試答案更正，來源表記明適用題號。[113 年公告](https://www.anesth.org.tw/news/content.asp?ID=2120) · [114 年公告](https://www.anesth.org.tw/news/content.asp?id=2232&type=1) · [口試及臨床評量附件定位與指紋](sources/clinical-assessments.tsv)
+
+中華民國核醫學學會「醫事放射師核醫組教學評量」收錄 DOPS 操作技能直接觀察、CbD 個案討論與 mini-CEX 迷你臨床演練，各有空白評量表及配套說明。三份表分別含 10、6、7 個評量面向，按量表登錄。DOPS 空白表與說明對第 4 項使用不同標頭，後續建立評分規準時須逐項核對。兩學會的附件目前均只收錄可核查的中繼資料，題文、量表的重刊及訓練權利待確認。[核醫學會下載索引](https://snm.org.tw/xcfile?psid=0O198666711473294194&xsmsid=0O050602815341260326) · [配套說明及權利紀錄](sources/clinical-assessments.tsv)
+
 ## 全國名冊與查核界限
 
 內政部「人民團體數位櫃檯」以社會團體名稱查詢「學會」，2026-11-26 官網列出 4,064 筆，已逐列保存全選匯出的名稱、立案證號與狀態。分母包含各學術領域，其中 3,604 筆已立案、369 筆解散、91 筆已准籌或仍在審查。另查「醫師協會」，以補充使用其他名稱的專業組織。歷史拼寫或官網沿用舊名時，保留原稱與明示更名的依據。[內政部現行查詢](https://grouptw.moi.gov.tw/searchGroup) · [即時快照與 391 筆「醫學會」交叉查詢](live-registry.md) · [全選匯出紀錄](live-registry.tsv) · [醫師協會查詢](live-physician-associations.tsv) · [異名對照](aliases.tsv)

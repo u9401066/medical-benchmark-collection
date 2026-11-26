@@ -1,0 +1,60 @@
+{
+  "single": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-122\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-114\",\n      \"answer\": \"A\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-009\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-021\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-075\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-084\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-058\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-076\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-027\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-105\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-089\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-064\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+  ],
+  "shared": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-122\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-test-114\",\n      \"answer\": \"A\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-009\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-021\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-075\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-084\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-058\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-076\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-027\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-105\",\n      \"answer\": \"A\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-089\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-064\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+  ],
+  "independent": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-122\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-114\",\n      \"answer\": \"A\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-009\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-021\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-075\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-084\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-058\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-076\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-027\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-105\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-089\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-064\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+  ],
+  "single_repeat": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-122\",\n      \"answer\": \"D\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-114\",\n      \"answer\": \"A\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-009\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-021\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-075\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-084\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-058\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-076\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-027\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-105\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-089\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-064\",\n      \"answer\": \"C\"\n    }\n  ]\n}"
+  ],
+  "shared_rotated": [
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-114\",\n      \"answer\": \"A\"\n    },\n    {\n      \"id\": \"anatomy-test-009\",\n      \"answer\": \"B\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-021\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-075\",\n      \"answer\": \"A\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-084\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-058\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-076\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-027\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-105\",\n      \"answer\": \"B\"\n    },\n    {\n      \"id\": \"anatomy-test-089\",\n      \"answer\": \"C\"\n    }\n  ]\n}",
+    "{\n  \"answers\": [\n    {\n      \"id\": \"anatomy-test-064\",\n      \"answer\": \"C\"\n    },\n    {\n      \"id\": \"anatomy-test-122\",\n      \"answer\": \"A\"\n    }\n  ]\n}"
+  ]
+}

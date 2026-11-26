@@ -108,10 +108,13 @@ def test_directory_preserves_identity_and_multiple_exam_sources(tmp_path):
     other = {
         **source,
         "name": "臺灣臨床測驗研究學會",
-        "exam_url": "",
-        "exam_evidence": "",
     }
-    obs = [source, original, other]
+    form = {
+        **other,
+        "exam_url": "https://soc.example/assessment-form",
+        "exam_evidence": "public_assessment_form",
+    }
+    obs = [source, original, other, form]
     rows = societies.build(tmp_path, obs)
     assert len(rows) == 2
     matched = next(r for r in rows if r["website"])
@@ -120,8 +123,22 @@ def test_directory_preserves_identity_and_multiple_exam_sources(tmp_path):
         and matched["website_source"] == "https://soc.example/"
     )
     assert matched["exam_url"] == original["exam_url"]
-    assert next(r for r in rows if not r["website"])["website_status"] == "directory"
+    form_only = next(r for r in rows if not r["website"])
+    assert form_only["website_status"] == "directory"
+    assert form_only["exam_url"] == form["exam_url"]
     societies.exam_sources(tmp_path, obs)
     assert {
         r["exam_url"] for r in societies.records(tmp_path / "exam-sources.tsv")
-    } == {original["exam_url"], source["exam_url"]}
+    } == {original["exam_url"], source["exam_url"], form["exam_url"]}
+    societies.write_directory(tmp_path, rows)
+    assert "公開臨床評量表" in (tmp_path / "by-specialty.md").read_text(
+        encoding="utf-8"
+    )
+    societies.coverage(tmp_path, rows)
+    assert (
+        sum(
+            int(r["public_exam_or_sample"])
+            for r in societies.records(tmp_path / "coverage.tsv")
+        )
+        == 1
+    )
