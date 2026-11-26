@@ -11,6 +11,7 @@
 | [index.json](index.json) | 年度選單 SHA-256、各公告頻道的查詢詞與實際筆數、逐頁 SHA-256、各場次可讀性與附件命中紀錄 |
 | [全文掃描進度](fulltext/coverage.json) | 全部標題的官方分母、實取筆數、已讀與待讀正文、附件取得及文字抽取狀態。獨立於上述逐題證據 |
 | [全文文章清單](fulltext/articles.tsv) · [全文附件清單](fulltext/attachments.tsv) | 每篇公告及其直接附件的網址、原件 SHA-256、搜尋狀態；附件陽性線索保留頁碼或段落 |
+| [考選周刊索引](weekly.json) | 紙本周刊數位典藏的標題查詢、各頁分母、命中文章的出刊日與原始掃描 PDF 的查核狀態 |
 
 ## 2026-11-26 的來源覆蓋
 
@@ -22,9 +23,15 @@
 
 考選部另有《考選周刊》數位典藏，1985-07-15 創刊，2007-01-25 第 1,103 期後停刊。考選部記載曾將各期內容掃描建檔；整合系統可依期別、分類及作者或標題關鍵字查詢。本批一般新聞統計只含上述現存網站期間。早期試務頁傳回找不到頁面，並無法判斷同一事項當年是否刊於紙本、是否有單獨公告或後續是否刪文。[考選部典藏沿革](https://wwwc.moex.gov.tw/main/content/wfrmContent.aspx?menu_id=671) · [考選周刊整合查詢](https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922)
 
+35 年共列 879 場，以考試名稱或人類醫事類科篩得的 400 場均已核對試務頁回應。58 場有可辨識的試務頁，342 場由官方傳回找不到頁面。在 58 個有效頁面的連結標題中未找到直接的改答或給分公告。[分年明細](coverage.tsv)
+
+《考選周刊》索引顯示 15,334 篇文章。本批用六個標題詞逐頁查核，共命中 17 篇不重複文章。已取得 2004-06-17 醫師國考試題分析與 2006-09-21 第二次醫事考試放榜報導的掃描 PDF。兩篇標題反映更正趨勢，取得的影像版面仍須人工定位，故沒有據此登錄個別題目。其餘文章依醫事相關性及一般試題疑義程序決定是否取件。[查詢和檔案指紋](weekly.json) · [2004 年原刊](https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13587) · [2006 年原刊](https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=15111)
+
 ## 逐題核對
 
-- **民國 90 年第一次醫事人員檢覈筆試，醫師第二階段**。同份考試院（90）考台訴決字第057號記載兩題不同的結果。外科學等科第 10 題原本選 B，經疑義會議接受 B 或 A；婦產科學等科第 13 題維持 A。訴訟過程中曾出現一律給分的主張。官方決定 PDF 第 3 頁「事實」和 Word 第 21 段可以核對疑義會議決議。原試卷的場次與科目檔案編碼保留待查。[官方案件與附件](https://wwwc.moex.gov.tw/main/ExamLaws/wfrmExamLaws.aspx?kind=7&menu_id=1933&laws_id=230)
+- **民國 83 年、86 年醫師考試的兩個待查案例**。考選部 2011 年出版的《各種考試事件參考案例暨處理情形彙編》有兩處無法逐題對應。案例 6-9（PDF 第 12 頁）記載 83 年第一次「基礎醫學（一）」更正答案，未寫題號，同科更正表列第 49 與 79 題。案例 6-8（第 11 頁）寫 86 年「公共衛生學」第 86 題可答 B 或 C，但同年醫師試卷的更正表只有 80 題，且其第 68 題接受 B 或 BC。兩筆均保留原件差異及查核線索。[官方出版目錄](https://wwwc.moex.gov.tw/Main/Publication/wfrmPublication.aspx?kind=1&menu_id=62&pub_id=171) · [彙編原件](https://wwwc.moex.gov.tw/Main/Publication/wHandPub_File.ashx?file_id=64) · [83 年更正表](https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=083020&c=004&s=c084&q=1) · [86 年更正表](https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=086260&c=239&s=7004&q=1)
+- **民國 90 年第一次醫事人員檢覈筆試，醫師第二階段**。考試院（90）考台訴決字第057號記載外科學等科第 10 題原為 B，疑義會議接受 B 或 A。婦產科學等科第 13 題維持 A。案件過程中曾出現一律給分的主張。決定 PDF 第 3 頁「事實」與 Word 第 21 段可對照案情。場次 `090040` 的外科更正表載 A 或 B，婦產科更正表第 13 題列 A，備註只有第 7 及 29 題。兩科的索引都只有考題與更正表。[官方案件與附件](https://wwwc.moex.gov.tw/main/ExamLaws/wfrmExamLaws.aspx?kind=7&menu_id=1933&laws_id=230) · [該場試卷](https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=090040&y=2001)
+- **民國 99 年第二次醫師（一）醫學（二）第 4 題**。彙編案例 6-10（PDF 第 13 頁）記載首次疑義會議維持 D，後續研商改為 C 或 D，並列有 100 年 1 月 21 日選題二字第1003100049號公告。同場更正表第 1 頁也記作答 C 或 D 者均給分。索引未列獨立原答案表，原答及處理先後來自機關彙編。[彙編原件](https://wwwc.moex.gov.tw/Main/Publication/wHandPub_File.ashx?file_id=64) · [醫學（二）更正表](https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=099130&c=101&s=200&q=1)
 - **民國 111 年牙體技術師考試**。考試院 111 考臺訴決字第 143 號第 3 頁記載，9 月 13 日疑義會議決議「牙體技術學（四）」第 46 題維持 C。原 S 表與更正 M 表第 46 題均為 C；同張 M 表另載第 1 題可答 A、B 或 AB，第 17 題可答 B、C 或 BC，第 18 題一律給分。已分別記錄各題可接受的作答組合。訴願決定日期為 12 月 5 日，舊發布頁的公告日期待查。[官方決定書](https://ws.exam.gov.tw/Download.ashx?icon=..pdf&n=MTExLTE0My5wZGY%3D&u=LzAwMS9VcGxvYWQvMS9yZWxmaWxlLzkyODcvNDYzMDUvYjAyMDc4NWYtMmY1NS00ZDgyLTkzMmItYjlmMDcyMmRjY2M4LnBkZg%3D%3D) · [官方更正表](https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=111110&c=109&s=0804&q=1)
 - **民國 112 年第二次社工師考試，跨域邊界例**。7 月 31 日公告啟動討論，8 月 2 日公告「社會工作」測驗第 34 題一律給分。可用場次 `112110`、類科 `103`、科目 `0301` 查回原答案 C 與更正答案表第 1 頁的備註。這筆收在 `boundary_items`。兩份公告提供理由與決議日期，原 S/M 表提供題號與給分條件。[初次說明](https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=5976) · [正式決議](https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=5979) · [原試卷與答案檔清單](https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?y=2023&e=112110)
 - **總體統計**。115 年 11 月 19 日說明回顧 114 年國家考試。1,533 題有疑義，其中 191 題更正答案或一律給分。0.73% 的分母是該年度列考測驗式試題總數；本文無逐題明細。[官方說明第一點](https://wwwc.moex.gov.tw/main/news/wfrmNews.aspx?kind=3&menu_id=42&news_id=7892)
@@ -41,6 +48,7 @@ python -m medbench.moex_notices --as-of 2026-11-26 --year-cache data/moex/index 
 python -m medbench.moex_notices --as-of 2026-11-26 --verify-decisions
 python -m medbench.moex_notices --as-of 2026-11-26 --fulltext
 python -m medbench.moex_notices --as-of 2026-11-26 --fulltext --offline
+python -m medbench.moex_notices --as-of 2026-11-26 --weekly
 ```
 
 `--offline` 可以從已下載的資料建立中間批次；缺少的來源列在 `index.json` 的 `failures`，程式以非零狀態結束，方便下次續抓。歷史案卷的本機原件用於核對，題目清單只登錄必要計分事實與機關文號。

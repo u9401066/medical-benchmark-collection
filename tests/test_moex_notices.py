@@ -87,7 +87,9 @@ def test_curated_decisions_separate_litigant_claims_from_awards_and_boundaries()
     cases = json.loads(source.read_text(encoding="utf8"))
     clinical = {d["question"]: d for d in cases["clinical_items"]}
     assert clinical[13]["ruling"] == "original_key_upheld"
-    assert clinical[10]["accepted_options"] == ["A", "B"] and clinical[10]["paper_item_id"] is None
+    assert clinical[10]["accepted_options"] == ["A", "B"]
+    assert clinical[10]["paper_item_id"] == "090040-001-2004-010"
+    assert clinical[13]["paper_item_id"] == "090040-001-3004-013"
     assert clinical[46]["ruling"] == "original_key_upheld"
     same_sheet = {x["question"]: x for x in clinical[46]["other_items_in_same_correction_sheet"]}
     assert same_sheet[1]["accepted_responses"] == ["A", "B", "AB"]
@@ -96,6 +98,23 @@ def test_curated_decisions_separate_litigant_claims_from_awards_and_boundaries()
     assert boundary["original_key"] == "C" and boundary["ruling"] == "universal_award"
     assert boundary["source"] != boundary["preliminary_source"]
     assert all(c["source"] in cases["source_documents"] for c in [boundary, *clinical.values()])
+
+
+def test_historical_publication_requires_exact_item_and_answer_conditions():
+    source = Path(__file__).resolve().parents[1] / "datasets/moex/notices/decisions.json"
+    cases = json.loads(source.read_text(encoding="utf8"))
+    records = {r["id"]: r for r in cases["clinical_items"]}
+    disputed = records["moex-compendium-6-8-public-health-086"]
+    assert disputed["paper_item_id"] is None and "corrected_asset" not in disputed
+    conflict = disputed["mapping_conflict"]
+    assert conflict["reported_question"] > conflict["candidate_item_count"]
+    assert conflict["candidate_question_68_responses"] == ["B", "BC"]
+    assert conflict["candidate_source"] in cases["source_documents"]
+    item = records["moex-compendium-6-10-medical-science-004"]
+    assert item["original_key"] == "D" and item["accepted_options"] == ["C", "D"]
+    assert item["paper_item_id"] == "099130-101-200-004" and "original_asset" not in item
+    early = next(x for x in cases["unresolved_case_summaries"] if x["id"] == "moex-compendium-6-9-basic-sciences")
+    assert early["question"] is None and early["candidate_item_numbers"] == [49, 79]
 
 
 def test_fulltext_search_finds_unlabelled_ruling_and_ignores_navigation(tmp_path):
@@ -137,3 +156,31 @@ def test_offline_inventory_distinguishes_missing_attachment_from_scanned_body(tm
     assert summary["bodies_pending"] == 0
     assert summary["attachment_statuses"] == {"pending": 1}
     assert "block-1" in (tmp_path / "report/articles.tsv").read_text(encoding="utf8")
+
+
+def test_weekly_records_nonmedical_titles_without_fetching_their_pdfs(tmp_path, monkeypatch):
+    from medbench import moex_notices as notices
+
+    class Listing:
+        path = tmp_path
+
+        def fetch(self, url, key):
+            return b'<span id="lblCount">15334</span>'
+
+    titles = ["醫師考試更正答案", "試題疑義處理辦法", "公路特考瑕疵一律給分"]
+    rows = [
+        dict(url=f"{notices.BASE}weekly-{i}", title=title, publication_date=None) for i, title in enumerate(titles)
+    ]
+    monkeypatch.setattr(
+        notices, "scan_index", lambda cache, label, url, query, logs: rows if query == "給分" else []
+    )
+    fetched = []
+
+    def download(cache, parent, url, title):
+        fetched.append(title)
+        return dict(sha256="a" * 64, bytes=10, media="pdf", cache_key="cache.bin")
+
+    monkeypatch.setattr(notices, "save_attachment", download)
+    report = notices.weekly_index(Listing(), tmp_path / "report")
+    assert len(report["matches"]) == 3 and fetched == titles[:2]
+    assert report["matches"][2]["file_status"] == "outside_download_scope"

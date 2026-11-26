@@ -535,12 +535,25 @@ def weekly_index(cache, out):
             record = papers.setdefault(row["url"], dict(row, terms=[], parent_url=url))
             record["terms"].append(term)
     for target, record in papers.items():
+        title = record["title"]
+        if MEDICAL.search(title):
+            record["scope"] = "human_medical_title"
+        elif "試題疑義" in title and "公務人員" not in title:
+            record["scope"] = "general_challenge_procedure"
+        else:
+            record.update(scope="other_title_match", file_status="outside_download_scope")
+            continue
         try:
             file = save_attachment(cache, url, target, record["title"])
             record.update(
-                sha256=file["sha256"], bytes=file["bytes"], media=file["media"], cache_key=file["cache_key"]
+                sha256=file["sha256"],
+                bytes=file["bytes"],
+                media=file["media"],
+                cache_key=file["cache_key"],
+                file_status="verified",
             )
         except (OSError, ValueError, subprocess.SubprocessError) as e:
+            record["file_status"] = "pending"
             errors.append(dict(url=target, error=str(e)))
     out.mkdir(parents=True, exist_ok=True)
     result = dict(

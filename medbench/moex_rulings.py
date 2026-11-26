@@ -40,6 +40,10 @@ def _item_sources(decisions):
 
 
 def _identity(item, document, subjects):
+    if item.get("mapping_conflict"):
+        # A candidate paper may be identifiable even when the reported item
+        # number cannot be reconciled with the candidate's numbered grid.
+        return None, "documented_item_mapping_conflict"
     n = item.get("question")
     if not isinstance(n, int) or isinstance(n, bool) or n < 1 or not _digest(document.get("sha256")) or not _official(document.get("url")):
         return None, "missing_item_number_or_source_digest"
@@ -88,6 +92,9 @@ def _document_rows(item, relation, documents):
             doc = documents.get(doc_id, {})
             refs.append({**doc, "document_id": doc_id, "role": role,
                          "locator": item.get("locator", doc.get("locator")) if role == "decision" else doc.get("locator")})
+        candidate = item.get("mapping_conflict", {}).get("candidate_source")
+        if candidate:
+            refs.append({**documents[candidate], "document_id": candidate, "role": "conflicting_candidate_sheet"})
     else:
         asset = item.get("corrected_asset", {})
         refs.append({**asset, "role": "correction_table", "kind": "official_correction_sheet",
@@ -113,10 +120,12 @@ def _archive_evidence(item, assets):
     for label, role in (("original_asset", "S"), ("corrected_asset", "M")):
         reviewed = item.get(label)
         result = {"reviewed_source": reviewed}
-        listed = [r for r in assets if r["asset_type"] == role]
+        listed = [r for r in (assets or []) if r["asset_type"] == role]
         result["current_sources"] = [{k: r.get(k, "") for k in ("asset_id", "source_url", "status", "sha256")}
                                      for r in sorted(listed, key=lambda r: r["source_url"])]
-        if reviewed:
+        if assets is None:
+            state = "paper_unmapped"
+        elif reviewed:
             current = [r for r in listed if r.get("asset_id") == reviewed["asset_id"] and r["source_url"] == reviewed["url"]]
             state = "not_in_current_manifest"
             if len(current) > 1:
@@ -129,21 +138,25 @@ def _archive_evidence(item, assets):
                 else:
                     state = "different_bytes"
         else:
-            state = "no_documented_key_digest"
+            state = "no_documented_key_digest" if listed else "not_listed_in_current_manifest"
         result["version_comparison"] = state
         matched[role] = result
     return matched
 
 
 def _grid_comparison(case, ledger, reference):
+    original_unlisted = reference["S"]["version_comparison"] == "not_listed_in_current_manifest"
+    roles = ("M",) if original_unlisted else ("S", "M")
     if any(r["version_comparison"] == "different_bytes" for r in reference.values()):
         return "archive_version_changed", None
-    if any(r["version_comparison"] != "matches_reviewed_bytes" for r in reference.values()):
+    if any(reference[role]["version_comparison"] != "matches_reviewed_bytes" for role in roles):
         return "awaiting_matching_archived_keys", None
     if not ledger:
         return "paper_ledger_pending", None
-    for role, r in reference.items():
-        source = r["reviewed_source"]
+    if original_unlisted and any(s.get("asset_type") == "S" for s in ledger["sources"]):
+        return "paper_ledger_out_of_date", None
+    for role in roles:
+        source = reference[role]["reviewed_source"]
         candidates = [s for s in ledger["sources"] if s.get("asset_type") == role and s.get("source_url") == source["url"]]
         if len(candidates) != 1 or candidates[0].get("sha256") != source["sha256"] or candidates[0].get("status") != "verified":
             return "paper_ledger_out_of_date", None
@@ -153,19 +166,26 @@ def _grid_comparison(case, ledger, reference):
     it = rows[0]
     excerpt = {k: it.get(k) for k in ("id", "section", "number", "pages", "key_evidence", "rule")}
     evidence = it.get("key_evidence", {})
-    if not all(role in evidence for role in ("S", "M")) or it.get("rule", {}).get("kind") == "unresolved":
+    if original_unlisted and evidence.get("S"):
+        return "paper_ledger_out_of_date", None
+    if not all(evidence.get(role, {}).get("token") for role in roles) or it.get("rule", {}).get("kind") == "unresolved":
         return "ledger_rule_unresolved", excerpt
     def norm(token):
         return unicodedata.normalize("NFKC", token).strip().upper()
-    actual_start = norm(evidence["S"]["token"])
-    if case.get("original_key") and actual_start != norm(case["original_key"]):
+    actual_start = None if original_unlisted else norm(evidence["S"]["token"])
+    if actual_start and case.get("original_key") and actual_start != norm(case["original_key"]):
         return "original_key_conflict", excerpt
     rule = it["rule"]
     kind = case["ruling"]
     if kind == "original_key_upheld":
-        equal = (rule["kind"] == "single" and norm(evidence["M"]["token"]) == actual_start and rule.get("choices") == [actual_start])
+        expected = actual_start or norm(case.get("original_key") or "")
+        if not expected:
+            return "ruling_type_requires_review", excerpt
+        equal = (rule["kind"] == "single" and norm(evidence["M"]["token"]) == expected and rule.get("choices") == [expected])
         if not equal:
             return "rule_conflict", excerpt
+        if original_unlisted:
+            return "reported_key_matches_correction_sheet_only", excerpt
         other_changes = any(i.get("number") != case["question"] and i.get("key_evidence", {}).get("M", {}).get("note")
                             for i in ledger["items"])
         return ("upheld_on_sheet_with_other_corrections" if other_changes else "upheld_in_archived_keys"), excerpt
@@ -198,13 +218,13 @@ def build(index, manifest, items, decisions, out):
     results = []
     for item, relation, parent in _item_sources(data):
         refs = _document_rows(item, relation, docs)
-        source = next((ref for ref in refs if ref["role"] != "preliminary"), {})
+        source = next((ref for ref in refs if ref["role"] in {"decision", "correction_table"}), {})
         pid, mapping = _identity(item, source, subjects)
         case = {k: v for k, v in item.items() if k not in {"other_items_in_same_correction_sheet", "original_asset", "corrected_asset"}}
         result = {"decision_id": item["id"], "relation": relation, "related_case_id": parent, "scope": item["scope"],
                   "paper_id": pid, "item_id": f"{pid}-{item['question']:03d}" if pid else None, "question": item["question"],
                   "mapping": mapping, "ruling": case, "documents": refs}
-        evidence = _archive_evidence(item, archives.get(pid, []))
+        evidence = _archive_evidence(item, archives.get(pid, []) if pid else None)
         result["answer_sources"] = evidence
         if pid:
             subj = result["official_subject"] = subjects[pid][0]
@@ -214,6 +234,9 @@ def build(index, manifest, items, decisions, out):
             result.update(grid_comparison=status, ledger_item=excerpt)
         else:
             result.update(grid_comparison="unmapped", ledger_item=None)
+        grid_keys = (result["ledger_item"] or {}).get("key_evidence") or {}
+        result["compared_key_roles"] = [role for role in ("S", "M") if grid_keys.get(role) and
+                                        evidence[role]["version_comparison"] == "matches_reviewed_bytes"]
         results.append(result)
     if len({r["decision_id"] for r in results}) != len(results):
         raise ValueError("Duplicate curated decision or companion ID")
@@ -225,6 +248,11 @@ def build(index, manifest, items, decisions, out):
                "grid_comparison": dict(Counter(r["grid_comparison"] for r in results)),
                "relation": dict(Counter(r["relation"] for r in results)),
                "aggregate_only_documents": {key: doc for key, doc in docs.items() if doc.get("kind") == "aggregate_only"}}
+    summary["unresolved_case_summaries"] = [
+        {**case, "documents": [{**docs[case[key]], "document_id": case[key], "role": key}
+                              for key in ("source", "candidate_source") if case.get(key)]}
+        for case in data.get("unresolved_case_summaries", [])
+    ]
     atomic(out / "scope.json", (json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8"))
     return summary
 
@@ -239,7 +267,7 @@ def main():
     parser.add_argument("--out", type=Path, default=base / "rulings")
     args = parser.parse_args()
     summary = build(args.index, args.manifest, args.items, args.decisions, args.out)
-    print(json.dumps({k: v for k, v in summary.items() if k != "aggregate_only_documents"}, sort_keys=True))
+    print(json.dumps({k: v for k, v in summary.items() if k not in {"aggregate_only_documents", "unresolved_case_summaries"}}, sort_keys=True))
 
 
 if __name__ == "__main__":

@@ -2094,9 +2094,63 @@
     },
     {
       "channel": "exam_detail",
+      "exam_code": "088050",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088050",
+      "cache_key": "exam-088050.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088060",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088060",
+      "cache_key": "exam-088060.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088080",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088080",
+      "cache_key": "exam-088080.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088100",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088100",
+      "cache_key": "exam-088100.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088130",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088130",
+      "cache_key": "exam-088130.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
       "exam_code": "088150",
       "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088150",
       "cache_key": "exam-088150.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088190",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088190",
+      "cache_key": "exam-088190.html",
       "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
       "status": "official_not_found_redirect",
       "matched_urls": []
@@ -2112,9 +2166,117 @@
     },
     {
       "channel": "exam_detail",
+      "exam_code": "088220",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088220",
+      "cache_key": "exam-088220.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088230",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088230",
+      "cache_key": "exam-088230.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088260",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088260",
+      "cache_key": "exam-088260.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088310",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088310",
+      "cache_key": "exam-088310.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "088320",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088320",
+      "cache_key": "exam-088320.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089010",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089010",
+      "cache_key": "exam-089010.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
       "exam_code": "089030",
       "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089030",
       "cache_key": "exam-089030.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089050",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089050",
+      "cache_key": "exam-089050.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089060",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089060",
+      "cache_key": "exam-089060.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089070",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089070",
+      "cache_key": "exam-089070.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089080",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089080",
+      "cache_key": "exam-089080.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089100",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089100",
+      "cache_key": "exam-089100.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089150",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089150",
+      "cache_key": "exam-089150.html",
       "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
       "status": "official_not_found_redirect",
       "matched_urls": []
@@ -2130,9 +2292,36 @@
     },
     {
       "channel": "exam_detail",
+      "exam_code": "089180",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089180",
+      "cache_key": "exam-089180.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
       "exam_code": "089190",
       "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089190",
       "cache_key": "exam-089190.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089250",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089250",
+      "cache_key": "exam-089250.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "089290",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089290",
+      "cache_key": "exam-089290.html",
       "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
       "status": "official_not_found_redirect",
       "matched_urls": []
@@ -2238,6 +2427,15 @@
     },
     {
       "channel": "exam_detail",
+      "exam_code": "091010",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091010",
+      "cache_key": "exam-091010.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
       "exam_code": "091030",
       "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091030",
       "cache_key": "exam-091030.html",
@@ -2250,6 +2448,24 @@
       "exam_code": "091070",
       "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091070",
       "cache_key": "exam-091070.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "091100",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091100",
+      "cache_key": "exam-091100.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "091140",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091140",
+      "cache_key": "exam-091140.html",
       "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
       "status": "official_not_found_redirect",
       "matched_urls": []
@@ -2274,9 +2490,27 @@
     },
     {
       "channel": "exam_detail",
+      "exam_code": "091210",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091210",
+      "cache_key": "exam-091210.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
       "exam_code": "091250",
       "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091250",
       "cache_key": "exam-091250.html",
+      "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
+      "status": "official_not_found_redirect",
+      "matched_urls": []
+    },
+    {
+      "channel": "exam_detail",
+      "exam_code": "091290",
+      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091290",
+      "cache_key": "exam-091290.html",
       "sha256": "37cb372c1e1393c8dec2b7c5e96260357d75409cf8479f814bbac1992fc96d42",
       "status": "official_not_found_redirect",
       "matched_urls": []
@@ -4988,162 +5222,5 @@
       "attachments": []
     }
   ],
-  "failures": [
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088050",
-      "channel": "exam_detail",
-      "exam_code": "088050",
-      "error": "not cached: exam-088050.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088060",
-      "channel": "exam_detail",
-      "exam_code": "088060",
-      "error": "not cached: exam-088060.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088080",
-      "channel": "exam_detail",
-      "exam_code": "088080",
-      "error": "not cached: exam-088080.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088100",
-      "channel": "exam_detail",
-      "exam_code": "088100",
-      "error": "not cached: exam-088100.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088130",
-      "channel": "exam_detail",
-      "exam_code": "088130",
-      "error": "not cached: exam-088130.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088190",
-      "channel": "exam_detail",
-      "exam_code": "088190",
-      "error": "not cached: exam-088190.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088220",
-      "channel": "exam_detail",
-      "exam_code": "088220",
-      "error": "not cached: exam-088220.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088230",
-      "channel": "exam_detail",
-      "exam_code": "088230",
-      "error": "not cached: exam-088230.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088260",
-      "channel": "exam_detail",
-      "exam_code": "088260",
-      "error": "not cached: exam-088260.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088310",
-      "channel": "exam_detail",
-      "exam_code": "088310",
-      "error": "not cached: exam-088310.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=088320",
-      "channel": "exam_detail",
-      "exam_code": "088320",
-      "error": "not cached: exam-088320.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089010",
-      "channel": "exam_detail",
-      "exam_code": "089010",
-      "error": "not cached: exam-089010.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089050",
-      "channel": "exam_detail",
-      "exam_code": "089050",
-      "error": "not cached: exam-089050.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089060",
-      "channel": "exam_detail",
-      "exam_code": "089060",
-      "error": "not cached: exam-089060.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089070",
-      "channel": "exam_detail",
-      "exam_code": "089070",
-      "error": "not cached: exam-089070.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089080",
-      "channel": "exam_detail",
-      "exam_code": "089080",
-      "error": "not cached: exam-089080.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089100",
-      "channel": "exam_detail",
-      "exam_code": "089100",
-      "error": "not cached: exam-089100.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089150",
-      "channel": "exam_detail",
-      "exam_code": "089150",
-      "error": "not cached: exam-089150.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089180",
-      "channel": "exam_detail",
-      "exam_code": "089180",
-      "error": "not cached: exam-089180.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089250",
-      "channel": "exam_detail",
-      "exam_code": "089250",
-      "error": "not cached: exam-089250.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=089290",
-      "channel": "exam_detail",
-      "exam_code": "089290",
-      "error": "not cached: exam-089290.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091010",
-      "channel": "exam_detail",
-      "exam_code": "091010",
-      "error": "not cached: exam-091010.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091100",
-      "channel": "exam_detail",
-      "exam_code": "091100",
-      "error": "not cached: exam-091100.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091140",
-      "channel": "exam_detail",
-      "exam_code": "091140",
-      "error": "not cached: exam-091140.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091210",
-      "channel": "exam_detail",
-      "exam_code": "091210",
-      "error": "not cached: exam-091210.html"
-    },
-    {
-      "url": "https://wwwc.moex.gov.tw/main/exam/wFrmExamDetail.aspx?c=091290",
-      "channel": "exam_detail",
-      "exam_code": "091290",
-      "error": "not cached: exam-091290.html"
-    }
-  ]
+  "failures": []
 }

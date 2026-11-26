@@ -1,0 +1,309 @@
+{
+  "as_of": "2026-11-26",
+  "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+  "parent_sha256": "6a539a314207f1b33bb4a2f26f1b5d7e8e5d099fa9bcb3eb7e6af8923d3881fb",
+  "unfiltered_total": 15334,
+  "scope": "title_keyword_search",
+  "pages": [
+    {
+      "channel": "weekly",
+      "query": "試題疑義",
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "cache_key": "weekly-35d57ea8-1.html",
+      "sha256": "7bb9bf5a6501afa733ea845e019ba06249b3c41faede3967847e37aaaa508195",
+      "rows": 11,
+      "reported_total": 11
+    },
+    {
+      "channel": "weekly",
+      "query": "更正答案",
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "cache_key": "weekly-43125be5-1.html",
+      "sha256": "7359089e32b3c0686329589a6750a0af5128d8a4c8ac5803039aef0c6de42c08",
+      "rows": 2,
+      "reported_total": 2
+    },
+    {
+      "channel": "weekly",
+      "query": "答案更正",
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "cache_key": "weekly-743e91be-1.html",
+      "sha256": "55e2ea6b2f2b9e937034b040d385373c9bb59ed59d4fa73bf5ca906d14b02369",
+      "rows": 0,
+      "reported_total": null
+    },
+    {
+      "channel": "weekly",
+      "query": "試題更正",
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "cache_key": "weekly-ea8871b8-1.html",
+      "sha256": "fa7314c081f0e4751739859ae4b51ce5a14c8d170d30be7956f06e7192671e64",
+      "rows": 0,
+      "reported_total": null
+    },
+    {
+      "channel": "weekly",
+      "query": "給分",
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "cache_key": "weekly-9319dc7b-1.html",
+      "sha256": "8f32a1444daa8630cc2c083cedaf716d713e350f2f52d1b9312f7d6561b8dc64",
+      "rows": 4,
+      "reported_total": 4
+    },
+    {
+      "channel": "weekly",
+      "query": "送分",
+      "page": 1,
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "cache_key": "weekly-013c2c4f-1.html",
+      "sha256": "99105cd1449df298939c9d3e60904b542511a0f7b767b47216c82b9d72114aaf",
+      "rows": 1,
+      "reported_total": 1
+    }
+  ],
+  "matches": [
+    {
+      "title": "試題疑義處理辦法擬修正　受理期限一律縮短為七天　明訂疑義會議為必要程序",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=10959",
+      "publication_date": "2000-06-08",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "file_status": "pending"
+    },
+    {
+      "title": "試題疑義處理辦法修正　試題子題錯誤明確規範",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=11030",
+      "publication_date": "2000-07-27",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "sha256": "a30116502628c514eaed939c72c6a1bfbaa5bd8dff3fa4eb15947bf772f62f00",
+      "bytes": 866235,
+      "media": "pdf",
+      "cache_key": "attachment-5ab1ea0eccb408479822.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "試題疑義處理辦法修正　受理期限將縮短為三日　齊一申請格式限採掛號",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=12618",
+      "publication_date": "2003-01-23",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "sha256": "7a32f3c302cb16f58432c6b45df3e461ce696ff44347072ae594871e943c0049",
+      "bytes": 1220250,
+      "media": "pdf",
+      "cache_key": "attachment-69075df05dc166d918bc.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "國家考試試題疑義處理辦法",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=12648",
+      "publication_date": "2003-02-20",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "sha256": "46d43b7d120ec68f24db5a2409c04fe74b68a515b74c9a04739198ec9cf0c4f1",
+      "bytes": 1371362,
+      "media": "pdf",
+      "cache_key": "attachment-10e54691e1026445a409.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "考選部完成醫師國考試題分析　容易與困難題數比約為四比六　更正答案情形集中少數子科目",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13587",
+      "publication_date": "2004-06-17",
+      "terms": [
+        "更正答案"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "human_medical_title",
+      "sha256": "6b0f35026f12a07078c201f190520715023df43bf12e739fdd334b4b1626c836",
+      "bytes": 1241090,
+      "media": "pdf",
+      "cache_key": "attachment-9fa332422916c396df88.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "試院修正試題疑義處理辦法　應考人考試時所提試題疑問　考畢後仍有疑義應提出申請",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13752",
+      "publication_date": "2004-09-09",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "sha256": "a9051a4a446ea93dafbe14d3f59726ee41785bea984ab64e58bcc5560fe0d296",
+      "bytes": 1172262,
+      "media": "pdf",
+      "cache_key": "attachment-a2335ea1f92e19c22466.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "國家考試試題疑義處理程序改進芻議(上)",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13933",
+      "publication_date": "2004-12-09",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "sha256": "9abf76381d668106fbab1197ede05c19e812a5b730abc5e92c3995242365bb11",
+      "bytes": 1468788,
+      "media": "pdf",
+      "cache_key": "attachment-8b436b55a8c18b398a92.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "國家考試試題疑義處理程序改進芻議(下)",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13949",
+      "publication_date": "2004-12-16",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "sha256": "1aad53fc16e902543604016dab0d891582b861d4144980664c8827ea30aa2532",
+      "bytes": 1485050,
+      "media": "pdf",
+      "cache_key": "attachment-fc913feea596c44392e0.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "考選部檢討試題疑義處理之程序　疑義處理以對考生最有利為原則　兩考試法補錄取規定不同將研修",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13953",
+      "publication_date": "2004-12-16",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "file_status": "pending"
+    },
+    {
+      "title": "94年律師考試作文採平行兩閱　國文科測驗題第4題一律給分",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=14408",
+      "publication_date": "2005-09-15",
+      "terms": [
+        "給分"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "other_title_match",
+      "file_status": "outside_download_scope"
+    },
+    {
+      "title": "本年第二次專技醫事人員考試榜示　整體更正答案及送分比例逐年降低　醫師類科錄取率與去年相較尚穩定",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=15111",
+      "publication_date": "2006-09-21",
+      "terms": [
+        "更正答案",
+        "送分"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "human_medical_title",
+      "sha256": "18c3771be1992fcdf90bc41681ec8a0515133dff0e261606d62b364898d41a2d",
+      "bytes": 1189044,
+      "media": "pdf",
+      "cache_key": "attachment-057cbb03ec6a3dd897f4.bin",
+      "file_status": "verified"
+    },
+    {
+      "title": "考研會召開第六次會議　研討選試科目評分差異　論文試卷給分參考標準　委員重視高資低考問題",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=1523",
+      "publication_date": "1987-06-09",
+      "terms": [
+        "給分"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "other_title_match",
+      "file_status": "outside_download_scope"
+    },
+    {
+      "title": "立院審議民選地方首長退撫條例　納入薪給分月薪及政務加給兩項　雖經初審通過惟仍有立委表反對",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=15236",
+      "publication_date": "2006-11-30",
+      "terms": [
+        "給分"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "other_title_match",
+      "file_status": "outside_download_scope"
+    },
+    {
+      "title": "公路特考公路法一題瑕疵　為維護考生權益該題均給分",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=3340",
+      "publication_date": "1989-12-19",
+      "terms": [
+        "給分"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "other_title_match",
+      "file_status": "outside_download_scope"
+    },
+    {
+      "title": "各種考試試題疑義處理方式之適法性",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=7660",
+      "publication_date": "1995-05-02",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "file_status": "pending"
+    },
+    {
+      "title": "試題疑義處理辦法通過　維護應考人權益為目的　兼顧考試結果之公信力",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=8523",
+      "publication_date": "1996-07-09",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "general_challenge_procedure",
+      "file_status": "pending"
+    },
+    {
+      "title": "公務人員考試試題疑義處理辦法",
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=8592",
+      "publication_date": "1996-08-20",
+      "terms": [
+        "試題疑義"
+      ],
+      "parent_url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wfrmExamWeekly.aspx?menu_id=922",
+      "scope": "other_title_match",
+      "file_status": "outside_download_scope"
+    }
+  ],
+  "gaps": [
+    {
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=13953",
+      "error": "not cached: attachment-573217e2d397b75fee24.bin"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=10959",
+      "error": "not cached: attachment-54971d882dff612b2c7b.bin"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=8523",
+      "error": "not cached: attachment-d27f4cf8cd81257afb13.bin"
+    },
+    {
+      "url": "https://wwwc.moex.gov.tw/main/ExamWeekly/wHandExamWeekly_File.ashx?weekly_id=7660",
+      "error": "not cached: attachment-e8ca9eb44b550b4fac44.bin"
+    }
+  ]
+}

@@ -14,16 +14,62 @@
   "grid_comparison": {
     "agrees": 2,
     "agrees_on_listed_responses": 2,
-    "unmapped": 2,
+    "ledger_rule_unresolved": 3,
+    "unmapped": 1,
     "upheld_on_sheet_with_other_corrections": 1
   },
   "mapping": {
-    "identified": 5,
-    "no_official_paper_identifier": 2
+    "documented_item_mapping_conflict": 1,
+    "identified": 8
   },
-  "records": 7,
+  "records": 9,
   "relation": {
-    "decision_on_this_item": 4,
+    "decision_on_this_item": 6,
     "other_item_on_same_correction_sheet": 3
-  }
+  },
+  "unresolved_case_summaries": [
+    {
+      "candidate_item_numbers": [
+        49,
+        79
+      ],
+      "candidate_source": "moex-083020-004-c084-M-1",
+      "documents": [
+        {
+          "cache_key": "compendium-64.pdf",
+          "document_id": "moex-compendium-2011-ch6",
+          "identifier": "考選部各種考試事件參考案例暨處理情形彙編，試題疑義章",
+          "kind": "official_retrospective_case_compendium",
+          "locator": "以 PDF 序頁及機關案例編號定位。數位上架日期與書籍出版年月分開記錄。",
+          "parent_source": "moex-publication-171",
+          "parent_url": "https://wwwc.moex.gov.tw/Main/Publication/wfrmPublication.aspx?kind=1&menu_id=62&pub_id=171",
+          "publication_date": null,
+          "publication_month": "2011-11",
+          "role": "source",
+          "sha256": "8d70222c8b2a3ec9ee14135ab80ae543d7b3d5f9fe0c7b180fd0ec17a4fe7243",
+          "url": "https://wwwc.moex.gov.tw/Main/Publication/wHandPub_File.ashx?file_id=64"
+        },
+        {
+          "asset_id": "moex-083020-004-c084-M-1",
+          "cache_key": "083020-004-c084-M.pdf",
+          "document_id": "moex-083020-004-c084-M-1",
+          "kind": "official_correction_sheet",
+          "locator": "第1頁試題代號0014，題數80。備註第49題可答C、D或CD；第79題可答B、D或BD。",
+          "publication_date": null,
+          "role": "candidate_source",
+          "sha256": "1b0cc995be80d16f5cbe31e24a00764f693ccbe42c8720de1033a80306ecdc6f",
+          "url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=083020&c=004&s=c084&q=1"
+        }
+      ],
+      "exam": "83年第一次醫事人員檢覈醫師第一階段",
+      "finding": "官方回顧記載更正答案及重新評閱，未指明題號與選項。同期 M 表列兩題更正，沒有資料可認定本案指的是哪題。",
+      "id": "moex-compendium-6-9-basic-sciences",
+      "locator": "PDF 第12頁，案例6-9案情摘要及處理方式第2點，列84年6月7日選題字第9392號函等。",
+      "paper_item_id": null,
+      "question": null,
+      "scope": "human_medical",
+      "source": "moex-compendium-2011-ch6",
+      "subject": "基礎醫學（一）"
+    }
+  ]
 }
