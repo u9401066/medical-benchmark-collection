@@ -1,7 +1,7 @@
 import gzip
 import json
 
-from medbench.moex_coverage import build, read_tsv, write
+from medbench.moex_coverage import build, ocr_counts, read_tsv, write
 
 
 def test_missing_correction_and_boundary_do_not_inflate_coverage(tmp_path):
@@ -37,3 +37,15 @@ def test_missing_correction_and_boundary_do_not_inflate_coverage(tmp_path):
     updated = build(index, manifest, items.parent, tmp_path / "coverage")
     assert updated["extraction_stale"] == updated["stale_item_records"] == 1
     assert updated["item_records"] == updated["rule_unresolved"] == 0
+
+
+def test_ocr_counts_only_pages_from_matching_verified_pdf(tmp_path):
+    folder = tmp_path / "81"
+    folder.mkdir()
+    ref = {"paper_id": "p", "sha256": "original"}
+    with gzip.open(folder / "aq.jsonl.gz", "wt", encoding="utf-8") as stream:
+        for i in range(1, 3):
+            stream.write(json.dumps({"asset_id": "aq", "source": ref, "pdf_page": i, "status": "ocr_draft"}) + "\n")
+    row = {**ref, "asset_id": "aq", "asset_type": "Q", "status": "verified"}
+    assert ocr_counts(tmp_path, [row])["p"] == {"ocr_assets": 1, "ocr_draft_pages": 2}
+    assert ocr_counts(tmp_path, [{**row, "sha256": "changed"}])["p"] == {"ocr_stale_pages": 2}

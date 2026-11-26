@@ -15,6 +15,7 @@ RULES = ("single", "replacement", "any_of", "all_of", "all_credit", "conditional
 COUNTS = ["indexed_files", "verified_files", "failed_files", "files_without_receipt", "changed_from_prior",
           "Q_listed", "Q_verified", "S_listed", "S_verified", "M_listed", "M_verified",
           "item_records", "stale_item_records", "items_with_text", "items_with_original_key", "items_with_corrected_key",
+          "ocr_assets", "ocr_draft_pages", "ocr_empty_pages", "ocr_error_pages", "ocr_stale_pages",
           *["rule_" + k for k in RULES]]
 
 
@@ -28,6 +29,37 @@ def write(path, fields, rows):
 
 def paper_id(row):
     return "-".join(row[k] for k in ("exam_code", "category_code", "subject_code"))
+
+
+def ocr_counts(folder, manifest):
+    counts = defaultdict(Counter)
+    if folder is None:
+        return counts
+    sources = {r.get("asset_id"): r for r in manifest if r["asset_type"] == "Q"}
+    for path in sorted(folder.glob("*/*.jsonl.gz")):
+        with gzip.open(path, "rt", encoding="utf-8") as stream:
+            pages = set()
+            counted_source = False
+            for raw in stream:
+                page = json.loads(raw)
+                ref, seq = page["source"], page["pdf_page"]
+                if seq in pages or page["asset_id"] != path.name.removesuffix(".jsonl.gz"):
+                    raise ValueError(f"Ambiguous OCR page identity in {path}")
+                source = sources.get(page["asset_id"])
+                if not source or source["paper_id"] != ref["paper_id"]:
+                    raise ValueError(f"OCR source missing from official inventory in {path}")
+                current = counts[source["paper_id"]]
+                if source.get("status") != "verified" or source.get("sha256") != ref["sha256"]:
+                    current["ocr_stale_pages"] += 1
+                else:
+                    if not counted_source:
+                        current["ocr_assets"] += 1
+                        counted_source = True
+                    label = {"ocr_draft": "ocr_draft_pages", "no_text_recognized": "ocr_empty_pages", "ocr_error": "ocr_error_pages"}.get(page["status"])
+                    if label:
+                        current[label] += 1
+                pages.add(seq)
+    return counts
 
 
 def ledger_counts(path):
@@ -63,6 +95,7 @@ def overview(years, out):
             f"醫事範圍共 {total('medical_papers'):,} 份卷，已取得 {total('verified_files'):,}／{total('indexed_files'):,} 個逐科附件。"
             f"其中 {total('papers_with_all_listed_files'):,} 份卷已備齊平台列出的逐科附件，{total('items_with_text'):,} 筆題目已抽出題幹。"
             f"另有 {total('boundary_papers'):,} 份邊界卷獨立列帳。", "",
+            f"已完成的掃描卷 OCR 草稿有 {total('ocr_draft_pages'):,} 個醫事附件頁，依原始 PDF 與頁碼另存供逐頁核對。[OCR 來源、去重頁數與辨識品質](../ocr/README.md)", "",
             "| 已辨識的官方給分方式 | 題目紀錄數 |", "|---|---:|",
             *[f"| {name} | {total('rule_' + rule):,} |" for rule, name in (
                 ("replacement", "改換答案"), ("any_of", "接受多種列明作答"), ("all_of", "指定完整選項組合"),
@@ -83,14 +116,16 @@ def overview(years, out):
     atomic(out / "README.md", "\n".join(text).encode())
 
 
-def build(index, manifest, items, out):
+def build(index, manifest, items, out, ocr=None):
     annual = {r["year_roc"]: r for r in read_tsv(index / "coverage.tsv")}
     subjects = {paper_id(r): r for r in read_tsv(index / "subjects.tsv")}
     assets = defaultdict(dict)
     for r in read_tsv(index / "assets.tsv"):
         assets[paper_id(r)][(r["asset_type"], r["source_url"])] = r
     archived = {}
-    for r in read_tsv(manifest):
+    source_rows = read_tsv(manifest)
+    scanned = ocr_counts(ocr, source_rows)
+    for r in source_rows:
         key = (r["asset_type"], r["source_url"])
         pid = r["paper_id"]
         archived[pid, key] = r
@@ -107,7 +142,7 @@ def build(index, manifest, items, out):
     groups = defaultdict(Counter)
     for pid, subject in sorted(subjects.items()):
         files = assets[pid]
-        counts = Counter()
+        counts = Counter(scanned[pid])
         source_refs = set()
         scope, year = subject["scope"], subject["year_roc"]
         for key in files:
@@ -170,8 +205,10 @@ def main():
     p.add_argument("--manifest", type=Path, default=root / "archive/files.tsv")
     p.add_argument("--items", type=Path, default=root / "items")
     p.add_argument("--out", type=Path, default=root / "coverage")
+    p.add_argument("--ocr", type=Path, help="optional folder of OCR page records for this snapshot")
     a = p.parse_args()
-    print(json.dumps(build(a.index, a.manifest, a.items, a.out), sort_keys=True))
+    ocr = a.ocr if a.ocr is not None else (a.items.parent / "ocr")
+    print(json.dumps(build(a.index, a.manifest, a.items, a.out, ocr), sort_keys=True))
 
 
 if __name__ == "__main__":

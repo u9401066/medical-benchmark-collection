@@ -29,7 +29,7 @@ def checkpoint(index, seed, cache, out, decisions):
         moex_items.build(manifest, cache, out / "items", paper_ids=ready)
     moex_items.prune_empty_placeholders(out / "items", cache)
     moex_rulings.build(index, manifest, out / "items", decisions, out / "rulings")
-    return moex_coverage.build(index, manifest, out / "items", out / "coverage")
+    return moex_coverage.build(index, manifest, out / "items", out / "coverage", out / "ocr")
 
 
 def main():

@@ -18,6 +18,6 @@ year_roc	exam_code	source_url	sha256	package_state	members	medical	boundary	outs
 115	115030	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=B&code=115030	34c985cd089d191d459e83f70a7dae0f1cf540c67ec2a1d67efaa57c55c541d8	inventoried	10	0	10	0	0	
 115	115040	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=B&code=115040	117aa60a7d019f7a58a206f414bbdf39904e5c12ee59e40f99e344e167266ac0	inventoried	179	0	0	179	0	
 115	115050	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=B&code=115050		pending	0	0	0	0	0	
-115	115080	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=B&code=115080		fetch_error	0	0	0	0	0	
+115	115080	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=B&code=115080	c37720aef407c9c1ecb9c553a63d94d5efc6acf9b977313717b38568de18ed54	inventoried	213	0	8	205	0	
 115	115100	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=B&code=115100	fa42ad2e0f48538f850c86e8c028fbb95a77c10f3144f6d34bd7bcf0d00b3d01	inventoried	10	0	10	0	0	
 115	115180	https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=B&code=115180		pending	0	0	0	0	0	
